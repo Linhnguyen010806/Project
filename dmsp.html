@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanami Book</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <main class="trang-san-pham">
+        <header>
+    <div class="top-bar">
+        <span>📞 Contact</span>
+    </div>
+
+    <div class="navbar">
+        <div class="logo">Hanami Book</div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm sách...">
+            <button><i class="fa fa-search"></i></button>
+        </div>
+
+        <div class="icons">
+            <i class="fa fa-user"></i>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-cart-shopping"></i>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#">Trang chủ</a>
+        <a href="#">Danh mục sản phẩm</a>
+        <a href="#">Giỏ hàng</a>
+        <a href="#">Thông báo</a>
+        <a href="#">Tài khoản</a>
+    </nav>
+
+    <!-- Nội dung trang sản phẩm-->
+     <!-- <main class = "Trang_san_pham"> -->
+        <div class = "Tieu_de_trang">
+           
+            <!-- <p><i>Khám phá tri thức tại Hanami Bookstore</i> </p> -->
+        
+            <h2> Danh mục sản phẩm</h2>
+        </div>
+
+    <!-- Đường dẫn -->
+    <div class="duong-dan">
+        Trang chủ > Sản phẩm
+    </div>
+
+
+    <!-- Khu vực chính -->
+    <div class="khu-vuc-san-pham">
+
+        <!-- Bộ lọc bên trái -->
+
+        <aside class="bo-loc">
+
+            <div class="Muc_luc_san_pham">
+                <!-- <h3> Thể loại</h3> -->
+
+                <select>
+                    <option> Tất cả các thể loại</option>
+                    <option> Phát triển bản thân</option>
+                    <option> Tiểu thuyết</option>
+                    <option> Thiếu nhi</option>
+                    <option> Kinh doanh</option>
+                    <option> Sách học ngoại ngữ</option>
+                    <option> Sách tham khảo</option>
+                </select>
+            </div>
+
+            <h3> Giá</h3>
+
+            <label>
+                <input type="checkbox">
+                0đ - 100.000đ
+            </label>
+
+            <label>
+                <input type="checkbox">
+                100.000đ - 150.000đ
+            </label>
+
+            <label>
+                <input type="checkbox">
+                150.000đ - 300.000đ
+            </label>
+
+            <label>
+                <input type="checkbox">
+                300.000đ - 500.000đ
+            </label>
+
+            <label>
+                <input type="checkbox">
+                500.000đ - Trở lên
+            </label>
+
+        </aside>
+
+
+        <!--Danh sách sản phẩm-->
+
+        <section class="khu-vuc-danh-sach">
+
+            <!--Sắp xếp-->
+            <div class="sap-xep">
+
+                <span>Sắp xếp theo:</span>
+
+                <select>
+                    <option>Mới nhất</option>
+                    <option>Giá thấp đến cao</option>
+                    <option>Giá cao đến thấp</option>
+                    <option>Bán chạy</option>
+                </select>
+
+            </div>
+
+
+            <!-- Phát triển bản thân-->
+
+        <section class="The_loai">
+            <h2> Phát triển bản thân</h2>
+
+            <div class="luoi-san-pham">
+
+                <!-- Sản phẩm 1-->
+                <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\dnt.webp" alt="Đắc nhân tâm">
+                    </div>
+                    <h3> Đắc nhân tâm</h3>
+                    <p> 86.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                </div>
+
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\ttbt2.webp" alt="Thiên tài bên trái kẻ điên bên phải">
+                    </div>
+                    <h3> Thiên tài bên trái kẻ điên bên phải</h3>
+                    <p> 179.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                    <!-- <div class="Gia_va_gio_hang">
+                        <p> 179.000đ</p>
+                        <button title="Thêm vào giỏ hàng">
+                            <i class="fa fa-cart-shopping"></i>
+                        </button>
+                    </div> -->
+                    
+                 </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\tlhtc.webp" alt="Tâm lý học thành công">
+                    </div>
+                    <h3> Tâm lý học thành công</h3>
+                    <p> 199.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                  </div>
+
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\tdnvc.webp" alt="Tư duy nhanh và chậm">
+                    </div>
+                    <h3> Tư duy nhanh và chậm</h3>
+                    <p> 269.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\tdn.jpg" alt="Tư duy ngược">
+                    </div>
+                    <h3> Tư duy ngược</h3>
+                    <p> 139.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>    
+
+                <!--Sản phẩm 6-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\dbg.webp" alt="Dám bị ghét">
+                    </div>
+                    <h3> Dám bị ghét</h3>
+                    <p> 129.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+            </div>
+        </section>
+
+        
+        <!-- Tiểu thuyết-->
+         <section class="The_loai">
+            <h2> Tiểu thuyết</h2>
+
+            <div class="luoi-san-pham">
+                <!-- Sản phẩm 1-->
+                <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\ndomtov.webp" alt="Người đàn ông mang tên Ove - Tái bản">
+                    </div>
+
+                    <h3> Ngươi đàn ông mang tên OVE - Tái bản</h3>
+                    <p> 160.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                </div>
+
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\ccnct1.webp" alt="Cây cam ngọt của tôi">
+                    </div>
+                    <!-- <div class="khung-anh">
+                        <img src="images\ccnct2.webp" alt="Cây cam ngọt của tôi">
+                    </div> -->
+
+                    <h3> Cây cam ngọt của tôi</h3>
+                    <p> 120.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                 </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\ngk.webp" alt="Nhà giả kim">
+                    </div>
+                    <h3> Nhà giả kim</h3>
+                    <p> 109.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                  </div>
+
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\sd.webp" alt="Số đỏ">
+                    </div>
+                    <h3> Số đỏ</h3>
+                    <p> 99.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\td.webp" alt="Tắt đèn">
+                    </div>
+                    <h3> Tắt đèn</h3>
+                    <p> 99.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                  <!-- Sản phẩm 6-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\bsv.webp" alt="Bông sen vàng">
+                    </div>
+                    <h3> Bông sen vàng</h3>
+                    <p> 169.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+         </section>
+
+         <!-- Thiếu nhi-->
+         <section class="The_loai">
+            <h2> Thiếu nhi</h2>
+
+            <div class="luoi-san-pham">
+                <!-- Sản phẩm 1-->
+                <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\ehln.webp" alt="Em học lễ nghĩa">
+                    </div>
+                    <h3> Em học lễ nghĩa</h3>
+                    <p> 99.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                </div>
+
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\ttgt.webp" alt="Tự tin giao tiếp">
+                    </div>
+                    <h3> Tự tin giao tiếp</h3>
+                    <p> 59.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                 </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\cd1.webp" alt="Câu đố">
+                        <!-- <img src="images\cd2.webp" alt="Đồng dao">
+                        <img src="images\cd3.webp" alt="Thơ">
+                        <img src="images\cd4.webp" alt="Truyện"> -->
+                    </div>
+                    <h3> Tư duy cho bé - Câu đố</h3>
+                    <p> 29.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                  </div>
+
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                    <img src="images\ttdd.webp" alt="Tuổi thơ dữ dội - Tập 1">
+                    </div>
+                    <!-- <img src="images\ttdd2.webp" alt="Tuổi thơ dữ dội - Tập 2"> -->
+                    <h3> Tuổi thơ dữ dội</h3>
+                    <p> 59.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                    <img src="images\dm.webp" alt="Dế mèn phiêu lưu ký">
+                    </div>
+                    <h3> Dế mèn phiêu lưu ký</h3>
+                    <p> 49.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                    </div>
+                
+                <!-- Sản phẩm 6-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                    <img src="images\mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
+                    </div>
+                    <h3> Mẹ hỏi bé trả lời</h3>
+                    <p> 49.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                    </div>
+         </section>
+
+         <!--Kinh doanh-->
+         <section class="The_loai">
+            <h2> Kinh doanh</h2>
+
+            <div class="luoi-san-pham">
+                <!-- Sản phẩm 1-->
+                <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\48nt.webp" alt="48 nguyên tắc chủ chốt của quyền lực">
+                    </div>
+
+                    <h3> 48 nguyên tắc chủ chốt của quyền lực</h3>
+                    <p> 200.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                </div>
+
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\ngcntb.webp" alt="Người giàu có nhất thành Babylon">
+                    </div>
+                 <h3> Người giàu có nhất thành Babylon</h3>
+                    <p> 99.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                 </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\ttdvd.webp" alt="Từ tốt đến vĩ đại">
+                    </div>
+                    <h3> Từ tốt đến vĩ đại</h3>
+                    <p> 129.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                  </div>
+
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\tdqld.webp" alt="Peter Drucker - Tư duy đúng quản lý đúng">
+                    </div>
+                    <h3> Peter Drucker - Tư duy đúng quản lý đúng</h3>
+                    <p> 199.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\nttdcl.webp" alt="Nghệ thuật tư duy chiến lược">
+                    </div>
+                    <h3> Nghệ thuật tư duy chiến lược</h3>
+                    <p> 249.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                  <!-- Sản phẩm 6-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\lskthll.webp" alt="Lược sử kinh tế học lầy lội">
+                    </div>
+                    <h3> Lược sử kinh tế học lầy lội</h3>
+                    <p> 199.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+                </section>
+
+
+                <!-- Sách học ngoại ngữ-->
+
+         <section class="The_loai">
+            <h2> Sách học ngoại ngữ</h2>
+
+            <div class="luoi-san-pham">
+                <!-- Sản phẩm 1-->
+                <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\hsk1.webp" alt="Giáo trình chuẩn HSK 1">
+                    </div>
+
+                    <h3> Giáo trình chuẩn HSK 1</h3>
+                    <p> 199.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                </div>
+
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\hsk2.webp" alt="Giáo trình chuẩn HSK 2">
+                    </div>
+                 <h3> Giáo trình chuẩn HSK 2</h3>
+                    <p> 199.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                 </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\hsk3.webp" alt="Giáo trình chuẩn HSK 3">
+                    </div>
+                    <h3> Giáo trình chuẩn HSK 3</h3>
+                    <p> 299.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                  </div>
+
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\hsk4.webp" alt="Giáo trình chuẩn HSK 4">
+                    </div>
+                    <h3> Giáo trình chuẩn HSK 4</h3>
+                    <p> 299.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\b1.webp" alt="Tiếng Nhật sơ cấp cho người mới bắt đầu">
+                    </div>
+                    <h3> Tiếng Nhật sơ cấp cho người mới bắt đầu</h3>
+                    <p> 99.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                  <!-- Sản phẩm 6-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\b11.webp" alt="Grammar And Vocabulary With Answer Key (Tái Bản 2025)">
+                    </div>
+                    <h3> Grammar And Vocabulary With Answer Key (Tái Bản 2025)</h3>
+                    <p> 199.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+                </section>
+
+                <!-- Sách tham khảo-->
+
+         <section class="The_loai">
+            <h2> Sách tham khảo</h2>
+
+            <div class="luoi-san-pham">
+                <!-- Sản phẩm 1-->
+                <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\vhth.webp" alt="Vui học tin học 2">
+                    </div>
+
+                    <h3> Vui học tin học 2</h3>
+                    <p> 39.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                </div>
+
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\al.webp" alt="Sách Alat Địa lý">
+                    </div>
+                 <h3> Sách Alat Địa lý</h3>
+                    <p> 59.000đ</p>
+                    <button>
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                 </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\tcthqt.webp" alt="Tăng cường tin học quốc tế - IC3 GS6">
+                    </div>
+                    <h3> Tăng cường tin học quốc tế - IC3 GS6</h3>
+                    <p> 79.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+
+                  </div>
+
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\mhtn.webp" alt="60 đề minh họa Tốt nghiệp THPT 2026">
+                    </div>
+                    <h3> 60 đề minh họa Tốt nghiệp THPT 2026</h3>
+                    <p> 199.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\mhtn2.webp" alt="100 đề minh họa Tốt nghiệp THPT 2026">
+                    </div>
+                    <h3> 100 đề minh họa Tốt nghiệp THPT 2026</h3>
+                    <p> 199.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+
+                  <!-- Sản phẩm 6-->
+                  <div class="san-pham">
+                    <div class="khung-anh">
+                        <img src="images\dptd.webp" alt="Đột phá tư duy kỳ thi Tót nghiệp THPT">
+                    </div>
+                    <h3> Đột phá tư duy kỳ thi Tốt nghiệp THPT</h3>
+                    <p> 159.000đ</p>
+                    <button> 
+                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
+                  </div>
+                </section>
+
+     </main>
+</body>
+</html>

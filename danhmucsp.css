@@ -1,0 +1,263 @@
+/* Thúy chỉnh sửa */
+
+/* Trang sản phẩm*/
+
+.trang-san-pham {
+    width: 94%;
+    max-width: 1500px;
+    margin: 30px auto;
+}
+
+
+/* Chia trang thành 2 bên 
+bên trái: bộ lọc
+bên phải: sản phẩm*/
+
+.khu-vuc-san-pham {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 25px;
+}
+
+
+/* bộ lọc bên trái*/
+
+.bo-loc {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.bo-loc h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.bo-loc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bo-loc li {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.bo-loc label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+
+/* Khu vực danh sách sản phẩm */
+
+.khu-vuc-danh-sach {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* Sắp xếp */
+
+.sap-xep {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.sap-xep select {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* lưới sản phẩm:
+3 sp/ hàng
+1sp/hàng */
+
+.chon-kieu {
+    display: flex;
+    justify-content: flext-end;
+    gap: 8px;
+    margin-bottom: 20px;
+
+}
+
+.chon-kieu-button{
+    width: 42px;
+    height: 38px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.chon-kieu button:hover {
+    background-color: #f2f2f2;
+
+}
+
+/* kieu1 */
+.luoi-san-pham {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 35px 25px;
+}
+
+
+/* 1 sản phẩm */
+
+.san-pham {
+    min-width: 0;
+    text-align: center;
+}
+
+
+/* Khung ảnh */
+
+.khung-anh {
+    width: 100%;
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* overflow: hidden; */
+}
+
+
+/* Ảnh sách */
+
+.khung-anh img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* Tên sách */
+
+.san-pham h3 {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.4;
+
+    height: 50x;
+
+    margin: 12px 0 8px;
+
+    overflow: hidden;
+}
+
+
+/* Giá giỏ hàng*/
+
+.gia-va-gio-hang {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 15x;
+}
+
+/* giá */
+.gia-va-gio-hang p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* Nút giỏ hàng */
+
+.gia-va-gio-hang button {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+/* 1sp/hàng */
+.dang-danh-sach .san-pham{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+
+}
+
+/* ảnh ghi ở kiểu danh sách */
+.dang-danh-sach .khung-anh {
+    width: 180px;
+    height: 220px;
+
+    flex-shrink: 0;
+}
+
+.dang-danh-sach .san-pham h3 {
+    text-align: left;
+
+    height: auto;
+
+    margin: 0 0 15px;
+
+    font-size: 20px;
+}
+
+.dang-danh-sach .gia-va-gio-hang {
+    justify-content: flex-start;
+}
+@media (max-width: 900px) {
+
+    .khu-vuc-san-pham {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .luoi-san-pham {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .khu-vuc-san-pham {
+        grid-template-columns: 1fr;
+    }
+
+    .luoi-san-pham {
+        grid-template-columns: 1fr;
+    }
+
+    .dang-danh-sach .san-pham {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .dang-danh-sach .san-pham h3 {
+        text-align: center;
+    }
+
+    .dang-danh-sach .gia-va-gio-hang {
+        justify-content: center;
+    }
+}
