@@ -3,138 +3,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanami Book</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Hanami Bookstore</title>
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-<header>
-    <div class="top-bar">
-        <span>📞 Contact</span>
-    </div>
+<header class="header">
 
-    <div class="navbar">
-        <div class="logo">Hanami Book</div>
+    <div class="top-bar">
+
+        <div class="logo">
+            <img src="images/hanami_logo.png" alt="Hanami Bookstore Logo">
+        </div>
 
         <div class="search-box">
             <input type="text" placeholder="Tìm kiếm sách...">
-            <button><i class="fa fa-search"></i></button>
+            <button><i class="fas fa-search"></i></button>
         </div>
 
-        <div class="icons">
-            <i class="fa fa-user"></i>
-            <i class="fa fa-heart"></i>
-            <i class="fa fa-cart-shopping"></i>
+        <div class="header-right">
+
+            <div class="top-icons">
+                <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+                <a href="#"><i class="fas fa-cart-shopping"></i> Giỏ hàng</a>
+            </div>
+
+            <div class="hotline">
+                Hotline: 0982 909 069
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="navbar">
+
+    <div class="category-menu">
+        <button class="category-btn">
+            <i class="fas fa-bars"></i>
+            Danh mục sách
+        </button>
+
+        <div class="category-list">
+            <a href="#">Phát triển bản thân</a>
+            <a href="#">Tiểu thuyết</a>
+            <a href="#">Thiếu nhi</a>
+            <a href="#">Kinh doanh</a>
+            <a href="#">Sách học ngoại ngữ</a>
+            <a href="#">Sách tham khảo</a>
         </div>
     </div>
 
-    <nav>
-        <a href="#">Trang chủ</a>
-        <a href="#">Sách mới</a>
-        <a href="#">Tiểu thuyết</a>
-        <a href="#">Kỹ năng</a>
-        <a href="#">Thiếu nhi</a>
-    </nav>
+   <nav class="main-menu">
+    <a href="#" class="active">Trang chủ</a>
+    <a href="pages/gioithieu.html">Giới thiệu</a>
+    <a href="pages/khuyenmai.html">Khuyến mãi</a>
+    <a href="pages/lienhe.html">Liên hệ</a>
+    <a href="pages/phanhoi.html">Phản hồi</a>
+</nav>
+
+</div>
+</div>
+    </div>
+</div>
+<div class="hero">
+
+    <div class="slider">
+
+        <div class="slides">
+
+            <img src="images/banner1.jpg" class="slide active">
+            <img src="images/banner2.jpg" class="slide">
+            <img src="images/banner3.jpg" class="slide">
+            <img src="images/banner4.jpg" class="slide">
+
+        </div>
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
 </header>
+<!-- ===== SẢN PHẨM MỚI ===== -->
+<section class="new-products">
 
-<section class="hero">
-    <div class="hero-text">
-        <h1>Khám phá thế giới sách</h1>
-        <p>Đọc hôm nay – phát triển ngày mai.</p>
-        <button>Khám phá ngay</button>
+    <div class="section-header">
+        <h2>📚 Sản phẩm mới</h2>
+
+        <div class="product-controls">
+            <button id="productPrev">&#10094;</button>
+            <button id="productNext">&#10095;</button>
+        </div>
     </div>
 
-    <div class="hero-image">
-        <img src="images/hero.jpg" alt="">
-    </div>
-</section>
+    <div class="product-slider">
+        <div class="product-track">
 
-<section class="features">
-    <div>🚚 Miễn phí vận chuyển</div>
-    <div>↩️ Đổi trả 30 ngày</div>
-    <div>🎁 Gói quà</div>
-    <div>✔️ Đặt trước</div>
-</section>
+            <div class="product-card">
+                <img src="images/automic_habits.jpg" alt="Atomic Habits">
+                <h4>Atomic Habits</h4>
+                <p>James Clear</p>
+                <span>99.000đ</span>
+            </div>
 
-<section class="brand">
-    <img src="images/brand.jpg" alt="">
+            <div class="product-card">
+                <img src="images/muon_kiep_nhan_sinh.jpg" alt="Muôn Kiếp Nhân Sinh">
+                <h4>Muôn Kiếp Nhân Sinh</h4>
+                <p>Nguyên Phong</p>
+                <span>120.000đ</span>
+            </div>
 
-    <div class="brand-text">
-        <h2>Châm ngôn thương hiệu</h2>
-        <p>Hanami Book mong muốn truyền cảm hứng đọc sách, giúp mỗi người học hỏi và phát triển bản thân qua từng trang sách.</p>
-        <button>Khám phá ngay</button>
-    </div>
-</section>
+            <div class="product-card">
+                <img src="images/dac_nhan_tam.jpg" alt="Đắc Nhân Tâm">
+                <h4>Đắc Nhân Tâm</h4>
+                <p>Dale Carnegie</p>
+                <span>88.000đ</span>
+            </div>
 
-<section class="products">
-    <h2>Sản phẩm nổi bật</h2>
+            <div class="product-card">
+                <img src="images/book4.jpg" alt="Tuổi Trẻ Đáng Giá Bao Nhiêu">
+                <h4>Tuổi Trẻ Đáng Giá Bao Nhiêu</h4>
+                <p>Rosie Nguyễn</p>
+                <span>95.000đ</span>
+            </div>
 
-    <div class="product-grid">
+            <div class="product-card">
+                <img src="images/book5.jpg" alt="Nhà Giả Kim">
+                <h4>Nhà Giả Kim</h4>
+                <p>Paulo Coelho</p>
+                <span>89.000đ</span>
+            </div>
 
-        <div class="card">
-            <img src="images/book1.jpg">
-            <h3>Atomic Habits</h3>
-            <p>199.000đ</p>
-            <button>Thêm vào giỏ hàng</button>
+            <div class="product-card">
+                <img src="images/book6.jpg" alt="Think and Grow Rich">
+                <h4>Think and Grow Rich</h4>
+                <p>Napoleon Hill</p>
+                <span>110.000đ</span>
+            </div>
+
         </div>
-
-        <div class="card">
-            <img src="images/book2.jpg">
-            <h3>Đắc Nhân Tâm</h3>
-            <p>120.000đ</p>
-            <button>Thêm vào giỏ hàng</button>
-        </div>
-
-        <div class="card">
-            <img src="images/book1.jpg">
-            <h3>Think Again</h3>
-            <p>175.000đ</p>
-            <button>Thêm vào giỏ hàng</button>
-        </div>
-
-    </div>
-</section>
-
-<section class="flash-sale">
-
-    <h2>Flash Sale</h2>
-    <div id="countdown">00:00:00</div>
-
-    <div class="product-grid">
-
-        <div class="card">
-            <img src="images/book2.jpg">
-            <h3>Nhà Giả Kim</h3>
-            <p>89.000đ</p>
-            <button>Thêm vào giỏ hàng</button>
-        </div>
-
-        <div class="card">
-            <img src="images/book1.jpg">
-            <h3>Tư Duy Nhanh Và Chậm</h3>
-            <p>169.000đ</p>
-            <button>Thêm vào giỏ hàng</button>
-        </div>
-
-        <div class="card">
-            <img src="images/book2.jpg">
-            <h3>Ikigai</h3>
-            <p>99.000đ</p>
-            <button>Thêm vào giỏ hàng</button>
-        </div>
-
     </div>
 
-    <button class="more">Xem thêm →</button>
+</section>
+<section class="bestseller">
+
+    <div class="best-title">Best seller</div>
+
+    <div class="best-container">
+
+        <!-- Danh sách sách -->
+        <div class="best-list">
+
+            <div class="best-item active"
+                data-img="images/dac_nhan_tam.jpg"
+                data-title="Đắc Nhân Tâm"
+                data-author="Dale Carnegie"
+                data-price="88.000đ"
+                data-desc="Cuốn sách kinh điển về nghệ thuật giao tiếp và ứng xử.">
+                <img src="images/dac_nhan_tam.jpg" alt="Đắc Nhân Tâm">
+                <div>
+                    <h4>Đắc Nhân Tâm</h4>
+                    <p>Dale Carnegie</p>
+                </div>
+            </div>
+
+            <div class="best-item"
+                data-img="images/nha_gia_kim.jpg"
+                data-title="Nhà Giả Kim"
+                data-author="Paulo Coelho"
+                data-price="89.000đ"
+                data-desc="Hành trình theo đuổi ước mơ của Santiago.">
+                <img src="images/nha_gia_kim.jpg" alt="Nhà Giả Kim">
+                <div>
+                    <h4>Nhà Giả Kim</h4>
+                    <p>Paulo Coelho</p>
+                </div>
+            </div>
+
+            <div class="best-item"
+                data-img="images/muon_kiep_nhan_sinh.jpg"
+                data-title="Muôn Kiếp Nhân Sinh"
+                data-author="Nguyên Phong"
+                data-price="120.000đ"
+                data-desc="Những câu chuyện về nhân quả và luân hồi.">
+                <img src="images/muon_kiep_nhan_sinh.jpg" alt="Muôn Kiếp Nhân Sinh">
+                <div>
+                    <h4>Muôn Kiếp Nhân Sinh</h4>
+                    <p>Nguyên Phong</p>
+                </div>
+            </div>
+
+            <div class="best-item"
+                data-img="images/automic_habits.jpg"
+                data-title="Atomic Habits"
+                data-author="James Clear"
+                data-price="99.000đ"
+                data-desc="Xây dựng thói quen tốt từng bước nhỏ.">
+                <img src="images/automic_habits.jpg" alt="Atomic Habits">
+                <div>
+                    <h4>Atomic Habits</h4>
+                    <p>James Clear</p>
+                </div>
+            </div>
+
+            <div class="best-item"
+                data-img="images/tu_duy_nhanh_cham.jpg"
+                data-title="Tư Duy Nhanh Và Chậm"
+                data-author="Daniel Kahneman"
+                data-price="145.000đ"
+                data-desc="Hiểu cách bộ não đưa ra quyết định.">
+                <img src="images/tu_duy_nhanh_cham.jpg" alt="Tư Duy Nhanh Và Chậm">
+                <div>
+                    <h4>Tư Duy Nhanh Và Chậm</h4>
+                    <p>Daniel Kahneman</p>
+                </div>
+            </div>
+
+            <div class="best-item"
+                data-img="images/7_thoi_quen.jpg"
+                data-title="7 Thói Quen Hiệu Quả"
+                data-author="Stephen Covey"
+                data-price="125.000đ"
+                data-desc="Bảy thói quen giúp nâng cao hiệu quả cuộc sống.">
+                <img src="images/7_thoi_quen.jpg" alt="7 Thói Quen Hiệu Quả">
+                <div>
+                    <h4>7 Thói Quen Hiệu Quả</h4>
+                    <p>Stephen Covey</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Khung sách nổi bật -->
+        <div class="best-feature">
+
+            <img id="featureImg" class="feature-img"
+                src="images/dac_nhan_tam.jpg" alt="Đắc Nhân Tâm">
+
+            <h3 id="featureTitle">Đắc Nhân Tâm</h3>
+
+            <p id="featureAuthor">Dale Carnegie</p>
+
+            <div id="featurePrice" class="price">88.000đ</div>
+
+            <button class="cart-btn">
+                <i class="fas fa-cart-shopping"></i>
+                Thêm vào giỏ hàng
+            </button>
+
+            <p id="featureDesc" class="feature-desc">
+                Cuốn sách kinh điển về nghệ thuật giao tiếp và ứng xử.
+            </p>
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐
+                <small>25 đánh giá</small>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
+<!-- ===== SÁCH THAM KHẢO ===== -->
+<section class="reference-books">
 
-<footer>
-    <p>© 2026 Hanami Book</p>
+    <div class="book-tabs">
+        <button class="tab-btn active" data-tab="reference">Sách tham khảo</button>
+        <button class="tab-btn" data-tab="foreign">Góc ngoại ngữ</button>
+    </div>
+
+    <!-- Sách tham khảo -->
+    <div class="tab-content active" id="reference">
+
+        <div class="book-grid">
+
+            <div class="book-item">
+                <img src="images/vui_hoc_tin_hoc.jpg" alt="Vui học Tin học">
+                <span class="trend">Xu hướng 📈</span>
+                <h4>Vui học Tin học 2</h4>
+                <div class="price-row">
+                    <span class="new-price">29.000đ</span>
+                    <span class="discount">-3%</span>
+                </div>
+                <p class="old-price">30.000đ</p>
+                <small>Đã bán 823</small>
+            </div>
+
+            <div class="book-item">
+                <img src="images/move_up_1.jpg" alt="Move Up 1">
+                <h4>Move Up 1</h4>
+                <div class="price-row">
+                    <span class="new-price">55.000đ</span>
+                </div>
+                <small>Đã bán 3.1k</small>
+            </div>
+
+            <div class="book-item">
+                <img src="images/ic3.jpg" alt="IC3">
+                <span class="trend">Xu hướng 📈</span>
+                <h4>IC3 GS6 Level 1</h4>
+                <div class="price-row">
+                    <span class="new-price">80.750đ</span>
+                    <span class="discount">-5%</span>
+                </div>
+                <p class="old-price">85.000đ</p>
+                <small>Đã bán 164</small>
+            </div>
+
+            <div class="book-item">
+                <img src="images/tri_tue_nhan_tao_8.jpg" alt="AI lớp 8">
+                <h4>Trí Tuệ Nhân Tạo 8</h4>
+                <div class="price-row">
+                    <span class="new-price">36.000đ</span>
+                    <span class="discount">-10%</span>
+                </div>
+                <p class="old-price">40.000đ</p>
+                <small>Đã bán 304</small>
+            </div>
+
+            <div class="book-item">
+                <img src="images/atlas.jpg" alt="Atlas">
+                <span class="trend">Xu hướng 📈</span>
+                <h4>Atlas Địa Lí Việt Nam</h4>
+                <div class="price-row">
+                    <span class="new-price">29.000đ</span>
+                    <span class="discount">-14%</span>
+                </div>
+                <p class="old-price">34.000đ</p>
+                <small>Đã bán 4.6k</small>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Góc ngoại ngữ -->
+    <div class="tab-content" id="foreign">
+
+        <div class="book-grid">
+
+            <div class="book-item">
+                <img src="images/toeic.jpg" alt="TOEIC">
+                <h4>TOEIC 600+</h4>
+                <div class="price-row">
+                    <span class="new-price">120.000đ</span>
+                </div>
+            </div>
+
+            <div class="book-item">
+                <img src="images/ielts.jpg" alt="IELTS">
+                <h4>IELTS Cambridge</h4>
+                <div class="price-row">
+                    <span class="new-price">185.000đ</span>
+                </div>
+            </div>
+
+            <div class="book-item">
+                <img src="images/grammar.jpg" alt="Grammar">
+                <h4>English Grammar</h4>
+                <div class="price-row">
+                    <span class="new-price">75.000đ</span>
+                </div>
+            </div>
+
+            <div class="book-item">
+                <img src="images/english.jpg" alt="English">
+                <h4>English for Life</h4>
+                <div class="price-row">
+                    <span class="new-price">68.000đ</span>
+                </div>
+            </div>
+
+            <div class="book-item">
+                <img src="images/vocabulary.jpg" alt="Vocabulary">
+                <h4>Vocabulary Builder</h4>
+                <div class="price-row">
+                    <span class="new-price">92.000đ</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="more-btn-wrap">
+        <button class="more-btn">Xem thêm</button>
+    </div>
+
+</section>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Cột 1 -->
+        <div class="footer-box">
+            <h3>Thông tin</h3>
+
+            <p><i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam</p>
+
+            <p><i class="fas fa-phone"></i> Hotline: 0982 909 069</p>
+
+            <p><i class="fas fa-envelope"></i> hanamibook@gmail.com</p>
+        </div>
+
+        <!-- Cột 2 -->
+        <div class="footer-box">
+            <h3>Chính sách</h3>
+
+            <a href="#">Chính sách đổi trả</a>
+            <a href="#">Chính sách bảo hành</a>
+            <a href="#">Hướng dẫn mua hàng</a>
+            <a href="#">Điều khoản sử dụng</a>
+        </div>
+
+        <!-- Cột 3 -->
+        <div class="footer-box">
+            <h3>Liên hệ</h3>
+
+            <a href="pages/gioithieu.html">Giới thiệu</a>
+            <a href="pages/lienhe.html">Liên hệ</a>
+            <a href="pages/phanhoi.html">Phản hồi</a>
+        </div>
+
+        <!-- Cột 4 -->
+        <div class="footer-box">
+            <h3>Theo dõi chúng tôi</h3>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-twitter"></i></a>
+
+            </div>
+
+            <p class="social-text">
+                Kết nối với Hanami để cập nhật sách mới và ưu đãi.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Hanami Bookstore. All rights reserved.
+    </div>
+
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
