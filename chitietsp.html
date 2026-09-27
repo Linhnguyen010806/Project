@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chi tiết sản phẩm - Hanami Book</title>
+
+    <link rel="stylesheet" href="chitiet.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="top-bar">
+        <span>📞 Contact</span>
+    </div>
+
+    <div class="navbar">
+
+        <div class="logo">
+            Hanami Book
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm sách...">
+            <button>
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+
+        <div class="icons">
+            <a href="dangnhap.html">
+                <i class="fa fa-user"></i>
+            </a>
+
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-cart-shopping"></i>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="sanpham.html">Danh mục sản phẩm</a>
+        <a href="#">Giỏ hàng</a>
+        <a href="#">Thông báo</a>
+        <a href="#">Tài khoản</a>
+    </nav>
+
+</header>
+
+
+<!-- ĐƯỜNG DẪN -->
+
+<div class="breadcrumb">
+    Trang chủ / Danh mục sản phẩm / Chi tiết sản phẩm
+</div>
+
+
+<!-- CHI TIẾT -->
+
+<main class="product-detail">
+
+    <div class="product-image">
+        <img id="bookImage" src="images/dnt.webp">
+    </div>
+
+
+    <div class="product-info">
+
+        <span id="bookCategory">PHÁT TRIỂN BẢN THÂN</span>
+
+        <h1 id="bookName">Đắc Nhân Tâm</h1>
+
+        <p class="author">
+            Tác giả: <strong id="bookAuthor">Dale Carnegie</strong>
+        </p>
+
+        <div class="rating">
+            ★★★★★
+            <span>4.9/5</span>
+        </div>
+
+        <div class="price" id="bookPrice">
+            86.000đ
+        </div>
+
+        <p class="description" id="bookDescription">
+            Đắc Nhân Tâm là cuốn sách kinh điển về nghệ thuật
+            giao tiếp và ứng xử, giúp người đọc hiểu hơn về
+            cách xây dựng các mối quan hệ trong cuộc sống.
+        </p>
+
+
+        <div class="book-info">
+
+            <div>
+                <span>Nhà xuất bản</span>
+                <strong>NXB Trẻ</strong>
+            </div>
+
+            <div>
+                <span>Năm xuất bản</span>
+                <strong>2024</strong>
+            </div>
+
+            <div>
+                <span>Số trang</span>
+                <strong>320</strong>
+            </div>
+
+            <div>
+                <span>Ngôn ngữ</span>
+                <strong>Tiếng Việt</strong>
+            </div>
+
+        </div>
+
+
+        <div class="quantity">
+
+            <span>Số lượng:</span>
+
+            <button id="minus">−</button>
+
+            <span id="quantity">1</span>
+
+            <button id="plus">+</button>
+
+        </div>
+
+
+        <div class="actions">
+
+            <button id="addCart">
+                <i class="fa fa-cart-shopping"></i>
+                Thêm vào giỏ hàng
+            </button>
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<section class="description-box">
+
+    <h2>Giới thiệu sách</h2>
+
+    <p id="bookDetail">
+        Cuốn sách cung cấp những bài học thực tế về giao tiếp,
+        ứng xử và xây dựng mối quan hệ với mọi người xung quanh.
+    </p>
+
+</section>
+
+
+<footer>
+    <p>© 2026 Hanami Book</p>
+</footer>
+
+
+<script src="chitiet.js"></script>
+
+</body>
+</html>
