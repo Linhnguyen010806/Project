@@ -1,1 +1,118 @@
 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới Thiệu - Hanami Bookstore</title>
+</head>
+<body>
+
+  <!-- Thanh điều hướng / Menu -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="about.html">Giới thiệu</a></li>
+        <li><a href="book-list.html">Danh sách sách</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Banner Giới thiệu -->
+    <section>
+      <h1>Chào Mừng Đến Với Hanami Bookstore</h1>
+      <p><em>"Nơi kết nối tri thức - Khơi nguồn cảm hứng đọc sách cho mọi gia đình Việt"</em></p>
+      <img src="images/banner-about.jpg" alt="Không gian nhà sách Hanami Bookstore" width="800">
+    </section>
+
+    <!-- Câu chuyện thương hiệu -->
+    <section>
+      <h2>1. Câu Chuyện Thương Hiệu</h2>
+      <p>
+        Được thành lập từ tình yêu sâu sắc với những trang sách, <strong>Hanami Bookstore</strong> hướng tới mục tiêu trở thành hệ thống phát hành sách và văn phòng phẩm uy tín hàng đầu. Lấy cảm hứng từ loài hoa anh đào (Hanami) tượng trưng cho sự tươi mới và sức sống bền bỉ, chúng tôi mong muốn mang tri thức cập bến tới mọi tầng lớp độc giả trên khắp cả nước.
+      </p>
+      <p>
+        Giống như mô hình của các nhà sách lớn, Hanami không chỉ là nơi bán sách đơn thuần mà còn là không gian văn hóa — nơi độc giả ở mọi lứa tuổi từ học sinh, sinh viên đến người đi làm đều có thể tìm thấy những cuốn sách phù hợp với tâm hồn và công việc của mình.
+      </p>
+    </section>
+
+    <!-- Thống kê nổi bật (Con số ấn tượng) -->
+    <section>
+      <h2>2. Hanami Bookstore Qua Những Con Số</h2>
+      <table border="1">
+        <caption>Thống kê thành tựu và quy mô phục vụ</caption>
+        <thead>
+          <tr>
+            <th>Chỉ số</th>
+            <th>Quy mô đạt được</th>
+            <th>Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Đầu sách phục vụ</strong></td>
+            <td>+50.000 đầu sách</td>
+            <td>Đa dạng thể loại trong và ngoài nước</td>
+          </tr>
+          <tr>
+            <td><strong>Đối tác xuất bản</strong></td>
+            <td>+100 NXB uy tín</td>
+            <td>Nhã Nam, Kim Đồng, NXB Trẻ, Alpha Books,...</td>
+          </tr>
+          <tr>
+            <td><strong>Độc giả tin tưởng</strong></td>
+            <td>+200.000 khách hàng</td>
+            <td>Phục vụ trên toàn quốc</td>
+          </tr>
+          <tr>
+            <td><strong>Tỷ lệ hài lòng</strong></td>
+            <td>99.5%</td>
+            <td>Đánh giá về chất lượng sách và dịch vụ</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Lĩnh vực / Sản phẩm thế mạnh -->
+    <section>
+      <h2>3. Các Sản Phẩm & Dịch Vụ Thế Mạnh</h2>
+      <ul>
+        <li><strong>Sách Văn học & Tiểu thuyết:</strong> Quy tụ các tác phẩm kinh điển, bestseller thế giới và văn học Việt Nam hiện đại.</li>
+        <li><strong>Sách Kinh tế & Kỹ năng:</strong> Cung cấp tri thức quản trị, đầu tư, tài chính và phát triển bản thân.</li>
+        <li><strong>Sách Thiếu nhi & Giáo khoa:</strong> Đầy đủ truyện tranh, sách tương tác, giáo trình học tập chuẩn BGD.</li>
+        <li><strong>Văn phòng phẩm & Quà tặng:</strong> Dụng cụ học tập cao cấp, quà lưu niệm độc đáo nhập khẩu.</li>
+      </ul>
+    </section>
+
+    <!-- 4 Cam kết vàng chuẩn nhà sách lớn -->
+    <section>
+      <h2>4.  Cam Kết Vàng Dành Cho Khách Hàng</h2>
+      <ol>
+        <li><strong>100% Sách Chính Hãng:</strong> Cam kết hoàn tiền 200% nếu phát hiện sách giả, sách kém chất lượng.</li>
+        <li><strong>Bọc Sách & Đóng Gói Cẩn Thận:</strong> Mọi đơn hàng đều được đóng gói chống sốc và bảo vệ bìa cẩn thận.</li>
+        <li><strong>Giao Hàng Nhanh Toàn Quốc:</strong> Hỗ trợ giao hàng siêu tốc trong 24h tại các thành phố lớn.</li>
+        <li><strong>Hỗ Trợ Đổi Trả Dễ Dàng:</strong> Đổi trả miễn phí trong 7 ngày nếu sản phẩm có lỗi từ nhà sản xuất.</li>
+      </ol>
+    </section>
+
+    <!-- Kêu gọi hành động -->
+    <section>
+      <h2>Khám Phá Cùng Hanami Ngay Hôm Nay</h2>
+      <p>Hãy chọn cho mình những cuốn sách hay nhất để bắt đầu hành trình nâng tầm tri thức!</p>
+      <p>
+        <a href="book-list.html">Xem danh mục sách</a> | 
+        <a href="contact.html">Liên hệ tư vấn</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- Chân trang -->
+  <footer>
+    <p>&copy; 2026 Hanami Bookstore. Tất cả quyền được bảo lưu.</p>
+  </footer>
+
+</body>
+</html>
