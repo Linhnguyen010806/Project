@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng ký - Hanami Book</title>
+
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <!-- Bên trái -->
+    <div class="auth-intro">
+
+        <h1>Hanami Book</h1>
+
+        <p>
+            Mỗi cuốn sách là<br>
+            một hành trình.
+        </p>
+
+        <span>
+            Tìm cuốn sách dành cho riêng bạn.
+        </span>
+
+    </div>
+
+
+    <!-- Bên phải -->
+    <div class="auth-box">
+
+        <h2>Đăng ký</h2>
+
+        <p class="subtitle">
+            Tạo tài khoản để khám phá Hanami Book.
+        </p>
+
+        <form id="registerForm">
+
+            <div class="form-group">
+                <label for="name">Họ và tên</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Nhập họ và tên"
+                    required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Nhập email"
+                    required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="registerPassword">Mật khẩu</label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Nhập mật khẩu"
+                    required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="confirmPassword">Xác nhận mật khẩu</label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Nhập lại mật khẩu"
+                    required>
+            </div>
+
+            <div class="terms">
+            <label>
+                <input type="checkbox" required>
+                Tôi đồng ý với
+                <a href="#">Điều khoản sử dụng của Hanami</a>
+            </label>
+        </div>
+            <button type="submit" class="auth-btn">
+                Đăng ký
+            </button>
+
+        </form>
+
+
+        <p class="auth-link">
+            Đã có tài khoản?
+            <a href="dangnhap.html">Đăng nhập</a>
+        </p>
+
+
+        <a href="index.html" class="home-link">
+            ← Quay lại trang chủ
+        </a>
+
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>
