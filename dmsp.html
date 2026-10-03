@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanami Book</title>
+    <title>Hanami Bookstore</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="danhmucsp.css">
+    
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 <body>
 
     <main class="trang-san-pham">
-        <header>
+        <!-- <header>
     <div class="top-bar">
         <span>📞 Contact</span>
     </div>
@@ -37,7 +41,90 @@
         <a href="#">Giỏ hàng</a>
         <a href="#">Thông báo</a>
         <a href="#">Tài khoản</a>
-    </nav>
+    </nav> -->
+
+    <header class="header">
+
+    <div class="top-bar">
+
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Hanami Bookstore Logo">
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm sách...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="header-right">
+
+            <div class="top-icons">
+                <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+                <a href="#"><i class="fas fa-cart-shopping"></i> Giỏ hàng</a>
+            </div>
+
+            <div class="hotline">
+                Hotline: 0982 909 069
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="navbar">
+
+    <div class="category-menu">
+        <button class="category-btn">
+            <i class="fas fa-bars"></i>
+            Danh mục sách
+        </button>
+
+        <div class="category-list">
+            <a href="#">Phát triển bản thân</a>
+            <a href="#">Tiểu thuyết</a>
+            <a href="#">Thiếu nhi</a>
+            <a href="#">Kinh doanh</a>
+            <a href="#">Sách học ngoại ngữ</a>
+            <a href="#">Sách tham khảo</a>
+        </div>
+    </div>
+
+   <nav class="main-menu">
+    <a href="#" class="active">Trang chủ</a>
+    <a href="pages/gioithieu.html">Giới thiệu</a>
+    <a href="pages/khuyenmai.html">Khuyến mãi</a>
+    <a href="pages/lienhe.html">Liên hệ</a>
+    <a href="pages/phanhoi.html">Phản hồi</a>
+</nav>
+
+</div>
+</div>
+    </div>
+</div>
+<div class="hero">
+
+    <div class="slider">
+
+        <div class="slides">
+
+            <img src="images/banner1.jpg" class="slide active">
+            <img src="images/banner2.jpg" class="slide">
+            <img src="images/banner3.jpg" class="slide">
+            <img src="images/banner4.jpg" class="slide">
+
+        </div>
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</header>
 
     <!-- Nội dung trang sản phẩm-->
      <!-- <main class = "Trang_san_pham"> -->
@@ -45,7 +132,7 @@
            
             <!-- <p><i>Khám phá tri thức tại Hanami Bookstore</i> </p> -->
         
-            <h2> Danh mục sản phẩm</h2>
+            <h2 id="dau-trang"> Danh mục sản phẩm</h2>
         </div>
 
     <!-- Đường dẫn -->
@@ -61,53 +148,65 @@
 
         <aside class="bo-loc">
 
+
             <div class="Muc_luc_san_pham">
                 <!-- <h3> Thể loại</h3> -->
 
-                <select>
-                    <option> Tất cả các thể loại</option>
-                    <option> Phát triển bản thân</option>
-                    <option> Tiểu thuyết</option>
-                    <option> Thiếu nhi</option>
-                    <option> Kinh doanh</option>
-                    <option> Sách học ngoại ngữ</option>
-                    <option> Sách tham khảo</option>
+                <select onchange ="location.href = this.value;">
+                    <option value=""> Tất cả các thể loại</option>
+                    <option value='#phat-trien-ban-than'> Phát triển bản thân</option>
+                    <option value='#tieu-thuyet'> Tiểu thuyết</option>
+                    <option value='#thieu-nhi'> Thiếu nhi</option>
+                    <option value='#kinh-doanh'> Kinh doanh</option>
+                    <option value='#sach-hoc-ngoai-ngu'> Sách học ngoại ngữ</option>
+                    <option value='#sach-tham-khao'> Sách tham khảo</option>
                 </select>
             </div>
-
+        
+        <div class="bo-loc-gia">
             <h3> Giá</h3>
 
             <label>
-                <input type="checkbox">
+                <input type="radio" name="muc-gia" value="0-100000" checked>
                 0đ - 100.000đ
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="radio" name="muc-gia" value="100000-150000" checked>
                 100.000đ - 150.000đ
             </label>
 
             <label>
-                <input type="checkbox">
-                150.000đ - 300.000đ
+                <input type="radio" name="muc-gia" value="150000-250000" checked>
+                150.000đ - 250.000đ
             </label>
 
             <label>
-                <input type="checkbox">
-                300.000đ - 500.000đ
+                <input type="radio" name="muc-gia" value="250000-trolen" checked>
+                250.000đ - Trở lên
             </label>
-
-            <label>
-                <input type="checkbox">
-                500.000đ - Trở lên
-            </label>
-
+        </div>
         </aside>
 
-
         <!--Danh sách sản phẩm-->
-
         <section class="khu-vuc-danh-sach">
+
+        <!-- chọn kiểu hiển thị sản phẩm -->
+            <div class="chon-kieu">
+                <input type="radio" name="kieu-hien-thi" id="kieu-danh-sach">
+                <label for="kieu-danh-sach">
+                    <i class="fa-solid fa-list"></i>
+                    Danh sách
+                </label>    
+
+                <input type="radio" name="kieu-hien-thi" id="kieu-3sp" checked>
+                <label for="kieu-3sp">
+                    <i class="fa-solid fa-grip"></i>
+                    3 sản phẩm
+                </label>    
+            </div>
+
+        
 
             <!--Sắp xếp-->
             <div class="sap-xep">
@@ -126,8 +225,8 @@
 
             <!-- Phát triển bản thân-->
 
-        <section class="The_loai">
-            <h2> Phát triển bản thân</h2>
+            <section class="The_loai" id="phat-trien-ban-than">
+                <h2> Phát triển bản thân</h2>
 
             <div class="luoi-san-pham">
 
@@ -212,11 +311,11 @@
                     </button>
                   </div>
             </div>
-        </section>
+          </section>
 
         
         <!-- Tiểu thuyết-->
-         <section class="The_loai">
+         <section class="The_loai" id="tieu-thuyet">
             <h2> Tiểu thuyết</h2>
 
             <div class="luoi-san-pham">
@@ -298,11 +397,11 @@
                         <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
                     </button>
                   </div>
-
+            </div>
          </section>
 
          <!-- Thiếu nhi-->
-         <section class="The_loai">
+         <section class="The_loai" id="thieu-nhi">
             <h2> Thiếu nhi</h2>
 
             <div class="luoi-san-pham">
@@ -382,11 +481,12 @@
                     <button> 
                         <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
                     </button>
-                    </div>
+                 </div>
+            </div>
          </section>
 
          <!--Kinh doanh-->
-         <section class="The_loai">
+         <section class="The_loai" id="kinh-doanh">
             <h2> Kinh doanh</h2>
 
             <div class="luoi-san-pham">
@@ -464,12 +564,14 @@
                         <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
                     </button>
                   </div>
-                </section>
+
+            </div>
+         </section>
 
 
                 <!-- Sách học ngoại ngữ-->
 
-         <section class="The_loai">
+         <section class="The_loai" id="sach-hoc-ngoai-ngu">
             <h2> Sách học ngoại ngữ</h2>
 
             <div class="luoi-san-pham">
@@ -547,11 +649,12 @@
                         <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
                     </button>
                   </div>
-                </section>
+            </div>
+        </section>
 
                 <!-- Sách tham khảo-->
 
-         <section class="The_loai">
+         <section class="The_loai" id="sach-tham-khao">
             <h2> Sách tham khảo</h2>
 
             <div class="luoi-san-pham">
@@ -629,8 +732,77 @@
                         <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
                     </button>
                   </div>
-                </section>
+            </div>
+        </section>
+
+        <a href="#dau-trang" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+        </a>
+    </section>
 
      </main>
+      <!-- ===== FOOTER ===== -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Cột 1 -->
+        <div class="footer-box">
+            <h3>Thông tin</h3>
+
+            <p><i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam</p>
+
+            <p><i class="fas fa-phone"></i> Hotline: 0982 909 069</p>
+
+            <p><i class="fas fa-envelope"></i> hanamibook@gmail.com</p>
+        </div>
+
+        <!-- Cột 2 -->
+        <div class="footer-box">
+            <h3>Chính sách</h3>
+
+            <a href="#">Chính sách đổi trả</a>
+            <a href="#">Chính sách bảo hành</a>
+            <a href="#">Hướng dẫn mua hàng</a>
+            <a href="#">Điều khoản sử dụng</a>
+        </div>
+
+        <!-- Cột 3 -->
+        <div class="footer-box">
+            <h3>Liên hệ</h3>
+
+            <a href="pages/gioithieu.html">Giới thiệu</a>
+            <a href="pages/lienhe.html">Liên hệ</a>
+            <a href="pages/phanhoi.html">Phản hồi</a>
+        </div>
+
+        <!-- Cột 4 -->
+        <div class="footer-box">
+            <h3>Theo dõi chúng tôi</h3>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-twitter"></i></a>
+
+            </div>
+
+            <p class="social-text">
+                Kết nối với Hanami để cập nhật sách mới và ưu đãi.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Hanami Bookstore. All rights reserved.
+    </div>
+
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
