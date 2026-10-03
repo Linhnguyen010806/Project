@@ -1,207 +1,276 @@
+// ================= DỮ LIỆU SẢN PHẨM =================
+
 const books = {
+
+    // ===== SẢN PHẨM MỚI =====
+
+    atomic: {
+        category: "PHÁT TRIỂN BẢN THÂN",
+        name: "Atomic Habits",
+        author: "James Clear",
+        price: "99.000đ",
+        image: "images/automic_habits.jpg",
+        description:
+            "Cuốn sách hướng dẫn cách xây dựng những thói quen tốt thông qua những thay đổi nhỏ và đều đặn mỗi ngày."
+    },
+
+    mk: {
+        category: "PHÁT TRIỂN BẢN THÂN",
+        name: "Muôn Kiếp Nhân Sinh",
+        author: "Nguyên Phong",
+        price: "120.000đ",
+        image: "images/muon_kiep_nhan_sinh.jpg",
+        description:
+            "Những câu chuyện về nhân quả, luân hồi và những bài học về cách sống."
+    },
+
     dnt: {
         category: "PHÁT TRIỂN BẢN THÂN",
         name: "Đắc Nhân Tâm",
         author: "Dale Carnegie",
-        price: "86.000đ",
-        image: "images/dnt.webp",
-        description: "Cuốn sách kinh điển về nghệ thuật giao tiếp và ứng xử, giúp người đọc xây dựng các mối quan hệ tốt đẹp."
+        price: "88.000đ",
+        image: "images/dac_nhan_tam.jpg",
+        description:
+            "Cuốn sách kinh điển về nghệ thuật giao tiếp và ứng xử, giúp người đọc xây dựng những mối quan hệ tốt đẹp."
     },
 
-    ttbt: {
+    ttdg: {
         category: "PHÁT TRIỂN BẢN THÂN",
-        name: "Thiên tài bên trái, kẻ điên bên phải",
-        author: "Alain de Botton",
-        price: "179.000đ",
-        image: "images/ttbt2.webp",
-        description: "Cuốn sách giúp người đọc khám phá tư duy, cảm xúc và cách nhìn nhận bản thân."
-    },
-
-    tlhtc: {
-        category: "PHÁT TRIỂN BẢN THÂN",
-        name: "Tâm lý học thành công",
-        author: "Carol S. Dweck",
-        price: "199.000đ",
-        image: "images/tlhtc.webp",
-        description: "Khám phá tư duy và những yếu tố tâm lý ảnh hưởng đến thành công."
-    },
-
-    tdnvc: {
-        category: "PHÁT TRIỂN BẢN THÂN",
-        name: "Tư duy nhanh và chậm",
-        author: "Daniel Kahneman",
-        price: "269.000đ",
-        image: "images/tdnvc.webp",
-        description: "Khám phá cách con người suy nghĩ, ra quyết định và xử lý thông tin."
-    },
-
-    tdn: {
-        category: "PHÁT TRIỂN BẢN THÂN",
-        name: "Tư duy ngược",
-        author: "Nguyễn Anh Dũng",
-        price: "139.000đ",
-        image: "images/tdn.jpg",
-        description: "Một góc nhìn mới giúp người đọc thay đổi cách tư duy và giải quyết vấn đề."
-    },
-
-    dbg: {
-        category: "PHÁT TRIỂN BẢN THÂN",
-        name: "Dám bị ghét",
-        author: "Ichiro Kishimi",
-        price: "129.000đ",
-        image: "images/dbg.webp",
-        description: "Cuốn sách hướng người đọc đến sự tự do, tự tin và sống theo lựa chọn của chính mình."
-    },
-
-    ove: {
-        category: "TIỂU THUYẾT",
-        name: "Người đàn ông mang tên Ove",
-        author: "Fredrik Backman",
-        price: "160.000đ",
-        image: "images/ndomtov.webp",
-        description: "Một câu chuyện cảm động về con người, tình yêu thương và những mối quan hệ bất ngờ."
-    },
-
-    cam: {
-        category: "TIỂU THUYẾT",
-        name: "Cây cam ngọt của tôi",
-        author: "José Mauro de Vasconcelos",
-        price: "120.000đ",
-        image: "images/ccnct1.webp",
-        description: "Câu chuyện tuổi thơ đầy cảm xúc về tình yêu thương và những mất mát trong cuộc sống."
+        name: "Tuổi Trẻ Đáng Giá Bao Nhiêu",
+        author: "Rosie Nguyễn",
+        price: "95.000đ",
+        image: "images/book4.jpg",
+        description:
+            "Cuốn sách chia sẻ những trải nghiệm và bài học dành cho người trẻ trong học tập, công việc và cuộc sống."
     },
 
     ngk: {
         category: "TIỂU THUYẾT",
-        name: "Nhà giả kim",
+        name: "Nhà Giả Kim",
         author: "Paulo Coelho",
-        price: "109.000đ",
-        image: "images/ngk.webp",
-        description: "Hành trình theo đuổi ước mơ và tìm kiếm ý nghĩa cuộc sống."
+        price: "89.000đ",
+        image: "images/book5.jpg",
+        description:
+            "Hành trình theo đuổi ước mơ và tìm kiếm ý nghĩa cuộc sống của Santiago."
     },
 
-    sd: {
-        category: "TIỂU THUYẾT",
-        name: "Số đỏ",
-        author: "Vũ Trọng Phụng",
-        price: "99.000đ",
-        image: "images/sd.webp",
-        description: "Tác phẩm văn học nổi tiếng với những tình huống trào phúng và châm biếm sâu sắc."
+    tagr: {
+        category: "KINH DOANH",
+        name: "Think and Grow Rich",
+        author: "Napoleon Hill",
+        price: "110.000đ",
+        image: "images/book6.jpg",
+        description:
+            "Cuốn sách tập trung vào tư duy, mục tiêu và những nguyên tắc được tác giả trình bày để hướng tới thành công."
     },
 
-    td: {
-        category: "TIỂU THUYẾT",
-        name: "Tắt đèn",
-        author: "Ngô Tất Tố",
-        price: "99.000đ",
-        image: "images/td.webp",
-        description: "Tác phẩm phản ánh cuộc sống khó khăn của người nông dân Việt Nam xưa."
+
+    // ===== BEST SELLER =====
+
+    tdnvc: {
+        category: "PHÁT TRIỂN BẢN THÂN",
+        name: "Tư Duy Nhanh Và Chậm",
+        author: "Daniel Kahneman",
+        price: "145.000đ",
+        image: "images/tu_duy_nhanh_cham.jpg",
+        description:
+            "Cuốn sách giúp người đọc hiểu cách con người suy nghĩ, xử lý thông tin và đưa ra quyết định."
     },
 
-    bsv: {
-        category: "TIỂU THUYẾT",
-        name: "Bông sen vàng",
+    "7thoiquen": {
+        category: "PHÁT TRIỂN BẢN THÂN",
+        name: "7 Thói Quen Hiệu Quả",
+        author: "Stephen Covey",
+        price: "125.000đ",
+        image: "images/7_thoi_quen.jpg",
+        description:
+            "Những nguyên tắc giúp xây dựng thói quen tích cực và nâng cao hiệu quả trong cuộc sống."
+    },
+
+
+    // ===== SÁCH THAM KHẢO =====
+
+    vhth: {
+        category: "SÁCH THAM KHẢO",
+        name: "Vui học Tin học 2",
         author: "Nhiều tác giả",
-        price: "169.000đ",
-        image: "images/bsv.webp",
-        description: "Một tác phẩm giàu giá trị văn học và cảm xúc."
+        price: "29.000đ",
+        image: "images/vui_hoc_tin_hoc.jpg",
+        description:
+            "Sách hỗ trợ học sinh làm quen với những kiến thức và kỹ năng tin học cơ bản."
     },
 
-    ehln: {
-        category: "THIẾU NHI",
-        name: "Em học lễ nghĩa",
+    moveup1: {
+        category: "SÁCH HỌC NGOẠI NGỮ",
+        name: "Move Up 1",
         author: "Nhiều tác giả",
-        price: "99.000đ",
-        image: "images/ehln.webp",
-        description: "Giúp trẻ hình thành những thói quen tốt và cách ứng xử lễ phép."
+        price: "55.000đ",
+        image: "images/move_up_1.jpg",
+        description:
+            "Tài liệu hỗ trợ người học rèn luyện và phát triển các kỹ năng tiếng Anh."
     },
 
-    ttgt: {
-        category: "THIẾU NHI",
-        name: "Tự tin giao tiếp",
+    ic3: {
+        category: "SÁCH THAM KHẢO",
+        name: "IC3 GS6 Level 1",
         author: "Nhiều tác giả",
-        price: "59.000đ",
-        image: "images/ttgt.webp",
-        description: "Giúp trẻ rèn luyện kỹ năng giao tiếp và tự tin thể hiện bản thân."
+        price: "80.750đ",
+        image: "images/ic3.jpg",
+        description:
+            "Tài liệu hỗ trợ người học làm quen với các kiến thức và kỹ năng tin học theo chuẩn IC3."
     },
 
-    cd1: {
-    category: "THIẾU NHI",
-    name: "Tư duy cho bé - Câu đố",
-    author: "Nhiều tác giả",
-    price: "29.000đ",
-    image: "images/cd1.webp",
-    description: "Những câu đố thú vị giúp trẻ phát triển khả năng tư duy."
-},
-
-cd2: {
-    category: "THIẾU NHI",
-    name: "Tư duy cho bé - Đồng dao",
-    author: "Nhiều tác giả",
-    price: "29.000đ",
-    image: "images/cd2.webp",
-    description: "Những bài đồng dao vui nhộn giúp bé vừa học vừa chơi."
-},
-
-cd3: {
-    category: "THIẾU NHI",
-    name: "Tư duy cho bé - Thơ",
-    author: "Nhiều tác giả",
-    price: "29.000đ",
-    image: "images/cd3.webp",
-    description: "Những bài thơ ngắn giúp bé phát triển ngôn ngữ và khả năng ghi nhớ."
-},
-
-cd4: {
-    category: "THIẾU NHI",
-    name: "Tư duy cho bé - Truyện",
-    author: "Nhiều tác giả",
-    price: "29.000đ",
-    image: "images/cd4.webp",
-    description: "Những câu chuyện thú vị giúp bé khám phá thế giới."
-},
-
-    ttdd: {
-        category: "THIẾU NHI",
-        name: "Tuổi thơ dữ dội",
-        author: "Phùng Quán",
-        price: "59.000đ",
-        image: "images/ttdd.webp",
-        description: "Câu chuyện giàu cảm xúc về tuổi trẻ, tình bạn và lòng dũng cảm."
-    },
-
-    dm: {
-        category: "THIẾU NHI",
-        name: "Dế mèn phiêu lưu ký",
-        author: "Tô Hoài",
-        price: "49.000đ",
-        image: "images/dm.webp",
-        description: "Hành trình phiêu lưu đầy thú vị của chú Dế Mèn."
-    },
-
-    mhbtl: {
-        category: "THIẾU NHI",
-        name: "Mẹ hỏi bé trả lời",
+    ai8: {
+        category: "SÁCH THAM KHẢO",
+        name: "Trí Tuệ Nhân Tạo 8",
         author: "Nhiều tác giả",
-        price: "49.000đ",
-        image: "images/mhbtl.jpg",
-        description: "Những câu hỏi và hoạt động giúp trẻ khám phá thế giới xung quanh."
+        price: "36.000đ",
+        image: "images/tri_tue_nhan_tao_8.jpg",
+        description:
+            "Tài liệu tham khảo giúp học sinh tiếp cận những kiến thức cơ bản về trí tuệ nhân tạo."
+    },
+
+    atlas: {
+        category: "SÁCH THAM KHẢO",
+        name: "Atlas Địa Lí Việt Nam",
+        author: "Nhiều tác giả",
+        price: "29.000đ",
+        image: "images/atlas.jpg",
+        description:
+            "Tài liệu hỗ trợ học tập và tra cứu kiến thức địa lý Việt Nam."
+    },
+
+
+    // ===== GÓC NGOẠI NGỮ =====
+
+    toeic: {
+        category: "SÁCH HỌC NGOẠI NGỮ",
+        name: "TOEIC 600+",
+        author: "Nhiều tác giả",
+        price: "120.000đ",
+        image: "images/toeic.jpg",
+        description:
+            "Tài liệu hỗ trợ người học luyện tập và nâng cao năng lực tiếng Anh theo định hướng TOEIC."
+    },
+
+    ielts: {
+        category: "SÁCH HỌC NGOẠI NGỮ",
+        name: "IELTS Cambridge",
+        author: "Nhiều tác giả",
+        price: "185.000đ",
+        image: "images/ielts.jpg",
+        description:
+            "Tài liệu luyện thi IELTS với các nội dung hỗ trợ phát triển kỹ năng tiếng Anh."
+    },
+
+    grammar: {
+        category: "SÁCH HỌC NGOẠI NGỮ",
+        name: "English Grammar",
+        author: "Nhiều tác giả",
+        price: "75.000đ",
+        image: "images/grammar.jpg",
+        description:
+            "Tài liệu giúp người học củng cố kiến thức ngữ pháp tiếng Anh."
+    },
+
+    english: {
+        category: "SÁCH HỌC NGOẠI NGỮ",
+        name: "English for Life",
+        author: "Nhiều tác giả",
+        price: "68.000đ",
+        image: "images/english.jpg",
+        description:
+            "Tài liệu tiếng Anh hướng tới việc phát triển khả năng sử dụng tiếng Anh trong cuộc sống."
+    },
+
+    vocabulary: {
+        category: "SÁCH HỌC NGOẠI NGỮ",
+        name: "Vocabulary Builder",
+        author: "Nhiều tác giả",
+        price: "92.000đ",
+        image: "images/vocabulary.jpg",
+        description:
+            "Tài liệu hỗ trợ mở rộng và củng cố vốn từ vựng tiếng Anh."
     }
+
 };
 
 
-// Lấy ID trên đường dẫn
+// ================= LẤY ID SẢN PHẨM =================
+
 const params = new URLSearchParams(window.location.search);
+
 const id = params.get("id");
 
 const book = books[id];
 
+
+// ================= HIỂN THỊ SẢN PHẨM =================
+
 if (book) {
-    document.getElementById("bookCategory").textContent = book.category;
-    document.getElementById("bookName").textContent = book.name;
-    document.getElementById("bookAuthor").textContent = book.author;
-    document.getElementById("bookPrice").textContent = book.price;
-    document.getElementById("bookImage").src = book.image;
-    document.getElementById("bookDescription").textContent = book.description;
-    document.getElementById("bookDetail").textContent = book.description;
+
+    document.getElementById("bookCategory").textContent =
+        book.category;
+
+    document.getElementById("bookName").textContent =
+        book.name;
+
+    document.getElementById("bookAuthor").textContent =
+        book.author;
+
+    document.getElementById("bookPrice").textContent =
+        book.price;
+
+    document.getElementById("bookImage").src =
+        book.image;
+
+    document.getElementById("bookImage").alt =
+        book.name;
+
+    document.getElementById("bookDescription").textContent =
+        book.description;
+
+    document.getElementById("bookDetail").textContent =
+        book.description;
+
+} else {
+
+    document.getElementById("bookName").textContent =
+        "Không tìm thấy sản phẩm";
+
+    document.getElementById("bookDescription").textContent =
+        "Sản phẩm bạn đang tìm kiếm không tồn tại.";
+
 }
+
+
+// ================= SỐ LƯỢNG =================
+
+const quantityInput =
+    document.getElementById("quantity");
+
+const minusBtn =
+    document.getElementById("minusBtn");
+
+const plusBtn =
+    document.getElementById("plusBtn");
+
+
+minusBtn.addEventListener("click", function () {
+
+    let quantity = Number(quantityInput.value);
+
+    if (quantity > 1) {
+        quantityInput.value = quantity - 1;
+    }
+
+});
+
+
+plusBtn.addEventListener("click", function () {
+
+    let quantity = Number(quantityInput.value);
+
+    quantityInput.value = quantity + 1;
+
+});
