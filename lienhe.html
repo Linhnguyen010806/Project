@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Hanami Bookstore</title>
+
+    <!-- Liên kết trực tiếp file CSS của trang chủ -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html"><img src="images/hanami_logo.png" alt="Hanami Bookstore Logo"></a>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm sách...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="header-right">
+            <div class="top-icons">
+                <a href="dangnhap.html"><i class="fas fa-user"></i> Tài khoản</a>
+                <a href="#"><i class="fas fa-cart-shopping"></i> Giỏ hàng</a>
+            </div>
+
+            <div class="hotline">
+                Hotline: 0982 909 069
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="category-menu">
+            <button class="category-btn">
+                <i class="fas fa-bars"></i>
+                Danh mục sách
+            </button>
+
+            <div class="category-list">
+                <a href="#">Phát triển bản thân</a>
+                <a href="#">Tiểu thuyết</a>
+                <a href="#">Thiếu nhi</a>
+                <a href="#">Kinh doanh</a>
+                <a href="#">Sách học ngoại ngữ</a>
+                <a href="#">Sách tham khảo</a>
+            </div>
+        </div>
+
+        <nav class="main-menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <a href="khuyenmai.html">Khuyến mãi</a>
+            <a href="lienhe.html" class="active">Liên hệ</a>
+            <a href="phanhoi.html">Phản hồi</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ===== NỘI DUNG NẰM GIỮA ===== -->
+<main class="page-container" style="max-width: 1200px; margin: 30px auto; padding: 20px; background: #fff; min-height: 400px; border-radius: 8px;">
+    <h1 style="color: #d81b60; margin-bottom: 20px;">Thông Tin Liên Hệ</h1>
+
+    <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+        <!-- Cột trái: Thông tin -->
+        <div style="flex: 1; min-width: 280px; line-height: 2;">
+            <h2>Hanami Bookstore</h2>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> Hà Nội, Việt Nam</p>
+            <p><i class="fas fa-phone"></i> <strong>Hotline:</strong> 0982 909 069</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> hanamibook@gmail.com</p>
+        </div>
+
+        <!-- Cột phải: Form gửi thông tin -->
+        <div style="flex: 1; min-width: 280px; background: #f9f9f9; padding: 20px; border-radius: 8px;">
+            <h3 style="margin-bottom: 15px;">Gửi thông tin cho chúng tôi</h3>
+            <form action="#" method="post">
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px;">Họ và tên:</label>
+                    <input type="text" placeholder="Nhập họ và tên" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px;">Email:</label>
+                    <input type="email" placeholder="Nhập địa chỉ email" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px;">Nội dung:</label>
+                    <textarea rows="4" placeholder="Nhập nội dung tin nhắn..." required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                </div>
+
+                <button type="submit" style="background: #d81b60; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Gửi liên hệ</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3>Thông tin</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam</p>
+            <p><i class="fas fa-phone"></i> Hotline: 0982 909 069</p>
+            <p><i class="fas fa-envelope"></i> hanamibook@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Chính sách</h3>
+            <a href="#">Chính sách đổi trả</a>
+            <a href="#">Chính sách bảo hành</a>
+            <a href="#">Hướng dẫn mua hàng</a>
+            <a href="#">Điều khoản sử dụng</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Liên hệ</h3>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <a href="lienhe.html">Liên hệ</a>
+            <a href="phanhoi.html">Phản hồi</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Theo dõi chúng tôi</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="social-text">
+                Kết nối với Hanami để cập nhật sách mới và ưu đãi.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Hanami Bookstore. All rights reserved.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
