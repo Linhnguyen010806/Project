@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khuyến mãi - Hanami Bookstore</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="khuyenmai.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/hanami_logo.png" alt="Hanami Bookstore Logo">
+                </a>
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm sách...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="header-right">
+                <div class="top-icons">
+                    <a href="dangnhap.html"><i class="fas fa-user"></i> Tài khoản</a>
+                    <a href="#"><i class="fas fa-cart-shopping"></i> Giỏ hàng</a>
+                </div>
+                <div class="hotline">
+                    Hotline: 0982 909 069
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="category-menu">
+                <button class="category-btn">
+                    <i class="fas fa-bars"></i>
+                    Danh mục sách
+                </button>
+                <div class="category-list">
+                    <a href="dmsp.html#phat-trien-ban-than">Phát triển bản thân</a>
+                    <a href="dmsp.html#tieu-thuyet">Tiểu thuyết</a>
+                    <a href="dmsp.html#thieu-nhi">Thiếu nhi</a>
+                    <a href="dmsp.html#kinh-doanh">Kinh doanh</a>
+                    <a href="dmsp.html#sach-hoc-ngoai-ngu">Sách học ngoại ngữ</a>
+                    <a href="dmsp.html#sach-tham-khao">Sách tham khảo</a>
+                </div>
+            </div>
+
+            <nav class="main-menu">
+                <a href="index.html">Trang chủ</a>
+                <a href="gioithieu.html">Giới thiệu</a>
+                <a href="khuyenmai.html" class="active">Khuyến mãi</a>
+                <a href="lienhe.html">Liên hệ</a>
+                <a href="phanhoi.html">Phản hồi</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="promo-container">
+
+        <!-- Banner Khuyến Mãi Phong Cách Màu Nước Lễ Hội Nghệ Thuật -->
+        <section class="promo-hero cute-doodle-hero watercolor-hero">
+            
+            <!-- Đốm sáng trang trí nhấp nháy lung linh -->
+            <div class="sparkle-glow glow-1">✨</div>
+            <div class="sparkle-glow glow-2">🌕</div>
+            <div class="sparkle-glow glow-3">🏮</div>
+            <div class="sparkle-glow glow-4">🎨</div>
+
+            <!-- Badge Siêu Sale kiểu Lồng đèn màu nước -->
+            <div class="sale-badge-doodle sale-badge-watercolor">
+                <div class="lantern-badge">
+                    <span class="sale-text">SIÊU SALE</span>
+                    <span class="discount-percent">-50%</span>
+                </div>
+            </div>
+
+            <!-- Nội dung chính của Banner -->
+            <div class="hero-content">
+                <!-- Bong bóng thoại mờ kính -->
+                <div class="speech-bubble watercolor-speech-bubble">
+                    <p>🎉 Đại tiệc sách 2026 - Đọc thả ga, giá cực đã!</p>
+                </div>
+                
+                <h2>ĐẠI TIỆC SÁCH HOT NĂM 2026 📚</h2>
+                <p>Giảm giá đến 50% cho toàn bộ các đầu sách phát triển bản thân &amp; kỹ năng hot nhất tháng này. Nhanh tay sở hữu ngay!</p>
+                
+                <a href="dmsp.html" class="btn-buy-now doodle-btn watercolor-btn">
+                    <span>MUA NGAY!!</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Khung ảnh sản phẩm với hiệu ứng loang màu nước -->
+            <div class="hero-image doodle-frame watercolor-frame">
+                <div class="watercolor-blob"></div>
+              
+                
+            </div>
+
+        </section>
+
+        <!-- Đồng hồ đếm ngược Flash Sale -->
+        <section class="countdown-section">
+            <h3>FLASH SALE KẾT THÚC SAU</h3>
+            <div class="timer-box">
+                <div class="time-item">
+                    <div class="number-wrapper">
+                        <span class="number" id="days">06</span>
+                        <span class="colon">:</span>
+                    </div>
+                    <span class="label">Ngày</span>
+                </div>
+
+                <div class="time-item">
+                    <div class="number-wrapper">
+                        <span class="number" id="hours">23</span>
+                        <span class="colon">:</span>
+                    </div>
+                    <span class="label">Giờ</span>
+                </div>
+
+                <div class="time-item">
+                    <div class="number-wrapper">
+                        <span class="number" id="minutes">59</span>
+                        <span class="colon">:</span>
+                    </div>
+                    <span class="label">Phút</span>
+                </div>
+
+                <div class="time-item">
+                    <div class="number-wrapper">
+                        <span class="number" id="seconds">45</span>
+                    </div>
+                    <span class="label">Giây</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thẻ Mã Giảm Giá -->
+        <section class="voucher-section">
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <h4>MÃ GIẢM 20K</h4>
+                    <p>Cho đơn hàng từ 150k</p>
+                </div>
+                <button class="btn-get-code" onclick="getVoucher('HANAMI20K', this)">Lấy mã</button>
+            </div>
+
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <h4>FREESHIP 0Đ</h4>
+                    <p>Áp dụng toàn quốc</p>
+                </div>
+                <button class="btn-get-code" onclick="getVoucher('HANAMIFS', this)">Lấy mã</button>
+            </div>
+
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <h4>GIẢM 50%</h4>
+                    <p>Sách Phát triển bản thân</p>
+                </div>
+                <button class="btn-get-code" onclick="getVoucher('HANAMI50', this)">Lấy mã</button>
+            </div>
+        </section>
+
+        <!-- Sản phẩm khuyến mãi -->
+        <section class="promo-products">
+            <div class="section-title">
+                <h2>SẢN PHẨM KHUYẾN MÃI HOT</h2>
+            </div>
+
+            <div class="product-grid">
+                <!-- Sách 1: Người Giàu Có Nhất Thành Babylon -->
+                <div class="product-item">
+                    <div class="product-thumb">
+                        <span class="discount-tag">-30%</span>
+                        <img src="images/ngcntb.webp" alt="Người Giàu Có Nhất Thành Babylon">
+                    </div>
+                    <h3>Người Giàu Có Nhất Thành Babylon</h3>
+                    <div class="price-box">
+                        <span class="current-price">70.000đ</span>
+                        <span class="old-price">100.000đ</span>
+                    </div>
+                    <a href="chitietsp.html?id=babylon" class="btn-detail">Xem chi tiết</a>
+                </div>
+
+                <!-- Sách 2: Cây Cam Ngọt Của Tôi -->
+                <div class="product-item">
+                    <div class="product-thumb">
+                        <span class="discount-tag">-25%</span>
+                        <img src="images/ccnct1.webp" alt="Cây Cam Ngọt Của Tôi">
+                    </div>
+                    <h3>Cây Cam Ngọt Của Tôi</h3>
+                    <div class="price-box">
+                        <span class="current-price">81.000đ</span>
+                        <span class="old-price">108.000đ</span>
+                    </div>
+                    <a href="chitietsp.html?id=caycamngot" class="btn-detail">Xem chi tiết</a>
+                </div>
+
+                <!-- Sách 3: Đắc Nhân Tâm -->
+                <div class="product-item">
+                    <div class="product-thumb">
+                        <span class="discount-tag">-35%</span>
+                        <img src="images/dnt.webp" alt="Đắc Nhân Tâm">
+                    </div>
+                    <h3>Đắc Nhân Tâm</h3>
+                    <div class="price-box">
+                        <span class="current-price">78.000đ</span>
+                        <span class="old-price">120.000đ</span>
+                    </div>
+                    <a href="chitietsp.html?id=dacnhantam" class="btn-detail">Xem chi tiết</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thông tin chính sách -->
+        <section class="promo-banner-info">
+            <p>🎁 Nhận quà tặng kèm cho đơn hàng từ 300.000đ trong thời gian diễn ra sự kiện.</p>
+            <p>🚚 Miễn phí vận chuyển cho tất cả các đơn hàng thanh toán qua ví điện tử.</p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <div class="footer-logo">
+                    <img src="images/hanami_logo.png" alt="Hanami Logo" style="width: 140px; margin-bottom: 10px;">
+                </div>
+                <p><strong>CHÂM NGÔN THƯƠNG HIỆU</strong></p>
+                <p>Mang tri thức và niềm vui đọc sách đến với mọi nhà.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Liên hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam</p>
+                <p><i class="fas fa-phone"></i> Hotline: 0982 909 069</p>
+                <p><i class="fas fa-envelope"></i> hanamibook@gmail.com</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Giới thiệu</h3>
+                <a href="gioithieu.html">Về chúng tôi</a>
+                <a href="dmsp.html">Danh mục sách</a>
+                <a href="phanhoi.html">Phản hồi khách hàng</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Chính sách</h3>
+                <a href="#">Chính sách đổi trả</a>
+                <a href="#">Chính sách bảo hành</a>
+                <a href="#">Điều khoản sử dụng</a>
+            </div>
+        </div>
+
+        <div class="payment-methods">
+            <p>Phương thức thanh toán</p>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa" style="color: #1a1f71; font-size: 28px;"></i>
+                <i class="fab fa-cc-mastercard" style="color: #eb001b; font-size: 28px;"></i>
+                <i class="fab fa-cc-paypal" style="color: #003087; font-size: 28px;"></i>
+                <span class="pay-badge">MoMo</span>
+                <span class="pay-badge">VNPay</span>
+                <span class="pay-badge">Napas</span>
+            </div>
+        </div>
+
+        <div class="bocongthuong">
+            <div class="bct-badge">
+                <i class="fas fa-check-circle"></i> ĐÃ THÔNG BÁO BỘ CÔNG THƯƠNG
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            HANAMI BOOK - © 2026 All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // 1. Đồng hồ đếm ngược
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 6);
+        targetDate.setHours(targetDate.getHours() + 23);
+        targetDate.setMinutes(targetDate.getMinutes() + 59);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.querySelector('.countdown-section').innerHTML = "<h3>CHƯƠNG TRÌNH KHUYẾN MÃI ĐÃ KẾT THÚC</h3>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // 2. Lấy mã giảm giá
+        function getVoucher(code, button) {
+            button.innerText = "Đã lưu mã";
+            button.style.backgroundColor = "#28a745";
+            button.disabled = true;
+
+            alert("🎉 Lưu thành công mã: " + code + "\nMã giảm giá đã được lưu vào ví của bạn!");
+        }
+    </script>
+
+</body>
+</html>

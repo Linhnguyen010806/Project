@@ -25,7 +25,7 @@
 }
 
 .about-hero h1 {
-    color: #d81b60;
+    color: #8B4513;
     font-size: 28px;
     margin-bottom: 10px;
 }
@@ -43,7 +43,7 @@
 
 .about-section h2 {
     font-size: 20px;
-    color: #d81b60;
+    color: #8B4513;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -70,14 +70,14 @@
 .about-features li {
     background-color: #fafafa;
     padding: 15px;
-    border-left: 4px solid #d81b60;
+    border-left: 4px solid #8B4513;
     border-radius: 4px;
     line-height: 1.6;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .about-features li strong {
-    color: #d81b60;
+    color: #8B4513;
     display: block;
     margin-bottom: 5px;
 }
