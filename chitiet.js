@@ -29,7 +29,7 @@ const books = {
         name: "Đắc Nhân Tâm",
         author: "Dale Carnegie",
         price: "88.000đ",
-        image: "images/dac_nhan_tam.jpg",
+        image: "images/dnt.webp",
         description:
             "Cuốn sách kinh điển về nghệ thuật giao tiếp và ứng xử, giúp người đọc xây dựng những mối quan hệ tốt đẹp."
     },
