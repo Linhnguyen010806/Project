@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanami Bookstore</title>
 
-    <title>Chi tiết sản phẩm - Hanami Book</title>
-
-    <link rel="stylesheet" href="chitiet.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chitiet.css">
 
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
+<header class="header">
 
     <div class="top-bar">
 
@@ -28,21 +26,14 @@
 
         <div class="search-box">
             <input type="text" placeholder="Tìm kiếm sách...">
-            <button>
-                <i class="fas fa-search"></i>
-            </button>
+            <button><i class="fas fa-search"></i></button>
         </div>
 
         <div class="header-right">
 
             <div class="top-icons">
-                <a href="dangnhap.html">
-                    <i class="fas fa-user"></i> Tài khoản
-                </a>
-
-                <a href="#">
-                    <i class="fas fa-cart-shopping"></i> Giỏ hàng
-                </a>
+                <a href="dangnhap.html"><i class="fas fa-user"></i> Tài khoản</a>
+                <a href="#"><i class="fas fa-cart-shopping"></i> Giỏ hàng</a>
             </div>
 
             <div class="hotline">
@@ -55,234 +46,211 @@
 
     <div class="navbar">
 
-        <div class="category-menu">
+    <!-- Danh mục -->
+    <div class="category-menu">
+        <button class="category-btn">
+            <i class="fas fa-bars"></i>
+            Danh mục sách
+        </button>
 
-            <button class="category-btn">
-                <i class="fas fa-bars"></i>
-                Danh mục sách
-            </button>
-
-            <div class="category-list">
-                <a href="#">Phát triển bản thân</a>
-                <a href="#">Tiểu thuyết</a>
-                <a href="#">Thiếu nhi</a>
-                <a href="#">Kinh doanh</a>
-                <a href="#">Sách học ngoại ngữ</a>
-                <a href="#">Sách tham khảo</a>
-            </div>
-
+        <div class="category-list">
+            <a href="dmsp.html#phat-trien-ban-than">Phát triển bản thân</a>
+            <a href="dmsp.html#tieu-thuyet">Tiểu thuyết</a>
+            <a href="dmsp.html#thieu-nhi">Thiếu nhi</a>
+            <a href="dmsp.html#kinh-doanh">Kinh doanh</a>
+            <a href="dmsp.html#ngoai-ngu">Sách học ngoại ngữ</a>
+            <a href="dmsp.html#tham-khao">Sách tham khảo</a>
         </div>
-
-        <nav class="main-menu">
-            <a href="index.html">Trang chủ</a>
-            <a href="pages/gioithieu.html">Giới thiệu</a>
-            <a href="pages/khuyenmai.html">Khuyến mãi</a>
-            <a href="pages/lienhe.html">Liên hệ</a>
-            <a href="pages/phanhoi.html">Phản hồi</a>
-        </nav>
-
     </div>
+
+    <!-- Menu ngang -->
+    <nav class="main-menu">
+        <a href="index.html" class="active">Trang chủ</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="pages/khuyenmai.html">Khuyến mãi</a>
+        <a href="lienhe.html">Liên hệ</a>
+        <a href="pages/phanhoi.html">Phản hồi</a>
+    </nav>
+
+</div>
 
 </header>
 
+<!-- ĐƯỜNG DẪN -->
 
-    <!-- BREADCRUMB -->
-    <div class="breadcrumb">
+<div class="breadcrumb">
+    Trang chủ / Danh mục sản phẩm / Chi tiết sản phẩm
+</div>
 
-        <a href="index.html">Trang chủ</a>
 
-        <span> / </span>
+<!-- CHI TIẾT -->
 
-        <span>Chi tiết sản phẩm</span>
+<main class="product-detail">
 
+    <div class="product-image">
+        <img id="bookImage" src="images/dnt.webp">
     </div>
 
 
-    <!-- CHI TIẾT SẢN PHẨM -->
-    <main class="product-detail">
+    <div class="product-info">
 
-        <div class="product-image">
+        <span id="bookCategory">PHÁT TRIỂN BẢN THÂN</span>
 
-            <img id="bookImage"
-                 src=""
-                 alt="Sản phẩm">
+        <h1 id="bookName">Đắc Nhân Tâm</h1>
+
+        <p class="author">
+            Tác giả: <strong id="bookAuthor">Dale Carnegie</strong>
+        </p>
+
+        <div class="rating">
+            ★★★★★
+            <span>4.9/5</span>
+        </div>
+
+        <div class="price" id="bookPrice">
+            86.000đ
+        </div>
+
+        <p class="description" id="bookDescription">
+            Đắc Nhân Tâm là cuốn sách kinh điển về nghệ thuật
+            giao tiếp và ứng xử, giúp người đọc hiểu hơn về
+            cách xây dựng các mối quan hệ trong cuộc sống.
+        </p>
+
+
+        <div class="book-info">
+
+            <div>
+                <span>Nhà xuất bản</span>
+                <strong>NXB Trẻ</strong>
+            </div>
+
+            <div>
+                <span>Năm xuất bản</span>
+                <strong>2024</strong>
+            </div>
+
+            <div>
+                <span>Số trang</span>
+                <strong>320</strong>
+            </div>
+
+            <div>
+                <span>Ngôn ngữ</span>
+                <strong>Tiếng Việt</strong>
+            </div>
 
         </div>
 
 
-        <div class="product-info">
+        <div class="quantity">
 
-            <div id="bookCategory"
-                 class="book-category">
+            <span>Số lượng:</span>
+
+            <button id="minus">−</button>
+
+            <span id="quantity">1</span>
+
+            <button id="plus">+</button>
+
+        </div>
+
+
+        <div class="actions">
+
+            <button id="addCart">
+                <i class="fa fa-cart-shopping"></i>
+                Thêm vào giỏ hàng
+            </button>
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<section class="description-box">
+
+    <h2>Giới thiệu sách</h2>
+
+    <p id="bookDetail">
+        Cuốn sách cung cấp những bài học thực tế về giao tiếp,
+        ứng xử và xây dựng mối quan hệ với mọi người xung quanh.
+    </p>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Cột 1 -->
+        <div class="footer-box">
+            <h3>Thông tin</h3>
+
+            <p><i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam</p>
+
+            <p><i class="fas fa-phone"></i> Hotline: 0982 909 069</p>
+
+            <p><i class="fas fa-envelope"></i> hanamibook@gmail.com</p>
+        </div>
+
+        <!-- Cột 2 -->
+        <div class="footer-box">
+            <h3>Chính sách</h3>
+
+            <a href="#">Chính sách đổi trả</a>
+            <a href="#">Chính sách bảo hành</a>
+            <a href="#">Hướng dẫn mua hàng</a>
+            <a href="#">Điều khoản sử dụng</a>
+        </div>
+
+        <!-- Cột 3 -->
+        <div class="footer-box">
+            <h3>Liên hệ</h3>
+
+            <a href="pages/gioithieu.html">Giới thiệu</a>
+            <a href="pages/lienhe.html">Liên hệ</a>
+            <a href="pages/phanhoi.html">Phản hồi</a>
+        </div>
+
+        <!-- Cột 4 -->
+        <div class="footer-box">
+            <h3>Theo dõi chúng tôi</h3>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-twitter"></i></a>
+
             </div>
 
-            <h1 id="bookName">
-                Tên sản phẩm
-            </h1>
-
-            <p class="author">
-                Tác giả:
-                <span id="bookAuthor"></span>
+            <p class="social-text">
+                Kết nối với Hanami để cập nhật sách mới và ưu đãi.
             </p>
 
-            <div class="rating">
-                ⭐⭐⭐⭐⭐
-                <span>(25 đánh giá)</span>
-            </div>
-
-            <div id="bookPrice"
-                 class="book-price">
-                0đ
-            </div>
-
-
-            <div class="description">
-
-                <h3>Mô tả sản phẩm</h3>
-
-                <p id="bookDescription"></p>
-
-            </div>
-
-
-            <div class="quantity">
-
-                <span>Số lượng:</span>
-
-                <button id="minusBtn">−</button>
-
-                <input id="quantity"
-                       type="number"
-                       value="1"
-                       min="1">
-
-                <button id="plusBtn">+</button>
-
-            </div>
-
-
-            <div class="product-actions">
-
-                <button class="cart-btn">
-                    <i class="fas fa-cart-shopping"></i>
-                    Thêm vào giỏ hàng
-                </button>
-
-                <button class="buy-btn">
-                    Mua ngay
-                </button>
-
-            </div>
-
-
-            <div class="book-detail">
-
-                <h3>Thông tin sản phẩm</h3>
-
-                <p id="bookDetail"></p>
-
-            </div>
-
         </div>
 
-    </main>
+    </div>
 
+    <div class="footer-bottom">
+        © 2026 Hanami Bookstore. All rights reserved.
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+</footer>
+<script src="script.js"></script>
 
-        <div class="footer-container">
-
-            <div class="footer-box">
-
-                <h3>Thông tin</h3>
-
-                <p>
-                    <i class="fas fa-map-marker-alt"></i>
-                    Hà Nội, Việt Nam
-                </p>
-
-                <p>
-                    <i class="fas fa-phone"></i>
-                    Hotline: 0982 909 069
-                </p>
-
-                <p>
-                    <i class="fas fa-envelope"></i>
-                    hanamibook@gmail.com
-                </p>
-
-            </div>
-
-
-            <div class="footer-box">
-
-                <h3>Chính sách</h3>
-
-                <a href="#">Chính sách đổi trả</a>
-                <a href="#">Chính sách bảo hành</a>
-                <a href="#">Hướng dẫn mua hàng</a>
-                <a href="#">Điều khoản sử dụng</a>
-
-            </div>
-
-
-            <div class="footer-box">
-
-                <h3>Liên hệ</h3>
-
-                <a href="pages/gioithieu.html">
-                    Giới thiệu
-                </a>
-
-                <a href="pages/lienhe.html">
-                    Liên hệ
-                </a>
-
-                <a href="pages/phanhoi.html">
-                    Phản hồi
-                </a>
-
-            </div>
-
-
-            <div class="footer-box">
-
-                <h3>Theo dõi chúng tôi</h3>
-
-                <div class="social-icons">
-
-                    <a href="#">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-
-                    <a href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-
-                    <a href="#">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-
-                </div>
-
-                <p>
-                    Kết nối với Hanami để cập nhật sách mới và ưu đãi.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-            © 2026 Hanami Bookstore. All rights reserved.
-        </div>
-
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="chitiet.js"></script>
+<script src="chitiet.js"></script>
 
 </body>
 </html>
