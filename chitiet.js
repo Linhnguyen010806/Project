@@ -40,7 +40,7 @@ const books = {
         name: "Tư duy ngược",
         author: "Nguyễn Anh Dũng",
         price: "139.000đ",
-        image: "images/tdn.jpg",
+        image: "images/tdn.webp",
         description: "Cuốn sách khuyến khích người đọc thay đổi cách tiếp cận vấn đề bằng việc suy nghĩ theo hướng khác biệt và linh hoạt hơn. Qua những góc nhìn mới mẻ, sách giúp bạn thoát khỏi lối tư duy quen thuộc, nhìn nhận vấn đề đa chiều và tìm ra những cách giải quyết sáng tạo hơn trong học tập, công việc và cuộc sống."
     },
 
@@ -186,7 +186,174 @@ cd4: {
         price: "49.000đ",
         image: "images/mhbtl.jpg",
         description: "Cuốn sách tập hợp những câu hỏi và hoạt động gần gũi, giúp bé khám phá thế giới xung quanh một cách tự nhiên và thú vị. Qua những tình huống quen thuộc, sách hỗ trợ bé phát triển khả năng quan sát, tư duy, ghi nhớ và mạnh dạn bày tỏ suy nghĩ."
+    },
+    //phải có dấu ","
+    
+    //KINH DOANH
+    "48nt": {
+        category: "KINH DOANH",
+        name: "48 nguyên tắc chủ chốt của quyền lực",
+        author: "Robert Greene",
+        price: "200.000đ",
+        image: "images/48nt.webp",
+        description: "Cuốn sách phân tích những nguyên tắc về quyền lực, chiến lược và cách ứng xử trong các mối quan hệ xã hội. Qua những ví dụ và bài học thực tế, sách giúp người đọc hiểu rõ hơn về cách con người tạo dựng ảnh hưởng và đưa ra quyết định."
+    },
+    ngcntb: {
+        category: "KINH DOANH",
+        name: "Người giàu có nhất thành Babylon",
+        author: "George S. Clason",
+        price: "99.000đ",
+        image: "images/ngcntb.webp",
+        description: "Cuốn sách chia sẻ những bài học tài chính cá nhân thông qua các câu chuyện tại thành Babylon cổ đại. Nội dung tập trung vào việc tiết kiệm, quản lý chi tiêu, tích lũy tài sản và xây dựng thói quen sử dụng tiền hợp lý."
+    },
+
+    ttdvd: {
+        category: "KINH DOANH",
+        name: "Từ tốt đến vĩ đại",
+        author: "Jim Collins",
+        price: "129.000đ",
+        image: "images/ttdvd.webp",
+        description: "Cuốn sách tìm hiểu những yếu tố giúp doanh nghiệp chuyển từ hoạt động tốt sang phát triển xuất sắc. Tác phẩm đề cập đến vai trò của lãnh đạo, con người, văn hóa kỷ luật và chiến lược trong quá trình phát triển tổ chức."
+    },
+
+    tdqld: {
+        category: "KINH DOANH",
+        name: "Peter Drucker - Tư duy đúng quản lý đúng",
+        author: "Peter Drucker",
+        price: "199.000đ",
+        image: "images/tdqld.webp",
+        description: "Cuốn sách giới thiệu những góc nhìn về tư duy quản lý, tổ chức công việc và đưa ra quyết định trong kinh doanh. Nội dung giúp người đọc hiểu hơn về vai trò của quản trị và cách nâng cao hiệu quả làm việc."
+    },
+
+    nttdcl: {
+        category: "KINH DOANH",
+        name: "Nghệ thuật tư duy chiến lược",
+        author: "Avinash K. Dixit và Barry J. Nalebuff",
+        price: "249.000đ",
+        image: "images/nttdcl.webp",
+        description: "Cuốn sách giới thiệu cách tư duy chiến lược trong những tình huống có nhiều bên cùng tham gia. Thông qua các ví dụ và phương pháp phân tích, sách giúp người đọc cân nhắc lựa chọn, dự đoán phản ứng và đưa ra quyết định phù hợp."
+    },
+
+    lskthll: {
+        category: "KINH DOANH",
+        name: "Lược sử kinh tế học lầy lội",
+        author: "Đang cập nhật",
+        price: "199.000đ",
+        image: "images/lskthll.webp",
+        description: "Cuốn sách đưa người đọc tiếp cận các ý tưởng kinh tế học thông qua cách trình bày gần gũi và dễ tiếp cận. Nội dung giúp người đọc bước đầu tìm hiểu những khái niệm kinh tế và mối liên hệ giữa kinh tế với đời sống."
+    },
+
+    
+    // NGOAI NGU
+    hsk1: {
+        category: "NGOẠI NGỮ",
+        name: "Giáo trình chuẩn HSK 1",
+        author: "Đang cập nhật",
+        price: "199.000đ",
+        image: "images/hsk1.webp",
+        description: "Giáo trình dành cho người mới bắt đầu học tiếng Trung, giúp làm quen với từ vựng, mẫu câu và những kiến thức nền tảng ở trình độ HSK 1."
+    },
+
+    hsk2: {
+        category: "NGOẠI NGỮ",
+        name: "Giáo trình chuẩn HSK 2",
+        author: "Đang cập nhật",
+        price: "199.000đ",
+        image: "images/hsk2.webp",
+        description: "Giáo trình giúp người học tiếp tục mở rộng vốn từ và củng cố các cấu trúc câu tiếng Trung ở trình độ HSK 2, phù hợp để luyện tập kiến thức sơ cấp."
+    },
+
+    hsk3: {
+        category: "NGOẠI NGỮ",
+        name: "Giáo trình chuẩn HSK 3",
+        author: "Đang cập nhật",
+        price: "299.000đ",
+        image: "images/hsk3.webp",
+        description: "Giáo trình hỗ trợ người học củng cố từ vựng, ngữ pháp và các kỹ năng tiếng Trung ở trình độ HSK 3, phục vụ quá trình học tập và ôn luyện."
+    },
+
+    hsk4: {
+        category: "NGOẠI NGỮ",
+        name: "Giáo trình chuẩn HSK 4",
+        author: "Đang cập nhật",
+        price: "299.000đ",
+        image: "images/hsk4.webp",
+        description: "Giáo trình dành cho người học tiếng Trung trình độ HSK 4, giúp mở rộng kiến thức và rèn luyện khả năng sử dụng tiếng Trung ở trình độ trung cấp."
+    },
+
+    b1: {
+        category: "NGOẠI NGỮ",
+        name: "Tiếng Nhật sơ cấp cho người mới bắt đầu",
+        author: "Đang cập nhật",
+        price: "99.000đ",
+        image: "images/b1.webp",
+        description: "Sách dành cho người mới bắt đầu học tiếng Nhật, hỗ trợ làm quen với kiến thức cơ bản, từ vựng và cấu trúc câu thường gặp trong quá trình học tập."
+    },
+
+    b11: {
+        category: "NGOẠI NGỮ",
+        name: "Grammar And Vocabulary With Answer Key (Tái Bản 2025)",
+        author: "Đang cập nhật",
+        price: "199.000đ",
+        image: "images/b11.webp",
+        description: "Sách hỗ trợ người học ôn luyện ngữ pháp và từ vựng tiếng Anh. Phần đáp án giúp người học kiểm tra kết quả, nhận biết lỗi sai và củng cố kiến thức."
+    },
+    
+    // SACH THAM KHAO
+    vhth: {
+        category: "SÁCH THAM KHẢO",
+        name: "Vui học tin học 2",
+        author: "Đang cập nhật",
+        price: "39.000đ",
+        image: "images/vhth.webp",
+        description: "Sách hỗ trợ học sinh tiếp cận kiến thức tin học thông qua những bài học và hoạt động thực hành. Nội dung hướng đến việc củng cố kiến thức và phát triển kỹ năng sử dụng máy tính."
+    },
+
+    al: {
+        category: "SÁCH THAM KHẢO",
+        name: "Sách Atlat Địa lý",
+        author: "Đang cập nhật",
+        price: "59.000đ",
+        image: "images/al.webp",
+        description: "Tài liệu bản đồ hỗ trợ học tập môn Địa lý, giúp học sinh tra cứu thông tin về tự nhiên, dân cư, kinh tế và các vùng lãnh thổ trong quá trình học tập, ôn luyện."
+    },
+
+    tcthqt: {
+        category: "SÁCH THAM KHẢO",
+        name: "Tăng cường tin học quốc tế - IC3 GS6",
+        author: "Đang cập nhật",
+        price: "79.000đ",
+        image: "images/tcthqt.webp",
+        description: "Tài liệu hỗ trợ người học củng cố kiến thức và kỹ năng tin học theo chương trình IC3 GS6, phục vụ việc học tập, thực hành và chuẩn bị cho kỳ thi."
+    },
+
+    mhtn: {
+        category: "SÁCH THAM KHẢO",
+        name: "60 đề minh họa Tốt nghiệp THPT 2026",
+        author: "Đang cập nhật",
+        price: "199.000đ",
+        image: "images/mhtn.webp",
+        description: "Bộ đề tham khảo dành cho học sinh ôn thi tốt nghiệp THPT năm 2026, hỗ trợ luyện tập, tự đánh giá kiến thức và làm quen với hình thức đề thi."
+    },
+
+    mhtn2: {
+        category: "SÁCH THAM KHẢO",
+        name: "100 đề minh họa Tốt nghiệp THPT 2026",
+        author: "Đang cập nhật",
+        price: "199.000đ",
+        image: "images/mhtn2.webp",
+        description: "Tài liệu luyện đề dành cho học sinh chuẩn bị kỳ thi tốt nghiệp THPT năm 2026, giúp củng cố kiến thức và rèn luyện kỹ năng làm bài."
+    },
+
+    dptd: {
+        category: "SÁCH THAM KHẢO",
+        name: "Đột phá tư duy kỳ thi Tốt nghiệp THPT",
+        author: "Đang cập nhật",
+        price: "159.000đ",
+        image: "images/dptd.webp",
+        description: "Sách tham khảo hỗ trợ học sinh rèn luyện tư duy, hệ thống hóa kiến thức và nâng cao kỹ năng giải quyết câu hỏi trong quá trình ôn thi tốt nghiệp THPT."
     }
+
 };
 
 
