@@ -40,7 +40,7 @@ const books = {
         name: "Tư duy ngược",
         author: "Nguyễn Anh Dũng",
         price: "139.000đ",
-        image: "images/tdn.webp",
+        image: "images/tdn.jpg",
         description: "Cuốn sách khuyến khích người đọc thay đổi cách tiếp cận vấn đề bằng việc suy nghĩ theo hướng khác biệt và linh hoạt hơn. Qua những góc nhìn mới mẻ, sách giúp bạn thoát khỏi lối tư duy quen thuộc, nhìn nhận vấn đề đa chiều và tìm ra những cách giải quyết sáng tạo hơn trong học tập, công việc và cuộc sống."
     },
 
