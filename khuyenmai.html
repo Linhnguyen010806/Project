@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -12,20 +11,18 @@
 </head>
 <body>
 
-<!-- HEADER: giữ cấu trúc Hanami -->
+<!-- HEADER: Giữ chuẩn 100% hệ thống Hanami -->
 <header class="header">
     <div class="top-bar">
         <div class="logo">
             <a href="index.html">
-                <img src="images/hanami_logo.png" alt="Hanami Bookstore">
+                <img src="images/hanami_logo.png" alt="Hanami Bookstore Logo">
             </a>
         </div>
 
         <div class="search-box">
-            <input id="promoSearch" type="search" placeholder="Tìm kiếm sách..." aria-label="Tìm kiếm sách">
-            <button id="searchButton" type="button" aria-label="Tìm kiếm">
-                <i class="fas fa-search"></i>
-            </button>
+            <input id="promoSearch" type="text" placeholder="Tìm kiếm sách...">
+            <button id="searchButton" type="button"><i class="fas fa-search"></i></button>
         </div>
 
         <div class="header-right">
@@ -33,14 +30,17 @@
                 <a href="dangnhap.html"><i class="fas fa-user"></i> Tài khoản</a>
                 <a href="#"><i class="fas fa-cart-shopping"></i> Giỏ hàng</a>
             </div>
-            <div class="hotline">Hotline: 0982 909 069</div>
+            <div class="hotline">
+                Hotline: 0982 909 069
+            </div>
         </div>
     </div>
 
     <div class="navbar">
         <div class="category-menu">
-            <button class="category-btn" type="button">
-                <i class="fas fa-bars"></i> Danh mục sách
+            <button class="category-btn">
+                <i class="fas fa-bars"></i>
+                Danh mục sách
             </button>
             <div class="category-list">
                 <a href="dmsp.html#phat-trien-ban-than">Phát triển bản thân</a>
@@ -62,227 +62,210 @@
     </div>
 </header>
 
-<!-- NỘI DUNG KHUYẾN MÃI -->
+<!-- NỘI DUNG CHÍNH (NỀN TRẮNG) -->
 <main class="promo-page">
     <div class="promo-container">
 
-        <!-- BANNER -->
-        <section class="promo-hero">
-            <div class="hero-content">
-                <span class="hero-label">
-                    <i class="fas fa-book-open"></i> HANAMI BOOKSTORE
-                </span>
-
-                <h1>Đại tiệc sách hay,<br>
-                    <span>ưu đãi ngập tràn!</span>
-                </h1>
-
-                <p>
-                    Khám phá những cuốn sách truyền cảm hứng,
-                    mở rộng tri thức và tìm người bạn đồng hành
-                    trên hành trình trưởng thành.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#sach-khuyen-mai" class="btn-primary">
-                        Khám phá ngay <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#voucher" class="btn-secondary">
-                        <i class="fas fa-ticket-alt"></i> Săn voucher
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-art" aria-hidden="true">
-                <div class="hero-circle circle-one"></div>
-                <div class="hero-circle circle-two"></div>
-
-                <div class="sale-sticker">
-                    <span>HANAMI</span>
-                    <strong>SALE</strong>
-                    <small>HỘI SÁCH</small>
-                </div>
-
-                <div class="art-book book-one">
-                    <span>TRI THỨC<br>VÀ ƯỚC MƠ</span>
-                </div>
-                <div class="art-book book-two">
-                    <span>MỖI TRANG SÁCH<br>MỘT HÀNH TRÌNH</span>
-                </div>
-                <div class="art-book book-three">
-                    <span>HANAMI<br>BOOKSTORE</span>
-                </div>
-
-                <span class="hero-star star-one">✦</span>
-                <span class="hero-star star-two">✧</span>
+        <!-- BANNER (Vị trí sửa link ảnh banner ở dòng phía dưới) -->
+        <section class="promo-banner-wrapper">
+            <div class="banner-image-container">
+                <img src="images/banner.jpg.png" alt="Banner Khuyến Mãi Hanami" class="banner-img">
+                <a href="#sach-khuyen-mai" class="btn-san-deal-banner">
+                    Săn deal ngay! <i class="fas fa-arrow-down"></i>
+                </a>
             </div>
         </section>
 
-        <!-- THÔNG ĐIỆP -->
-        <section class="countdown-section">
-            <div>
-                <span class="section-eyebrow">HANAMI BOOKSTORE</span>
-                <h2>Mỗi cuốn sách hay là một món quà</h2>
-                <p>Chọn sách yêu thích và khám phá những ưu đãi dành cho bạn.</p>
+        <!-- ĐỒNG HỒ ĐẾM NGƯỢC -->
+        <section class="countdown-wireframe-box">
+            <div class="countdown-title">
+                <i class="fas fa-bolt"></i> SĂN DEAL GIỜ VÀNG - SỐ LƯỢNG CÓ HẠN
             </div>
-            <a href="#sach-khuyen-mai" class="countdown-link">
-                Xem sách ngay <i class="fas fa-arrow-right"></i>
-            </a>
+            <div class="timer-display">
+                <div class="time-block"><span id="hours">89</span><small>Giờ</small></div>
+                <span class="colon">:</span>
+                <div class="time-block"><span id="minutes">14</span><small>Phút</small></div>
+                <span class="colon">:</span>
+                <div class="time-block"><span id="seconds">37</span><small>Giây</small></div>
+            </div>
         </section>
 
-        <!-- VOUCHER -->
-        <section class="promo-section" id="voucher">
+        <!-- KHU VỰC VOUCHER -->
+        <section class="promo-section" id="voucher-section">
             <div class="section-heading">
                 <div>
-                    <span class="section-eyebrow">ƯU ĐÃI DÀNH CHO BẠN</span>
-                    <h2>Săn voucher Hanami</h2>
+                    <span class="section-eyebrow">ƯU ĐÃI ĐẶC BIỆT</span>
+                    <h2>Mã Giảm Giá HOT Trong Ngày</h2>
                 </div>
             </div>
 
-            <div class="voucher-grid">
-                <article class="voucher-card">
-                    <div class="voucher-icon">
-                        <i class="fas fa-ticket-alt"></i>
+            <div class="voucher-wireframe-grid">
+                <div class="voucher-card-item">
+                    <div class="voucher-card-header"><i class="fas fa-ticket-alt"></i><span>GIẢM 20K</span></div>
+                    <div class="voucher-card-body">
+                        <h3>Đơn từ 150.000đ</h3>
+                        <p>Áp dụng toàn bộ danh mục sách</p>
+                        <strong class="code-text">HANAMI20K</strong>
                     </div>
-                    <div class="voucher-info">
-                        <span>ĐƠN TỪ 150.000Đ</span>
-                        <h3>Giảm 20.000đ</h3>
-                        <p>Ưu đãi cho đơn hàng đủ điều kiện.</p>
-                        <strong class="voucher-code">HANAMI20K</strong>
-                    </div>
-                    <button class="get-voucher" data-code="HANAMI20K" type="button">
-                        Nhận mã
-                    </button>
-                </article>
+                    <button class="get-voucher" data-code="HANAMI20K" type="button">Lưu mã</button>
+                </div>
 
-                <article class="voucher-card">
-                    <div class="voucher-icon">
-                        <i class="fas fa-truck-fast"></i>
+                <div class="voucher-card-item">
+                    <div class="voucher-card-header"><i class="fas fa-truck-fast"></i><span>FREESHIP</span></div>
+                    <div class="voucher-card-body">
+                        <h3>Miễn phí vận chuyển</h3>
+                        <p>Tối đa 30k cho đơn từ 200k</p>
+                        <strong class="code-text">HANAMIFS</strong>
                     </div>
-                    <div class="voucher-info">
-                        <span>ƯU ĐÃI VẬN CHUYỂN</span>
-                        <h3>Freeship 0đ</h3>
-                        <p>Voucher vận chuyển.</p>
-                        <strong class="voucher-code">HANAMIFS</strong>
-                    </div>
-                    <button class="get-voucher" data-code="HANAMIFS" type="button">
-                        Nhận mã
-                    </button>
-                </article>
+                    <button class="get-voucher" data-code="HANAMIFS" type="button">Lưu mã</button>
+                </div>
 
-                <article class="voucher-card">
-                    <div class="voucher-icon">
-                        <i class="fas fa-gift"></i>
+                <div class="voucher-card-item">
+                    <div class="voucher-card-header"><i class="fas fa-gift"></i><span>GIẢM 50%</span></div>
+                    <div class="voucher-card-body">
+                        <h3>Đại tiệc sách HOT</h3>
+                        <p>Dành riêng cho đơn hàng đầu tiên</p>
+                        <strong class="code-text">HANAMI50</strong>
                     </div>
-                    <div class="voucher-info">
-                        <span>ƯU ĐÃI ĐẶC BIỆT</span>
-                        <h3>Voucher sách</h3>
-                        <p>Lưu mã để tiện sử dụng.</p>
-                        <strong class="voucher-code">HANAMI50</strong>
-                    </div>
-                    <button class="get-voucher" data-code="HANAMI50" type="button">
-                        Nhận mã
-                    </button>
-                </article>
+                    <button class="get-voucher" data-code="HANAMI50" type="button">Lưu mã</button>
+                </div>
             </div>
-
-            <p id="voucherMessage" class="voucher-message" role="status"></p>
 
             <div class="voucher-wallet">
                 <div class="wallet-heading">
-                    <h3><i class="fas fa-ticket-alt"></i> Voucher đã nhận</h3>
+                    <h3><i class="fas fa-wallet"></i> Ví Voucher Của Bạn</h3>
                     <button type="button" id="clearVouchers">Xóa tất cả</button>
                 </div>
                 <div id="savedVouchers">
-                    <p class="empty-message">Bạn chưa nhận voucher nào.</p>
+                    <p class="empty-message">Bạn chưa lưu voucher nào.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SẢN PHẨM -->
-        <section class="promo-section" id="sach-khuyen-mai">
-            <div class="section-heading product-heading">
-                <div>
-                    <span class="section-eyebrow">ĐỌC HAY · GIÁ TỐT</span>
-                    <h2>Sách nổi bật</h2>
-                    <p>Nhấn vào sách để xem thông tin chi tiết.</p>
+        <!-- KHUNG LIỀN MẠCH: DANH MỤC DEAL HOT & LƯỚI SẢN PHẨM -->
+        <section class="promo-section unified-deal-box" id="sach-khuyen-mai">
+            <div class="deal-category-bar">
+                <span class="deal-title-label">Danh mục deal hot</span>
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-category="all">Tất cả</button>
+                    <button class="tab-btn" data-category="phat-trien-ban-than">Phát triển bản thân</button>
+                    <button class="tab-btn" data-category="tieu-thuyet">Tiểu thuyết</button>
+                    <button class="tab-btn" data-category="thieu-nhi">Thiếu nhi</button>
+                    <button class="tab-btn" data-category="kinh-doanh">Kinh doanh</button>
+                    <button class="tab-btn" data-category="ngoai-ngu">Ngoại ngữ</button>
+                    <button class="tab-btn" data-category="tham-khao">Tham khảo</button>
                 </div>
-
-                <label class="sort-control">
-                    Sắp xếp
+                <div class="sort-box">
                     <select id="sortProducts">
-                        <option value="featured">Nổi bật</option>
-                        <option value="low">Giá thấp đến cao</option>
-                        <option value="high">Giá cao đến thấp</option>
-                        <option value="name">Tên A–Z</option>
+                        <option value="featured">Sắp xếp: Nổi bật</option>
+                        <option value="low">Giá: Thấp đến Cao</option>
+                        <option value="high">Giá: Cao đến Thấp</option>
                     </select>
-                </label>
+                </div>
             </div>
 
+            <!-- Lưới sản phẩm -->
             <div class="product-grid" id="productGrid">
 
-                <article class="promo-product" data-price="99000">
-                    <a class="product-cover" href="chitietsp.html?id=ngcntb">
-                        <img src="images/ngcntb.webp"
-                             alt="Người giàu có nhất thành Babylon"
-                             loading="lazy">
-                    </a>
-                    <div class="product-info">
-                        <span class="product-category">KINH DOANH</span>
-                        <h3>
-                            <a href="chitietsp.html?id=ngcntb">
-                                Người giàu có nhất thành Babylon
-                            </a>
-                        </h3>
-                        <p class="product-author">George S. Clason</p>
-                        <div class="price-line">
-                            <strong>99.000đ</strong>
-                        </div>
-                        <a class="detail-button" href="chitietsp.html?id=ngcntb">
-                            Xem chi tiết <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="promo-product" data-price="120000">
-                    <a class="product-cover" href="chitietsp.html?id=cam">
-                        <img src="images/ccnct1.webp"
-                             alt="Cây cam ngọt của tôi"
-                             loading="lazy">
-                    </a>
-                    <div class="product-info">
-                        <span class="product-category">TIỂU THUYẾT</span>
-                        <h3>
-                            <a href="chitietsp.html?id=cam">Cây cam ngọt của tôi</a>
-                        </h3>
-                        <p class="product-author">José Mauro de Vasconcelos</p>
-                        <div class="price-line">
-                            <strong>120.000đ</strong>
-                        </div>
-                        <a class="detail-button" href="chitietsp.html?id=cam">
-                            Xem chi tiết <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="promo-product" data-price="86000">
+                <article class="promo-product" data-price="86000" data-cat="phat-trien-ban-than">
                     <a class="product-cover" href="chitietsp.html?id=dnt">
-                        <img src="images/dnt.webp"
-                             alt="Đắc Nhân Tâm"
-                             loading="lazy">
+                        <img src="images/dnt.webp" alt="Đắc Nhân Tâm" loading="lazy">
+                        <span class="badge-sale">-40%</span>
                     </a>
                     <div class="product-info">
                         <span class="product-category">PHÁT TRIỂN BẢN THÂN</span>
-                        <h3>
-                            <a href="chitietsp.html?id=dnt">Đắc Nhân Tâm</a>
-                        </h3>
+                        <h3><a href="chitietsp.html?id=dnt">Đắc Nhân Tâm</a></h3>
                         <p class="product-author">Dale Carnegie</p>
                         <div class="price-line">
                             <strong>86.000đ</strong>
+                            <del>140.000đ</del>
                         </div>
-                        <a class="detail-button" href="chitietsp.html?id=dnt">
-                            Xem chi tiết <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="detail-button" href="chitietsp.html?id=dnt">Mua ngay <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </article>
+
+                <article class="promo-product" data-price="120000" data-cat="tieu-thuyet">
+                    <a class="product-cover" href="chitietsp.html?id=cam">
+                        <img src="images/ccnct1.webp" alt="Cây cam ngọt của tôi" loading="lazy">
+                        <span class="badge-sale">-20%</span>
+                    </a>
+                    <div class="product-info">
+                        <span class="product-category">TIỂU THUYẾT</span>
+                        <h3><a href="chitietsp.html?id=cam">Cây cam ngọt của tôi</a></h3>
+                        <p class="product-author">José Mauro de Vasconcelos</p>
+                        <div class="price-line">
+                            <strong>120.000đ</strong>
+                            <del>150.000đ</del>
+                        </div>
+                        <a class="detail-button" href="chitietsp.html?id=cam">Mua ngay <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </article>
+
+                <article class="promo-product" data-price="99000" data-cat="kinh-doanh">
+                    <a class="product-cover" href="chitietsp.html?id=ngcntb">
+                        <img src="images/ngcntb.webp" alt="Người giàu có nhất thành Babylon" loading="lazy">
+                        <span class="badge-sale">-35%</span>
+                    </a>
+                    <div class="product-info">
+                        <span class="product-category">KINH DOANH</span>
+                        <h3><a href="chitietsp.html?id=ngcntb">Người giàu có nhất thành Babylon</a></h3>
+                        <p class="product-author">George S. Clason</p>
+                        <div class="price-line">
+                            <strong>99.000đ</strong>
+                            <del>150.000đ</del>
+                        </div>
+                        <a class="detail-button" href="chitietsp.html?id=ngcntb">Mua ngay <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </article>
+
+                <article class="promo-product" data-price="49000" data-cat="thieu-nhi">
+                    <a class="product-cover" href="chitietsp.html?id=dm">
+                        <img src="images/dm.webp" alt="Dế mèn phiêu lưu ký" loading="lazy">
+                        <span class="badge-sale">-30%</span>
+                    </a>
+                    <div class="product-info">
+                        <span class="product-category">THIẾU NHI</span>
+                        <h3><a href="chitietsp.html?id=dm">Dế mèn phiêu lưu ký</a></h3>
+                        <p class="product-author">Tô Hoài</p>
+                        <div class="price-line">
+                            <strong>49.000đ</strong>
+                            <del>70.000đ</del>
+                        </div>
+                        <a class="detail-button" href="chitietsp.html?id=dm">Mua ngay <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </article>
+
+                <article class="promo-product" data-price="199000" data-cat="ngoai-ngu">
+                    <a class="product-cover" href="chitietsp.html?id=hsk1">
+                        <img src="images/hsk1.webp" alt="Giáo trình chuẩn HSK 1" loading="lazy">
+                        <span class="badge-sale">-25%</span>
+                    </a>
+                    <div class="product-info">
+                        <span class="product-category">SÁCH HỌC NGOẠI NGỮ</span>
+                        <h3><a href="chitietsp.html?id=hsk1">Giáo trình chuẩn HSK 1</a></h3>
+                        <p class="product-author">Đang cập nhật</p>
+                        <div class="price-line">
+                            <strong>199.000đ</strong>
+                            <del>265.000đ</del>
+                        </div>
+                        <a class="detail-button" href="chitietsp.html?id=hsk1">Mua ngay <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </article>
+
+                <article class="promo-product" data-price="199000" data-cat="tham-khao">
+                    <a class="product-cover" href="chitietsp.html?id=mhtn">
+                        <img src="images/mhtn.webp" alt="60 đề minh họa Tốt nghiệp THPT 2026" loading="lazy">
+                        <span class="badge-sale">-30%</span>
+                    </a>
+                    <div class="product-info">
+                        <span class="product-category">SÁCH THAM KHẢO</span>
+                        <h3><a href="chitietsp.html?id=mhtn">60 đề minh họa Tốt nghiệp THPT 2026</a></h3>
+                        <p class="product-author">Đang cập nhật</p>
+                        <div class="price-line">
+                            <strong>199.000đ</strong>
+                            <del>285.000đ</del>
+                        </div>
+                        <a class="detail-button" href="chitietsp.html?id=mhtn">Mua ngay <i class="fas fa-shopping-cart"></i></a>
                     </div>
                 </article>
 
@@ -293,23 +276,23 @@
             </p>
         </section>
 
-        <!-- LỢI ÍCH -->
-        <section class="promo-benefits">
-            <article>
-                <i class="fas fa-book-open"></i>
-                <h3>Khám phá tri thức</h3>
-                <p>Tìm đọc những cuốn sách phù hợp với bạn.</p>
-            </article>
-            <article>
-                <i class="fas fa-ticket-alt"></i>
-                <h3>Lưu voucher dễ dàng</h3>
-                <p>Nhận và lưu mã để tra cứu khi cần.</p>
-            </article>
-            <article>
-                <i class="fas fa-heart"></i>
-                <h3>Trao gửi yêu thương</h3>
-                <p>Mỗi trang sách mở ra một chân trời mới.</p>
-            </article>
+        <!-- FORM ĐĂNG KÝ VOUCHER 100K -->
+        <section class="register-voucher-box">
+            <div class="reg-content">
+                <span class="reg-subtitle">Dành Cho Thành Viên Mới</span>
+                <h2>ĐĂNG KÝ NHẬN VOUCHER 100.000Đ</h2>
+                <p>Nhập thông tin ngay để nhận mã giảm trực tiếp 100k cho đơn hàng đầu tiên và thông báo deal hot sớm nhất.</p>
+                
+                <form id="subscriberForm" class="reg-form" onsubmit="return false;">
+                    <input type="text" placeholder="Họ và tên của bạn..." required>
+                    <input type="email" placeholder="Địa chỉ Email..." required>
+                    <input type="tel" placeholder="Số điện thoại..." required>
+                    <button type="submit" class="btn-submit-reg">Nhận voucher 100k ngay !</button>
+                </form>
+                <div id="regSuccessMsg" class="reg-success" hidden>
+                    🎉 Đăng ký thành công! Mã <strong>HANAMI100K</strong> đã được ghi nhận.
+                </div>
+            </div>
         </section>
 
     </div>
@@ -356,6 +339,7 @@
     </div>
 </footer>
 
+<script src="script.js"></script>
 <script src="khuyenmai.js"></script>
 </body>
 </html>
