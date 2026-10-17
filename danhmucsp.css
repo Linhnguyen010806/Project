@@ -1,513 +1,648 @@
-/* Thúy chỉnh sửa */
 
-/* Trang sản phẩm*/
-/* .logo img{
-    width:170px;
-    display:block;
-} */
+/* font*/
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
 
+:root {
+    --mau-nau: #50362b;
+    --mau-nau-dam: #35241f;
+    --mau-vang: #b88954;
+    --mau-be: #f5eee5;
+    --mau-nen-the: #fffdf9;
+    --mau-vien: #e5d8c9;
+    --mau-chu-phu: #75665b;
+}
+
+/* Cài đặt chung */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    margin: 0;
+    background-color: var(--mau-be);
+    color: var(--mau-nau-dam);
+    font-family: "Be Vietnam Pro", Arial, sans-serif;
+}
+
+/* Khung trang sản phẩm */
 .trang-san-pham {
     width: 94%;
     max-width: 1500px;
-    margin: 30px auto;
+    margin: 0 auto 40px;
 }
 
+/*Khu vực giới thiệu*/
 
-/* Chia trang thành 2 bên 
-bên trái: bộ lọc
-bên phải: sản phẩm*/
+.khu-vuc-gioi-thieu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    padding: 40px 8%;
+    margin: 28px 0 22px;
+
+    background: #f8f5f0;
+    border: 1px solid #e9e0d8;
+    border-radius: 16px;
+
+    box-sizing: border-box;
+}
+
+.noi-dung-gioi-thieu {
+    flex: 1;
+    max-width: 700px;
+    min-width: 0;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    margin-bottom: 25px;
+
+}
+
+.dong-chu-dan {
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+
+
+    color: var(--mau-vang);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    font-family: "Be Vietnam Pro", Arial, sans-serif;
+}
+
+.khu-vuc-gioi-thieu h1 {
+    margin: 0 0 16px;
+
+    color: var(--mau-nau-dam);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(28px, 3vw, 30px);
+    line-height: 1.35;
+}
+
+.khu-vuc-gioi-thieu p {
+    max-width: 650px;
+    margin: 0;
+
+    color: var(--mau-chu-phu);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Hình trang trí */
+.khu-vuc-trang-tri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 0 0 250px;
+    min-height: 220px;
+}
+
+.hinh-trang-tri-sach {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 180px;
+    height: 220px;
+    padding: 20px;
+
+    transform: rotate(8deg);
+
+    background: var(--mau-nau);
+    border: 5px solid var(--mau-vang);
+    border-radius: 5px 15px 15px 5px;
+    box-shadow: 8px 8px 0 #e5d6c4;
+
+    color: #f8f5f0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.hinh-trang-tri-sach small {
+    display: block;
+    margin-top: 20px;
+
+    color: #d9b77e;
+    font-family: "Be Vietnam Pro", Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.danh-sach-loi-ich {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    margin: 22px 0;
+}
+
+.loi-ich {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 18px;
+    background: var(--mau-nen-the);
+    border: 1px solid var(--mau-vien);
+    border-radius: 10px;
+}
+
+.bieu-tuong-loi-ich {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    background: #f1e5d7;
+    border-radius: 50%;
+    color: var(--mau-nau);
+}
+
+.loi-ich strong,
+.loi-ich span {
+    display: block;
+}
+
+.loi-ich strong {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.loi-ich span {
+    color: var(--mau-chu-phu);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* tiêu đề + đường đẫn */
+
+.Tieu-de-trang {
+    margin: 32px 0 14px;
+    text-align: center;
+}
+
+.Tieu-de-trang h2 {
+    margin: 0;
+    color: var(--mau-nau-dam);
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 30px;
+}
+
+.Tieu-de-thanh-ben h2 {
+    margin: 0;
+    padding-bottom:20px;
+    border-bottom: 1px solid var(--mau-vien);
+
+    color: var(--mau-nau-dam);
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 26px;
+}
+
+.duong-dan {
+    margin: 14px 0 22px;
+    color: var(--mau-chu-phu);
+    font-size: 13px;
+}
+
+.duong-dan a {
+    color: var(--mau-nau);
+    text-decoration: none;
+}
+/* Khu vực danh mục */
+.bo-loc-the-loai {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--mau-vien);
+}
+
+.bo-loc-the-loai h3 {
+    margin: 20px 0 16px;
+    color: var(--mau-nau-dam);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Danh sách thể loại */
+.bo-loc-the-loai nav a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 13px 8px;
+    color: var(--mau-chu-phu);
+    font-size: 13px;
+    text-decoration: none;
+
+    transition: color 0.2s;
+}
+
+.bo-loc-the-loai nav a i {
+    color: #ad9278;
+    font-size: 15px;
+}
+
+.bo-loc-the-loai nav a:hover {
+    color: var(--mau-vang);
+}
+/* bố cục bộ lọc và sp */
 
 .khu-vuc-san-pham {
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 250px minmax(0, 1fr);
     gap: 25px;
+    align-items: start;
 }
 
-
-/* bộ lọc bên trái*/
-
-.bo-loc {
-    background: white;
+.bo-loc,
+.khu-vuc-danh-sach {
+    min-width: 0;
     padding: 20px;
+
+    background: var(--mau-nen-the);
+    border: 1px solid var(--mau-vien);
     border-radius: 10px;
-    height: fit-content;
+
+    box-sizing: border-box;
 }
 
-.bo-loc h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
+/* Bộ lọc thể loại */
+.bo-loc-the-loai select {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid var(--mau-vien);
+    border-radius: 6px;
+    background: white;
+    color: var(--mau-nau-dam);
 }
 
-.bo-loc ul {
-    list-style: none;
-    padding: 0;
+/* Bộ lọc giá */
+.bo-loc-gia {
+    margin-top: 24px;
 }
 
-.bo-loc li {
-    margin-bottom: 15px;
+.bo-loc-gia h3 {
+    margin: 0 0 14px;
+    color: var(--mau-nau);
+    font-size: 17px;
+}
+
+.bo-loc-gia label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin: 12px 0;
+    color: var(--mau-chu-phu);
+    font-size: 14px;
     cursor: pointer;
 }
 
-.bo-loc label {
-    display: block;
-    margin-bottom: 12px;
+.bo-loc-gia input {
+    accent-color: var(--mau-vang);
 }
 
-/* Khu vực danh sách sản phẩm */
-
-.khu-vuc-danh-sach {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* Thể loại sản phẩm */
-
-.The_loai{
-    margin-bottom: 40px;
-}
-
-.The_loai h2{
-    font-size: 24px;
-    margin: 25px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #8a0606;
-}
-
-/* Sắp xếp */
-
-.sap-xep {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-
-    border-bottom: 1px solid #ddd;
-}
-
-.sap-xep select {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-
-/* lưới sản phẩm:
-3 sp/ hàng
-1sp/hàng */
+/* chọn kiểu */
 
 .chon-kieu {
     display: flex;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 8px;
-    margin-bottom: 20px;
 
+    justify-content: flex-end;
+
+
+    margin-bottom: 18px;
 }
 
-.chon-kieu input{
-    display: none;
+.chon-kieu input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.chon-kieu-button{
-    width: 42px;
-    height: 38px;
-    font-size: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
+.chon-kieu label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
 
-}
-
-/*nút lựa chọn */
-.chon-kieu label{
-    padding: 10px 16px;
-    border: 1px solid #8b6f47;
+    padding: 9px 13px;
+    border: 1px solid var(--mau-vien);
     border-radius: 6px;
-    background-color: white;
-    color: #5c4630;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.2s;
 
+    background: white;
+    color: var(--mau-nau);
+    font-size: 13px;
+    cursor: pointer;
 }
 
-/* Khi được chọn*/
-#kieu-3sp:checked + label,
-#kieu-danh-sach:checked + label {
-    background-color: #8b6f47;
+.chon-kieu input:checked + label {
+    background: var(--mau-nau);
+    border-color: var(--mau-nau);
     color: white;
 }
 
-.chon-kieu button:hover {
-    background-color: #f2f2f2;
+.sap-xep {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 
+    margin-bottom: 25px;
+    color: var(--mau-chu-phu);
+    font-size: 13px;
 }
 
-/* kieu1 */
+.sap-xep select {
+    padding: 9px 12px;
+    border: 1px solid var(--mau-vien);
+    border-radius: 6px;
+    background: white;
+    color: var(--mau-nau-dam);
+}
+
+/* tiêu đề danh mục */
+
+.The-loai {
+    margin-bottom: 35px;
+    scroll-margin-top: 24px;
+}
+
+.The-loai h2 {
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+
+    color: var(--mau-nau);
+    font-size: 22px;
+
+    border-bottom: 2px solid var(--mau-vang);
+}
+
+/* 3sp */
+
 .luoi-san-pham {
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 30px 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px 18px;
 }
 
-
-/* 1 sản phẩm */
-
-/* .san-pham {
-    min-width: 0;
-    text-align: center;
-} */
-
-/* #kieu-danh-sach:checked ~ .The_loai .luoi-san-pham {
-    display: block;
-}
-
-#kieu-danh-sach:checked ~ .The_loai .san-pham {
+.san-pham {
     display: flex;
-    width: 100%;
-    margin-bottom: 20px;
-    align-items: center;
+    flex-direction: column;
+    min-width: 0;
+
+    padding: 14px;
+    background: white;
+    border: 1px solid var(--mau-vien);
+    border-radius: 9px;
+
+    transition: transform 0.25s, box-shadow 0.25s;
 }
 
-#kieu-danh-sach:checked ~ .The_loai .khung-anh {
-    width: 180px;
-    flex-shrink: 0;
+.san-pham:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px #50362b18;
 }
 
-#kieu-danh-sach:checked ~ .The_loai .san-pham img {
-    width: 100%;
+.link-chi-tiet {
+    display: block;
+    color: inherit;
+    text-decoration: none;
 }
-
-#kieu-danh-sach:checked ~ .The_loai .thong-tin-san-pham {
-    flex: 1;
-    padding-left: 25px;
-} */
-
-
-/* Khung ảnh */
 
 .khung-anh {
-    width: 100%;
-    height: 300px;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
-    /* overflow: hidden; */
-}
-
-
-/* Ảnh sách */
-
-.khung-anh img {
     width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-}
-
-
-/* Tên sách */
-
-.san-pham h3 {
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.4;
-
-    height: 50px;
-
-    margin: 12px 0 8px;
-
+    height: 230px;
     overflow: hidden;
 }
 
+.khung-anh img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 
-/* Giá giỏ hàng*/
-
-.gia-va-gio-hang {
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    /* justify-content: space-between; */
-    align-items: center;
-    gap: 15px;
+    transition: transform 0.25s;
 }
 
-/* giá */
-.gia-va-gio-hang p {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    justify-content: center
+.san-pham:hover .khung-anh img {
+    transform: scale(1.04);
 }
 
+.san-pham h3 {
+    min-height: 48px;
+    margin: 12px 0 8px;
 
-/* Nút giỏ hàng */
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+}
 
-.gia-va-gio-hang button {
-    width: 40px;
-    height: 40px;
+.san-pham h3 a {
+    color: var(--mau-nau-dam);
+    text-decoration: none;
+}
+
+.san-pham h3 a:hover {
+    color: var(--mau-vang);
+}
+
+.san-pham p {
+    margin: 0 0 12px;
+    color: #8a382d;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.san-pham button {
+    width: 100%;
+    margin-top: auto;
+    padding: 10px;
 
     border: none;
-    border-radius: 5px;
-    justify-content: center;
+    border-radius: 6px;
+    background: var(--mau-nau);
+    color: white;
+
+    font-size: 13px;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
-/* =========================
-   KIỂU DANH SÁCH
-========================= */
-
-/* #kieu-danh-sach:checked ~ .The_loai .luoi-san-pham {
-    display: block;
+.san-pham button:hover {
+    background: var(--mau-vang);
 }
 
-#kieu-danh-sach:checked ~ .The_loai .san-pham {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    min-height: 220px;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-    box-sizing: border-box;
-    text-align: left;
-}
+/* danh sách */
 
-#kieu-danh-sach:checked ~ .The_loai .khung-anh {
-    width: 180px;
-    height: 220px;
-    flex-shrink: 0;
-}
-
-#kieu-danh-sach:checked ~ .The_loai .san-pham h3 {
-    text-align: left;
-    height: auto;
-    margin-left: 25px;
-}
-
-#kieu-danh-sach:checked ~ .The_loai .san-pham p {
-    margin-left: 25px;
-}
-
-@media (max-width: 900px) {
-
-    .khu-vuc-san-pham {
-        grid-template-columns: 200px 1fr;
-    }
-
-    .luoi-san-pham {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .khu-vuc-san-pham {
-        grid-template-columns: 1fr;
-    }
-
-    .luoi-san-pham {
-        grid-template-columns: 1fr;
-    }
-
-    .dang-danh-sach .san-pham {
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-    .dang-danh-sach .san-pham h3 {
-        text-align: center;
-    }
-
-    .dang-danh-sach .gia-va-gio-hang {
-        justify-content: center;
-    }
-} */
-
-/* Kiểu danh sách */
-
-/* Khi chọn DANH SÁCH */
 .khu-vuc-danh-sach:has(#kieu-danh-sach:checked) .luoi-san-pham {
     display: block;
 }
 
-
-/* Sản phẩm chuyển thành từng hàng */
 .khu-vuc-danh-sach:has(#kieu-danh-sach:checked) .san-pham {
     display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 22px;
+    align-items: center;
 
-    /* Ảnh | Phần thông tin */
-    grid-template-columns: 200px 1fr;
-
-    /* Tên | Giá + nút */
-    grid-template-rows: auto auto;
-
-    column-gap: 30px;
-    row-gap: 5px;
-
-    width: 100%;
-    min-height: 220px;
-
-    padding: 20px;
-    margin-bottom: 10px;
-
-    border-bottom: 1px solid #350707;
-
-    box-sizing: border-box;
+    margin-bottom: 18px;
+    padding: 15px;
 }
 
-
-/* Ảnh */
-
-.khu-vuc-danh-sach:has(#kieu-danh-sach:checked) .khung-anh {
+.khu-vuc-danh-sach:has(#kieu-danh-sach:checked)
+.san-pham > a:first-child {
     grid-column: 1;
-    grid-row: 1 / 3;
+    grid-row: 1 / 4;
+}
 
+.khu-vuc-danh-sach:has(#kieu-danh-sach:checked)
+.san-pham .khung-anh {
     width: 180px;
     height: 220px;
 }
 
-
-/* Tên sách */
-
-.khu-vuc-danh-sach:has(#kieu-danh-sach:checked) .san-pham h3 {
+.khu-vuc-danh-sach:has(#kieu-danh-sach:checked)
+.san-pham h3 {
     grid-column: 2;
     grid-row: 1;
 
-    align-self: end;
-
+    min-height: auto;
+    margin: 0 0 10px;
     text-align: left;
-
-    height: auto;
-
-    margin: 0 0 5px;
-
-    font-size: 18px;
 }
 
-
-/* Giá */
-
-.khu-vuc-danh-sach:has(#kieu-danh-sach:checked) .san-pham p {
+.khu-vuc-danh-sach:has(#kieu-danh-sach:checked)
+.san-pham p {
     grid-column: 2;
     grid-row: 2;
 
-    align-self: start;
-
-    margin: 0;
-
-    font-size: 18px;
-    font-weight: bold;
+    margin: 0 0 12px;
+    text-align: left;
 }
 
-
-/* Giỏ hàng */
-
-.khu-vuc-danh-sach:has(#kieu-danh-sach:checked) .san-pham button {
+.khu-vuc-danh-sach:has(#kieu-danh-sach:checked)
+.san-pham button {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 3;
+    justify-self: start;
 
-    justify-self: end;
+    width: fit-content;
+    min-width: 180px;
+    margin: 0;
+}
 
-    width: 180px;
+/* Nút lên đầu trang */
+.back-to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 42px;
     height: 42px;
 
-    margin: 0;
-
-    border: none;
-    border-radius: 5px;
-
-    cursor: pointer;
+    border-radius: 50%;
+    background: var(--mau-nau);
+    color: white;
+    text-decoration: none;
 }
 
-
-/* =========================
-   KHI CHỌN 3 SẢN PHẨM
-========================= */
-
-.luoi-san-pham {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px 20px;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-
+@media (max-width: 1000px) {
     .khu-vuc-san-pham {
-        grid-template-columns: 200px 1fr;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 16px;
     }
 
-    .luoi-san-pham {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .khu-vuc-san-pham {
+    .danh-sach-loi-ich {
         grid-template-columns: 1fr;
     }
 
-    /* Dạng 3 sản phẩm */
     .luoi-san-pham {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
 
-    /* Dạng danh sách trên điện thoại */
-    .khu-vuc-danh-sach:has(#kieu-danh-sach:checked) .san-pham {
+@media (max-width: 650px) {
+    .khu-vuc-gioi-thieu {
         flex-direction: column;
-        text-align: center;
+        gap: 20px;
+        padding: 28px 20px;
     }
 
-    .khu-vuc-danh-sach:has(#kieu-danh-sach:checked) .san-pham h3 {
-        text-align: center;
-        margin-left: 0;
+    .khu-vuc-trang-tri {
+        flex-basis: auto;
+        width: 100%;
     }
 
-    .khu-vuc-danh-sach:has(#kieu-danh-sach:checked) .san-pham p {
-        margin-left: 0;
+    .khu-vuc-san-pham {
+        grid-template-columns: 1fr;
     }
-}
 
+    .luoi-san-pham {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
 
-.back-to-top{
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
+    .bo-loc,
+    .khu-vuc-danh-sach {
+        padding: 14px;
+    }
 
-    color: black;
+    .khung-anh {
+        height: 180px;
+    }
 
-    text-decoration: none;
+    .san-pham {
+        padding: 10px;
+    }
 
-    font-size: 18px;
-    z-index: 1000;
-}
+    .san-pham h3 {
+        font-size: 13px;
+    }
 
-html {
-    scroll-behavior: smooth;
-}
+    .khu-vuc-danh-sach:has(#kieu-danh-sach:checked)
+    .san-pham {
+        grid-template-columns: 100px minmax(0, 1fr);
+        column-gap: 12px;
+    }
 
-.link-chi-tiet {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-}
+    .khu-vuc-danh-sach:has(#kieu-danh-sach:checked)
+    .san-pham .khung-anh {
+        width: 100px;
+        height: 140px;
+    }
 
-.link-chi-tiet:hover h3 {
-    color: #9a5700;
-    text-decoration:none;
+    .khu-vuc-danh-sach:has(#kieu-danh-sach:checked)
+    .san-pham button {
+        min-width: 0;
+        width: 100%;
+    }
 }

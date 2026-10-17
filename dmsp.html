@@ -15,33 +15,6 @@
 <body>
 
     <main class="trang-san-pham">
-        <!-- <header>
-    <div class="top-bar">
-        <span>📞 Contact</span>
-    </div>
-
-    <div class="navbar">
-        <div class="logo">Hanami Book</div>
-
-        <div class="search-box">
-            <input type="text" placeholder="Tìm kiếm sách...">
-            <button><i class="fa fa-search"></i></button>
-        </div>
-
-        <div class="icons">
-            <i class="fa fa-user"></i>
-            <i class="fa fa-heart"></i>
-            <i class="fa fa-cart-shopping"></i>
-        </div>
-    </div>
-
-    <nav>
-        <a href="#">Trang chủ</a>
-        <a href="#">Danh mục sản phẩm</a>
-        <a href="#">Giỏ hàng</a>
-        <a href="#">Thông báo</a>
-        <a href="#">Tài khoản</a>
-    </nav> -->
 
     <header class="header">
 
@@ -72,33 +45,32 @@
         </div>
 
     </div>
-
+<!--Thanh điều hướng-->
     <div class="navbar">
-
-    <div class="category-menu">
-        <button class="category-btn">
+        <div class="category-menu">
+            <button class="category-btn" type="button">
             <i class="fas fa-bars"></i>
             Danh mục sách
         </button>
-
-        <div class="category-list">
-            <a href="#">Phát triển bản thân</a>
-            <a href="#">Tiểu thuyết</a>
-            <a href="#">Thiếu nhi</a>
-            <a href="#">Kinh doanh</a>
-            <a href="#">Sách học ngoại ngữ</a>
-            <a href="#">Sách tham khảo</a>
-        </div>
     </div>
 
    <nav class="main-menu">
-    <a href="#" class="active">Trang chủ</a>
-    <a href="pages/gioithieu.html">Giới thiệu</a>
-    <a href="pages/khuyenmai.html">Khuyến mãi</a>
-    <a href="pages/lienhe.html">Liên hệ</a>
-    <a href="pages/phanhoi.html">Phản hồi</a>
+    <a href="#" class="active">
+        Trang chủ
+    </a>
+    <a href="pages/gioithieu.html">
+        Giới thiệu
+    </a>
+    <a href="pages/khuyenmai.html">
+        Khuyến mãi
+    </a>
+    <a href="pages/lienhe.html">
+        Liên hệ
+    </a>
+    <a href="pages/phanhoi.html">
+        Phản hồi
+    </a>
 </nav>
-
 </div>
 </div>
     </div>
@@ -106,12 +78,99 @@
 
 </header>
 
+<!--Giới thiệu Hanami-->
+<section
+    class="khu-vuc-gioi-thieu"
+    aria-label="Giới thiệu Hanami Bookstore">
+
+    <div class="noi-dung-gioi-thieu">
+        <span class="duong-chu-dan">
+            MỞ SÁCH - MỞ THẾ GIỚI
+        </span>
+
+        <h1>
+            Một cuốn sách hay
+            <br>
+            <em style="color: #663b37; 
+            font-family:'Playfair Display', serif;
+            margin-left: 60px; " >ngàn điều thú vị...</em>
+        </h1>
+
+        <p>
+            Khám phá những đầu sách được tuyển chọn dành cho bạn
+        </p>
+        <a href="#phat-trien-ban-than" class="dong-chu-dan">Khám phá ngay ↗</a>
+    </div>
+    <div aria-hidden="true" class="khu-vuc-trang-tri">
+        <div class="hinh-trang-tri-sach">
+
+            <i>
+            A world
+            <br>
+            of stories
+            </i>
+            
+
+            <small>
+                HANAMI BOOKSTORE
+            </small>
+        </div>
+    </div>
+</section>
+
+<section aria-label="Dịch vụ Hanami" class="danh-sach-loi-ich">
+    <div class="loi-ich">
+        <div class="bieu-tuong-loi-ich">
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+
+        <div>
+            <strong>
+                Đa dạng thể loại
+            </strong>
+
+            <span>
+                Chọn sách theo sở thích của bạn
+            </span>
+        </div>
+    </div>
+
+    <div class="loi-ich">
+        <div class="bieu-tuong-loi-ich">
+            <i class="fa-solid fa-box"></i>
+        </div>
+
+        <div>
+            <strong>
+                Đóng gói cẩn thận
+            </strong>
+
+            <span>
+                Trân trọng từng cuốn sách gửi đi
+            </span>
+        </div>
+    </div>
+
+    <div class="loi-ich">
+        <div class="bieu-tuong-loi-ich">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <div>
+            <strong>
+                Trao gửi tri thức
+            </strong>
+
+            <span>
+                Một lựa chọn nhỏ, cảm hứng lớn
+            </span>
+        </div>
+    </div>
+</section>
+
+
     <!-- Nội dung trang sản phẩm-->
-     <!-- <main class = "Trang_san_pham"> -->
         <div class = "Tieu_de_trang">
-           
-            <!-- <p><i>Khám phá tri thức tại Hanami Bookstore</i> </p> -->
-        
             <h2 id="dau-trang"> Danh mục sản phẩm</h2>
         </div>
 
@@ -120,28 +179,79 @@
         <a href="index.html"> Trang chủ</a> &gt; <span> Danh mục sách</span>
     </div>
 
-
     <!-- Khu vực chính -->
     <div class="khu-vuc-san-pham">
 
         <!-- Bộ lọc bên trái -->
 
         <aside class="bo-loc">
+          
+        <div class="Tieu-de-thanh-ben">
+        <b> Khám phá sách</b>
+        </div>
+
+     <div class="bo-loc-the-loai">
+      <h3>
+       Danh mục
+      </h3>
 
 
-            <div class="Muc_luc_san_pham">
-                <!-- <h3> Thể loại</h3> -->
+      <nav>
+       <a href="#phat-trien-ban-than">
+        <i class="fa-solid fa-book-open">
+        </i>
+        <span>
+         Phát triển bản thân
+        </span>
+       </a>
 
-                <select onchange ="location.href = this.value;">
-                    <option value=""> Tất cả các thể loại</option>
-                    <option value='#phat-trien-ban-than'> Phát triển bản thân</option>
-                    <option value='#tieu-thuyet'> Tiểu thuyết</option>
-                    <option value='#thieu-nhi'> Thiếu nhi</option>
-                    <option value='#kinh-doanh'> Kinh doanh</option>
-                    <option value='#sach-hoc-ngoai-ngu'> Sách học ngoại ngữ</option>
-                    <option value='#sach-tham-khao'> Sách tham khảo</option>
-                </select>
-            </div>
+
+       <a href="#tieu-thuyet">
+        <i class="fa-solid fa-book-open">
+        </i>
+        <span>
+         Tiểu thuyết
+        </span>
+       </a>
+
+
+       <a href="#thieu-nhi">
+        <i class="fa-solid fa-book-open">
+        </i>
+        <span>
+         Thiếu nhi
+        </span>
+       </a>
+
+
+       <a href="#kinh-doanh">
+        <i class="fa-solid fa-book-open">
+        </i>
+        <span>
+         Kinh doanh
+        </span>
+       </a>
+
+
+       <a href="#sach-hoc-ngoai-ngu">
+        <i class="fa-solid fa-book-open">
+        </i>
+        <span>
+        Sách học ngoại ngữ
+        </span>
+       </a>
+
+
+       <a href="#sach-tham-khao">
+        <i class="fa-solid fa-book-open">
+        </i>
+        <span>
+        Sách tham khảo
+        </span>
+       </a>
+
+      </nav>
+     </div>
         
         <div class="bo-loc-gia">
             <h3> Giá</h3>
@@ -170,26 +280,24 @@
 
         <!--Danh sách sản phẩm-->
         <section class="khu-vuc-danh-sach">
-
+<div class="sap-xep">
         <!-- chọn kiểu hiển thị sản phẩm -->
             <div class="chon-kieu">
                 <input type="radio" name="kieu-hien-thi" id="kieu-danh-sach">
                 <label for="kieu-danh-sach">
                     <i class="fa-solid fa-list"></i>
-                    Danh sách
                 </label>    
 
                 <input type="radio" name="kieu-hien-thi" id="kieu-3sp" checked>
                 <label for="kieu-3sp">
                     <i class="fa-solid fa-grip"></i>
-                    3 sản phẩm
                 </label>    
             </div>
 
         
 
             <!--Sắp xếp-->
-            <div class="sap-xep">
+            
 
                 <span>Sắp xếp theo:</span>
 
@@ -200,14 +308,12 @@
                     <option>Bán chạy</option>
                 </select>
 
-            </div>
+</div>
 
 
             <!-- Phát triển bản thân-->
 
             <section class="The_loai" id="phat-trien-ban-than">
-                <h2> Phát triển bản thân</h2>
-
             <div class="luoi-san-pham">
 
                 <!-- Sản phẩm 1-->
@@ -221,7 +327,7 @@
                     <!-- </a> -->
                     </a>
                     <h3> 
-                        <a href="chitietsp.html?id=dnt">
+                        <a href="chitietsp.html?id=dnt" class="link-chi-tiet">
                              Đắc nhân tâm
                         </a>
                     </h3>
@@ -241,14 +347,14 @@
 
                     
                     <h3>
-                        <a href="chitietsp.html?id=ttbt">
-                            Thiên tài bên trái kẻ điên bên phải
-                        </a>
-                    </h3>
-                    <p> 179.000đ</p>
+                        <a href="chitietsp.html?id=ttbt" class="link-chi-tiet">Thiên tài bên trái kẻ điên bên phải </a>
+                    </h3>        
+                     <p> 179.000đ</p>   
                     <button>
                         <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
                     </button>
+                   
+                    
                     
                  </div>
 
@@ -259,7 +365,7 @@
                         <img src="images\tlhtc.webp" alt="Tâm lý học thành công">
                     </div>
                     <h3>
-                        <a href="chitietsp.html?id=tlhtc">
+                        <a href="chitietsp.html?id=tlhtc" class="link-chi-tiet">
                             Tâm lý học thành công
                         </a>
                     </h3>
@@ -278,7 +384,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=tdnvc">
+                        <a href="chitietsp.html?id=tdnvc"  class="link-chi-tiet">
                             Tư duy nhanh và chậm
                         </a>
                     </h3>
@@ -290,13 +396,13 @@
 
                 <!-- Sản phẩm 5-->
                   <div class="san-pham">
-                    <a href="chitietsp.html?id=tdn" class="link-chi-tiet"></a>
+                    <a href="chitietsp.html?id=tdn" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\tdn.jpg" alt="Tư duy ngược">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=tdn">
+                        <a href="chitietsp.html?id=tdn"  class="link-chi-tiet">
                             Tư duy ngược
                         </a>
                     </h3>
@@ -308,13 +414,13 @@
 
                 <!--Sản phẩm 6-->
                   <div class="san-pham">
-                    <a href="chitietsp.html?id=dbg" class="link-chi-tiet"></a>
+                    <a href="chitietsp.html?id=dbg" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\dbg.webp" alt="Dám bị ghét">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=dbg">
+                        <a href="chitietsp.html?id=dbg" class="link-chi-tiet">
                             Dám bị ghét
                         </a>
                     </h3>
@@ -329,8 +435,6 @@
         
         <!-- Tiểu thuyết-->
          <section class="The_loai" id="tieu-thuyet">
-            <h2> Tiểu thuyết</h2>
-
             <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
                 <div class="san-pham">
@@ -340,7 +444,7 @@
                     </div>
                     </a>
                     <h3> 
-                        <a href="chitietsp.html?id=ove">
+                        <a href="chitietsp.html?id=ove"  class="link-chi-tiet">
                             Ngươi đàn ông mang tên OVE - Tái bản
                         </a>
                     </h3>
@@ -352,13 +456,13 @@
 
                 <!-- Sản phẩm 2-->
                  <div class="san-pham">
-                    <a href="chitietsp.html?id=ccnct" class="link-chi-tiet">
+                    <a href="chitietsp.html?id=cam" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ccnct1.webp" alt="Cây cam ngọt của tôi">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=ccnct">
+                        <a href="chitietsp.html?id=cam"  class="link-chi-tiet">
                             Cây cam ngọt của tôi
                         </a>
                     </h3>
@@ -377,7 +481,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=ngk">
+                        <a href="chitietsp.html?id=ngk"  class="link-chi-tiet">
                             Nhà giả kim
                         </a>
                     </h3>
@@ -396,7 +500,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=sd">
+                        <a href="chitietsp.html?id=sd" class="link-chi-tiet">
                             Số đỏ
                         </a>
                     </h3>
@@ -414,7 +518,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=td">
+                        <a href="chitietsp.html?id=td" class="link-chi-tiet">
                             Tắt đèn
                         </a>
                     </h3>
@@ -432,7 +536,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=bsv">
+                        <a href="chitietsp.html?id=bsv" class="link-chi-tiet">
                             Bông sen vàng
                         </a>
                     </h3>
@@ -446,9 +550,7 @@
 
          <!-- Thiếu nhi-->
          <section class="The_loai" id="thieu-nhi">
-            <h2> Thiếu nhi</h2>
-
-            <div class="luoi-san-pham">
+          <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
                 <div class="san-pham">
                     <a href="chitietsp.html?id=ehln" class="link-chi-tiet">
@@ -457,7 +559,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=ehln">
+                        <a href="chitietsp.html?id=ehln"  class="link-chi-tiet">
                             Em học lễ nghĩa
                         </a>
                     </h3>
@@ -475,7 +577,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=ttgt">
+                        <a href="chitietsp.html?id=ttgt"  class="link-chi-tiet">
                             Tự tin giao tiếp
                         </a>
                     </h3>
@@ -497,7 +599,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=cd1">
+                        <a href="chitietsp.html?id=cd1"  class="link-chi-tiet">
                             Tư duy cho bé - Câu đố
                         </a>
                     </h3>
@@ -517,7 +619,7 @@
                     </a>
                     <!-- <img src="images\ttdd2.webp" alt="Tuổi thơ dữ dội - Tập 2"> -->
                     <h3>
-                        <a href="chitietsp.html?id=ttdd">
+                        <a href="chitietsp.html?id=ttdd"  class="link-chi-tiet">
                             Tuổi thơ dữ dội
                         </a>
                     </h3>
@@ -535,7 +637,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=dm">
+                        <a href="chitietsp.html?id=dm"  class="link-chi-tiet">
                             Dế mèn phiêu lưu ký
                         </a>
                     </h3>
@@ -553,7 +655,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=mhbtl">
+                        <a href="chitietsp.html?id=mhbtl"  class="link-chi-tiet">
                             Mẹ hỏi bé trả lời
                         </a>
                     </h3>
@@ -567,9 +669,7 @@
 
          <!--Kinh doanh-->
          <section class="The_loai" id="kinh-doanh">
-            <h2> Kinh doanh</h2>
-
-            <div class="luoi-san-pham">
+         <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
                 <div class="san-pham">
                     <a href="chitietsp.html?id=48nt" class="link-chi-tiet">
@@ -578,7 +678,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=48nt">
+                        <a href="chitietsp.html?id=48nt"  class="link-chi-tiet">
                             48 nguyên tắc chủ chốt của quyền lực
                         </a>
                     </h3>
@@ -596,7 +696,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=ngcntb">
+                        <a href="chitietsp.html?id=ngcntb"  class="link-chi-tiet">
                             Người giàu có nhất thành Babylon
                         </a>
                     </h3>
@@ -615,7 +715,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=ttdvd">
+                        <a href="chitietsp.html?id=ttdvd"  class="link-chi-tiet">
                             Từ tốt đến vĩ đại
                         </a>
                     </h3>
@@ -634,7 +734,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=tdqld">
+                        <a href="chitietsp.html?id=tdqld"  class="link-chi-tiet">
                             Peter Drucker - Tư duy đúng quản lý đúng
                         </a>
                     </h3>
@@ -652,7 +752,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=nttdcl">
+                        <a href="chitietsp.html?id=nttdcl"  class="link-chi-tiet">
                             Nghệ thuật tư duy chiến lược
                         </a>
                     </h3>
@@ -670,7 +770,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=lskthll">
+                        <a href="chitietsp.html?id=lskthll" class="link-chi-tiet">
                             Lược sử kinh tế học lầy lội
                         </a>
                     </h3>
@@ -687,9 +787,7 @@
                 <!-- Sách học ngoại ngữ-->
 
          <section class="The_loai" id="sach-hoc-ngoai-ngu">
-            <h2> Sách học ngoại ngữ</h2>
-
-            <div class="luoi-san-pham">
+          <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
                 <div class="san-pham">
                     <a href="chitietsp.html?id=hsk1" class="link-chi-tiet">
@@ -698,7 +796,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=hsk1">
+                        <a href="chitietsp.html?id=hsk1" class="link-chi-tiet">
                             Giáo trình chuẩn HSK 1
                         </a>
                     </h3>
@@ -716,7 +814,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=hsk2">
+                        <a href="chitietsp.html?id=hsk2" class="link-chi-tiet">
                             Giáo trình chuẩn HSK 2
                         </a>
                     </h3>
@@ -734,7 +832,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=hsk3">
+                        <a href="chitietsp.html?id=hsk3" class="link-chi-tiet">
                             Giáo trình chuẩn HSK 3
                         </a>
                     </h3>
@@ -752,7 +850,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=hsk4">
+                        <a href="chitietsp.html?id=hsk4" class="link-chi-tiet">
                             Giáo trình chuẩn HSK 4
                         </a>
                     </h3>
@@ -770,7 +868,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=b1">
+                        <a href="chitietsp.html?id=b1" class="link-chi-tiet">
                             Tiếng Nhật sơ cấp cho người mới bắt đầu
                         </a>
                     </h3>
@@ -781,61 +879,6 @@
 
                  </div>
 
-                 <!-- Sản phẩm 3-->
-                  <div class="san-pham">
-                    <a href="chitietsp.html?id=hsk3" class="link-chi-tiet">
-                        <div class="khung-anh">
-                            <img src="images\hsk3.webp" alt="Giáo trình chuẩn HSK 3">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=hsk3">
-                            Giáo trình chuẩn HSK 3
-                        </a>
-                    </h3>
-                    <p> 299.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-
-                  </div>
-
-                  <!-- Sản phẩm 4-->
-                  <div class="san-pham">
-                    <a href="chitietsp.html?id=hsk4" class="link-chi-tiet">
-                        <div class="khung-anh">
-                            <img src="images\hsk4.webp" alt="Giáo trình chuẩn HSK 4">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=hsk4">
-                            Giáo trình chuẩn HSK 4
-                        </a>
-                    </h3>
-                    <p> 299.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                  </div>
-
-                <!-- Sản phẩm 5-->
-                  <div class="san-pham">
-                    <a href="chitietsp.html?id=b1" class="link-chi-tiet">
-                        <div class="khung-anh">
-                            <img src="images\b1.webp" alt="Tiếng Nhật sơ cấp cho người mới bắt đầu">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=b1">
-                            Tiếng Nhật sơ cấp cho người mới bắt đầu
-                        </a>
-                    </h3>
-                    <p> 99.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                  </div>
-
                   <!-- Sản phẩm 6-->
                   <div class="san-pham">
                     <a href="chitietsp.html?id=b11" class="link-chi-tiet">
@@ -844,7 +887,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=b11">
+                        <a href="chitietsp.html?id=b11" class="link-chi-tiet">
                             Grammar And Vocabulary With Answer Key (Tái Bản 2025)
                         </a>
                     </h3>
@@ -859,9 +902,7 @@
                 <!-- Sách tham khảo-->
 
          <section class="The_loai" id="sach-tham-khao">
-            <h2> Sách tham khảo</h2>
-
-            <div class="luoi-san-pham">
+          <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
                 <div class="san-pham">
                     <a href="chitietsp.html?id=vhth" class="link-chi-tiet">
@@ -870,7 +911,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=vhth">
+                        <a href="chitietsp.html?id=vhth" class="link-chi-tiet">
                             Vui học tin học 2
                         </a>
                     </h3>
@@ -888,7 +929,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=al">
+                        <a href="chitietsp.html?id=al" class="link-chi-tiet">
                             Sách Alat Địa lý
                         </a>
                     </h3>
@@ -906,7 +947,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=tcthqt">
+                        <a href="chitietsp.html?id=tcthqt" class="link-chi-tiet">
                             Tăng cường tin học quốc tế - IC3 GS6
                         </a>
                     </h3>
@@ -925,7 +966,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=mhtn">
+                        <a href="chitietsp.html?id=mhtn" class="link-chi-tiet">
                             60 đề minh họa Tốt nghiệp THPT 2026
                         </a>
                     </h3>
@@ -943,7 +984,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=mhtn2">
+                        <a href="chitietsp.html?id=mhtn2" class="link-chi-tiet">
                             100 đề minh họa Tốt nghiệp THPT 2026
                         </a>
                     </h3>
@@ -961,7 +1002,7 @@
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=dptd">
+                        <a href="chitietsp.html?id=dptd" class="link-chi-tiet">
                             Đột phá tư duy kỳ thi Tốt nghiệp THPT
                         </a>
                     </h3>
