@@ -1,16 +1,45 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const $ = (selector, root = document) => root.querySelector(selector);
     const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
     const VOUCHER_KEY = "hanamiPromoVouchers";
-    const voucherMessage = $("#voucherMessage");
     const savedVouchers = $("#savedVouchers");
     const searchInput = $("#promoSearch");
     const searchButton = $("#searchButton");
     const productGrid = $("#productGrid");
     const sortSelect = $("#sortProducts");
 
+    /* =========================================================
+       1. ĐỒNG HỒ ĐẾM NGƯỢC CHUẨN XÁC THEO THỜI GIAN THỰC
+       ========================================================= */
+    const hoursEl = $("#hours");
+    const minutesEl = $("#minutes");
+    const secondsEl = $("#seconds");
+
+    let totalSeconds = (89 * 3600) + (14 * 60) + 37;
+
+    function updateTimer() {
+        if (totalSeconds <= 0) {
+            totalSeconds = (89 * 3600) + (14 * 60) + 37;
+        }
+
+        const hrs = Math.floor(totalSeconds / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+
+        if (hoursEl) hoursEl.textContent = String(hrs).padStart(2, "0");
+        if (minutesEl) minutesEl.textContent = String(mins).padStart(2, "0");
+        if (secondsEl) secondsEl.textContent = String(secs).padStart(2, "0");
+
+        totalSeconds--;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    /* =========================================================
+       2. QUẢN LÝ VOUCHER & LOCALSTORAGE
+       ========================================================= */
     function readVouchers() {
         try {
             const data = JSON.parse(localStorage.getItem(VOUCHER_KEY) || "[]");
@@ -27,8 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         savedVouchers.innerHTML = "";
 
         if (codes.length === 0) {
-            savedVouchers.innerHTML =
-                '<p class="empty-message">Bạn chưa nhận voucher nào.</p>';
+            savedVouchers.innerHTML = '<p class="empty-message">Bạn chưa lưu voucher nào.</p>';
             return;
         }
 
@@ -43,13 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
             item.addEventListener("click", async () => {
                 try {
                     await navigator.clipboard.writeText(code);
-                    if (voucherMessage) {
-                        voucherMessage.textContent = "Đã sao chép mã " + code + ".";
-                    }
+                    alert("Đã sao chép mã: " + code);
                 } catch (error) {
-                    if (voucherMessage) {
-                        voucherMessage.textContent = "Mã voucher của bạn: " + code;
-                    }
+                    alert("Mã voucher của bạn: " + code);
                 }
             });
             list.appendChild(item);
@@ -73,18 +97,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 codes.push(code);
                 try {
                     localStorage.setItem(VOUCHER_KEY, JSON.stringify(codes));
-                } catch (error) {
-                    // Trang vẫn hoạt động nếu trình duyệt chặn localStorage.
-                }
+                } catch (error) {}
             }
 
             button.textContent = "Đã lưu";
             button.disabled = true;
-
-            if (voucherMessage) {
-                voucherMessage.textContent = "Đã lưu mã " + code + " trên trình duyệt này.";
-            }
-
             renderVouchers();
         });
     });
@@ -96,14 +113,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         $$("[data-code]").forEach(button => {
             button.disabled = false;
-            button.textContent = "Nhận mã";
+            button.textContent = "Lưu mã";
         });
 
-        if (voucherMessage) {
-            voucherMessage.textContent = "Đã xóa các voucher đã lưu.";
-        }
-
         renderVouchers();
+    });
+
+    /* =========================================================
+       3. LỌC VÀ SẮP XẾP SẢN PHẨM TRONG KHUNG LIỀN MẠCH
+       ========================================================= */
+    const tabButtons = $$(".tab-btn");
+    tabButtons.forEach(btn => {
+        btn.addEventListener("click", function () {
+            tabButtons.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+
+            const cat = this.dataset.category;
+            $$(".promo-product", productGrid).forEach(prod => {
+                if (cat === "all" || prod.dataset.cat === cat) {
+                    prod.hidden = false;
+                } else {
+                    prod.hidden = true;
+                }
+            });
+        });
     });
 
     function filterProducts() {
@@ -123,39 +156,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (emptyMessage) {
             emptyMessage.hidden = visibleCount !== 0;
         }
-
-        if (query) {
-            $("#sach-khuyen-mai")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
     }
 
     searchButton?.addEventListener("click", filterProducts);
-
-    searchInput?.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
+    searchInput?.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
             filterProducts();
-        }
-    });
-
-    searchInput?.addEventListener("input", function () {
-        const query = searchInput.value.trim().toLocaleLowerCase("vi");
-        let visibleCount = 0;
-
-        $$(".promo-product", productGrid).forEach(product => {
-            const matched = !query ||
-                product.textContent.toLocaleLowerCase("vi").includes(query);
-
-            product.hidden = !matched;
-            if (matched) visibleCount++;
-        });
-
-        const emptyMessage = $("#emptyMessage");
-        if (emptyMessage) {
-            emptyMessage.hidden = visibleCount !== 0;
         }
     });
 
@@ -164,28 +171,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const products = $$(".promo-product", productGrid);
         const mode = sortSelect.value;
-
-        const priceOf = product =>
-            Number(product.dataset.price || 0);
+        const priceOf = product => Number(product.dataset.price || 0);
 
         if (mode === "low") {
             products.sort((a, b) => priceOf(a) - priceOf(b));
         } else if (mode === "high") {
             products.sort((a, b) => priceOf(b) - priceOf(a));
-        } else if (mode === "name") {
-            products.sort((a, b) =>
-                a.querySelector("h3").textContent.trim().localeCompare(
-                    b.querySelector("h3").textContent.trim(), "vi"
-                )
-            );
         } else {
-            products.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
-            // Thứ tự nổi bật mặc định được xác định bên dưới.
-            const featuredOrder = ["99000", "120000", "86000"];
-            products.sort((a, b) =>
-                featuredOrder.indexOf(a.dataset.price) -
-                featuredOrder.indexOf(b.dataset.price)
-            );
+            products.sort((a, b) => priceOf(a) - priceOf(b));
         }
 
         products.forEach(product => productGrid.appendChild(product));
@@ -193,21 +186,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sortSelect?.addEventListener("change", sortProducts);
 
-    // Ảnh bị lỗi sẽ được thay bằng khung trắng dự phòng.
-    $$(".product-cover img").forEach(img => {
-        img.addEventListener("error", function () {
-            this.hidden = true;
+    /* =========================================================
+       4. FORM ĐĂNG KÝ VOUCHER 100K
+       ========================================================= */
+    const subscriberForm = $("#subscriberForm");
+    const regSuccessMsg = $("#regSuccessMsg");
 
-            const cover = this.closest(".product-cover");
-            if (!cover || cover.querySelector(".image-fallback")) return;
-
-            const fallback = document.createElement("div");
-            fallback.className = "image-fallback";
-            fallback.innerHTML =
-                '<i class="fas fa-book-open"></i><span>Hanami Bookstore</span>';
-
-            cover.appendChild(fallback);
-        }, { once: true });
+    subscriberForm?.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (regSuccessMsg) {
+            regSuccessMsg.hidden = false;
+            subscriberForm.reset();
+        }
     });
 
     renderVouchers();
