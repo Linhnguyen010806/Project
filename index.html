@@ -41,7 +41,6 @@
         </div>
 
     </div>
-
     <div class="navbar">
 
     <!-- Danh mục -->
@@ -56,8 +55,8 @@
             <a href="dmsp.html#tieu-thuyet">Tiểu thuyết</a>
             <a href="dmsp.html#thieu-nhi">Thiếu nhi</a>
             <a href="dmsp.html#kinh-doanh">Kinh doanh</a>
-            <a href="dmsp.html#ngoai-ngu">Sách học ngoại ngữ</a>
-            <a href="dmsp.html#tham-khao">Sách tham khảo</a>
+            <a href="dmsp.html#sach-hoc-ngoai-ngu">Sách học ngoại ngữ</a>
+            <a href="dmsp.html#sach-tham-khao">Sách tham khảo</a>
         </div>
     </div>
 
@@ -65,36 +64,41 @@
     <nav class="main-menu">
         <a href="index.html" class="active">Trang chủ</a>
         <a href="gioithieu.html">Giới thiệu</a>
-        <a href="pages/khuyenmai.html">Khuyến mãi</a>
+        <a href="khuyenmai.html">Khuyến mãi</a>
         <a href="lienhe.html">Liên hệ</a>
-        <a href="pages/phanhoi.html">Phản hồi</a>
+        <a href="index.html#customer-reviews">Phản hồi</a>
     </nav>
 
 </div>
-<div class="hero">
+    <div class="hero">
 
-    <div class="slider">
+        <div class="slider">
 
-        <div class="slides">
+            <div class="slides">
 
-            <img src="images/banner1.jpg" class="slide active">
-            <img src="images/banner2.jpg" class="slide">
-            <img src="images/banner3.jpg" class="slide">
-            <img src="images/banner4.jpg" class="slide">
+                <img src="images/banner1.jpg" class="slide active">
+                <img src="images/banner2.jpg" class="slide">
+                <img src="images/banner3.jpg" class="slide">
+                <img src="images/banner4.jpg" class="slide">
 
-        </div>
+            </div>
 
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
 
-        <div class="dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
     </div>
 </header>
+
+
+
+
 <!-- ===== SẢN PHẨM MỚI ===== -->
 <section class="new-products">
 
@@ -110,12 +114,12 @@
     <div class="product-slider">
         <div class="product-track">
 
-            <div class="product-card">
-                <a href="chitietsp.html?id=atomic">
+            <div class="product-card" onclick="goToDetail('bsv')">
+                <a href="chitietsp.html?id=bsv">
                 <img src="images/bsv.webp" alt="Bông sen vàng">
             </a>
                 <h4>
-                    <a href="chitietsp.html?id=atomic"> Bông sen vàng
+                    <a href="chitietsp.html?id=bsv"> Bông sen vàng
 
                     </a>
                 </h4>
@@ -123,12 +127,12 @@
                 <span>169.000đ</span>
             </div>
 
-            <div class="product-card">
-                <a href="chitietsp.html?id=mk">
+            <div class="product-card" onclick="goToDetail('dm')">
+                <a href="chitietsp.html?id=dm">
                 <img src="images/dm.webp" alt="Dế mèn">
             </a>
                 <h4>
-                    <a href="chitietsp.html?id=mk"> Dế mèn phiêu lưu kí
+                    <a href="chitietsp.html?id=dm"> Dế mèn phiêu lưu kí
 
                     </a>
                 </h4>
@@ -136,7 +140,7 @@
                 <span>49.000đ</span>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" onclick="goToDetail('dnt')">
                 <a href="chitietsp.html?id=dnt">
                 <img src="images/dnt.webp" alt="Đắc Nhân Tâm">
             </a>
@@ -149,12 +153,12 @@
                 <span>86.000đ</span>
             </div>
 
-            <div class="product-card">
-                <a href="chitietsp.html?id=ttdg">
+            <div class="product-card" onclick="goToDetail('ttdvd')">
+                <a href="chitietsp.html?id=ttdvd">
                 <img src="images/ttdvd.webp" alt="Từ tốt đến vĩ đại">
             </a>
                 <h4>
-                    <a href="chitietsp.html?id=ttdg"> Từ tốt đến vĩ đại
+                    <a href="chitietsp.html?id=ttdvd"> Từ tốt đến vĩ đại
 
                     </a>
                 </h4>
@@ -162,12 +166,12 @@
                 <span>129.000đ</span>
             </div>
 
-            <div class="product-card">
-                <a href="chitietsp.html?id=ngk">
+            <div class="product-card" onclick="goToDetail('mhbtl')">
+                <a href="chitietsp.html?id=mhbtl">
                 <img src="images/mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
             </a>
                 <h4>
-                    <a href="chitietsp.html?id=ngk">Mẹ hỏi bé trả lời
+                    <a href="chitietsp.html?id=mhbtl">Mẹ hỏi bé trả lời
 
                     </a>
                 </h4>
@@ -175,12 +179,12 @@
                 <span>49.000đ</span>
             </div>
 
-            <div class="product-card">
-                <a href="chitietsp.html?id=tagr">
+            <div class="product-card" onclick="goToDetail('lskthll')">
+                <a href="chitietsp.html?id=lskthll">
                 <img src="images/lskthll.webp" alt="Lịch sử kinh tế học lầy lội">
             </a>
                 <h4> 
-                    <a href="chitietsp.html?id=tagr">Lịch sử kinh tế học lầy lội
+                    <a href="chitietsp.html?id=lskthll">Lịch sử kinh tế học lầy lội
 
                     </a>
                 </h4>
@@ -192,126 +196,221 @@
     </div>
 
 </section>
-<section class="bestseller">
 
-    <div class="best-title">Best seller</div>
 
-    <div class="best-container">
 
-        <!-- Danh sách sách -->
-        <div class="best-list">
+<section class="bestseller" id="bestseller">
+    <h2 class="best-title">BEST SELLER</h2>
 
-            <div class="best-item active"
-                data-img="images/dnt.webp"
-                data-title="Đắc Nhân Tâm"
-                data-author="Dale Carnegie"
-                data-price="86.000đ"
-                data-desc="Cuốn sách kinh điển về nghệ thuật giao tiếp và ứng xử.">
-                <img src="images/dnt.webp" alt="Đắc Nhân Tâm">
-                <div>
-                    <h4>Đắc Nhân Tâm</h4>
-                    <p>Dale Carnegie</p>
+    <div class="best-layout">
+
+        <!-- CỘT TRÁI: DANH SÁCH 10 SÁCH -->
+        <aside class="best-sidebar">
+            <div class="best-list" id="bestList">
+
+                <button class="best-item active" type="button"
+                    data-title="Đắc Nhân Tâm"
+                    data-author="Dale Carnegie"
+                    data-category="Phát triển bản thân"
+                    data-price="86.000đ"
+                    data-image="images/dnt.webp"
+                    data-desc="Cuốn sách kinh điển về nghệ thuật giao tiếp, ứng xử và xây dựng mối quan hệ tốt đẹp.">
+                    <span class="best-rank">1</span>
+                    <img src="images/dnt.webp" alt="Đắc Nhân Tâm">
+                    <span class="best-item-name">Đắc Nhân Tâm</span>
+                </button>
+
+                <button class="best-item" type="button"
+                    data-title="Cây Cam Ngọt Của Tôi"
+                    data-author="José Mauro de Vasconcelos"
+                    data-category="Tiểu thuyết"
+                    data-price="108.000đ"
+                    data-image="images/ccnct1.webp"
+                    data-desc="Câu chuyện cảm động về tuổi thơ, tình yêu thương và hành trình trưởng thành của Zezé.">
+                    <span class="best-rank">2</span>
+                    <img src="images/ccnct1.webp" alt="Cây Cam Ngọt Của Tôi">
+                    <span class="best-item-name">Cây Cam Ngọt Của Tôi</span>
+                </button>
+
+                <button class="best-item" type="button"
+                    data-title="Dế Mèn Phiêu Lưu Ký"
+                    data-author="Tô Hoài"
+                    data-category="Thiếu nhi"
+                    data-price="49.000đ"
+                    data-image="images/dm.webp"
+                    data-desc="Tác phẩm thiếu nhi nổi tiếng kể về những cuộc phiêu lưu và bài học trưởng thành của Dế Mèn.">
+                    <span class="best-rank">3</span>
+                    <img src="images/dm.webp" alt="Dế Mèn Phiêu Lưu Ký">
+                    <span class="best-item-name">Dế Mèn Phiêu Lưu Ký</span>
+                </button>
+
+                <button class="best-item" type="button"
+                    data-title="Thiên Tài Bên Trái, Kẻ Điên Bên Phải"
+                    data-author="Cao Minh"
+                    data-category="Phát triển bản thân"
+                    data-price="179.000đ"
+                    data-image="images/ttbt2.webp"
+                    data-desc="Cuốn sách gợi mở những góc nhìn khác biệt về tư duy, tâm lý và cách nhìn nhận thế giới.">
+                    <span class="best-rank">4</span>
+                    <img src="images/ttbt2.webp" alt="Thiên Tài Bên Trái, Kẻ Điên Bên Phải">
+                    <span class="best-item-name">Thiên Tài Bên Trái, Kẻ Điên Bên Phải</span>
+                </button>
+
+                <button class="best-item" type="button"
+                    data-title="Tư Duy Nhanh Và Chậm"
+                    data-author="Daniel Kahneman"
+                    data-category="Phát triển bản thân"
+                    data-price="199.000đ"
+                    data-image="images/tdnvc.webp"
+                    data-desc="Khám phá hai hệ thống tư duy ảnh hưởng đến cách con người suy nghĩ và ra quyết định.">
+                    <span class="best-rank">5</span>
+                    <img src="images/tdnvc.webp" alt="Tư Duy Nhanh Và Chậm">
+                    <span class="best-item-name">Tư Duy Nhanh Và Chậm</span>
+                </button>
+
+                <button class="best-item" type="button"
+                    data-title="48 Nguyên Tắc Chủ Chốt Của Quyền Lực"
+                    data-author="Robert Greene"
+                    data-category="Phát triển bản thân"
+                    data-price="189.000đ"
+                    data-image="images/48nt.webp"
+                    data-desc="Tìm hiểu những nguyên tắc về quyền lực, chiến lược và ứng xử trong các mối quan hệ xã hội.">
+                    <span class="best-rank">6</span>
+                    <img src="images/48nt.webp" alt="48 Nguyên Tắc Chủ Chốt Của Quyền Lực">
+                    <span class="best-item-name">48 Nguyên Tắc Chủ Chốt Của Quyền Lực</span>
+                </button>
+
+                <button class="best-item" type="button"
+                    data-title="Người Đàn Ông Mang Tên Ove"
+                    data-author="Fredrik Backman"
+                    data-category="Tiểu thuyết"
+                    data-price="150.000đ"
+                    data-image="images/ndomtov.webp"
+                    data-desc="Câu chuyện vừa hài hước vừa cảm động về tình người, mất mát và những kết nối bất ngờ.">
+                    <span class="best-rank">7</span>
+                    <img src="images/ndomtov.webp" alt="Người Đàn Ông Mang Tên Ove">
+                    <span class="best-item-name">Người Đàn Ông Mang Tên Ove</span>
+                </button>
+
+                <button class="best-item" type="button"
+                    data-title="Bông Sen Vàng"
+                    data-author="Sơn Tùng"
+                    data-category="Văn học"
+                    data-price="169.000đ"
+                    data-image="images/vth.webp"
+                    data-desc="Tác phẩm văn học về cuộc đời và những dấu ấn đáng nhớ của nhân vật lịch sử.">
+                    <span class="best-rank">8</span>
+                    <img src="images/vth.webp" alt="Bông Sen Vàng">
+                    <span class="best-item-name">Bông Sen Vàng</span>
+                </button>
+
+                <button class="best-item" type="button"
+                    data-title="Tâm Lý Học Thành Công"
+                    data-author="Carol S. Dweck"
+                    data-category="Phát triển bản thân"
+                    data-price="199.000đ"
+                    data-image="images/mindset.webp"
+                    data-desc="Giúp người đọc hiểu về tư duy phát triển và thay đổi góc nhìn để học hỏi, tiến bộ.">
+                    <span class="best-rank">9</span>
+                    <img src="images/mindset.webp" alt="Tâm Lý Học Thành Công">
+                    <span class="best-item-name">Tâm Lý Học Thành Công</span>
+                </button>
+
+                <button class="best-item" type="button"
+                    data-title="Mẹ Hỏi Bé Trả Lời"
+                    data-author="Nhiều tác giả"
+                    data-category="Thiếu nhi"
+                    data-price="49.000đ"
+                    data-image="images/mhbtl.jpg"
+                    data-desc="Những câu hỏi và câu trả lời thú vị giúp trẻ khám phá thế giới xung quanh.">
+                    <span class="best-rank">10</span>
+                    <img src="images/mhbtl.jpg" alt="Mẹ Hỏi Bé Trả Lời">
+                    <span class="best-item-name">Mẹ Hỏi Bé Trả Lời</span>
+                </button>
+
+            </div>
+        </aside>
+
+        <!-- CỘT PHẢI: CHI TIẾT SÁCH -->
+        <div class="best-detail" id="bestDetail">
+
+            <div class="best-detail-main">
+
+                <div class="best-detail-cover">
+                    <img id="bestDetailImage"
+                         src="images/dnt.webp"
+                         alt="Bìa sách">
+                </div>
+
+                <div class="best-detail-info">
+
+                    <h3 id="bestDetailTitle">Đắc Nhân Tâm</h3>
+
+                    <p class="best-author" id="bestDetailAuthor">
+                        Dale Carnegie
+                    </p>
+
+                    <div class="best-tags">
+                        <span id="bestDetailCategory">
+                            Phát triển bản thân
+                        </span>
+                    </div>
+
+                    <p class="best-price" id="bestDetailPrice">
+                        86.000đ
+                    </p>
+
+                    <button class="best-cart-btn"
+                            id="bestCartBtn"
+                            type="button">
+                        🛒 Thêm vào giỏ hàng
+                    </button>
+
+                    <p class="best-description"
+                       id="bestDetailDescription">
+                        Cuốn sách kinh điển về nghệ thuật giao tiếp,
+                        ứng xử và xây dựng mối quan hệ tốt đẹp.
+                    </p>
+
                 </div>
             </div>
 
-            <div class="best-item"
-                data-img="images/ccnct1.webp"
-                data-title="Cây cam ngọt của tôi"
-                data-author="Jose Mauro de Vasconcelos"
-                data-price="120.000đ"
-                data-desc="Hành trình trưởng thành đẫm nước mắt và bài học về tình yêu thương chân thành của cậu bé nghèo Zeze.">
-                <img src="images/ccnct1.webp" alt="Cây cam ngọt của tôi">
-                <div>
-                    <h4>Cây cam ngọt của tôi</h4>
-                    <p>Jose Mauro de Vasconcelos</p>
-                </div>
-            </div>
+            <!-- ĐÁNH GIÁ KHÁCH HÀNG -->
+            <section class="best-reviews">
+                <h4>Đánh giá từ độc giả</h4>
 
-            <div class="best-item"
-                data-img="images/tdnvc.webp"
-                data-title="Tư duy nhanh và chậm"
-                data-author="Daniel Kahneman"
-                data-price="269.000đ"
-                data-desc="Giải mã hai quy chế của bộ não nhằm giúp con người nhận diện định kiến và đưa ra quyết định đúng đắn hơn.">
-                <img src="images/tdnvc.webp" alt="Tư duy nhanh và chậm">
-                    <div>
-                        <h4>Tư duy nhanh và chậm</h4>
-                    <p>Daniel Kahneman</p>
-                </div>
-            </div>
+                <article class="best-review-item">
+                    <div class="best-review-heading">
+                        <strong>Minh Anh</strong>
+                        <span>★★★★★</span>
+                    </div>
+                    <p>Sách được đóng gói cẩn thận, bìa đẹp
+                       và giao hàng nhanh.</p>
+                </article>
 
-            <div class="best-item"
-                data-img="images/ttbt2.webp"
-                data-title="Thiên tài bên trái kẻ điên bên phải"
-                data-author="Cao Minh"
-                data-price="179.000đ"
-                data-desc="Khám phá thế giới quan độc đáo của những người bênh tâm thần, ranh giới giữa sự khác biệt tuyệt vời và sự điên rồ.">
-                <img src="images/ttbt2.webp" alt="Thiên tài bên trái kẻ điên bên phải">
-                <div>
-                    <h4>Thiên tài bên trái kẻ điên bên phải</h4>
-                    <p>Cao Minh</p>
-                </div>
-            </div>
+                <article class="best-review-item">
+                    <div class="best-review-heading">
+                        <strong>Hoàng Nam</strong>
+                        <span>★★★★★</span>
+                    </div>
+                    <p>Website dễ sử dụng, tìm sách nhanh
+                       và có nhiều đầu sách hay.</p>
+                </article>
 
-            <div class="best-item"
-                data-img="images/48nt.webp"
-                data-title="48 Nguyên tắc chủ chốt của quyền lực"
-                data-author="Robert Greene"
-                data-price="200.000đ"
-                data-desc="Phân tích các chiến thuật tâm lý và thao túng giúp con người thấu hiểu, giành lấy và bảo vệ vị thế trong cuộc sống .">
-                <img src="images/48nt.webp" alt="48 Nguyên tắc chủ chốt của quyền lực">
-                <div>
-                    <h4>48 Nguyên tắc chủ chốt của quyền lực</h4>
-                    <p>Robert Greene</p>
-                </div>
-            </div>
-
-            <div class="best-item"
-                data-img="images/ndomtov.webp"
-                data-title="Người đàn ông mang tên Ove"
-                data-author="Fredrik Backman"
-                data-price="160.000đ"
-                data-desc="Hành trình chữa lành tâm hồn của ông lão nguyên tắc, được cứu rỗi bởi tình người và sự tử tế xung quanh mình.">
-                <img src="images/ndomtov.webp" alt="Người đàn ông mang tên Ove">
-                <div>
-                    <h4>Người đàn ông mang tên Ove</h4>
-                    <p>Fredrik Backman</p>
-                </div>
-            </div>
+                <article class="best-review-item">
+                    <div class="best-review-heading">
+                        <strong>Lan Phương</strong>
+                        <span>★★★★★</span>
+                    </div>
+                    <p>Mình tìm được nhiều cuốn sách yêu thích
+                       với mức giá hợp lý.</p>
+                </article>
+            </section>
 
         </div>
-
-        <!-- Khung sách nổi bật -->
-        <div class="best-feature">
-
-            <img id="featureImg" class="feature-img"
-                src="images/dac_nhan_tam.jpg" alt="Đắc Nhân Tâm">
-
-            <h3 id="featureTitle">Đắc Nhân Tâm</h3>
-
-            <p id="featureAuthor">Dale Carnegie</p>
-
-            <div id="featurePrice" class="price">88.000đ</div>
-
-            <button class="cart-btn">
-                <i class="fas fa-cart-shopping"></i>
-                Thêm vào giỏ hàng
-            </button>
-
-            <p id="featureDesc" class="feature-desc">
-                Cuốn sách kinh điển về nghệ thuật giao tiếp và ứng xử.
-            </p>
-
-            <div class="rating">
-                ⭐⭐⭐⭐⭐
-                <small>25 đánh giá</small>
-            </div>
-
-        </div>
-
     </div>
-
 </section>
+
 <!-- ===== SÁCH THAM KHẢO ===== -->
 <section class="reference-books">
 
@@ -325,7 +424,7 @@
 
         <div class="book-grid">
 
-            <div class="book-item">
+            <div class="book-item" onclick="goToDetail('vhth')">
                 <img src="images/vhth.webp" alt="Vui học Tin học 2">
                 <span class="trend">Xu hướng 📈</span>
                 <h4>Vui học Tin học 2</h4>
@@ -337,7 +436,7 @@
                 <small>Đã bán 823</small>
             </div>
 
-            <div class="book-item">
+            <div class="book-item" onclick="goToDetail('al')">
                 <img src="images/al.webp" alt="Sách Atlat Địa lý">
                 <h4>Sách Atlat Địa lý</h4>
                 <div class="price-row">
@@ -346,7 +445,7 @@
                 <small>Đã bán 3.1k</small>
             </div>
 
-            <div class="book-item">
+            <div class="book-item" onclick="goToDetail('tcthqt')">
                 <img src="images/tcthqt.webp" alt="IC3">
                 <span class="trend">Xu hướng 📈</span>
                 <h4>Tăng cường tin học quốc tế - IC3 GS6</h4>
@@ -358,7 +457,7 @@
                 <small>Đã bán 164</small>
             </div>
 
-            <div class="book-item">
+            <div class="book-item" onclick="goToDetail('mhtn')">
                 <img src="images/mhtn.webp" alt="Minh họa tốt nghiệp môn toán">
                 <h4>60 đề minh họa Tốt nghiệp THPT 2026</h4>
                 <div class="price-row">
@@ -368,29 +467,20 @@
                 <p class="old-price">221.000đ</p>
                 <small>Đã bán 304</small>
             </div>
-
-            <div class="book-item">
-                <img src="images/mhtn2.webp" alt="Minh họa tốt nghiệp môn văn">
-                <span class="trend">Xu hướng 📈</span>
-                <h4>100 đề minh họa Tốt nghiệp THPT 2026</h4>
-                <div class="price-row">
-                    <span class="new-price">199.000đ</span>
-                    <span class="discount">-14%</span>
-                </div>
-                <p class="old-price">230.000đ</p>
-                <small>Đã bán 4.6k</small>
-            </div>
-
         </div>
-
+            <div class="more-btn-wrap">
+                <button class="more-btn"
+                    onclick="window.location.href='dmsp.html#sach-tham-khao'">
+                    Xem thêm
+                </button>
+            </div>
     </div>
-
     <!-- Góc ngoại ngữ -->
     <div class="tab-content" id="foreign">
 
         <div class="book-grid">
 
-            <div class="book-item">
+            <div class="book-item" onclick="goToDetail('hsk1')">
                 <img src="images/hsk1.webp" alt="HSK 1">
                 <h4>Giáo trình chuẩn HSK 1</h4>
                 <div class="price-row">
@@ -398,7 +488,7 @@
                 </div>
             </div>
 
-            <div class="book-item">
+            <div class="book-item" onclick="goToDetail('b1')">
                 <img src="images/b1.webp" alt="Tiếng Nhật">
                 <h4>Tiếng Nhật sơ cấp cho người mới bắt đầu</h4>
                 <div class="price-row">
@@ -406,7 +496,7 @@
                 </div>
             </div>
 
-            <div class="book-item">
+            <div class="book-item" onclick="goToDetail('b11')">
                 <img src="images/b11.webp" alt="Tiếng anh B1">
                 <h4>Grammar And Vocabulary With Answer Key (Tái Bản 2025)</h4>
                 <div class="price-row">
@@ -414,31 +504,119 @@
                 </div>
             </div>
 
-            <div class="book-item">
+            <div class="book-item" onclick="goToDetail('hsk2')">
                 <img src="images/hsk2.webp" alt="Hsk2">
                 <h4>Giáo trình chuẩn HSK 2</h4>
                 <div class="price-row">
                     <span class="new-price">199.000đ</span>
                 </div>
             </div>
+        </div>
+        <div class="more-btn-wrap">
+            <button class="more-btn"
+                onclick="window.location.href='dmsp.html#sach-hoc-ngoai-ngu'">
+                Xem thêm
+            </button>
+        </div>
+    </div>
+</div>
 
-            <div class="book-item">
-                <img src="images/hsk3.webp" alt="Hsk3">
-                <h4>Giáo trình chuẩn HSK 3</h4>
+</section>
+
+<!-- ===== SÁCH THIẾU NHI ===== -->
+<section class="children-books">
+
+    <div class="children-heading">
+    <h2>Sách thiếu nhi</h2>
+
+    <div class="children-slider-controls">
+        <button type="button" class="children-prev"
+                aria-label="Xem sách trước">&#10094;</button>
+        <button type="button" class="children-next"
+                aria-label="Xem sách tiếp theo">&#10095;</button>
+    </div>
+</div>
+
+    
+        <div class="children-track">
+
+            <!-- Sách 1 -->
+            <div class="book-item" onclick="goToDetail('ehlm')">
+                <img src="images/ehln.webp" alt="Em học lễ nghĩa">
+                <h4>Em học lễ nghĩa</h4>
+                <p class="book-author">Nhiều tác giả</p>
                 <div class="price-row">
-                    <span class="new-price">299.000đ</span>
+                    <span class="new-price">99.000đ</span>
+                </div>
+            </div>
+
+            <!-- Sách 2 -->
+            <div class="book-item" onclick="goToDetail('ttgt')">
+                <img src="images/ttgt.webp" alt="Tự tin giao tiếp">
+                <h4>Tự tin giao tiếp</h4>
+                <p class="book-author">Nhiều tác giả</p>
+                <div class="price-row">
+                    <span class="new-price">59.000đ</span>
+                </div>
+            </div>
+
+            <!-- Sách 3 -->
+            <div class="book-item" onclick="goToDetail('cd1')">
+                <img src="images/cd1.webp" alt="Câu đố">
+                <h4>Tư duy cho bé - Câu đố</h4>
+                <p class="book-author">Nhiều tác giả</p>
+                <div class="price-row">
+                    <span class="new-price">29.000đ</span>
+                </div>
+            </div>
+
+            <!-- Sách 4 -->
+            <div class="book-item" onclick="goToDetail('ttdd')">
+                <img src="images/ttdd.webp"
+                    alt="Tuổi thơ dữ dội">
+                <h4>Tuổi thơ dữ dội</h4>
+                <p class="book-author">Phùng Quán</p>
+                <div class="price-row">
+                    <span class="new-price">59.000đ</span>
+                </div>
+            </div>
+
+            <!-- Sách 5 -->
+            <div class="book-item" onclick="goToDetail('dm')">
+                <img src="images/dm.webp"
+                    alt="Dế men phiêu lưu ký">
+                <h4>Dế men phiêu lưu ký</h4>
+                <p class="book-author">Tô Hoài</p>
+                <div class="price-row">
+                    <span class="new-price">49.000đ</span>
+                </div>
+            </div>
+
+            <!-- Sách 6 -->
+            <div class="book-item" onclick="goToDetail('mhbtl')">
+                <img src="images/mhbtl.jpg"
+                    alt="Mẹ hỏi bé trả lời">
+                <h4>Mẹ hỏi bé trả lời</h4>
+                <p class="book-author">Nhiều tác giả</p>
+                <div class="price-row">
+                    <span class="new-price">49.000đ</span>
                 </div>
             </div>
 
         </div>
 
-    </div>
 
-    <div class="more-btn-wrap">
-        <button class="more-btn">Xem thêm</button>
-    </div>
+        <!-- Nút xem thêm -->
+        <div class="more-btn-wrap">
+            <button class="more-btn"
+                    onclick="window.location.href='dmsp.html#thieu-nhi'">
+                Xem thêm
+            </button>
+        </div>
 
+    </div>
 </section>
+
 <section class="customer-reviews">
     <div class="reviews-container">
         <h2>Đánh giá khách hàng</h2>
@@ -488,6 +666,8 @@
         </div>
     </div>
 </section>
+
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
 
@@ -497,11 +677,11 @@
         <div class="footer-box">
             <h3>Thông tin</h3>
 
-            <p><i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam</p>
+            <p><i class="fas fa-map-marker-alt"></i> 12 Chùa Bộc, Hà Nội, Việt Nam</p>
 
             <p><i class="fas fa-phone"></i> Hotline: 0982 909 069</p>
 
-            <p><i class="fas fa-envelope"></i> hanamibook@gmail.com</p>
+            <p><i class="fas fa-envelope"></i> hanamibookstore@gmail.com</p>
         </div>
 
         <!-- Cột 2 -->
@@ -550,6 +730,14 @@
     </div>
 
 </footer>
+
+<!-- Nút quay lại đầu trang -->
+
+<button id="backToTop"
+        title="Quay lại đầu trang"
+        aria-label="Quay lại đầu trang"></button>
+
+
 <script src="script.js"></script>
 </body>
 </html>
