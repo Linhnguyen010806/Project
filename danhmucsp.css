@@ -645,4 +645,27 @@ body {
         min-width: 0;
         width: 100%;
     }
+}.nhom-nut-mua {
+    display: flex;
+    gap: 8px;
+}
+
+.nhom-nut-mua button,
+.nhom-nut-mua .nut-mua-ngay {
+    flex: 1;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: center;
+}
+
+.nhom-nut-mua .nut-mua-ngay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: #833131;
+    color: white;
+    text-decoration: none;
 }
