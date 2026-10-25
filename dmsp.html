@@ -55,7 +55,7 @@
     </div>
 
    <nav class="main-menu">
-    <a href="#" class="active">
+    <a href="index.html" class="active">
         Trang chủ
     </a>
     <a href="pages/gioithieu.html">
@@ -197,7 +197,17 @@
 
 
       <nav>
-       <a href="#phat-trien-ban-than">
+
+        <a href="#" class="loc-the-loai" data-the-loai="all">
+        <i class="fa-solid fa-book-open">
+        </i>
+        <span>
+        Tất cả
+        </span>
+       </a>
+
+
+       <a href="#" class="loc-the-loai" data-the-loai="phat-trien-ban-than">
         <i class="fa-solid fa-book-open">
         </i>
         <span>
@@ -206,7 +216,7 @@
        </a>
 
 
-       <a href="#tieu-thuyet">
+       <a href="#" class="loc-the-loai" data-the-loai="tieu-thuyet">
         <i class="fa-solid fa-book-open">
         </i>
         <span>
@@ -215,7 +225,7 @@
        </a>
 
 
-       <a href="#thieu-nhi">
+       <a href="#" class="loc-the-loai" data-the-loai="thieu-nhi">
         <i class="fa-solid fa-book-open">
         </i>
         <span>
@@ -224,7 +234,7 @@
        </a>
 
 
-       <a href="#kinh-doanh">
+       <a href="#" class="loc-the-loai" data-the-loai="kinh-doanh">
         <i class="fa-solid fa-book-open">
         </i>
         <span>
@@ -233,7 +243,7 @@
        </a>
 
 
-       <a href="#sach-hoc-ngoai-ngu">
+       <a href="#" class="loc-the-loai" data-the-loai="sach-hoc-ngoai-ngu">
         <i class="fa-solid fa-book-open">
         </i>
         <span>
@@ -242,7 +252,7 @@
        </a>
 
 
-       <a href="#sach-tham-khao">
+       <a href="#" class="loc-the-loai" data-the-loai="sach-tham-khao">
         <i class="fa-solid fa-book-open">
         </i>
         <span>
@@ -257,30 +267,54 @@
             <h3> Giá</h3>
 
             <label>
-                <input type="radio" name="muc-gia" value="0-100000" checked>
-                0đ - 100.000đ
+                <input type="radio" name="muc-gia" value="all" checked>
+                Tất cả mức giá
             </label>
 
             <label>
-                <input type="radio" name="muc-gia" value="100000-150000" checked>
-                100.000đ - 150.000đ
+                <input type="radio" name="muc-gia" value="0-100000">
+                0đ - 100000đ
             </label>
 
             <label>
-                <input type="radio" name="muc-gia" value="150000-250000" checked>
-                150.000đ - 250.000đ
+                <input type="radio" name="muc-gia" value="100000-150000">
+                100000đ - 150000đ
             </label>
 
             <label>
-                <input type="radio" name="muc-gia" value="250000-trolen" checked>
-                250.000đ - Trở lên
+                <input type="radio" name="muc-gia" value="150000-250000">
+                150000đ - 250000đ
+            </label>
+
+            <label>
+                <input type="radio" name="muc-gia" value="250000-Infinity">
+                250000đ - Trở lên
             </label>
         </div>
         </aside>
 
         <!--Danh sách sản phẩm-->
         <section class="khu-vuc-danh-sach">
-<div class="sap-xep">
+    <div class="sap-xep">
+        <!-- Số lượng sách hiển thị-->
+        <p class="so-luong-hien-thi"> 
+            Hiển thị <strong id="so-luong-sach"> 0</strong> cuốn sách
+         </p>
+
+        
+            <!--Sắp xếp, nút hiển thị-->
+            
+            <div class="cong-cu-phai">
+                <span>Sắp xếp</span>
+
+                <select id="chon-sap-xep">
+                    <option>Mới nhất</option>
+                    <option>Giá thấp đến cao</option>
+                    <option>Giá cao đến thấp</option>
+                    <option>Bán chạy</option>
+                </select>
+
+
         <!-- chọn kiểu hiển thị sản phẩm -->
             <div class="chon-kieu">
                 <input type="radio" name="kieu-hien-thi" id="kieu-danh-sach">
@@ -293,21 +327,7 @@
                     <i class="fa-solid fa-grip"></i>
                 </label>    
             </div>
-
-        
-
-            <!--Sắp xếp-->
-            
-
-                <span>Sắp xếp theo:</span>
-
-                <select>
-                    <option>Mới nhất</option>
-                    <option>Giá thấp đến cao</option>
-                    <option>Giá cao đến thấp</option>
-                    <option>Bán chạy</option>
-                </select>
-
+            </div>
 </div>
 
 
@@ -315,25 +335,51 @@
 
             <section class="The_loai" id="phat-trien-ban-than">
             <div class="luoi-san-pham">
+                
 
-                <!-- Sản phẩm 1-->
-                <div class="san-pham">
+                <!-- Sản phẩm 1 -->
+                <div class="san-pham" data-gia="86000" data-giam="40">
                     <!-- <a href="chitietsp.html" id="dnt"> -->
                     <a href="chitietsp.html?id=dnt" class="link-chi-tiet">
 
                         <div class="khung-anh">
+                            <!-- Tự động hiển thị % giảm giá-->
+
+                            <span class="nhan-giam-gia">
+                                40%
+                            </span>
+
+                            <span class="nhan-sach" style="background:#6c4737;">
+                                BÁN CHẠY
+                            </span>
                             <img src="images\dnt.webp" alt="Đắc nhân tâm">
                         </div>
-                    <!-- </a> -->
                     </a>
                     <h3> 
                         <a href="chitietsp.html?id=dnt" class="link-chi-tiet">
                              Đắc nhân tâm
                         </a>
                     </h3>
-                    <p> 86.000đ</p>
+                    <!-- <p> 86.000đ</p> -->
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+                            <strong class="gia-ban">86000</strong> <del class="gia-goc">132000</del>
+                            <!-- <del class="gia-goc">132000</del> -->
+
+                        </div>
+
+                        <button type="button"
+                                class="nut-them-nhanh"
+                                data-id="dnt"
+                                data-ten="Đắc nhân tâm"
+                                data-anh="images\dnt.webp"
+                                aria-label="Thêm vào giỏ hàng">
+                            <i class="fa-solid fa-plus"></i>    
+                        </button>
+                     </div>
+
                     
-<div class="nhom-nut-mua">
+<!-- <div class="nhom-nut-mua">
     <button>
         <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
     </button>
@@ -341,12 +387,12 @@
     <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
         Mua ngay
     </a>
-</div>
+</div> -->
 
                 </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham">
+                 <div class="san-pham" data-gia="179000">
                     <a href="chitietsp.html?id=ttbt" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ttbt2.webp" alt="Thiên tài bên trái kẻ điên bên phải">
@@ -373,7 +419,7 @@
                  </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="199000">
                      <a href="chitietsp.html?id=tlhtc" class="link-chi-tiet">
                     <div class="khung-anh">
                         <img src="images\tlhtc.webp" alt="Tâm lý học thành công">
@@ -397,7 +443,7 @@
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="269000">
                      <a href="chitietsp.html?id=tdnvc" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\tdnvc.webp" alt="Tư duy nhanh và chậm">
@@ -421,7 +467,7 @@
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="139000">
                     <a href="chitietsp.html?id=tdn" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\tdn.jpg" alt="Tư duy ngược">
@@ -445,7 +491,7 @@
                   </div>    
 
                 <!--Sản phẩm 6-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="129000">
                     <a href="chitietsp.html?id=dbg" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\dbg.webp" alt="Dám bị ghét">
@@ -475,7 +521,7 @@
          <section class="The_loai" id="tieu-thuyet">
             <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
-                <div class="san-pham">
+                <div class="san-pham" data-gia="160000">
                     <a href="chitietsp.html?id=ove" class="link-chi-tiet">
                     <div class="khung-anh">
                         <img src="images\ndomtov.webp" alt="Người đàn ông mang tên Ove - Tái bản">
@@ -499,7 +545,7 @@
                 </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham">
+                 <div class="san-pham" data-gia="120000">
                     <a href="chitietsp.html?id=cam" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ccnct1.webp" alt="Cây cam ngọt của tôi">
@@ -524,7 +570,7 @@
                 
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="109000">
                     <a href="chitietsp.html?id=ngk" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ngk.webp" alt="Nhà giả kim">
@@ -549,7 +595,7 @@
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="99000">
                     <a href="chitietsp.html?id=sd" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\sd.webp" alt="Số đỏ">
@@ -573,7 +619,7 @@
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="99000">
                     <a href="chitietsp.html?id=td" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\td.webp" alt="Tắt đèn">
@@ -597,7 +643,7 @@
                   </div>
 
                   <!-- Sản phẩm 6-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="=169000">
                     <a href="chitietsp.html?id=bsv" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\bsv.webp" alt="Bông sen vàng">
@@ -626,7 +672,7 @@
          <section class="The_loai" id="thieu-nhi">
           <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
-                <div class="san-pham">
+                <div class="san-pham" data-gia="99000">
                     <a href="chitietsp.html?id=ehln" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ehln.webp" alt="Em học lễ nghĩa">
@@ -650,7 +696,7 @@
                 </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham">
+                 <div class="san-pham" data-gia="59000">
                     <a href="chitietsp.html?id=ttgt" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ttgt.webp" alt="Tự tin giao tiếp">
@@ -675,7 +721,7 @@
                  </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="29000">
                     <a href="chitietsp.html?id=cd1" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\cd1.webp" alt="Câu đố">
@@ -697,7 +743,7 @@
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="59000">
                     <a href="chitietsp.html?id=ttdd" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ttdd.webp" alt="Tuổi thơ dữ dội - Tập 1">
@@ -716,7 +762,7 @@
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="49000">
                     <a href="chitietsp.html?id=dm" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\dm.webp" alt="Dế mèn phiêu lưu ký">
@@ -734,7 +780,7 @@
                     </div>
                 
                 <!-- Sản phẩm 6-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="49000">
                     <a href="chitietsp.html?id=mhbtl" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
@@ -757,7 +803,7 @@
          <section class="The_loai" id="kinh-doanh">
          <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
-                <div class="san-pham">
+                <div class="san-pham" data-gia="200000">
                     <a href="chitietsp.html?id=48nt" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\48nt.webp" alt="48 nguyên tắc chủ chốt của quyền lực">
@@ -775,7 +821,7 @@
                 </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham">
+                 <div class="san-pham" data-gia="99000">
                     <a href="chitietsp.html?id=ngcntb" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ngcntb.webp" alt="Người giàu có nhất thành Babylon">
@@ -794,7 +840,7 @@
                  </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="129000">
                     <a href="chitietsp.html?id=ttdvd" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ttdvd.webp" alt="Từ tốt đến vĩ đại">
@@ -813,7 +859,7 @@
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="199000">
                     <a href="chitietsp.html?id=tdqld" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\tdqld.webp" alt="Peter Drucker - Tư duy đúng quản lý đúng">
@@ -831,7 +877,7 @@
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="249000">
                     <a href="chitietsp.html?id=nttdcl" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\nttdcl.webp" alt="Nghệ thuật tư duy chiến lược">
@@ -849,7 +895,7 @@
                   </div>
 
                   <!-- Sản phẩm 6-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="199000">
                     <a href="chitietsp.html?id=lskthll" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\lskthll.webp" alt="Lược sử kinh tế học lầy lội">
@@ -875,7 +921,7 @@
          <section class="The_loai" id="sach-hoc-ngoai-ngu">
           <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
-                <div class="san-pham">
+                <div class="san-pham" data-gia="199000">
                     <a href="chitietsp.html?id=hsk1" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\hsk1.webp" alt="Giáo trình chuẩn HSK 1">
@@ -893,7 +939,7 @@
                 </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham">
+                 <div class="san-pham" data-gia="199000">
                     <a href="chitietsp.html?id=hsk2" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\hsk2.webp" alt="Giáo trình chuẩn HSK 2">
@@ -911,7 +957,7 @@
                  </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="299000">
                     <a href="chitietsp.html?id=hsk3" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\hsk3.webp" alt="Giáo trình chuẩn HSK 3">
@@ -929,7 +975,7 @@
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="299000">
                     <a href="chitietsp.html?id=hsk4" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\hsk4.webp" alt="Giáo trình chuẩn HSK 4">
@@ -947,7 +993,7 @@
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="99000">
                     <a href="chitietsp.html?id=b1" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\b1.webp" alt="Tiếng Nhật sơ cấp cho người mới bắt đầu">
@@ -966,7 +1012,7 @@
                  </div>
 
                   <!-- Sản phẩm 6-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="199000">
                     <a href="chitietsp.html?id=b11" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\b11.webp" alt="Grammar And Vocabulary With Answer Key (Tái Bản 2025)">
@@ -990,7 +1036,7 @@
          <section class="The_loai" id="sach-tham-khao">
           <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
-                <div class="san-pham">
+                <div class="san-pham" data-gia="39000">
                     <a href="chitietsp.html?id=vhth" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\vhth.webp" alt="Vui học tin học 2">
@@ -1008,7 +1054,7 @@
                 </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham">
+                 <div class="san-pham" data-gia="59000">
                     <a href="chitietsp.html?id=al" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\al.webp" alt="Sách Alat Địa lý">
@@ -1026,7 +1072,7 @@
                 </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="79000">
                     <a href="chitietsp.html?id=tcthqt" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\tcthqt.webp" alt="Tăng cường tin học quốc tế - IC3 GS6">
@@ -1045,7 +1091,7 @@
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="199000">
                     <a href="chitietsp.html?id=mhtn" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\mhtn.webp" alt="60 đề minh họa Tốt nghiệp THPT 2026">
@@ -1063,7 +1109,7 @@
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="199000">
                     <a href="chitietsp.html?id=mhtn2" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\mhtn2.webp" alt="100 đề minh họa Tốt nghiệp THPT 2026">
@@ -1081,7 +1127,7 @@
                   </div>
 
                   <!-- Sản phẩm 6-->
-                  <div class="san-pham">
+                  <div class="san-pham" data-gia="159000">
                     <a href="chitietsp.html?id=dptd" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\dptd.webp" alt="Đột phá tư duy kỳ thi Tót nghiệp THPT">
@@ -1169,5 +1215,7 @@
 
 </footer>
 <script src="script.js"></script>
+<script src="dmsp.js"></script>
+
 </body>
 </html>
