@@ -71,138 +71,125 @@ if (nextBtn && prevBtn && slides.length > 0) {
     setInterval(nextSlide, 3000);
 }
 
+
 // ================= Slider sản phẩm mới =================
 
-const productTrack = document.querySelector(".product-track");
-const productPrev = document.getElementById("productPrev");
-const productNext = document.getElementById("productNext");
-
-let productIndex = 0;
-
-if (productTrack && productPrev && productNext) {
-
-    productNext.addEventListener("click", () => {
-
-        if (productIndex < 1) productIndex++;
-
-        productTrack.style.transform =
-            `translateX(-${productIndex * 100}%)`;
-
-    });
-
-    productPrev.addEventListener("click", () => {
-
-        if (productIndex > 0) productIndex--;
-
-        productTrack.style.transform =
-            `translateX(-${productIndex * 100}%)`;
-
-    });
-
-}
 
 
 
-
+ // ================= SLIDER VÀ TAB SÁCH =================
 
 document.addEventListener("DOMContentLoaded", function () {
-    const list = document.getElementById("bestList");
 
-    if (!list) return;
+    document.querySelectorAll(".new-products").forEach(section => {
 
-    const items = list.querySelectorAll(".best-item");
+        const tabs = section.querySelectorAll(".tab-btn");
+        const contents = section.querySelectorAll(".tab-content");
+        const prev = section.querySelector(".productPrev");
+        const next = section.querySelector(".productNext");
 
-    const image = document.getElementById("bestDetailImage");
-    const title = document.getElementById("bestDetailTitle");
-    const author = document.getElementById("bestDetailAuthor");
-    const category = document.getElementById("bestDetailCategory");
-    const price = document.getElementById("bestDetailPrice");
-    const description = document.getElementById("bestDetailDescription");
-    const cartButton = document.getElementById("bestCartBtn");
+        // Khởi tạo slider riêng cho từng tab
+        const sliderData = [];
 
-    function showBook(item) {
-        items.forEach(function (book) {
-            book.classList.toggle("active", book === item);
+        contents.forEach(content => {
+            const track = content.querySelector(".product-track");
+            if (!track) return;
+
+            const cards = track.querySelectorAll(".product-card");
+
+            sliderData.push({
+                content: content,
+                track: track,
+                cards: cards,
+                index: 0
+            });
         });
 
-        title.textContent = item.dataset.title || "";
-        author.textContent = item.dataset.author || "";
-        category.textContent = item.dataset.category || "";
-        price.textContent = item.dataset.price || "";
-        description.textContent = item.dataset.desc || "";
+        function updateSlider(slider) {
+            if (!slider || slider.cards.length === 0) return;
 
-        image.src = item.dataset.image || "";
-        image.alt = "Bìa sách " + (item.dataset.title || "");
+            const cardWidth = slider.cards[0].getBoundingClientRect().width;
 
-        cartButton.dataset.title = item.dataset.title || "";
-        cartButton.dataset.price = item.dataset.price || "";
-    }
+            if (cardWidth === 0) return;
 
-    items.forEach(function (item) {
-        item.addEventListener("click", function () {
-            showBook(item);
-        });
-    });
+            const maxIndex = Math.max(0, slider.cards.length - 4);
 
-    // Mặc định hiển thị sách đầu tiên
-    if (items.length > 0) {
-        showBook(items[0]);
-    }
+            slider.index = Math.max(0, Math.min(slider.index, maxIndex));
 
-    // Nút giỏ hàng minh họa
-    cartButton.addEventListener("click", function () {
-        alert(
-            'Bạn đã chọn "' +
-            (this.dataset.title || "sách") +
-            '". Hãy kết nối nút này với chức năng giỏ hàng hiện có.'
-        );
-    });
-});
-
-
-// ===== Tabs Sách tham khảo =====
-
-const tabBtns = document.querySelectorAll(".tab-btn");
-const tabContents = document.querySelectorAll(".tab-content");
-
-tabBtns.forEach(btn => {
-
-    btn.addEventListener("click", () => {
-
-        tabBtns.forEach(b => b.classList.remove("active"));
-        tabContents.forEach(c => c.classList.remove("active"));
-
-        btn.classList.add("active");
-        document.getElementById(btn.dataset.tab).classList.add("active");
-
-    });
-
-});
-function goToDetail(bookId) {
-    window.location.href = "chitietsp.html?id=" + bookId;
-}
-// Khi bấm vào sản phẩm, chuyển sang trang chi tiết
-function goToDetail(bookId) {
-    window.location.href =
-        "chitietsp.html?id=" + encodeURIComponent(bookId);
-}
-// thanh bar cố định khi cuộn trang
-const navbar = document.querySelector('.navbar');
-
-if (navbar) {
-    const navbarTop = navbar.offsetTop;
-    const navbarHeight = navbar.offsetHeight;
-
-    window.addEventListener('scroll', function () {
-        if (window.scrollY >= navbarTop) {
-            navbar.classList.add('navbar-fixed');
-            document.body.style.paddingTop = navbarHeight + 'px';
-        } else {
-            navbar.classList.remove('navbar-fixed');
-            document.body.style.paddingTop = '';
+            slider.track.style.transform =
+                `translateX(-${slider.index * cardWidth}px)`;
         }
+
+        function getActiveSlider() {
+            return sliderData.find(item =>
+                item.content.classList.contains("active")
+            );
+        }
+
+        // Chuyển tab
+        tabs.forEach(tab => {
+            tab.addEventListener("click", function () {
+
+                tabs.forEach(btn => btn.classList.remove("active"));
+                contents.forEach(content => content.classList.remove("active"));
+
+                this.classList.add("active");
+
+                const target = this.dataset.tab;
+                const selected = section.querySelector(
+                    `.tab-content[id="${target}"]`
+                );
+
+                if (selected) {
+                    selected.classList.add("active");
+
+                    const slider = sliderData.find(
+                        item => item.content === selected
+                    );
+
+                    if (slider) {
+                        requestAnimationFrame(() => updateSlider(slider));
+                    }
+                }
+            });
+        });
+
+        // Nút sang phải
+        if (next) {
+            next.addEventListener("click", function () {
+                const slider = getActiveSlider();
+                if (!slider) return;
+
+                const maxIndex = Math.max(0, slider.cards.length - 4);
+
+                slider.index = Math.min(slider.index + 4, maxIndex);
+
+                updateSlider(slider);
+            });
+        }
+
+        // Nút sang trái
+        if (prev) {
+            prev.addEventListener("click", function () {
+                const slider = getActiveSlider();
+                if (!slider) return;
+
+                slider.index = Math.max(slider.index - 4, 0);
+
+                updateSlider(slider);
+            });
+        }
+
+        // Cập nhật khi thay đổi kích thước màn hình
+        window.addEventListener("resize", function () {
+            const slider = getActiveSlider();
+            if (slider) updateSlider(slider);
+        });
+
     });
-}
+
+});
+
 
 /* ===== SLIDER SÁCH THIẾU NHI ===== */
 document.addEventListener("DOMContentLoaded", function () {

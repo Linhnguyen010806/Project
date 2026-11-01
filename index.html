@@ -21,6 +21,7 @@
                 <img src="images/hanami_logo.png" alt="Hanami Bookstore Logo">
             </a>
         </div>
+        
 
         <div class="search-box">
             <input type="text" placeholder="Tìm kiếm sách...">
@@ -28,15 +29,30 @@
         </div>
 
         <div class="header-right">
-
-            <div class="top-icons">
-                <a href="dangnhap.html"><i class="fas fa-user"></i> Tài khoản</a>
-                <a href="#"><i class="fas fa-cart-shopping"></i> Giỏ hàng</a>
-            </div>
-
             <div class="hotline">
                 Hotline: 0982 909 069
             </div>
+            <div class="top-icons">
+
+                <a href="dangnhap.html">
+                    <i class="fas fa-user"></i> Tài khoản
+                </a>
+
+                <a href="#" class="notification-icon">
+                    <i class="fa-solid fa-bell"></i> Thông báo
+                </a>
+
+                <a href="#" class="favorite-icon">
+                    <i class="fa-solid fa-heart"></i> Yêu thích
+                </a>
+
+                <a href="#">
+                    <i class="fas fa-cart-shopping"></i> Giỏ hàng
+                </a>
+
+            </div>
+        
+            
 
         </div>
 
@@ -95,109 +111,6 @@
         </div>
     </div>
 </header>
-
-
-
-
-<!-- ===== SẢN PHẨM MỚI ===== -->
-<section class="new-products">
-
-    <div class="section-header">
-        <h2>📚 Sản phẩm mới</h2>
-
-        <div class="product-controls">
-            <button id="productPrev">&#10094;</button>
-            <button id="productNext">&#10095;</button>
-        </div>
-    </div>
-
-    <div class="product-slider">
-        <div class="product-track">
-
-            <div class="product-card" onclick="goToDetail('bsv')">
-                <a href="chitietsp.html?id=bsv">
-                <img src="images/bsv.webp" alt="Bông sen vàng">
-            </a>
-                <h4>
-                    <a href="chitietsp.html?id=bsv"> Bông sen vàng
-
-                    </a>
-                </h4>
-                <p>Sơn Tùng</p>
-                <span>169.000đ</span>
-            </div>
-
-            <div class="product-card" onclick="goToDetail('dm')">
-                <a href="chitietsp.html?id=dm">
-                <img src="images/dm.webp" alt="Dế mèn">
-            </a>
-                <h4>
-                    <a href="chitietsp.html?id=dm"> Dế mèn phiêu lưu kí
-
-                    </a>
-                </h4>
-                <p>Tô Hoài</p>
-                <span>49.000đ</span>
-            </div>
-
-            <div class="product-card" onclick="goToDetail('dnt')">
-                <a href="chitietsp.html?id=dnt">
-                <img src="images/dnt.webp" alt="Đắc Nhân Tâm">
-            </a>
-                <h4> 
-                    <a href="chitietsp.html?id=dnt"> Nhân Tâm
-
-                    </a>
-                </h4>
-                <p>Dale Carnegie</p>
-                <span>86.000đ</span>
-            </div>
-
-            <div class="product-card" onclick="goToDetail('ttdvd')">
-                <a href="chitietsp.html?id=ttdvd">
-                <img src="images/ttdvd.webp" alt="Từ tốt đến vĩ đại">
-            </a>
-                <h4>
-                    <a href="chitietsp.html?id=ttdvd"> Từ tốt đến vĩ đại
-
-                    </a>
-                </h4>
-                <p>Jim Collins</p>
-                <span>129.000đ</span>
-            </div>
-
-            <div class="product-card" onclick="goToDetail('mhbtl')">
-                <a href="chitietsp.html?id=mhbtl">
-                <img src="images/mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
-            </a>
-                <h4>
-                    <a href="chitietsp.html?id=mhbtl">Mẹ hỏi bé trả lời
-
-                    </a>
-                </h4>
-                <p>Linh Lan</p>
-                <span>49.000đ</span>
-            </div>
-
-            <div class="product-card" onclick="goToDetail('lskthll')">
-                <a href="chitietsp.html?id=lskthll">
-                <img src="images/lskthll.webp" alt="Lịch sử kinh tế học lầy lội">
-            </a>
-                <h4> 
-                    <a href="chitietsp.html?id=lskthll">Lịch sử kinh tế học lầy lội
-
-                    </a>
-                </h4>
-                <p>Adam Smith</p>
-                <span>199.000đ</span>
-            </div>
-
-        </div>
-    </div>
-
-</section>
-
-
 
 <section class="bestseller" id="bestseller">
     <h2 class="best-title">BEST SELLER</h2>
@@ -371,6 +284,9 @@
                         Cuốn sách kinh điển về nghệ thuật giao tiếp,
                         ứng xử và xây dựng mối quan hệ tốt đẹp.
                     </p>
+                    <button class="btn-detail" onclick="window.location.href='chitietsp.html'">
+                        Xem chi tiết
+                    </button>
 
                 </div>
             </div>
@@ -411,211 +327,398 @@
     </div>
 </section>
 
+
+<!-- ===== SẢN PHẨM MỚI ===== -->
+<section class="new-products">
+
+    <div class="section-header">
+        <h2>📚 Sản phẩm mới</h2>
+
+        <div class="product-controls">
+            <button class="productPrev">❮</button>
+            <button class="productNext">❯</button>
+        </div>
+    </div>
+
+    <div class="product-slider">
+        <div class="product-track">
+
+            <div class="product-card" onclick="goToDetail('bsv')">
+                <a href="chitietsp.html?id=bsv">
+                <img src="images/bsv.webp" alt="Bông sen vàng">
+            </a>
+                <h4>
+                    <a href="chitietsp.html?id=bsv"> Bông sen vàng
+
+                    </a>
+                </h4>
+                <p>Sơn Tùng</p>
+                <span>169.000đ</span>
+            </div>
+
+            <div class="product-card" onclick="goToDetail('dm')">
+                <a href="chitietsp.html?id=dm">
+                <img src="images/dm.webp" alt="Dế mèn">
+            </a>
+                <h4>
+                    <a href="chitietsp.html?id=dm"> Dế mèn phiêu lưu kí
+
+                    </a>
+                </h4>
+                <p>Tô Hoài</p>
+                <span>49.000đ</span>
+            </div>
+            <div class="product-card" onclick="goToDetail('tcthqt')">
+                <a href="chitietsp.html?id=tcthqt">
+                <img src="images/tcthqt.webp" alt="Tăng cường Tin học quốc tế">
+            </a>
+                <h4>
+                    <a href="chitietsp.html?id=tcthqt"> Tăng cường Tin học quốc tế
+
+                    </a>
+                </h4>
+                <p>Dang cập nhật</p>
+                <span>79.000đ</span>
+            </div>
+
+           
+            <div class="product-card" onclick="goToDetail('dnt')">
+                <a href="chitietsp.html?id=dnt">
+                <img src="images/dnt.webp" alt="Đắc Nhân Tâm">
+            </a>
+                <h4> 
+                    <a href="chitietsp.html?id=dnt"> Nhân Tâm
+
+                    </a>
+                </h4>
+                <p>Dale Carnegie</p>
+                <span>86.000đ</span>
+            </div>
+
+            <div class="product-card" onclick="goToDetail('ttdvd')">
+                <a href="chitietsp.html?id=ttdvd">
+                <img src="images/ttdvd.webp" alt="Từ tốt đến vĩ đại">
+            </a>
+                <h4>
+                    <a href="chitietsp.html?id=ttdvd"> Từ tốt đến vĩ đại
+
+                    </a>
+                </h4>
+                <p>Jim Collins</p>
+                <span>129.000đ</span>
+            </div>
+
+            <div class="product-card" onclick="goToDetail('mhbtl')">
+                <a href="chitietsp.html?id=mhbtl">
+                <img src="images/mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
+            </a>
+                <h4>
+                    <a href="chitietsp.html?id=mhbtl">Mẹ hỏi bé trả lời
+
+                    </a>
+                </h4>
+                <p>Linh Lan</p>
+                <span>49.000đ</span>
+            </div>
+
+            <div class="product-card" onclick="goToDetail('lskthll')">
+                <a href="chitietsp.html?id=lskthll">
+                <img src="images/lskthll.webp" alt="Lịch sử kinh tế học lầy lội">
+            </a>
+                <h4> 
+                    <a href="chitietsp.html?id=lskthll">Lịch sử kinh tế học lầy lội
+
+                    </a>
+                </h4>
+                <p>Adam Smith</p>
+                <span>199.000đ</span>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- ===== Thiếu nhi ===== -->
+<section class="new-products">
+
+    <div class="section-header">
+        <h2>Sách thiếu nhi</h2>
+
+        <div class="product-controls">
+            <button class="productPrev">❮</button>
+            <button class="productNext">❯</button>
+        </div>
+    </div>
+
+    <div class="product-slider">
+        <div class="product-track">
+
+            <div class="product-card" onclick="goToDetail('ehln')">
+                <a href="chitietsp.html?id=bsv">
+                <img src="images/ehln.webp" alt="Em học lễ nghĩa">
+            </a>
+                <h4>
+                    <a href="chitietsp.html?id=bsv"> Em học lễ nghĩa
+
+                    </a>
+                </h4>
+                <p>Nhiều tác giả</p>
+                <span>99.000đ</span>
+            </div>
+            
+            <div class="product-card" onclick="goToDetail('ttgt')">
+                <a href="chitietsp.html?id=ttgt">
+                <img src="images/ttgt.webp" alt="Tự tin giao tiếp">
+            </a>
+                <h4> 
+                    <a href="chitietsp.html?id=ttgt"> Tự tin giao tiếp
+
+                    </a>
+                </h4>
+                <p>Nhiều tác giả</p>
+                <span>59.000đ</span>
+            </div>
+
+            <div class="product-card" onclick="goToDetail('cd1')">
+                <a href="chitietsp.html?id=cd1">
+                <img src="images/cd1.webp" alt="Câu đố">
+            </a>
+                <h4>
+                    <a href="chitietsp.html?id=ttgt"> Tư duy cho bé - câu đố
+
+                    </a>
+                </h4>
+                <p>Nhiều tác giả</p>
+                <span>29.000đ</span>
+            </div>
+            <div class="product-card" onclick="goToDetail('ttdd')">
+                <a href="chitietsp.html?id=ttdd">
+                <img src="images/ttdd.webp" alt="Tuổi thơ dữ dội">
+            </a>
+                <h4>
+                    <a href="chitietsp.html?id=ttdd"> Tuổi thơ dữ dội
+
+                    </a>
+                </h4>
+                <p>Phùng quán</p>
+                <span>59.000đ</span>
+            </div>
+            
+            <div class="product-card" onclick="goToDetail('dm')">
+                <a href="chitietsp.html?id=dm">
+                <img src="images/dm.webp" alt="Dế mèn phiêu lưu ký">
+            </a>
+                <h4> 
+                    <a href="chitietsp.html?id=dm"> Dế mèn phiêu lưu ký
+
+                    </a>
+                </h4>
+                <p>Tô Hoài</p>
+                <span>46.000đ</span>
+            </div>
+
+            <div class="product-card" onclick="goToDetail('mhbtl')">
+                <a href="chitietsp.html?id=mhbtl">
+                <img src="images/mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
+            </a>
+                <h4>
+                    <a href="chitietsp.html?id=mhbtl">Mẹ hỏi bé trả lời
+
+                    </a>
+                </h4>
+                <p>Linh Lan</p>
+                <span>49.000đ</span>
+            </div>
+        </div>
+    </div>
+
+</section>
+
 <!-- ===== SÁCH THAM KHẢO ===== -->
-<section class="reference-books">
+<section class="new-products">
 
     <div class="book-tabs">
         <button class="tab-btn active" data-tab="reference">Sách tham khảo</button>
         <button class="tab-btn" data-tab="foreign">Góc ngoại ngữ</button>
     </div>
 
-    <!-- Sách tham khảo -->
+    <div class="product-controls">
+            <button class="productPrev">❮</button>
+            <button class="productNext">❯</button>
+    </div>
     <div class="tab-content active" id="reference">
+        <div class="product-slider">
+            <div class="product-track">
 
-        <div class="book-grid">
+                <div class="product-card" onclick="goToDetail('vhth')">
+                    <a href="chitietsp.html?id=vhth">
+                    <img src="images/vhth.webp" alt="Vui học Tin học 2">
+                </a>
+                    <h4>
+                        <a href="chitietsp.html?id=vhth"> Vui học Tin học 2
 
-            <div class="book-item" onclick="goToDetail('vhth')">
-                <img src="images/vhth.webp" alt="Vui học Tin học 2">
-                <span class="trend">Xu hướng 📈</span>
-                <h4>Vui học Tin học 2</h4>
-                <div class="price-row">
-                    <span class="new-price">39.000đ</span>
-                    <span class="discount">-3%</span>
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>39.000đ</span>
                 </div>
-                <p class="old-price">40.206đ</p>
-                <small>Đã bán 823</small>
-            </div>
+                
+                <div class="product-card" onclick="goToDetail('Sách Atlat Địa lý')">
+                    <a href="chitietsp.html?id=al">
+                    <img src="images/al.webp" alt="Sách Atlat Địa lý">
+                </a>
+                    <h4> 
+                        <a href="chitietsp.html?id=al"> Sách Atlat Địa lý
 
-            <div class="book-item" onclick="goToDetail('al')">
-                <img src="images/al.webp" alt="Sách Atlat Địa lý">
-                <h4>Sách Atlat Địa lý</h4>
-                <div class="price-row">
-                    <span class="new-price">59.000đ</span>
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>59.000đ</span>
                 </div>
-                <small>Đã bán 3.1k</small>
-            </div>
 
-            <div class="book-item" onclick="goToDetail('tcthqt')">
-                <img src="images/tcthqt.webp" alt="IC3">
-                <span class="trend">Xu hướng 📈</span>
-                <h4>Tăng cường tin học quốc tế - IC3 GS6</h4>
-                <div class="price-row">
-                    <span class="new-price">79.000đ</span>
-                    <span class="discount">-5%</span>
-                </div>
-                <p class="old-price">83.158đ</p>
-                <small>Đã bán 164</small>
-            </div>
+                <div class="product-card" onclick="goToDetail('tcthqt')">
+                    <a href="chitietsp.html?id=tcthqt">
+                    <img src="images/tcthqt.webp" alt="Câu đố">
+                </a>
+                    <h4>
+                        <a href="chitietsp.html?id=tcthqt"> Tăng cường Tin học quốc tế
 
-            <div class="book-item" onclick="goToDetail('mhtn')">
-                <img src="images/mhtn.webp" alt="Minh họa tốt nghiệp môn toán">
-                <h4>60 đề minh họa Tốt nghiệp THPT 2026</h4>
-                <div class="price-row">
-                    <span class="new-price">199.000đ</span>
-                    <span class="discount">-10%</span>
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>79.000đ</span>
                 </div>
-                <p class="old-price">221.000đ</p>
-                <small>Đã bán 304</small>
+                <div class="product-card" onclick="goToDetail('mhtn')">
+                    <a href="chitietsp.html?id=mhtn">
+                    <img src="images/mhtn.webp" alt="Tuổi thơ dữ dội">
+                </a>
+                    <h4>
+                        <a href="chitietsp.html?id=mhtn"> Đề minh họa tốt nghiệp môn Toán
+
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>199.000đ</span>
+                </div>
+                
+                <div class="product-card" onclick="goToDetail('mhtn2')">
+                    <a href="chitietsp.html?id=mhtn2">
+                    <img src="images/mhtn2.webp" alt="100 đề minh họa Tốt nghiệp THPT 2026">
+                </a>
+                    <h4> 
+                        <a href="chitietsp.html?id=mhtn2"> 100 đề minh họa Tốt nghiệp THPT 2026
+
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>199.000đ</span>
+                </div>
+
+                <div class="product-card" onclick="goToDetail('dptd')">
+                    <a href="chitietsp.html?id=dptd">
+                    <img src="images/dptd.webp" alt="Đột phá tư duy kỳ thi Tót nghiệp THPT">
+                </a>
+                    <h4>
+                        <a href="chitietsp.html?id=dptd">Đột phá tư duy kỳ thi Tốt nghiệp THPT
+
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>159.000đ</span>
+                </div>
             </div>
         </div>
-            <div class="more-btn-wrap">
-                <button class="more-btn"
-                    onclick="window.location.href='dmsp.html#sach-tham-khao'">
-                    Xem thêm
-                </button>
-            </div>
     </div>
-    <!-- Góc ngoại ngữ -->
     <div class="tab-content" id="foreign">
+        <div class="product-slider">
+            <div class="product-track">
 
-        <div class="book-grid">
+                <div class="product-card" onclick="goToDetail('hsk1')">
+                    <a href="chitietsp.html?id=hsk1">
+                    <img src="images/hsk1.webp" alt="HSK1">
+                </a>
+                    <h4>
+                        <a href="chitietsp.html?id=hsk1"> Giáo trình chuẩn HSK1
 
-            <div class="book-item" onclick="goToDetail('hsk1')">
-                <img src="images/hsk1.webp" alt="HSK 1">
-                <h4>Giáo trình chuẩn HSK 1</h4>
-                <div class="price-row">
-                    <span class="new-price">199.000đ</span>
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>199.000đ</span>
+                </div>
+                
+                <div class="product-card" onclick="goToDetail('b1')">
+                    <a href="chitietsp.html?id=b1">
+                    <img src="images/b1.webp" alt="Tiếng nhật">
+                </a>
+                    <h4> 
+                        <a href="chitietsp.html?id=b1"> Tiếng Nhật sơ cấp cho người bắt đầu
+
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>99.000đ</span>
+                </div>
+
+                <div class="product-card" onclick="goToDetail('b11')">
+                    <a href="chitietsp.html?id=b11">
+                    <img src="images/b11.webp" alt="Tiếng anh B1">
+                </a>
+                    <h4>
+                        <a href="chitietsp.html?id=b11"> Tiếng anh B1
+
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>199.000đ</span>
+                </div>
+                <div class="product-card" onclick="goToDetail('hsk2')">
+                    <a href="chitietsp.html?id=hsk2">
+                    <img src="images/hsk2.webp" alt="hsk2">
+                </a>
+                    <h4>
+                        <a href="chitietsp.html?id=hsk2"> Giáo trình chuẩn HSK2
+
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>199.000đ</span>
+                </div>
+                
+                <div class="product-card" onclick="goToDetail('hsk3')">
+                    <a href="chitietsp.html?id=hsk3">
+                    <img src="images/hsk3.webp" alt="hsk3">
+                </a>
+                    <h4> 
+                        <a href="chitietsp.html?id=hsk3">  Giáo trình chuẩn HSK3
+
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>299.000đ</span>
+                </div>
+
+                <div class="product-card" onclick="goToDetail('hsk4')">
+                    <a href="chitietsp.html?id=hsk4">
+                    <img src="images/hsk4.webp" alt="Giáo trình chuẩn HSK4">
+                </a>
+                    <h4>
+                        <a href="chitietsp.html?id=hsk4"> Giáo trình chuẩn HSK4
+
+                        </a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>299.000đ</span>
                 </div>
             </div>
-
-            <div class="book-item" onclick="goToDetail('b1')">
-                <img src="images/b1.webp" alt="Tiếng Nhật">
-                <h4>Tiếng Nhật sơ cấp cho người mới bắt đầu</h4>
-                <div class="price-row">
-                    <span class="new-price">99.000đ</span>
-                </div>
-            </div>
-
-            <div class="book-item" onclick="goToDetail('b11')">
-                <img src="images/b11.webp" alt="Tiếng anh B1">
-                <h4>Grammar And Vocabulary With Answer Key (Tái Bản 2025)</h4>
-                <div class="price-row">
-                    <span class="new-price">199.000đ</span>
-                </div>
-            </div>
-
-            <div class="book-item" onclick="goToDetail('hsk2')">
-                <img src="images/hsk2.webp" alt="Hsk2">
-                <h4>Giáo trình chuẩn HSK 2</h4>
-                <div class="price-row">
-                    <span class="new-price">199.000đ</span>
-                </div>
-            </div>
-        </div>
-        <div class="more-btn-wrap">
-            <button class="more-btn"
-                onclick="window.location.href='dmsp.html#sach-hoc-ngoai-ngu'">
-                Xem thêm
-            </button>
         </div>
     </div>
-</div>
 
 </section>
 
-<!-- ===== SÁCH THIẾU NHI ===== -->
-<section class="children-books">
-
-    <div class="children-heading">
-    <h2>Sách thiếu nhi</h2>
-
-    <div class="children-slider-controls">
-        <button type="button" class="children-prev"
-                aria-label="Xem sách trước">&#10094;</button>
-        <button type="button" class="children-next"
-                aria-label="Xem sách tiếp theo">&#10095;</button>
-    </div>
-</div>
-
-    
-        <div class="children-track">
-
-            <!-- Sách 1 -->
-            <div class="book-item" onclick="goToDetail('ehlm')">
-                <img src="images/ehln.webp" alt="Em học lễ nghĩa">
-                <h4>Em học lễ nghĩa</h4>
-                <p class="book-author">Nhiều tác giả</p>
-                <div class="price-row">
-                    <span class="new-price">99.000đ</span>
-                </div>
-            </div>
-
-            <!-- Sách 2 -->
-            <div class="book-item" onclick="goToDetail('ttgt')">
-                <img src="images/ttgt.webp" alt="Tự tin giao tiếp">
-                <h4>Tự tin giao tiếp</h4>
-                <p class="book-author">Nhiều tác giả</p>
-                <div class="price-row">
-                    <span class="new-price">59.000đ</span>
-                </div>
-            </div>
-
-            <!-- Sách 3 -->
-            <div class="book-item" onclick="goToDetail('cd1')">
-                <img src="images/cd1.webp" alt="Câu đố">
-                <h4>Tư duy cho bé - Câu đố</h4>
-                <p class="book-author">Nhiều tác giả</p>
-                <div class="price-row">
-                    <span class="new-price">29.000đ</span>
-                </div>
-            </div>
-
-            <!-- Sách 4 -->
-            <div class="book-item" onclick="goToDetail('ttdd')">
-                <img src="images/ttdd.webp"
-                    alt="Tuổi thơ dữ dội">
-                <h4>Tuổi thơ dữ dội</h4>
-                <p class="book-author">Phùng Quán</p>
-                <div class="price-row">
-                    <span class="new-price">59.000đ</span>
-                </div>
-            </div>
-
-            <!-- Sách 5 -->
-            <div class="book-item" onclick="goToDetail('dm')">
-                <img src="images/dm.webp"
-                    alt="Dế men phiêu lưu ký">
-                <h4>Dế men phiêu lưu ký</h4>
-                <p class="book-author">Tô Hoài</p>
-                <div class="price-row">
-                    <span class="new-price">49.000đ</span>
-                </div>
-            </div>
-
-            <!-- Sách 6 -->
-            <div class="book-item" onclick="goToDetail('mhbtl')">
-                <img src="images/mhbtl.jpg"
-                    alt="Mẹ hỏi bé trả lời">
-                <h4>Mẹ hỏi bé trả lời</h4>
-                <p class="book-author">Nhiều tác giả</p>
-                <div class="price-row">
-                    <span class="new-price">49.000đ</span>
-                </div>
-            </div>
-
-        </div>
 
 
-        <!-- Nút xem thêm -->
-        <div class="more-btn-wrap">
-            <button class="more-btn"
-                    onclick="window.location.href='dmsp.html#thieu-nhi'">
-                Xem thêm
-            </button>
-        </div>
 
-    </div>
-</section>
+
 
 <section class="customer-reviews">
     <div class="reviews-container">
@@ -675,6 +778,11 @@
 
         <!-- Cột 1 -->
         <div class="footer-box">
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="images/hanami_logo.png" alt="Hanami Bookstore">
+            </div>
+            
             <h3>Thông tin</h3>
 
             <p><i class="fas fa-map-marker-alt"></i> 12 Chùa Bộc, Hà Nội, Việt Nam</p>

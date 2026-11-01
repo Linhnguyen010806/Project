@@ -31,6 +31,7 @@ body{
     max-height: 110px;
     object-fit: contain;
     display: block;
+    margin-left: 15px;
 }
 
 .search-box {
@@ -85,6 +86,7 @@ body{
     color: #d35400;
     font-weight: bold;
     font-size: 14px;
+    transform: translateY(-10px);
 }
 
 
@@ -281,6 +283,7 @@ body{
     padding: 0 30px;
     box-sizing: border-box;
     scroll-margin-top: 80px;
+    position: relative;
 }
 
 .section-header{
@@ -294,15 +297,40 @@ body{
     color:#8B4A00;
 }
 
-.product-controls button{
-    width:38px;
-    height:38px;
-    border:none;
-    border-radius:50%;
-    background:#8B4A00;
-    color:#fff;
-    cursor:pointer;
-    margin-left:8px;
+.product-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.product-controls button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.8);
+    color: #888;
+
+    font-size: 20px;
+    cursor: pointer;
+    pointer-events: auto;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.product-controls button:hover {
+    background: #fff;
+    color: #8B4A00;
 }
 
 .product-slider{
@@ -316,7 +344,7 @@ body{
 }
 
 .product-card{
-   flex: 0 0 33.333%;
+   flex: 0 0 25%;
     min-width: 0;
     padding: 12px;
     box-sizing: border-box;
@@ -759,7 +787,16 @@ body{
 .footer-box a:hover{
     color:#d7a84b;
 }
+.footer-logo {
+    margin-bottom: 15px;
+}
 
+.footer-logo img {
+    width: 140px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}
 /* Icon mạng xã hội */
 
 .social-icons{
