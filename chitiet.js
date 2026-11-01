@@ -357,12 +357,14 @@ cd4: {
 };
 
 
-// Lấy ID trên đường dẫn
+
+// LẤY ID SẢN PHẨM TRÊN ĐƯỜNG DẪN
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
 const book = books[id];
 
+// HIỂN THỊ THÔNG TIN SÁCH
 if (book) {
     document.getElementById("bookCategory").textContent = book.category;
     document.getElementById("bookName").textContent = book.name;
@@ -370,5 +372,45 @@ if (book) {
     document.getElementById("bookPrice").textContent = book.price;
     document.getElementById("bookImage").src = book.image;
     document.getElementById("bookDescription").textContent = book.description;
-    document.getElementById("bookDetail").textContent = book.description;
+
+    document.getElementById("bookImage").alt = book.name;
+} 
+
+// CHỨC NĂNG TĂNG GIẢM SỐ LƯỢNG
+let quantity = 1;
+
+const quantityDisplay = document.getElementById("quantity");
+const minusButton = document.getElementById("minus");
+const plusButton = document.getElementById("plus");
+
+function updateQuantity() {
+    quantityDisplay.textContent = quantity;
 }
+
+plusButton.addEventListener("click", function () {
+    quantity++;
+    updateQuantity();
+});
+
+minusButton.addEventListener("click", function () {
+    if (quantity > 1) {
+        quantity--;
+        updateQuantity();
+    }
+});
+
+// NÚT THÊM VÀO GIỎ HÀNG
+const addCartButton = document.getElementById("addCart");
+
+addCartButton.addEventListener("click", function () {
+    if (!book) {
+        alert("Không tìm thấy sản phẩm!");
+        return;
+    }
+
+    alert(
+        "Đã chọn " + quantity +
+        " cuốn \"" + book.name +
+        "\". Chức năng giỏ hàng sẽ được kết nối theo hệ thống của website."
+    );
+});

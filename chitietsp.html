@@ -28,82 +28,80 @@
 <main class="product-detail">
 
     <div class="product-image">
-        <img id="bookImage" src="images/dnt.webp">
+        <img id="bookImage" src="images/dnt.webp" alt="Ảnh bìa sách">
     </div>
-
 
     <div class="product-info">
 
-        <span id="bookCategory">PHÁT TRIỂN BẢN THÂN</span>
+        <span id="bookCategory" class="book-category">
+            PHÁT TRIỂN BẢN THÂN
+        </span>
 
         <h1 id="bookName">Đắc Nhân Tâm</h1>
 
         <p class="author">
-            Tác giả: <strong id="bookAuthor">Dale Carnegie</strong>
+            Tác giả:
+            <strong id="bookAuthor">Dale Carnegie</strong>
         </p>
 
         <div class="rating">
-            ★★★★★
-            <span>4.9/5</span>
+            <span class="stars">★★★★★</span>
+            <span class="rating-number">4.9/5</span>
         </div>
 
-        <div class="price" id="bookPrice">
-            86.000đ
+        <div class="price" id="bookPrice">86.000đ</div>
+
+        <div class="description">
+            <h3>Giới thiệu sách</h3>
+            <p id="bookDescription">
+                Đắc Nhân Tâm là cuốn sách kinh điển về nghệ thuật giao tiếp
+                và ứng xử, giúp người đọc hiểu hơn về cách xây dựng các
+                mối quan hệ trong cuộc sống.
+            </p>
         </div>
-
-        <p class="description" id="bookDescription">
-            Đắc Nhân Tâm là cuốn sách kinh điển về nghệ thuật
-            giao tiếp và ứng xử, giúp người đọc hiểu hơn về
-            cách xây dựng các mối quan hệ trong cuộc sống.
-        </p>
-
 
         <div class="book-info">
 
             <div>
-                <span>Nhà xuất bản</span>
+                <span>Nhà xuất bản:</span>
                 <strong>NXB Trẻ</strong>
             </div>
 
             <div>
-                <span>Năm xuất bản</span>
+                <span>Năm xuất bản:</span>
                 <strong>2024</strong>
             </div>
 
             <div>
-                <span>Số trang</span>
+                <span>Số trang:</span>
                 <strong>320</strong>
             </div>
 
             <div>
-                <span>Ngôn ngữ</span>
+                <span>Ngôn ngữ:</span>
                 <strong>Tiếng Việt</strong>
             </div>
 
         </div>
 
-
         <div class="quantity">
+            <strong>Số lượng:</strong>
 
-            <span>Số lượng:</span>
-
-            <button id="minus">−</button>
+            <button type="button" id="minus" aria-label="Giảm số lượng">−</button>
 
             <span id="quantity">1</span>
 
-            <button id="plus">+</button>
-
+            <button type="button" id="plus" aria-label="Tăng số lượng">+</button>
         </div>
-
 
         <div class="actions">
 
-            <button id="addCart">
-                <i class="fa fa-cart-shopping"></i>
+            <button type="button" id="addCart">
+                <i class="fa-solid fa-cart-shopping"></i>
                 Thêm vào giỏ hàng
             </button>
 
-            <button class="wishlist">
+            <button type="button" class="wishlist" aria-label="Yêu thích">
                 ♡
             </button>
 
@@ -112,18 +110,6 @@
     </div>
 
 </main>
-
-
-<section class="description-box">
-
-    <h2>Giới thiệu sách</h2>
-
-    <p id="bookDetail">
-        Cuốn sách cung cấp những bài học thực tế về giao tiếp,
-        ứng xử và xây dựng mối quan hệ với mọi người xung quanh.
-    </p>
-
-</section>
 
 
 <!-- ===== FOOTER ===== -->
