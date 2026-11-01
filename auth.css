@@ -1,3 +1,5 @@
+
+/* ===== CAU HINH CHUNG ===== */
 * {
     margin: 0;
     padding: 0;
@@ -13,12 +15,14 @@ body {
 .auth-container {
     min-height: 100vh;
     display: flex;
+    position: relative;
 }
 
-/* Bên trái */
+/* ===== BEN TRAI ===== */
 .auth-intro {
     width: 50%;
-    background-color: #432d22;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3f2418, #805036);
     color: white;
 
     display: flex;
@@ -27,28 +31,112 @@ body {
     align-items: center;
 
     text-align: center;
-    padding: 50px;
+    padding: 60px;
+
+    position: relative;
+    overflow: hidden;
 }
 
+/* Trang tri nen */
+.auth-intro::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    top: -120px;
+    left: -120px;
+}
+
+.auth-intro::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Logo */
 .auth-intro h1 {
     font-family: Georgia, serif;
-    font-size: 58px;
-    margin-bottom: 25px;
-}
-
-.auth-intro p {
-    font-family: Arial, sans-serif;
-    font-size: 27px;
-    line-height: 1.5;
+    font-size: 52px;
+    line-height: 1.15;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
 }
 
-.auth-intro span {
+.auth-intro h1 span {
+    color: #f0c99b;
+}
+
+/* Duong trang tri */
+.intro-line {
+    width: 300px;
+    max-width: 90%;
+    height: 3px;
+    background: #d9a46c;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Slogan */
+.slogan {
+    font-family: Arial, sans-serif;
+    font-size: 26px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+    text-align: center;
+    word-spacing: normal;
+    letter-spacing: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.slogan span {
+    display: block;
+    width: auto;
+    text-align: center;
+    word-spacing: normal;
+    letter-spacing: normal;
+}
+
+/* Mo ta */
+.intro-text {
     font-size: 15px;
-    opacity: 0.85;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+
+    text-align: center;
+    word-spacing: normal;
+    letter-spacing: normal;
+
+    position: relative;
+    z-index: 1;
 }
 
-/* Bên phải */
+/* Cau quote */
+.quote {
+    margin-top: 45px;
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.55);
+
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== BEN PHAI ===== */
 .auth-box {
     width: 50%;
     background-color: #fffdf9;
@@ -66,12 +154,27 @@ body {
     margin-bottom: 10px;
 }
 
+/* Loi chao */
 .auth-box .subtitle {
     color: #777;
     margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.6;
+
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-align: left;
 }
 
-/* Form */
+/* Ten thuong hieu khong bi tach */
+.brand-name {
+    display: inline;
+    color: #9a5700;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ===== FORM ===== */
 .form-group {
     margin-bottom: 18px;
 }
@@ -91,13 +194,14 @@ body {
 
     font-size: 15px;
     outline: none;
+    transition: border-color 0.2s ease;
 }
 
 .form-group input:focus {
     border-color: #9a5700;
 }
 
-/* Button */
+/* ===== BUTTON DANG NHAP ===== */
 .auth-btn {
     width: 100%;
     padding: 13px;
@@ -113,13 +217,14 @@ body {
 
     cursor: pointer;
     margin-top: 8px;
+    transition: background-color 0.25s ease;
 }
 
 .auth-btn:hover {
     background-color: #7d4500;
 }
 
-/* Link */
+/* ===== LINK DANG KY ===== */
 .auth-link {
     text-align: center;
     margin-top: 20px;
@@ -136,45 +241,42 @@ body {
     text-decoration: underline;
 }
 
-/* Về trang chủ */
-.home-link {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
+/* ===== NUT X DONG TRANG ===== */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    z-index: 20;
 
-    color: #555;
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #f5eee6;
+    color: #754329;
+
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1;
+
     text-decoration: none;
-    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(60, 35, 20, 0.08);
+
+    transition: all 0.25s ease;
 }
 
-.home-link:hover {
-    color: #9a5700;
+.close-btn:hover {
+    background: #754329;
+    color: #fff;
+    transform: rotate(90deg);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    .auth-container {
-        flex-direction: column;
-    }
-
-    .auth-intro {
-        width: 100%;
-        min-height: 280px;
-    }
-
-    .auth-box {
-        width: 100%;
-        padding: 40px 8%;
-    }
-
-    .auth-intro h1 {
-        font-size: 42px;
-    }
-
-    .auth-intro p {
-        font-size: 21px;
-    }
-}
+/* ===== DIEU KHOAN ===== */
 .terms {
     margin-bottom: 18px;
     font-size: 13px;
@@ -199,4 +301,42 @@ body {
 
 .terms a:hover {
     text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-intro {
+        width: 100%;
+        min-height: 280px;
+        padding: 40px 20px;
+    }
+
+    .auth-box {
+        width: 100%;
+        padding: 40px 8%;
+    }
+
+    .auth-intro h1 {
+        font-size: 36px;
+        white-space: normal;
+    }
+
+    .slogan {
+        font-size: 21px;
+    }
+
+    .intro-text {
+        font-size: 14px;
+    }
+
+    .close-btn {
+        top: 12px;
+        right: 12px;
+        width: 32px;
+        height: 32px;
+    }
 }
