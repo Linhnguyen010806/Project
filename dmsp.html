@@ -6,15 +6,14 @@
     <title>Hanami Bookstore</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="danhmucsp.css">
-    
+    <link rel="stylesheet" href="danhmucsp.css">    
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 <body>
     <div id="header_container"></div>
-    
+
     <main class="trang-san-pham">
 
 <!--Giới thiệu Hanami-->
@@ -252,7 +251,7 @@
                     <option>Giá cao đến thấp</option>
                     <option>Bán chạy</option>
                 </select>
-
+            </div>
 
         <!-- chọn kiểu hiển thị sản phẩm -->
             <div class="chon-kieu">
@@ -266,27 +265,19 @@
                     <i class="fa-solid fa-grip"></i>
                 </label>    
             </div>
-            </div>
-</div>
+        </div>
 
 
             <!-- Phát triển bản thân-->
 
-            <section class="The_loai" id="phat-trien-ban-than">
-            <div class="luoi-san-pham">
-                
-
+            <div class="luoi-san-pham">     
                 <!-- Sản phẩm 1 -->
-                <div class="san-pham" data-gia="86000" data-giam="40">
-                    <!-- <a href="chitietsp.html" id="dnt"> -->
+                <div class="san-pham" 
+                    data-the-loai="phat-trien-ban-than"
+                    data-gia="86000">
                     <a href="chitietsp.html?id=dnt" class="link-chi-tiet">
 
                         <div class="khung-anh">
-                            <!-- Tự động hiển thị % giảm giá-->
-
-                            <span class="nhan-giam-gia">
-                                40%
-                            </span>
 
                             <span class="nhan-sach" style="background:#6c4737;">
                                 BÁN CHẠY
@@ -294,46 +285,36 @@
                             <img src="images\dnt.webp" alt="Đắc nhân tâm">
                         </div>
                     </a>
-                    <h3> 
-                        <a href="chitietsp.html?id=dnt" class="link-chi-tiet">
+                    <h3 style="margin-bottom:2px"> 
+                        <a href="chitietsp.html?id=dnt" class="link-chi-tiet" >
                              Đắc nhân tâm
                         </a>
                     </h3>
-                    <!-- <p> 86.000đ</p> -->
-                     <div class="nhom-gia-gio-hang">
-                        <div class="thong-tin-gia">
-                            <strong class="gia-ban">86000</strong> <del class="gia-goc">132000</del>
-                            <!-- <del class="gia-goc">132000</del> -->
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> DALE CARNEGIE </p>
+                    <button class="nut-them-nhanh" type="button">+</button>
+                    <div class="nhom-gia-gio-hang">
+                    <div class="thong-tin-gia">
 
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                <span class="gia-ban">86000đ</span>
+                                <span class="nhan-giam-gia"></span>
+                            </p>
+
+                                <del class="gia-goc"><i>144000đ</i></del>
+                        
                         </div>
-
-                        <button type="button"
-                                class="nut-them-nhanh"
-                                data-id="dnt"
-                                data-ten="Đắc nhân tâm"
-                                data-anh="images\dnt.webp"
-                                aria-label="Thêm vào giỏ hàng">
-                            <i class="fa-solid fa-plus"></i>    
-                        </button>
+                     </div>
                      </div>
 
-                    
-<!-- <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
-
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div> -->
-
-                </div>
-
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham" data-gia="179000">
+                 <div class="san-pham" 
+                        data-gia="179000"
+                        data-the-loai="phat-trien-ban-than">
                     <a href="chitietsp.html?id=ttbt" class="link-chi-tiet">
                         <div class="khung-anh">
+                            <span class="nhan-sach" style="background:#6c4737;">
+                                NỔI BẬT
+                            </span>
                             <img src="images\ttbt2.webp" alt="Thiên tài bên trái kẻ điên bên phải">
                         </div>
                     </a>
@@ -342,23 +323,26 @@
                     <h3>
                         <a href="chitietsp.html?id=ttbt" class="link-chi-tiet">Thiên tài bên trái kẻ điên bên phải </a>
                     </h3>        
-                     <p> 179.000đ</p>   
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                     <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> ALAIN DE BOTTON</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
-                   
-                    
-                    
-                 </div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">179000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>190000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham" data-gia="199000">
+                  <div class="san-pham" 
+                  data-gia="199000"
+                  data-the-loai="phat-trien-ban-than">
                      <a href="chitietsp.html?id=tlhtc" class="link-chi-tiet">
                     <div class="khung-anh">
                         <img src="images\tlhtc.webp" alt="Tâm lý học thành công">
@@ -368,21 +352,27 @@
                             Tâm lý học thành công
                         </a>
                     </h3>
-                    <p> 199.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> CAROL S.DWECK</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=tlhtc" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
 
-                  </div>
+                                <del class="gia-goc"><i>220000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
+
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham" data-gia="269000">
+                  <div class="san-pham" 
+                        data-gia="269000"
+                        data-the-loai="phat-trien-ban-than">
                      <a href="chitietsp.html?id=tdnvc" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\tdnvc.webp" alt="Tư duy nhanh và chậm">
@@ -393,20 +383,26 @@
                             Tư duy nhanh và chậm
                         </a>
                     </h3>
-                    <p> 269.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">DANIEL KAHNEMAN</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
-                  </div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">269000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>279000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham" data-gia="139000">
+                  <div class="san-pham" 
+                  data-gia="139000"
+                  data-the-loai="phat-trien-ban-than">
                     <a href="chitietsp.html?id=tdn" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\tdn.jpg" alt="Tư duy ngược">
@@ -417,20 +413,26 @@
                             Tư duy ngược
                         </a>
                     </h3>
-                    <p> 139.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">NGUYỄN ANH DŨNG</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
-                  </div>    
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">139000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>159000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
 
                 <!--Sản phẩm 6-->
-                  <div class="san-pham" data-gia="129000">
+                  <div class="san-pham" 
+                  data-gia="129000"
+                  data-the-loai="phat-trien-ban-than">
                     <a href="chitietsp.html?id=dbg" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\dbg.webp" alt="Dám bị ghét">
@@ -441,26 +443,28 @@
                             Dám bị ghét
                         </a>
                     </h3>
-                    <p> 129.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                   <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> ICHIRO KISHIMI</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dbg" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
-                  </div>
-            </div>
-          </section>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">129000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>139000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
 
         
         <!-- Tiểu thuyết-->
-         <section class="The_loai" id="tieu-thuyet">
-            <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
-                <div class="san-pham" data-gia="160000">
+                <div class="san-pham" 
+                data-gia="160000"
+                data-the-loai="tieu-thuyet">
                     <a href="chitietsp.html?id=ove" class="link-chi-tiet">
                     <div class="khung-anh">
                         <img src="images\ndomtov.webp" alt="Người đàn ông mang tên Ove - Tái bản">
@@ -471,20 +475,27 @@
                             Ngươi đàn ông mang tên OVE - Tái bản
                         </a>
                     </h3>
-                    <p> 160.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">FREDRIK BACKMAN</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">160000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>179000đ</i></del>
+                        </div>
+                     </div>
+
                 </div>
 
+
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham" data-gia="120000">
+                 <div class="san-pham" 
+                        data-gia="120000"
+                        data-the-loai="tieu-thuyet">
                     <a href="chitietsp.html?id=cam" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ccnct1.webp" alt="Cây cam ngọt của tôi">
@@ -495,21 +506,26 @@
                             Cây cam ngọt của tôi
                         </a>
                     </h3>
-                    <p> 120.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                   <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">JOSÉ MAURO DE VASCONCELOS</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">120000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>150000đ</i></del>
+                        </div>
+                     </div>
+
                 </div>
-                
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham" data-gia="109000">
+                  <div class="san-pham" 
+                        data-gia="109000"
+                        data-the-loai="tieu-thuyet">
                     <a href="chitietsp.html?id=ngk" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ngk.webp" alt="Nhà giả kim">
@@ -520,21 +536,26 @@
                             Nhà giả kim
                         </a>
                     </h3>
-                    <p> 109.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> PAULO COELHO</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">109000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
 
-                  </div>
+                                <del class="gia-goc"><i>120000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham" data-gia="99000">
+                  <div class="san-pham" 
+                        data-gia="99000"
+                        data-the-loai="tieu-thuyet">
                     <a href="chitietsp.html?id=sd" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\sd.webp" alt="Số đỏ">
@@ -545,20 +566,26 @@
                             Số đỏ
                         </a>
                     </h3>
-                    <p> 99.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">VŨ TRỌNG PHỤNG</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
-                  </div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">99000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>110000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham" data-gia="99000">
+                  <div class="san-pham" 
+                        data-gia="99000"
+                        data-the-loai="tieu-thuyet">
                     <a href="chitietsp.html?id=td" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\td.webp" alt="Tắt đèn">
@@ -569,20 +596,25 @@
                             Tắt đèn
                         </a>
                     </h3>
-                    <p> 99.000đ</p>
-                   <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">NGÔ TẤT TỐ</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">99000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>110000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                   <!-- Sản phẩm 6-->
-                  <div class="san-pham" data-gia="=169000">
+                  <div class="san-pham" 
+                        data-gia="169000"
+                        data-the-loai="tieu-thuyet">
                     <a href="chitietsp.html?id=bsv" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\bsv.webp" alt="Bông sen vàng">
@@ -593,25 +625,26 @@
                             Bông sen vàng
                         </a>
                     </h3>
-                    <p> 169.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">169000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>180000đ</i></del>
+                        </div>
+                     </div>
                   </div>
-            </div>
-         </section>
-
-         <!-- Thiếu nhi-->
-         <section class="The_loai" id="thieu-nhi">
-          <div class="luoi-san-pham">
+         
+                <!-- Thiếu nhi-->
                 <!-- Sản phẩm 1-->
-                <div class="san-pham" data-gia="99000">
+                <div class="san-pham" 
+                        data-gia="99000"
+                        data-the-loai="thieu-nhi">
                     <a href="chitietsp.html?id=ehln" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ehln.webp" alt="Em học lễ nghĩa">
@@ -622,20 +655,25 @@
                             Em học lễ nghĩa
                         </a>
                     </h3>
-                    <p> 99.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p></p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">99000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>110000đ</i></del>
+                        </div>
+                     </div>
                 </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham" data-gia="59000">
+                 <div class="san-pham" 
+                        data-gia="59000"
+                        data-the-loai="thieu-nhi">
                     <a href="chitietsp.html?id=ttgt" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ttgt.webp" alt="Tự tin giao tiếp">
@@ -646,62 +684,86 @@
                             Tự tin giao tiếp
                         </a>
                     </h3>
-                    <p> 59.000đ</p>
-                    <div class="nhom-nut-mua">
-    <button>
-        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-    </button>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-    <a href="chitietsp.html?id=dnt" class="nut-mua-ngay">
-        Mua ngay
-    </a>
-</div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">59000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
 
-                 </div>
+                                <del class="gia-goc"><i>66000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham" data-gia="29000">
+                  <div class="san-pham" 
+                        data-gia="29000"
+                        data-the-loai="thieu-nhi">
                     <a href="chitietsp.html?id=cd1" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\cd1.webp" alt="Câu đố">
-                            <!-- <img src="images\cd2.webp" alt="Đồng dao">
-                            <img src="images\cd3.webp" alt="Thơ">
-                            <img src="images\cd4.webp" alt="Truyện"> -->
                         </div>
                     </a>
                     <h3>
                         <a href="chitietsp.html?id=cd1"  class="link-chi-tiet">
-                            Tư duy cho bé - Câu đố
+                            Tư duy cho bé 
                         </a>
                     </h3>
-                    <p> 29.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">29000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>49000đ</i></del>
+                        </div>
+                     </div>
 
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham" data-gia="59000">
+                  <div class="san-pham" 
+                        data-gia="59000"
+                        data-the-loai="thieu-nhi">
                     <a href="chitietsp.html?id=ttdd" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ttdd.webp" alt="Tuổi thơ dữ dội - Tập 1">
                         </div>
                     </a>
-                    <!-- <img src="images\ttdd2.webp" alt="Tuổi thơ dữ dội - Tập 2"> -->
                     <h3>
                         <a href="chitietsp.html?id=ttdd"  class="link-chi-tiet">
                             Tuổi thơ dữ dội
                         </a>
                     </h3>
-                    <p> 59.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">PHÙNG QUÁN</p> 
+
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">59000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>66000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham" data-gia="49000">
+                  <div class="san-pham" 
+                        data-gia="49000"
+                        data-the-loai="thieu-nhi">
                     <a href="chitietsp.html?id=dm" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\dm.webp" alt="Dế mèn phiêu lưu ký">
@@ -712,14 +774,25 @@
                             Dế mèn phiêu lưu ký
                         </a>
                     </h3>
-                    <p> 49.000đ</p>
-                    <button>
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                    </div>
-                
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">TÔ HOÀI</p> 
+
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">49000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>70000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
                 <!-- Sản phẩm 6-->
-                  <div class="san-pham" data-gia="49000">
+                  <div class="san-pham" 
+                        data-gia="49000"
+                        data-the-loai="thieu-nhi">
                     <a href="chitietsp.html?id=mhbtl" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
@@ -730,19 +803,27 @@
                             Mẹ hỏi bé trả lời
                         </a>
                     </h3>
-                    <p> 49.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                 </div>
-            </div>
-         </section>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">499000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>60000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
+
 
          <!--Kinh doanh-->
-         <section class="The_loai" id="kinh-doanh">
-         <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
-                <div class="san-pham" data-gia="200000">
+                <div class="san-pham" 
+                        data-gia="200000"
+                        data-the-loai="kinh-doanh">
                     <a href="chitietsp.html?id=48nt" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\48nt.webp" alt="48 nguyên tắc chủ chốt của quyền lực">
@@ -753,14 +834,26 @@
                             48 nguyên tắc chủ chốt của quyền lực
                         </a>
                     </h3>
-                    <p> 200.000đ</p>
-                    <button>
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                </div>
+                     <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">ROBERT GREENE</p> 
+
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">200000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>220000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham" data-gia="99000">
+                 <div class="san-pham" 
+                        data-gia="99000"
+                        data-the-loai="kinh-doanh">
                     <a href="chitietsp.html?id=ngcntb" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ngcntb.webp" alt="Người giàu có nhất thành Babylon">
@@ -771,15 +864,26 @@
                             Người giàu có nhất thành Babylon
                         </a>
                     </h3>
-                    <p> 99.000đ</p>
-                    <button>
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                     <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">GEORGE S.CLASON</p> 
 
-                 </div>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">99000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>150000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham" data-gia="129000">
+                  <div class="san-pham" 
+                        data-gia="129000"
+                        data-the-loai="kinh-doanh">
                     <a href="chitietsp.html?id=ttdvd" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\ttdvd.webp" alt="Từ tốt đến vĩ đại">
@@ -790,15 +894,26 @@
                             Từ tốt đến vĩ đại
                         </a>
                     </h3>
-                    <p> 129.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">JIM COLLINS</p> 
 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">129000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>139000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham" data-gia="199000">
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="kinh-doanh">
                     <a href="chitietsp.html?id=tdqld" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\tdqld.webp" alt="Peter Drucker - Tư duy đúng quản lý đúng">
@@ -809,14 +924,26 @@
                             Peter Drucker - Tư duy đúng quản lý đúng
                         </a>
                     </h3>
-                    <p> 199.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">PETER DRUCKER</p> 
+
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>220000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham" data-gia="249000">
+                  <div class="san-pham" 
+                        data-gia="249000"
+                        data-the-loai="kinh-doanh">
                     <a href="chitietsp.html?id=nttdcl" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\nttdcl.webp" alt="Nghệ thuật tư duy chiến lược">
@@ -827,14 +954,25 @@
                             Nghệ thuật tư duy chiến lược
                         </a>
                     </h3>
-                    <p> 249.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">AVINASH K.DIXIT, BARRY J.NALEBUFF/p> 
+
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                        <span class="gia-ban">249000đ</span>
+                                        <span class="nhan-giam-gia"></span>
+                                  </p>
+    
+                                  <del class="gia-goc"><i>270000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                   <!-- Sản phẩm 6-->
-                  <div class="san-pham" data-gia="199000">
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="kinh-doanh">
                     <a href="chitietsp.html?id=lskthll" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\lskthll.webp" alt="Lược sử kinh tế học lầy lội">
@@ -845,22 +983,25 @@
                             Lược sử kinh tế học lầy lội
                         </a>
                     </h3>
-                    <p> 199.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                        <span class="gia-ban">199000đ</span>
+                                        <span class="nhan-giam-gia"></span>
+                                  </p>
+    
+                                  <del class="gia-goc"><i>220000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
-            </div>
-         </section>
-
-
                 <!-- Sách học ngoại ngữ-->
-
-         <section class="The_loai" id="sach-hoc-ngoai-ngu">
-          <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
-                <div class="san-pham" data-gia="199000">
+                <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
                     <a href="chitietsp.html?id=hsk1" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\hsk1.webp" alt="Giáo trình chuẩn HSK 1">
@@ -871,14 +1012,24 @@
                             Giáo trình chuẩn HSK 1
                         </a>
                     </h3>
-                    <p> 199.000đ</p>
-                    <button>
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                </div>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                        <span class="gia-ban">199000đ</span>
+                                        <span class="nhan-giam-gia"></span>
+                                  </p>
+    
+                                  <del class="gia-goc"><i>265000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham" data-gia="199000">
+                 <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
                     <a href="chitietsp.html?id=hsk2" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\hsk2.webp" alt="Giáo trình chuẩn HSK 2">
@@ -889,14 +1040,24 @@
                             Giáo trình chuẩn HSK 2
                         </a>
                     </h3>
-                    <p> 199.000đ</p>
-                    <button>
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                 </div>
+                     <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                        <span class="gia-ban">199000đ</span>
+                                        <span class="nhan-giam-gia"></span>
+                                  </p>
+    
+                                  <del class="gia-goc"><i>220000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham" data-gia="299000">
+                  <div class="san-pham" 
+                        data-gia="299000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
                     <a href="chitietsp.html?id=hsk3" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\hsk3.webp" alt="Giáo trình chuẩn HSK 3">
@@ -907,14 +1068,25 @@
                             Giáo trình chuẩn HSK 3
                         </a>
                     </h3>
-                    <p> 299.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">299000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>309000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham" data-gia="299000">
+                  <div class="san-pham" 
+                        data-gia="299000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
                     <a href="chitietsp.html?id=hsk4" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\hsk4.webp" alt="Giáo trình chuẩn HSK 4">
@@ -925,14 +1097,25 @@
                             Giáo trình chuẩn HSK 4
                         </a>
                     </h3>
-                    <p> 299.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">209000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>239000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham" data-gia="99000">
+                  <div class="san-pham" 
+                        data-gia="99000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
                     <a href="chitietsp.html?id=b1" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\b1.webp" alt="Tiếng Nhật sơ cấp cho người mới bắt đầu">
@@ -943,15 +1126,25 @@
                             Tiếng Nhật sơ cấp cho người mới bắt đầu
                         </a>
                     </h3>
-                    <p> 99.000đ</p>
-                    <button>
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                        <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-                 </div>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">99000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>119000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
 
                   <!-- Sản phẩm 6-->
-                  <div class="san-pham" data-gia="199000">
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-hoc-ngoai-ngu"> 
                     <a href="chitietsp.html?id=b11" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\b11.webp" alt="Grammar And Vocabulary With Answer Key (Tái Bản 2025)">
@@ -962,20 +1155,27 @@
                             Grammar And Vocabulary With Answer Key (Tái Bản 2025)
                         </a>
                     </h3>
-                    <p> 199.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                        <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>239000đ</i></del>
+                        </div>
+                     </div>
                   </div>
-            </div>
-        </section>
+   
 
                 <!-- Sách tham khảo-->
-
-         <section class="The_loai" id="sach-tham-khao">
-          <div class="luoi-san-pham">
                 <!-- Sản phẩm 1-->
-                <div class="san-pham" data-gia="39000">
+                <div class="san-pham" 
+                        data-gia="39000"
+                        data-the-loai="sach-tham-khao">
                     <a href="chitietsp.html?id=vhth" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\vhth.webp" alt="Vui học tin học 2">
@@ -986,14 +1186,25 @@
                             Vui học tin học 2
                         </a>
                     </h3>
-                    <p> 39.000đ</p>
-                    <button>
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                </div>
+                     <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">39000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>49000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
 
                 <!-- Sản phẩm 2-->
-                 <div class="san-pham" data-gia="59000">
+                 <div class="san-pham" 
+                        data-gia="59000"
+                        data-the-loai="sach-tham-khao">
                     <a href="chitietsp.html?id=al" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\al.webp" alt="Sách Alat Địa lý">
@@ -1004,14 +1215,25 @@
                             Sách Alat Địa lý
                         </a>
                     </h3>
-                    <p> 59.000đ</p>
-                    <button>
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
-                </div>
+                    <p> </p>
+                    <button class="nut-them-nhanh" type="button">+</button>
+                    <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">59000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>66000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="san-pham" data-gia="79000">
+                  <div class="san-pham" 
+                        data-gia="79000"
+                        data-the-loai="sach-tham-khao">
                     <a href="chitietsp.html?id=tcthqt" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\tcthqt.webp" alt="Tăng cường tin học quốc tế - IC3 GS6">
@@ -1022,15 +1244,25 @@
                             Tăng cường tin học quốc tế - IC3 GS6
                         </a>
                     </h3>
-                    <p> 79.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                    <p> </p>
+                    <button class="nut-them-nhanh" type="button">+</button>
+                    <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">79000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>99000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="san-pham" data-gia="199000">
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-tham-khao">
                     <a href="chitietsp.html?id=mhtn" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\mhtn.webp" alt="60 đề minh họa Tốt nghiệp THPT 2026">
@@ -1041,14 +1273,25 @@
                             60 đề minh họa Tốt nghiệp THPT 2026
                         </a>
                     </h3>
-                    <p> 199.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                        <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>285000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="san-pham" data-gia="199000">
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-tham-khao">
                     <a href="chitietsp.html?id=mhtn2" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\mhtn2.webp" alt="100 đề minh họa Tốt nghiệp THPT 2026">
@@ -1059,14 +1302,25 @@
                             100 đề minh họa Tốt nghiệp THPT 2026
                         </a>
                     </h3>
-                    <p> 199.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                     <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>209000đ</i></del>
+                        </div>
+                     </div>
                   </div>
 
                   <!-- Sản phẩm 6-->
-                  <div class="san-pham" data-gia="159000">
+                  <div class="san-pham" 
+                        data-gia="159000"
+                        data-the-loai="sach-tham-khao">
                     <a href="chitietsp.html?id=dptd" class="link-chi-tiet">
                         <div class="khung-anh">
                             <img src="images\dptd.webp" alt="Đột phá tư duy kỳ thi Tót nghiệp THPT">
@@ -1077,10 +1331,19 @@
                             Đột phá tư duy kỳ thi Tốt nghiệp THPT
                         </a>
                     </h3>
-                    <p> 159.000đ</p>
-                    <button> 
-                        <i class="fa fa-cart-shopping"></i> Thêm vào giỏ hàng
-                    </button>
+                     <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">159000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>169000đ</i></del>
+                        </div>
+                     </div>
                   </div>
             </div>
         </section>
@@ -1091,11 +1354,13 @@
     </section>
 
      </main>
-      <!-- ===== FOOTER ===== -->
+
 <div id="footer_container"></div>
+     
 <script src="script.js"></script>
 <script src="dmsp.js"></script>
 <script src="header_footer.js"></script>
+
 
 </body>
 </html>

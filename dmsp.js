@@ -23,11 +23,11 @@ document.querySelectorAll(".loc-the-loai").forEach(function(muc) {
         const theLoai = this.getAttribute("data-the-loai");
 
         const cacTheLoai = document.querySelectorAll(
-            ".khu-vuc-danh-sach .The_loai"
+            ".khu-vuc-danh-sach .san-pham"
         );
 
         cacTheLoai.forEach(function(khuVuc) {
-            if (theLoai === "all" || khuVuc.id === theLoai) {
+            if (theLoai === "all" || khuVuc.getAttribute("data-the-loai") === theLoai) {
                 khuVuc.style.display = "";
             } else {
                 khuVuc.style.display = "none";
@@ -144,3 +144,39 @@ if (sanPhamThu && books.dnt) {
 }
 
 
+function onMouseOver(sanPham) {
+    sanPham.querySelector(".nut-them-nhanh").style.display = "flex";
+}
+
+function onMouseOut(sanPham) {
+    sanPham.querySelector(".nut-them-nhanh").style.display = "none";
+}
+
+
+// Tự động điền nhãn giảm giá
+// Tự động tính nhãn giảm giá cho tất cả sách
+document.querySelectorAll(".san-pham").forEach(function(sanPham) {
+
+    let giaGoc = sanPham.querySelector(".gia-goc");
+    let giaBan = sanPham.querySelector(".gia-ban");
+    let nhanGiamGia = sanPham.querySelector(".nhan-giam-gia");
+
+    if (giaGoc && giaBan && nhanGiamGia) {
+
+        let giaGocSo = Number(giaGoc.textContent.replace(/[^\d]/g, ""));
+        let giaBanSo = Number(giaBan.textContent.replace(/[^\d]/g, ""));
+
+        if (giaGocSo > 0 && giaBanSo < giaGocSo) {
+
+            let phanTram = Math.round(
+                (giaGocSo - giaBanSo) / giaGocSo * 100
+            );
+
+            nhanGiamGia.textContent = "-" + phanTram + "%";
+            nhanGiamGia.style.display = "inline-block";
+
+        } else {
+            nhanGiamGia.style.display = "none";
+        }
+    }
+});

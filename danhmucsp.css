@@ -407,29 +407,20 @@ body {
     cursor: pointer;
 }
 
-/* tiêu đề danh mục */
-
-.The-loai {
-    margin-bottom: 35px;
-    scroll-margin-top: 24px;
-}
-
-.The-loai h2 {
-    margin: 0 0 20px;
-    padding-bottom: 10px;
-
-    color: var(--mau-nau);
-    font-size: 22px;
-
-    border-bottom: 2px solid var(--mau-vang);
-}
-
 /* 3sp */
 
 .luoi-san-pham {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px 18px;
+    grid-template-columns: repeat(3, minmax(0, 320px));
+    /* gap: 25px 18px; */
+
+    /* max-width: 1120px;
+    margin: 0 auto; */
+    width: 100%;
+
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .san-pham {
@@ -437,7 +428,7 @@ body {
     flex-direction: column;
     min-width: 0;
 
-    padding: 14px;
+    padding: 10px;
     background: white;
     border: 1px solid var(--mau-vien);
     border-radius: 9px;
@@ -466,7 +457,6 @@ body {
     overflow: hidden;
 
     position: relative; 
-    /* thử */
 
 }
 
@@ -475,9 +465,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-/* 
-    transform: perspective(800px) rotateY(-12deg) rotateZ(-2deg);
-    filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, 0.18)); */
 
     transition: transform 0.4s ease;
 
@@ -486,13 +473,11 @@ body {
 .san-pham:hover .khung-anh img {
     transform: scale(1.04);
 
-     /* transform: perspective(800px) rotateY(-5deg) rotateZ(0deg)
-               translateY(-4px); */
 }
 
 .san-pham h3 {
-    min-height: 48px;
-    margin: 12px 0 8px;
+    min-height: 42px;
+    margin: 8px 0 5px;
 
     font-size: 15px;
     line-height: 1.5;
@@ -625,7 +610,7 @@ body {
     }
 
     .luoi-san-pham {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 340px));
     }
 }
 
@@ -646,8 +631,8 @@ body {
     }
 
     .luoi-san-pham {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+        grid-template-columns:  minmax(0, 1fr);
+        /* gap: 12px; */
     }
 
     .bo-loc,
@@ -716,11 +701,11 @@ body {
 
 /* <!-- Thử  */
 .nhom-gia-gio-hang {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    margin-top: auto;
+    margin-top: 30px !important;
     padding-top: 12px;
 }
 
@@ -728,6 +713,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    align-items: center;
+    
 }
 
 .thong-tin-gia strong {
@@ -742,26 +729,31 @@ body {
 
 /* Nút dấu cộng */
 .san-pham .nut-them-nhanh {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    margin: 0;
-    padding: 0;
+    width: 25px;
+    height: 25px;
+    /* flex-shrink: 0; */
+    /* margin: 0;
+    padding: 0; */
+    position: absolute;
+    right: 20px;
+    top: 75%;
+
     border: 1px solid #e5d8c9;
     border-radius: 7px;
-    background: #f5eee5;
-    color: #50362b;
+    background: #90350d;
+    color: #d0744d;
     font-size: 18px;
     cursor: pointer;
-    transition: 0.25s;
+    transition: 0.21s;
 }
 
-.san-pham .nut-them-nhanh:hover {
-    background: #50362b;
-    color: white;
+.san-pham:hover .nut-them-nhanh {
+    display:flex;
+    background: #d7cac4;
+    color: #90350d;
     transform: translateY(-3px);
 }
 
@@ -770,7 +762,7 @@ body {
 }
 
 .san-pham .nhom-gia-gio-hang {
-    margin-top: 15px;
+    margin-top: auto;
     padding-top: 12px;
     border-top: 1px solid #eee5dc;
 }
@@ -794,15 +786,8 @@ body {
 
 /* Nhãn giảm giá bên phải */
 .nhan-giam-gia {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    left: auto;
-    z-index: 2;
-
     padding: 4px 7px;
     border-radius: 4px;
-
     background: #b74d3e;
     color: white;
     font-size: 8px;
