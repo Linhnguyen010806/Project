@@ -7,7 +7,10 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="khuyenmai.css">
+    <link rel="stylesheet" href="yeuthich.css">
+    <link rel="stylesheet" href="thongbao.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -225,27 +228,106 @@
             <p id="emptyMessage" class="empty-message" hidden>
                 Không tìm thấy sản phẩm phù hợp.
             </p>
+            <div class="wv-allsale"><a href="dmsp.html"><i class="fa-solid fa-book-open"></i> Xem tất cả sách đang giảm giá</a></div>
         </section>
 
-        <!-- FORM ĐĂNG KÝ VOUCHER 100K -->
-        <section class="register-voucher-box">
-            <div class="reg-content">
-                <span class="reg-subtitle">Dành Cho Thành Viên Mới</span>
-                <h2>ĐĂNG KÝ NHẬN VOUCHER 100.000Đ</h2>
-                <p>Nhập thông tin ngay để nhận mã giảm trực tiếp 100k cho đơn hàng đầu tiên và thông báo deal hot sớm nhất.</p>
-                
-                <form id="subscriberForm" class="reg-form" onsubmit="return false;">
-                    <input type="text" placeholder="Họ và tên của bạn..." required>
-                    <input type="email" placeholder="Địa chỉ Email..." required>
-                    <input type="tel" placeholder="Số điện thoại..." required>
-                    <button type="submit" class="btn-submit-reg">Nhận voucher 100k ngay !</button>
-                </form>
-                <div id="regSuccessMsg" class="reg-success" hidden>
-                    🎉 Đăng ký thành công! Mã <strong>HANAMI100K</strong> đã được ghi nhận.
+        <!-- ================= NHẬN VOUCHER 100K CHO THÀNH VIÊN MỚI ================= -->
+        <section class="welcome-voucher" id="nhan-voucher">
+
+            <div class="wv-left">
+                <h2 class="wv-serif">Một lời chào,<br>trăm nghìn yêu thương.</h2>
+                <p>Đăng ký thành viên mới, nhận ngay voucher cho đơn sách đầu tiên. Thêm một lý do để mang sách về nhà.</p>
+
+                <div class="wv-ticket">
+                    <i class="fa-solid fa-gift"></i>
+                    <div>
+                        <strong>100.000đ</strong>
+                        <span>Mã HANAMI100K · đơn đầu từ 499.000đ</span>
+                    </div>
                 </div>
+
+                <p class="wv-fine">Không thư rác, chỉ sách hay và những điều đáng đọc. Thông tin của bạn luôn được Hanami trân trọng.</p>
+            </div>
+
+            <div class="wv-right">
+                <h3 class="wv-serif">Nhận món quà đầu tiên của bạn</h3>
+
+                <ol class="wv-steps">
+                    <li class="on" data-n="1">Đăng ký</li>
+                    <li data-n="2">Nhận mã</li>
+                    <li data-n="3">Chọn sách</li>
+                </ol>
+
+                <!-- Bước 1: điền thông tin -->
+                <form id="subscriberForm" class="wv-form" novalidate>
+                    <label>Họ và tên
+                        <input type="text" id="wvName" placeholder="Bạn tên là gì?" autocomplete="name">
+                        <span class="wv-err" data-for="wvName"></span>
+                    </label>
+                    <label>Số điện thoại
+                        <input type="tel" id="wvPhone" placeholder="Nhập số điện thoại" autocomplete="tel">
+                        <span class="wv-err" data-for="wvPhone"></span>
+                    </label>
+                    <label class="full">Địa chỉ email
+                        <input type="email" id="wvEmail" placeholder="Email để Hanami gửi voucher cho bạn" autocomplete="email">
+                        <span class="wv-err" data-for="wvEmail"></span>
+                    </label>
+                    <label class="wv-agree full">
+                        <input type="checkbox" id="wvAgree">
+                        <span>Tôi đồng ý với <a href="dieukhoansudung.html">Điều khoản sử dụng</a> và muốn nhận tin ưu đãi từ Hanami.</span>
+                    </label>
+                    <span class="wv-err full" data-for="wvAgree"></span>
+                    <button type="submit" class="wv-submit"><i class="fa-solid fa-gift"></i> Đăng ký &amp; nhận voucher 100.000đ</button>
+                </form>
+
+                <!-- Bước 2 + 3: hiện mã sau khi đăng ký -->
+                <div class="wv-done" id="wvDone" hidden>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h4>Voucher đã vào ví của bạn</h4>
+                    <div class="wv-code">
+                        <strong>HANAMI100K</strong>
+                        <button type="button" id="wvCopy">Sao chép mã</button>
+                    </div>
+                    <p>Nhập mã khi thanh toán đơn đầu từ 499.000đ. Xem lại mã trong <a href="#voucher-section">Ví Voucher Của Bạn</a> hoặc ở chuông thông báo.</p>
+                    <a class="wv-cta" href="dmsp.html">Chọn sách ngay</a>
+                </div>
+
+                <p class="wv-fine">Dành cho đơn hàng đầu tiên từ 499.000đ (chưa gồm phí giao hàng). Không cộng dồn với mã giảm giá khác. Dùng đến hết 30/11/2026.</p>
             </div>
         </section>
 
+        <!-- ================= MUA SÁCH CHỈ VỚI 3 BƯỚC ================= -->
+        <section class="wv-how">
+            <h2 class="wv-serif">Mua sách vui hơn, chỉ với 3 bước</h2>
+            <ol>
+                <li>
+                    <b>01</b>
+                    <div>
+                        <h4>Chọn những cuốn bạn thương</h4>
+                        <p>Khám phá sách đang giảm giá, bấm trái tim để lưu vào <a href="yeuthich.html">tủ sách yêu thích</a>.</p>
+                    </div>
+                </li>
+                <li>
+                    <b>02</b>
+                    <div>
+                        <h4>Gói thêm chút ưu đãi</h4>
+                        <p>Lưu mã ở trang này, rồi nhập mã ở bước thanh toán để được giảm trực tiếp.</p>
+                    </div>
+                </li>
+                <li>
+                    <b>03</b>
+                    <div>
+                        <h4>Chờ sách gõ cửa nhà</h4>
+                        <p>Thanh toán xong, chờ sách giao tận nơi. Đơn hàng được đổi trả trong 7 ngày.</p>
+                    </div>
+                </li>
+            </ol>
+
+            <div class="wv-note">
+                <span><i class="fa-solid fa-circle-info"></i> Ưu đãi dùng đến hết 30/11/2026. Đơn hàng vẫn được đổi trả trong 7 ngày theo chính sách của Hanami.</span>
+                <a href="chinhsachdoitra.html">Xem chính sách</a>
+            </div>
+        </section>
     </div>
 </main>
 
@@ -253,6 +335,8 @@
 
 <script src="script.js"></script>
 <script src="khuyenmai.js"></script>
+<script src="thongbao.js"></script>
+<script src="yeuthich.js"></script>
 <script src="header_footer.js"></script>
 </body>
 </html>

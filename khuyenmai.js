@@ -187,18 +187,99 @@ document.addEventListener("DOMContentLoaded", function () {
     sortSelect?.addEventListener("change", sortProducts);
 
     /* =========================================================
-       4. FORM ĐĂNG KÝ VOUCHER 100K
+       4. NHẬN VOUCHER 100K CHO THÀNH VIÊN MỚI
        ========================================================= */
-    const subscriberForm = $("#subscriberForm");
-    const regSuccessMsg = $("#regSuccessMsg");
+    const WELCOME_CODE = "HANAMI100K";            // đổi mã tại đây (nhớ đổi cả trong khuyenmai.html)
+    const WELCOME_KEY = "hanamiWelcomeVoucher";
+    const wvForm = $("#subscriberForm");
+    const wvDone = $("#wvDone");
 
-    subscriberForm?.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (regSuccessMsg) {
-            regSuccessMsg.hidden = false;
-            subscriberForm.reset();
-        }
-    });
+    function wvStep(n) {
+        $$(".wv-steps li").forEach((li, i) => li.classList.toggle("on", i < n));
+    }
+
+    function wvShowDone() {
+        wvForm.hidden = true;
+        wvDone.hidden = false;
+        wvStep(2);
+    }
+
+    // Hiện lỗi dưới ô nhập; trả về true nếu hợp lệ
+    function wvCheck(id, message) {
+        const el = $('.wv-err[data-for="' + id + '"]');
+        if (el) el.textContent = message;
+        return !message;
+    }
+
+    if (wvForm) {
+        // Đã đăng nhập thì điền sẵn tên + email
+        try {
+            const user = JSON.parse(localStorage.getItem("hanamiCurrentUser"));
+            if (user) {
+                $("#wvName").value = user.name || "";
+                $("#wvEmail").value = user.email || "";
+            }
+            if (localStorage.getItem(WELCOME_KEY)) wvShowDone();   // đã nhận rồi
+        } catch (error) {}
+
+        wvForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = $("#wvName").value.trim();
+            const phone = $("#wvPhone").value.replace(/\s/g, "");
+            const email = $("#wvEmail").value.trim();
+
+            const valid = [
+                wvCheck("wvName", name.length < 2 ? "Bạn cho Hanami biết tên nhé." : ""),
+                wvCheck("wvPhone", /^(0|\+84)\d{9}$/.test(phone) ? "" : "Số điện thoại gồm 10 số, bắt đầu bằng 0."),
+                wvCheck("wvEmail", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? "" : "Email chưa đúng định dạng."),
+                wvCheck("wvAgree", $("#wvAgree").checked ? "" : "Bạn cần đồng ý điều khoản để nhận voucher.")
+            ].every(Boolean);
+            if (!valid) return;
+
+            // 1) ghi nhận đã nhận voucher
+            try {
+                localStorage.setItem(WELCOME_KEY, JSON.stringify({ name, phone, email, code: WELCOME_CODE, date: Date.now() }));
+            } catch (error) {}
+
+            // 2) cho mã vào "Ví Voucher Của Bạn"
+            const codes = readVouchers();
+            if (!codes.includes(WELCOME_CODE)) {
+                codes.push(WELCOME_CODE);
+                try { localStorage.setItem(VOUCHER_KEY, JSON.stringify(codes)); } catch (error) {}
+            }
+            renderVouchers();
+
+            // 3) báo trên chuông thông báo
+            const note = {
+                icon: "fa-ticket",
+                title: "Bạn nhận được voucher 100.000đ",
+                text: "Mã " + WELCOME_CODE + " cho đơn đầu từ 499.000đ, dùng đến 30/11/2026.",
+                href: "khuyenmai.html#voucher-section"
+            };
+            if (window.hanami) {
+                hanami.notify(note);
+            } else {
+                try {
+                    const list = JSON.parse(localStorage.getItem("hanamiNotifications")) || [];
+                    list.unshift(Object.assign({ ts: Date.now(), unread: true }, note));
+                    localStorage.setItem("hanamiNotifications", JSON.stringify(list));
+                } catch (error) {}
+            }
+
+            wvShowDone();
+        });
+
+        $("#wvCopy")?.addEventListener("click", async function () {
+            try {
+                await navigator.clipboard.writeText(WELCOME_CODE);
+                this.textContent = "Đã sao chép";
+            } catch (error) {
+                this.textContent = WELCOME_CODE;
+            }
+            setTimeout(() => { this.textContent = "Sao chép mã"; }, 1800);
+        });
+    }
 
     renderVouchers();
 });

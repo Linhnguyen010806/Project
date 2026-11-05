@@ -441,83 +441,68 @@ body {
     background: #9a5700;
 }
 
-/* REGISTER VOUCHER BOX */
-.register-voucher-box {
-    background: #ffffff;
-    border: 1px solid #e0d5c8;
-    border-radius: 8px;
-    padding: 35px 30px;
-    margin-top: 40px;
-    box-shadow: 0 4px 15px rgba(59, 41, 33, 0.08);
+/* ================= NHẬN VOUCHER 100K THÀNH VIÊN MỚI ================= */
+.welcome-voucher { display: grid; grid-template-columns: 1fr 1.05fr; margin-top: 48px; overflow: hidden; background: #fffdf9; border: 1px solid #ecd9c6; border-radius: 18px; box-shadow: 0 6px 24px rgba(59, 41, 33, .08); }
+.wv-serif { font-family: Lora, Georgia, serif; font-weight: 600; color: #3b2921; }
+.wv-left { display: flex; flex-direction: column; gap: 16px; padding: 42px 38px; background: #f6e3d0; }
+.wv-left h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.2; }
+.wv-left p, .wv-right p { font-size: 13px; line-height: 1.7; color: #6d5a49; }
+.wv-ticket { display: flex; align-items: center; gap: 16px; padding: 18px 22px; background: #3b2921; border-radius: 12px; color: #fff; }
+.wv-ticket > i { font-size: 30px; color: #f3c677; }
+.wv-ticket strong { display: block; font: 600 34px/1.1 Lora, Georgia, serif; color: #f3c677; }
+.wv-ticket span { font-size: 12px; color: #e8d5c0; }
+.wv-left .wv-fine, .wv-right .wv-fine { font-size: 11px; color: #8b7763; }
+
+.wv-right { display: flex; flex-direction: column; gap: 16px; padding: 40px 38px; }
+.wv-right h3 { font-size: 22px; }
+.wv-steps { display: flex; gap: 20px; list-style: none; font-size: 12px; color: #a8998a; }
+.wv-steps li { display: flex; align-items: center; gap: 7px; }
+.wv-steps li::before { content: attr(data-n); width: 20px; height: 20px; border-radius: 50%; border: 1px solid currentColor; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+.wv-steps li.on { color: #d35400; font-weight: 700; }
+.wv-steps li.on::before { background: #d35400; border-color: #d35400; color: #fff; }
+
+.wv-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.wv-form label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #3b2921; }
+.wv-form .full { grid-column: 1 / -1; }
+.wv-form input[type="text"], .wv-form input[type="tel"], .wv-form input[type="email"] { padding: 12px 14px; border: 1px solid #dccbb8; border-radius: 8px; background: #fff; font-size: 13px; }
+.wv-form input:focus-visible { outline: 2px solid #d35400; border-color: #d35400; }
+.wv-form .wv-agree { flex-direction: row; align-items: flex-start; gap: 8px; font-weight: 400; color: #6d5a49; line-height: 1.5; }
+.wv-agree a, .wv-done a, .wv-how a { color: #9a5700; font-weight: 700; text-decoration: underline; }
+.wv-err { min-height: 0; font-size: 11px; font-weight: 400; color: #c0392b; }
+.wv-submit { grid-column: 1 / -1; padding: 14px; border: none; border-radius: 8px; background: #d35400; color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; }
+.wv-submit:hover { background: #b94700; }
+
+.wv-done { text-align: center; padding: 18px 14px; background: #f7f1e8; border-radius: 12px; }
+.wv-done > i { font-size: 30px; color: #3f7d4f; }
+.wv-done h4 { margin: 8px 0 12px; font-size: 16px; color: #3b2921; }
+.wv-code { display: inline-flex; align-items: center; gap: 12px; padding: 8px 8px 8px 18px; background: #fff; border: 1px dashed #d35400; border-radius: 10px; }
+.wv-code strong { font-size: 18px; letter-spacing: 1px; color: #3b2921; }
+.wv-code button { padding: 8px 12px; border: none; border-radius: 7px; background: #3b2921; color: #fff; font-size: 12px; cursor: pointer; }
+.wv-done p { margin: 12px 0; }
+.wv-cta { display: inline-block; padding: 12px 22px; border-radius: 8px; background: #d35400; color: #fff !important; text-decoration: none !important; }
+
+.wv-how { margin-top: 44px; }
+.wv-how h2 { margin-bottom: 22px; font-size: 26px; }
+.wv-how ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; list-style: none; }
+.wv-how li { display: flex; gap: 14px; }
+.wv-how li > b { font: 500 34px/1 Lora, Georgia, serif; color: #d35400; }
+.wv-how h4 { margin-bottom: 5px; font-size: 14px; color: #3b2921; }
+.wv-how p { font-size: 12px; line-height: 1.6; color: #6d5a49; }
+.wv-note { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 26px; padding: 12px 16px; background: #f0e9df; border-radius: 10px; font-size: 12px; color: #6d5a49; }
+.wv-note a { color: #3b2921; font-weight: 700; white-space: nowrap; }
+.wv-allsale { margin-top: 22px; text-align: center; }
+.wv-allsale a { display: inline-block; padding: 10px 20px; border: 1px solid #dccbb8; border-radius: 8px; background: #fff; color: #3b2921; font-size: 13px; font-weight: 700; text-decoration: none; }
+.wv-allsale a:hover { background: #3b2921; color: #fff; }
+
+@media (max-width: 860px) {
+    .welcome-voucher, .wv-how ol { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+    .wv-left, .wv-right { padding: 28px 20px; }
+    .wv-form { grid-template-columns: 1fr; }
+    .wv-note { flex-direction: column; align-items: flex-start; }
 }
 
-.reg-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.reg-subtitle {
-    font-size: 13px;
-    font-weight: bold;
-    color: #9a5700;
-    letter-spacing: 1px;
-}
-
-.reg-content h2 {
-    font-size: 22px;
-    color: #3b2921;
-    margin: 8px 0 12px;
-}
-
-.reg-content p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 25px;
-}
-
-.reg-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.reg-form input {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    background: #fafafa;
-}
-
-.btn-submit-reg {
-    background: #9a5700;
-    color: #ffffff;
-    border: none;
-    padding: 14px;
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-    margin-top: 10px;
-}
-
-.btn-submit-reg:hover {
-    background: #3b2921;
-}
-
-.reg-success {
-    margin-top: 15px;
-    padding: 12px;
-    background: #e8f5e9;
-    color: #2e7d32;
-    border-radius: 4px;
-    font-size: 14px;
-}
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
