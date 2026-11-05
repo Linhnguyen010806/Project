@@ -1,0 +1,19 @@
+/* ===== thongbao.css ===== */
+.notification-icon, .favorite-icon { position: relative; }
+.hn-badge { position: absolute; top: -9px; right: -12px; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: #d93025; color: #fff; font: 700 10px/16px Arial, sans-serif; text-align: center; }
+.hn-badge.soft { background: #8B4A00; }
+ 
+.hn-panel { position: fixed; z-index: 10001; width: 360px; max-width: calc(100vw - 24px); max-height: 72vh; overflow-y: auto; background: #fffdf9; border: 1px solid #e8ded3; border-radius: 14px; box-shadow: 0 14px 36px rgba(58, 36, 18, .2); font-family: Arial, sans-serif; color: #3a2412; }
+.hn-panel[hidden] { display: none; }
+.hn-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-bottom: 1px solid #e8ded3; font-size: 15px; }
+.hn-head button { border: none; background: none; color: #8B4A00; font-size: 12px; font-weight: 700; cursor: pointer; }
+.hn-item { display: flex; gap: 12px; padding: 13px 16px; border-bottom: 1px solid #f1e8dd; color: inherit; text-decoration: none; }
+.hn-item:hover { background: #faf3ea; }
+.hn-item.new { background: #fbf0e4; }
+.hn-item > i { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #f6e3d0; color: #8B4A00; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.hn-item b { font-size: 13px; }
+.hn-item p { margin: 3px 0; font-size: 12px; line-height: 1.5; color: #6d5a49; }
+.hn-item small { font-size: 11px; color: #a8998a; }
+.hn-empty { padding: 32px 16px; text-align: center; font-size: 13px; color: #85705c; }
+.hn-foot { display: block; padding: 12px 16px; text-align: center; font-size: 12px; font-weight: 700; color: #8B4A00; text-decoration: none; }
+.hn-foot:hover { background: #faf3ea; }
