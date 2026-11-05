@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yêu thích - Hanami Bookstore</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="thongbao.css">
+    <link rel="stylesheet" href="yeuthich.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body class="yt-body">
+
+<div id="header_container"></div>
+
+<main class="yt-page">
+
+    <nav class="yt-crumb">
+        <a href="index.html">Trang chủ</a>
+        <i class="fa-solid fa-angle-right"></i>
+        <span>Yêu thích</span>
+    </nav>
+
+    <!-- MỞ ĐẦU + Ô CÂU NÓI -->
+    <section class="yt-hero">
+        <div>
+            <h1 class="yt-serif">
+    <span class="yt-title">Góc nhỏ của <span id="ytWho">bạn</span></span>
+    <span class="yt-count" id="ytCount" hidden>00</span>
+</h1>
+            <p class="yt-sub" id="ytSub">Lưu một tựa sách, giữ một niềm háo hức. Chọn một cuốn cho hôm nay nhé.</p>
+        </div>
+        <figure class="yt-quote">
+            <i class="fa-solid fa-book-open"></i>
+            <blockquote class="yt-serif">“Sách làm cho con người trở thành chủ nhân vũ trụ.”</blockquote>
+            <figcaption>– Paplenko</figcaption>
+        </figure>
+    </section>
+
+    <!-- BÁO SÁCH ĐANG GIẢM GIÁ -->
+    <div class="yt-alert" id="ytAlert" hidden>
+        <i class="fa-solid fa-tags"></i>
+        <div id="ytAlertText"></div>
+        <a href="khuyenmai.html">Xem khuyến mãi</a>
+    </div>
+
+    <!-- LỌC + SẮP XẾP -->
+    <div class="yt-toolbar">
+        <div class="yt-chips" id="ytChips"></div>
+        <label class="yt-sort">Sắp xếp:
+            <select id="ytSort">
+                <option value="new">Mới lưu gần nhất</option>
+                <option value="low">Giá thấp đến cao</option>
+                <option value="high">Giá cao đến thấp</option>
+                <option value="name">Tên A–Z</option>
+            </select>
+        </label>
+    </div>
+    <div class="yt-selectrow">
+        <label><input type="checkbox" id="ytAll"><span id="ytAllText"></span></label>
+        <span>Bấm trái tim trên bìa sách để bỏ lưu</span>
+    </div>
+
+    <!-- DANH SÁCH SÁCH YÊU THÍCH -->
+    <section class="yt-grid" id="ytGrid"></section>
+
+    <div class="yt-bar">
+        <div id="ytBarText"></div>
+        <div class="yt-actions">
+            <button type="button" class="yt-btn" id="ytShare"><i class="fa-solid fa-share-nodes"></i> Chia sẻ tủ sách</button>
+            <button type="button" class="yt-btn solid" id="ytAddAll"></button>
+        </div>
+    </div>
+
+    <!-- GỢI Ý -->
+    <section class="yt-more" id="ytMore">
+        <div class="yt-more-head">
+            <div>
+                <h2 class="yt-serif">Biết đâu, bạn sẽ thương cả những cuốn này</h2>
+                <p>Hanami chọn thêm vài cuốn dựa trên thể loại bạn hay lưu.</p>
+            </div>
+            <a class="yt-seemore" href="dmsp.html">Xem thêm sách</a>
+        </div>
+        <div class="yt-sugs" id="ytSugs"></div>
+    </section>
+
+</main>
+
+<div class="yt-toast" id="ytToast" role="status" aria-live="polite"></div>
+
+<div id="footer_container"></div>
+
+<script src="header_footer.js"></script> 
+<script src="thongbao.js"></script>
+<script src="yeuthich.js"></script>
+</body>
+</html>
