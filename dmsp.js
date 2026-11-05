@@ -180,3 +180,80 @@ document.querySelectorAll(".san-pham").forEach(function(sanPham) {
         }
     }
 });
+
+//Tìm kiếm sách hoặc tên tác giả
+
+function bodau(chuoi) {
+    return chuoi
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d");
+}
+
+// Lấy từ khóa trên đường dẫn
+const thamSo = new URLSearchParams(window.location.search);
+const tuKhoa = thamSo.get("search");
+
+if (tuKhoa) {
+
+    const danhSach = document.querySelectorAll(
+        ".khu-vuc-danh-sach .san-pham"
+    );
+
+    let tuKhoaBoDau = bodau(tuKhoa);
+    let soSachTimThay = 0;
+    let sachDauTien = null;
+
+    danhSach.forEach(function(sanPham) {
+
+        // Lấy tên sách
+        let tenSach = sanPham.querySelector("h3").textContent;
+
+        // Lấy tên tác giả
+        let tenTacGia = sanPham.querySelector("h3").nextElementSibling.textContent;
+
+        // Ghép tên sách và tên tác giả
+        let thongTinSach = bodau(tenSach + " " + tenTacGia);
+
+        // Kiểm tra từ khóa
+        if (thongTinSach.includes(tuKhoaBoDau)) {
+
+            sanPham.style.display = "";
+
+            soSachTimThay++;
+
+            if (sachDauTien === null) {
+                sachDauTien = sanPham;
+            }
+
+        } else {
+            sanPham.style.display = "none";
+        }
+    });
+
+    // Cập nhật số lượng sách
+    capNhatSoLuongSach();
+
+    // Kiểm tra kết quả tìm kiếm
+    if (soSachTimThay === 0) {
+
+        alert("Không tìm thấy sách phù hợp với từ khóa: " + tuKhoa);
+
+    } else {
+
+        // Cuộn xuống khu vực danh sách sách
+        setTimeout(function() {
+
+            document.querySelector(".khu-vuc-danh-sach").scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+            // Làm nổi bật quyển sách đầu tiên tìm thấy
+            sachDauTien.style.outline = "2px solid #b88954";
+            sachDauTien.style.outlineOffset = "5px";
+
+        }, 300);
+    }
+}

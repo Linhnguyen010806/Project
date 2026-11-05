@@ -16,10 +16,62 @@
             </a>
         </div>
         
+                <style>
+            .search-box {
+                position: relative;
+            }
 
-        <div class="search-box">
-            <input type="text" placeholder="Tìm kiếm sách...">
-            <button><i class="fas fa-search"></i></button>
+            #lich-su-tim-kiem {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                box-sizing: border-box;
+                background: white;
+                border: 1px solid #e8ded3;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+                z-index: 1000;
+                padding: 10px;
+                font-size: 12px;
+            }
+
+           .dong-lich-su {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px;
+                font-size: 12px;
+            }
+
+            .dong-lich-su span {
+                cursor: pointer;
+            }
+
+            #lich-su-tim-kiem .dong-lich-su .nut-xoa-lich-su {
+                all: unset;
+                color: black;
+                font-size: 13px;
+                font-weight: bold;
+                cursor: pointer;
+                padding: 0 5px;
+            }
+
+            #lich-su-tim-kiem .dong-lich-su .nut-xoa-lich-su:hover {
+                background: white;
+                color: black;
+            }
+        </style>
+        <div class="search-box"
+        >
+            <input type="text" id="o-tim-kiem"
+                placeholder="Tìm kiếm tên sách hoặc tác giả...">
+            <button id="nut-tim-kiem"><i class="fas fa-search"></i></button>
+
+            <div id="lich-su-tim-kiem">
+                <div id="danh-sach-lich-su"></div>    
+            </div>
         </div>
 
         <div class="header-right">
