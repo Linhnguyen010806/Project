@@ -1,19 +1,36 @@
 /* ===== thongbao.css ===== */
-.notification-icon, .favorite-icon { position: relative; }
+.notification-icon { position: relative; }
 .hn-badge { position: absolute; top: -9px; right: -12px; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: #d93025; color: #fff; font: 700 10px/16px Arial, sans-serif; text-align: center; }
-.hn-badge.soft { background: #8B4A00; }
- 
-.hn-panel { position: fixed; z-index: 10001; width: 360px; max-width: calc(100vw - 24px); max-height: 72vh; overflow-y: auto; background: #fffdf9; border: 1px solid #e8ded3; border-radius: 14px; box-shadow: 0 14px 36px rgba(58, 36, 18, .2); font-family: Arial, sans-serif; color: #3a2412; }
+
+.hn-panel { position: fixed; z-index: 10001; display: flex; flex-direction: column; width: 360px; max-width: calc(100vw - 24px); max-height: 72vh; overflow: hidden; background: #fffdf9; border: 1px solid #e8ded3; border-radius: 14px; box-shadow: 0 14px 36px rgba(58, 36, 18, .2); font-family: Arial, sans-serif; color: #3a2412; }
 .hn-panel[hidden] { display: none; }
-.hn-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-bottom: 1px solid #e8ded3; font-size: 15px; }
+.hn-panel :focus-visible { outline: 2px solid #8B4A00; outline-offset: -2px; }
+
+.hn-head { flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-bottom: 1px solid #e8ded3; font-size: 15px; }
 .hn-head button { border: none; background: none; color: #8B4A00; font-size: 12px; font-weight: 700; cursor: pointer; }
+
+/* lọc theo hành động (chỉ hiện khi bấm "Xem tất cả thông báo") */
+.hn-tabs { flex-shrink: 0; display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 16px; border-bottom: 1px solid #e8ded3; }
+.hn-tabs button { border: 1px solid #e8ded3; background: #fff; color: #3a2412; border-radius: 999px; padding: 5px 11px; font: 12px Arial, sans-serif; cursor: pointer; }
+.hn-tabs button b { margin-left: 3px; color: #8B4A00; }
+.hn-tabs button.on { background: #8B4A00; border-color: #8B4A00; color: #fff; }
+.hn-tabs button.on b { color: #fff; }
+
+/* danh sách cuộn riêng, đầu và chân panel đứng yên */
+.hn-body { flex: 1; min-height: 0; overflow-y: auto; }
 .hn-item { display: flex; gap: 12px; padding: 13px 16px; border-bottom: 1px solid #f1e8dd; color: inherit; text-decoration: none; }
+.hn-body .hn-item:last-child { border-bottom: none; }
 .hn-item:hover { background: #faf3ea; }
 .hn-item.new { background: #fbf0e4; }
+.hn-item > div { min-width: 0; }
 .hn-item > i { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #f6e3d0; color: #8B4A00; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.hn-item.t-voucher > i, .hn-item.t-register > i { background: #fbe9dc; color: #d35400; }
+.hn-item.t-favorite > i { background: #fbe3df; color: #c0392b; }
+.hn-item.t-cart > i { background: #e3f0e6; color: #3f7d4f; }
 .hn-item b { font-size: 13px; }
 .hn-item p { margin: 3px 0; font-size: 12px; line-height: 1.5; color: #6d5a49; }
 .hn-item small { font-size: 11px; color: #a8998a; }
 .hn-empty { padding: 32px 16px; text-align: center; font-size: 13px; color: #85705c; }
-.hn-foot { display: block; padding: 12px 16px; text-align: center; font-size: 12px; font-weight: 700; color: #8B4A00; text-decoration: none; }
+
+.hn-foot { flex-shrink: 0; display: block; width: 100%; padding: 12px 16px; border: none; border-top: 1px solid #f1e8dd; background: none; text-align: center; font: 700 12px Arial, sans-serif; color: #8B4A00; cursor: pointer; }
 .hn-foot:hover { background: #faf3ea; }
