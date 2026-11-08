@@ -72,159 +72,70 @@ if (nextBtn && prevBtn && slides.length > 0) {
 }
 
 
-// ================= Slider sản phẩm mới =================
+// ================= FLASH SALE + SLIDER SÁCH =================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ---------- 1. FLASH SALE ---------- */
+
+    const flashList = document.querySelector("#flashList");
+    const FLASH_VISIBLE = 4;   // số sản phẩm hiện cùng lúc
+    let flashIndex = 0;
+
+    window.moveFlash = direction => {
+        const cards = flashList?.querySelectorAll(".flash-card");
+        if (!cards?.length) return;
+
+        const gap = parseFloat(getComputedStyle(flashList).columnGap) || 0;
+        const step = cards[0].getBoundingClientRect().width + gap;
+        const maxIndex = Math.max(0, cards.length - FLASH_VISIBLE);
+
+        flashIndex = Math.max(0, Math.min(flashIndex + direction, maxIndex));
+        flashList.style.transform = `translateX(-${flashIndex * step}px)`;
+    };
+
+    window.addEventListener("resize", () => {
+        flashIndex = 0;
+        if (flashList) flashList.style.transform = "translateX(0)";
+    });
 
 
+    /* ---------- 2. SLIDER SÁCH (thiếu nhi, sản phẩm mới, tham khảo, ngoại ngữ) ---------- */
 
-
- // ================= SLIDER VÀ TAB SÁCH =================
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    document.querySelectorAll(".new-products").forEach(section => {
-
+    document.querySelectorAll(".book-section").forEach(section => {
         const tabs = section.querySelectorAll(".tab-btn");
         const contents = section.querySelectorAll(".tab-content");
-        const prev = section.querySelector(".productPrev");
-        const next = section.querySelector(".productNext");
 
-        // Khởi tạo slider riêng cho từng tab
-        const sliderData = [];
+        // Track đang hiển thị: trong tab active, hoặc track duy nhất nếu không có tab
+        const getTrack = () =>
+            section.querySelector(".tab-content.active .product-track") ||
+            section.querySelector(".product-track");
 
-        contents.forEach(content => {
-            const track = content.querySelector(".product-track");
+        // Mỗi lần bấm cuộn đúng một khung (4 quyển)
+        const scrollTrack = direction => {
+            const track = getTrack();
             if (!track) return;
 
-            const cards = track.querySelectorAll(".product-card");
-
-            sliderData.push({
-                content: content,
-                track: track,
-                cards: cards,
-                index: 0
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            track.scrollBy({
+                left: direction * (track.clientWidth + gap),
+                behavior: "smooth"
             });
-        });
+        };
 
-        function updateSlider(slider) {
-            if (!slider || slider.cards.length === 0) return;
+        section.querySelector(".productPrev")?.addEventListener("click", () => scrollTrack(-1));
+        section.querySelector(".productNext")?.addEventListener("click", () => scrollTrack(1));
 
-            const cardWidth = slider.cards[0].getBoundingClientRect().width;
-
-            if (cardWidth === 0) return;
-
-            const maxIndex = Math.max(0, slider.cards.length - 4);
-
-            slider.index = Math.max(0, Math.min(slider.index, maxIndex));
-
-            slider.track.style.transform =
-                `translateX(-${slider.index * cardWidth}px)`;
-        }
-
-        function getActiveSlider() {
-            return sliderData.find(item =>
-                item.content.classList.contains("active")
-            );
-        }
-
-        // Chuyển tab
+        // Chuyển tab (nếu section có tab)
         tabs.forEach(tab => {
-            tab.addEventListener("click", function () {
-
-                tabs.forEach(btn => btn.classList.remove("active"));
-                contents.forEach(content => content.classList.remove("active"));
-
-                this.classList.add("active");
-
-                const target = this.dataset.tab;
-                const selected = section.querySelector(
-                    `.tab-content[id="${target}"]`
-                );
-
-                if (selected) {
-                    selected.classList.add("active");
-
-                    const slider = sliderData.find(
-                        item => item.content === selected
-                    );
-
-                    if (slider) {
-                        requestAnimationFrame(() => updateSlider(slider));
-                    }
-                }
+            tab.addEventListener("click", () => {
+                tabs.forEach(btn => btn.classList.toggle("active", btn === tab));
+                contents.forEach(c => c.classList.toggle("active", c.id === tab.dataset.tab));
             });
         });
-
-        // Nút sang phải
-        if (next) {
-            next.addEventListener("click", function () {
-                const slider = getActiveSlider();
-                if (!slider) return;
-
-                const maxIndex = Math.max(0, slider.cards.length - 4);
-
-                slider.index = Math.min(slider.index + 4, maxIndex);
-
-                updateSlider(slider);
-            });
-        }
-
-        // Nút sang trái
-        if (prev) {
-            prev.addEventListener("click", function () {
-                const slider = getActiveSlider();
-                if (!slider) return;
-
-                slider.index = Math.max(slider.index - 4, 0);
-
-                updateSlider(slider);
-            });
-        }
-
-        // Cập nhật khi thay đổi kích thước màn hình
-        window.addEventListener("resize", function () {
-            const slider = getActiveSlider();
-            if (slider) updateSlider(slider);
-        });
-
     });
 
 });
-
-
-/* ===== SLIDER SÁCH THIẾU NHI ===== */
-document.addEventListener("DOMContentLoaded", function () {
-    const section = document.querySelector(".children-books");
-    if (!section) return;
-
-    const track = section.querySelector(".children-track");
-    const prev = section.querySelector(".children-prev");
-    const next = section.querySelector(".children-next");
-
-    if (!track || !prev || !next) return;
-
-    function getStep() {
-        const book = track.querySelector(".book-item");
-        if (!book) return 0;
-
-        const gap = parseFloat(getComputedStyle(track).gap) || 0;
-        return book.getBoundingClientRect().width + gap;
-    }
-
-    prev.addEventListener("click", function () {
-        track.scrollBy({
-            left: -getStep(),
-            behavior: "smooth"
-        });
-    });
-
-    next.addEventListener("click", function () {
-        track.scrollBy({
-            left: getStep(),
-            behavior: "smooth"
-        });
-    });
-});
-
 
 /* NÚT QUAY LẠI ĐẦU TRANG */
 
@@ -249,3 +160,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Chuyển sản phẩm Flash Sale
+function moveFlash(direction) {
+    const list = document.getElementById("flashList");
+
+    list.scrollBy({
+        left: direction * (list.clientWidth * 0.8),
+        behavior: "smooth"
+    });
+}
+
+
+// Đồng hồ đếm ngược
+let flashTime = 1 * 3600 + 30 * 60;
+
+function updateFlashTimer() {
+    let h = Math.floor(flashTime / 3600);
+    let m = Math.floor((flashTime % 3600) / 60);
+    let s = flashTime % 60;
+
+    document.getElementById("fs-hour").textContent =
+        String(h).padStart(2, "0");
+
+    document.getElementById("fs-minute").textContent =
+        String(m).padStart(2, "0");
+
+    document.getElementById("fs-second").textContent =
+        String(s).padStart(2, "0");
+
+    if (flashTime > 0) {
+        flashTime--;
+    }
+}
+
+updateFlashTimer();
+setInterval(updateFlashTimer, 1000);
