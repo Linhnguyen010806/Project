@@ -10,28 +10,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const sortSelect = $("#sortProducts");
 
     /* =========================================================
-       1. ĐỒNG HỒ ĐẾM NGƯỢC CHUẨN XÁC THEO THỜI GIAN THỰC
+       1. ĐỒNG HỒ ĐẾM NGƯỢC: NGÀY : GIỜ : PHÚT : GIÂY
        ========================================================= */
-    const hoursEl = $("#hours");
-    const minutesEl = $("#minutes");
-    const secondsEl = $("#seconds");
+    const DEADLINE = new Date(2026, 10, 30, 23, 59, 59);   // 30/11/2026 23:59:59 (tháng tính từ 0)
+    const timeEls = { days: $("#days"), hours: $("#hours"), minutes: $("#minutes"), seconds: $("#seconds") };
 
-    let totalSeconds = (89 * 3600) + (14 * 60) + 37;
+    function setTime(el, value) {
+        if (!el || el.textContent === value) return;
+        el.textContent = value;
+        el.classList.remove("tick");
+        void el.offsetWidth;                   // chạy lại hiệu ứng lật số
+        el.classList.add("tick");
+    }
 
     function updateTimer() {
-        if (totalSeconds <= 0) {
-            totalSeconds = (89 * 3600) + (14 * 60) + 37;
-        }
-
-        const hrs = Math.floor(totalSeconds / 3600);
-        const mins = Math.floor((totalSeconds % 3600) / 60);
-        const secs = totalSeconds % 60;
-
-        if (hoursEl) hoursEl.textContent = String(hrs).padStart(2, "0");
-        if (minutesEl) minutesEl.textContent = String(mins).padStart(2, "0");
-        if (secondsEl) secondsEl.textContent = String(secs).padStart(2, "0");
-
-        totalSeconds--;
+        const left = Math.max(0, Math.floor((DEADLINE - Date.now()) / 1000));
+        const pad = n => String(n).padStart(2, "0");
+        setTime(timeEls.days, pad(Math.floor(left / 86400)));
+        setTime(timeEls.hours, pad(Math.floor((left % 86400) / 3600)));
+        setTime(timeEls.minutes, pad(Math.floor((left % 3600) / 60)));
+        setTime(timeEls.seconds, pad(left % 60));
     }
 
     setInterval(updateTimer, 1000);
@@ -95,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!codes.includes(code)) {
                 codes.push(code);
+                window.hanami && hanami.voucherSaved(code);   // báo lên chuông: "Đã lưu voucher"
                 try {
                     localStorage.setItem(VOUCHER_KEY, JSON.stringify(codes));
                 } catch (error) {}
@@ -120,71 +119,66 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /* =========================================================
-       3. LỌC VÀ SẮP XẾP SẢN PHẨM TRONG KHUNG LIỀN MẠCH
+       3. LỌC THEO THỂ LOẠI, SẮP XẾP VÀ "XEM THÊM"
        ========================================================= */
-    const tabButtons = $$(".tab-btn");
-    tabButtons.forEach(btn => {
-        btn.addEventListener("click", function () {
-            tabButtons.forEach(b => b.classList.remove("active"));
-            this.classList.add("active");
+    const PAGE_SIZE = 6;                       // số sách hiện ban đầu và mỗi lần bấm "Xem thêm"
+    const moreBtn = $("#moreDeals");
+    const emptyMessage = $("#emptyMessage");
+    const allCards = $$(".promo-product", productGrid);   // giữ thứ tự gốc (data-order)
+    let currentGenre = "all", shown = PAGE_SIZE, query = "";
 
-            const cat = this.dataset.category;
-            $$(".promo-product", productGrid).forEach(prod => {
-                if (cat === "all" || prod.dataset.cat === cat) {
-                    prod.hidden = false;
-                } else {
-                    prod.hidden = true;
-                }
-            });
+    function renderProducts() {
+        const mode = sortSelect ? sortSelect.value : "featured";
+        const priceOf = p => Number(p.dataset.price || 0);
+        const orderOf = p => Number(p.dataset.order || 0);
+
+        const list = allCards.filter(p =>
+            (currentGenre === "all" || p.dataset.genre === currentGenre) &&
+            (!query || p.textContent.toLocaleLowerCase("vi").includes(query))
+        );
+
+        if (mode === "low") list.sort((a, b) => priceOf(a) - priceOf(b));
+        else if (mode === "high") list.sort((a, b) => priceOf(b) - priceOf(a));
+        else list.sort((a, b) => orderOf(a) - orderOf(b));
+
+        allCards.forEach(p => { p.hidden = true; });
+        list.slice(0, shown).forEach(p => {
+            p.hidden = false;
+            productGrid.appendChild(p);
+        });
+
+        if (emptyMessage) emptyMessage.hidden = list.length !== 0;
+        if (moreBtn) moreBtn.hidden = shown >= list.length;
+    }
+
+    $$(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+            $$(".tab-btn").forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            currentGenre = this.dataset.category;
+            shown = PAGE_SIZE;
+            renderProducts();
         });
     });
+
+    moreBtn?.addEventListener("click", function () {
+        shown += PAGE_SIZE;                    // chỉ hiện thêm sách giảm giá, không chuyển trang
+        renderProducts();
+    });
+
+    sortSelect?.addEventListener("change", renderProducts);
 
     function filterProducts() {
-        const query = (searchInput?.value || "").trim().toLocaleLowerCase("vi");
-        const products = $$(".promo-product", productGrid);
-        let visibleCount = 0;
-
-        products.forEach(product => {
-            const text = product.textContent.toLocaleLowerCase("vi");
-            const matched = !query || text.includes(query);
-
-            product.hidden = !matched;
-            if (matched) visibleCount++;
-        });
-
-        const emptyMessage = $("#emptyMessage");
-        if (emptyMessage) {
-            emptyMessage.hidden = visibleCount !== 0;
-        }
+        query = (searchInput?.value || "").trim().toLocaleLowerCase("vi");
+        shown = PAGE_SIZE;
+        renderProducts();
     }
-
     searchButton?.addEventListener("click", filterProducts);
     searchInput?.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            filterProducts();
-        }
+        if (e.key === "Enter") { e.preventDefault(); filterProducts(); }
     });
 
-    function sortProducts() {
-        if (!productGrid || !sortSelect) return;
-
-        const products = $$(".promo-product", productGrid);
-        const mode = sortSelect.value;
-        const priceOf = product => Number(product.dataset.price || 0);
-
-        if (mode === "low") {
-            products.sort((a, b) => priceOf(a) - priceOf(b));
-        } else if (mode === "high") {
-            products.sort((a, b) => priceOf(b) - priceOf(a));
-        } else {
-            products.sort((a, b) => priceOf(a) - priceOf(b));
-        }
-
-        products.forEach(product => productGrid.appendChild(product));
-    }
-
-    sortSelect?.addEventListener("change", sortProducts);
+    renderProducts();
 
     /* =========================================================
        4. NHẬN VOUCHER 100K CHO THÀNH VIÊN MỚI
@@ -281,5 +275,67 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    renderVouchers();
+/* =========================================================
+       5. THÊM VÀO GIỎ HÀNG
+       Lưu vào khoá "hanamiCart": [{ id, qty }] (cùng định dạng với trang Yêu thích).
+       thongbao.js tự nhận ra và báo "Đã thêm vào giỏ hàng" trên chuông.
+       ========================================================= */
+    const CART_KEY = "hanamiCart";
+    const toastEl = document.createElement("div");
+    toastEl.className = "yt-toast";            // kiểu thông báo nhỏ có sẵn trong yeuthich.css
+    toastEl.setAttribute("role", "status");
+    toastEl.setAttribute("aria-live", "polite");
+    document.body.appendChild(toastEl);
+    let toastTimer;
+
+    function showToast(message) {
+        toastEl.textContent = message;
+        toastEl.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2800);
+    }
+
+    function addToCart(id) {
+        let cart = [];
+        try {
+            cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+            if (!Array.isArray(cart)) cart = [];
+        } catch (error) {
+            cart = [];
+        }
+
+        const item = cart.find(c => c && c.id === id);
+        if (item) {
+            const key = ("quantity" in item && !("qty" in item)) ? "quantity" : "qty";
+            item[key] = (Number(item[key]) || 1) + 1;
+        } else {
+            cart.push({ id: id, qty: 1 });
+        }
+
+        try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch (error) {}
+        window.hanami && hanami.refresh();
+    }
+
+    $$(".add-cart").forEach(btn => {
+        const original = btn.innerHTML;
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation();               // không mở trang chi tiết khi bấm nút
+            e.preventDefault();
+
+            addToCart(this.dataset.cart);
+
+            const card = this.closest(".promo-product");
+            const name = card ? card.querySelector("h4").textContent.trim() : "sách";
+            showToast("Đã thêm “" + name + "” vào giỏ hàng");
+
+            this.innerHTML = '<i class="fas fa-check"></i> Đã thêm';
+            this.classList.add("added");
+            setTimeout(() => {
+                this.innerHTML = original;
+                this.classList.remove("added");
+            }, 1400);
+        });
+    });
+
+        renderVouchers();
 });

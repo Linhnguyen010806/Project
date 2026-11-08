@@ -46,26 +46,20 @@
 .yt-selectrow label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
 .yt-selectrow input { accent-color: var(--brown); }
 
-/* thẻ sách */
-.yt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.yt-card { display: flex; flex-direction: column; overflow: hidden; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; }
-.yt-cover { position: relative; background: #f0e6da; padding: 28px 30px 22px; }
-.yt-cover img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: contain; filter: drop-shadow(0 12px 12px rgba(58, 36, 18, .3)); }
-.yt-badge { position: absolute; top: 12px; left: 12px; background: var(--orange); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 5px; }
-.yt-heart { position: absolute; top: 10px; right: 10px; z-index: 1; width: 34px; height: 34px; border: none; border-radius: 50%; background: #fff; color: #c0392b; box-shadow: 0 2px 8px rgba(58, 36, 18, .15); transition: transform .15s; }
+/* thẻ sách: dùng khung .product-card của trang chủ (style.css),
+   chỉ ghi đè phần kích thước dành cho slider + căn giữa nội dung */
+.yt-grid, .yt-sugs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+:is(.yt-grid, .yt-sugs) .product-card { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; flex: none; width: auto; min-width: 0; max-width: none; margin: 0; cursor: pointer; }
+:is(.yt-grid, .yt-sugs) .product-card, :is(.yt-grid, .yt-sugs) .product-card :not(i) { font-family: Arial, sans-serif; }
+:is(.yt-grid, .yt-sugs) .product-card :is(h4, p, span) { width: 100%; text-align: center; }
+:is(.yt-grid, .yt-sugs) .product-card span { margin-bottom: 12px; }
+:is(.yt-grid, .yt-sugs) .product-card span del { margin-left: 6px; font-size: .8em; font-weight: 400; color: #999; }
+.yt-badge { position: absolute; top: 50px; right: 10px; z-index: 2; background: var(--orange); color: #fff; font-size: 11px; font-style: normal; font-weight: 700; padding: 4px 8px; border-radius: 5px; }
+.yt-heart { position: absolute; top: 10px; right: 10px; z-index: 2; width: 34px; height: 34px; border: none; border-radius: 50%; background: #fff; color: #c0392b; box-shadow: 0 2px 8px rgba(58, 36, 18, .15); transition: transform .15s; }
 .yt-heart:hover { transform: scale(1.12); }
-.yt-pick { position: absolute; left: 12px; bottom: 12px; z-index: 1; width: 16px; height: 16px; accent-color: var(--brown); cursor: pointer; }
-.yt-info { flex: 1; display: flex; flex-direction: column; gap: 5px; padding: 16px 16px 18px; }
-.yt-info h3 { font-size: 15px; line-height: 1.35; }
-.yt-author { font-size: 12px; color: var(--muted); }
-.yt-rate { font-size: 12px; color: var(--muted); }
-.yt-rate i { color: #e0a100; }
-.yt-price { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; }
-.yt-price strong { font-size: 18px; color: var(--orange); }
-.yt-price del { font-size: 12px; color: #a8998a; }
-.yt-stock { margin-bottom: 10px; font-size: 11px; color: var(--green); }
-.yt-add { margin-top: auto; border: 1px solid var(--brown); background: transparent; color: var(--brown); border-radius: 10px; padding: 10px; font-weight: 600; transition: background .15s, color .15s; }
-.yt-add:hover { background: var(--brown); color: #fff; }
+.yt-pick { position: absolute; top: 12px; left: 12px; z-index: 2; width: 18px; height: 18px; accent-color: var(--brown); cursor: pointer; }
+.yt-add { align-self: stretch; margin-top: auto; border: none; background: var(--brown); color: #fff; border-radius: 4px; padding: 10px; font-weight: 700; transition: background .15s; }
+.yt-add:hover { background: #6f3b00; }
 
 /* trạng thái trống */
 .yt-empty { grid-column: 1 / -1; text-align: center; padding: 64px 20px; background: var(--paper); border: 1px dashed var(--line); border-radius: 18px; }
@@ -96,13 +90,6 @@
 .yt-more { margin-top: 56px; }
 .yt-more h2 { font-size: 28px; margin-bottom: 6px; }
 .yt-more p { font-size: 13px; color: var(--muted); }
-.yt-sugs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.yt-sug { display: flex; align-items: center; gap: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
-.yt-sug img { width: 84px; height: 112px; flex-shrink: 0; object-fit: contain; filter: drop-shadow(0 8px 8px rgba(58, 36, 18, .25)); }
-.yt-sug h4 { font-size: 14px; line-height: 1.35; }
-.yt-sug p { font-size: 12px; color: var(--muted); margin: 3px 0 8px; }
-.yt-sug strong { display: block; color: var(--orange); margin-bottom: 6px; }
-.yt-sug span { font-size: 12px; font-weight: 700; color: var(--brown); }
 
 /* thông báo nhỏ */
 .yt-toast { position: fixed; left: 50%; bottom: 28px; z-index: 10000; display: flex; align-items: center; gap: 14px; background: #3a2412; color: #fff; font: 13px "Be Vietnam Pro", Arial, sans-serif; padding: 12px 18px; border-radius: 12px; opacity: 0; pointer-events: none; transform: translate(-50%, 20px); transition: opacity .2s, transform .2s; }
@@ -110,13 +97,12 @@
 .yt-toast button { border: none; background: none; color: #f6c28b; font: 700 13px "Be Vietnam Pro", Arial, sans-serif; cursor: pointer; }
 
 @media (max-width: 980px) {
-    .yt-grid { grid-template-columns: repeat(2, 1fr); }
-    .yt-hero, .yt-sugs { grid-template-columns: 1fr; }
+    .yt-grid, .yt-sugs { grid-template-columns: repeat(2, 1fr); }
+    .yt-hero { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
     .yt-page { padding: 14px 14px 40px; }
     .yt-grid { gap: 12px; }
-    .yt-cover { padding: 24px 18px 18px; }
     .yt-actions, .yt-btn { width: 100%; text-align: center; }
 }
 @media (prefers-reduced-motion: reduce) { .yt-heart, .yt-add, .yt-toast { transition: none; } }

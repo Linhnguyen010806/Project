@@ -68,52 +68,110 @@ body {
     border-color: #9a5700;
 }
 
-/* ĐỒNG HỒ ĐẾM NGƯỢC */
+/* ĐỒNG HỒ ĐẾM NGƯỢC: kiểu lật số, nền kem hoa anh đào */
 .countdown-wireframe-box {
-    background: #ffffff;
-    border: 1px solid #e0d5c8;
-    border-radius: 8px;
-    padding: 20px 30px;
-    margin: 30px 0 40px;
+    --flower: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'><g fill='%23f2a9b0' fill-opacity='.6'><path transform='rotate(0)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/><path transform='rotate(72)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/><path transform='rotate(144)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/><path transform='rotate(216)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/><path transform='rotate(288)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/></g><circle r='5' fill='%23f6c667' fill-opacity='.9'/></svg>");
+    position: relative;
+    overflow: hidden;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(59, 41, 33, 0.08);
+    margin: 30px 0 40px;
+    padding: 34px 20px 30px;
+    border: 1px solid #f0d5c0;
+    border-radius: 22px;
+    color: #3b2921;
+    background:
+        var(--flower) no-repeat top -34px left -30px / 150px,
+        var(--flower) no-repeat bottom -46px right -38px / 180px,
+        var(--flower) no-repeat top 26px right 11% / 38px,
+        var(--flower) no-repeat bottom 30px left 13% / 30px,
+        linear-gradient(135deg, #fffaf5 0%, #fdeadc 55%, #f9dcc6 100%);
+    box-shadow: 0 14px 34px rgba(139, 74, 0, .14);
 }
 
+.countdown-wireframe-box > * { position: relative; }
+
 .countdown-title {
-    font-size: 15px;
-    font-weight: bold;
-    color: #9a5700;
-    margin-bottom: 10px;
+    font: 600 22px Lora, Georgia, serif;
+    color: #8B4A00;
+}
+
+.countdown-title i { margin-right: 4px; color: #e68a9c; }
+
+.countdown-sub {
+    margin: 5px 0 24px;
+    font-size: 13px;
+    color: #8a6b52;
 }
 
 .timer-display {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px;
+    align-items: flex-start;
+    gap: clamp(6px, 2vw, 16px);
 }
 
 .time-block {
+    width: clamp(60px, 17vw, 112px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 26px;
-    font-weight: bold;
-    color: #3b2921;
+}
+
+.time-num {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: clamp(70px, 17vw, 110px);
+    border-radius: 16px;
+    border: 1px solid #efd3bb;
+    background: linear-gradient(180deg, #ffffff 0, #fffaf4 50%, #fbefe3 50%, #fff8f0 100%);
+    box-shadow: inset 0 1px 0 #fff, 0 10px 22px rgba(139, 74, 0, .16);
+    font: 600 clamp(34px, 9vw, 62px)/1 Lora, Georgia, serif;
+    font-variant-numeric: tabular-nums;
+    color: #8B4A00;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.time-num::after {              /* vạch chia đôi */
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    height: 1px;
+    background: rgba(139, 74, 0, .18);
+}
+
+.time-num.tick { animation: tickFlip .45s ease-out; }
+
+@keyframes tickFlip {
+    from { transform: perspective(260px) rotateX(-80deg); opacity: .2; }
+    to   { transform: none; opacity: 1; }
 }
 
 .time-block small {
-    font-size: 11px;
-    color: #666;
-    font-weight: normal;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8B4A00;
 }
 
-.colon {
-    font-size: 24px;
-    font-weight: bold;
-    color: #3b2921;
-    margin-top: -12px;
+.time-block:last-child .time-num {      /* ô giây: màu hoa anh đào */
+    border-color: #e68a9c;
+    background: linear-gradient(180deg, #f3adb9 0, #e98fa0 50%, #e07d91 50%, #db7388 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 10px 24px rgba(224, 125, 145, .38);
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(150, 50, 70, .35);
 }
+
+.time-block:last-child .time-num::after { background: rgba(150, 50, 70, .22); }
+
+.colon {
+    margin-top: clamp(18px, 4vw, 30px);
+    font: 600 clamp(24px, 5vw, 40px) Lora, Georgia, serif;
+    color: #d98a9a;
+}
+
+@media (prefers-reduced-motion: reduce) { .time-num.tick { animation: none; } }
 
 /* VOUCHER SECTION */
 .promo-section {
@@ -273,16 +331,20 @@ body {
 }
 
 .deal-category-bar {
+    background: #faf6f0;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #e8dfd5;
+}
+
+.deal-bar-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #faf6f0;
-    padding: 12px 18px;
-    border-radius: 6px;
-    margin-bottom: 25px;
-    border: 1px solid #e8dfd5;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
+    margin-bottom: 10px;
 }
 
 .deal-title-label {
@@ -293,15 +355,18 @@ body {
 
 .filter-tabs {
     display: flex;
-    flex-wrap: wrap;
     gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
 }
 
 .tab-btn {
+    flex: none;
     background: transparent;
     border: none;
-    padding: 6px 14px;
+    padding: 8px 14px;
     font-size: 13px;
+    font-weight: bold;
     color: #666;
     cursor: pointer;
     border-radius: 4px;
@@ -314,120 +379,61 @@ body {
 }
 
 .sort-box select {
-    padding: 6px 12px;
+    padding: 7px 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background: #fff;
 }
 
+/* Lưới sản phẩm: dùng khung .product-card của trang chủ (style.css),
+   chỉ ghi đè phần kích thước dành cho slider để vừa ô lưới + căn giữa nội dung */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.promo-product {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #e0d5c8;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-}
-
-.promo-product:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(59, 41, 33, 0.08);
-}
-
-.product-cover {
+#productGrid .product-card {
     position: relative;
-    height: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    padding: 15px;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.product-cover img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-.badge-sale {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #e63946;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 4px;
-}
-
-.product-info {
-    padding: 16px;
     display: flex;
     flex-direction: column;
-    flex: 1;
-}
-
-.product-category {
-    font-size: 11px;
-    font-weight: bold;
-    color: #9a5700;
-    margin-bottom: 5px;
-}
-
-.product-info h3 {
-    font-size: 15px;
-    line-height: 1.4;
-    margin-bottom: 8px;
-    height: 42px;
-    overflow: hidden;
-}
-
-.product-info h3 a {
-    color: #3b2921;
-    text-decoration: none;
-}
-
-.product-info h3 a:hover {
-    color: #9a5700;
-}
-
-.product-author {
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 12px;
-}
-
-.price-line {
-    margin-top: auto;
-    margin-bottom: 12px;
-    display: flex;
     align-items: center;
-    gap: 10px;
+    text-align: center;
+    flex: none;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    cursor: pointer;
 }
 
-.price-line strong {
-    font-size: 18px;
-    color: #9a5700;
+#productGrid .product-card[hidden] { display: none; }
+
+#productGrid .product-card h4,
+#productGrid .product-card p,
+#productGrid .product-card span {
+    width: 100%;
+    text-align: center;
 }
 
-.price-line del {
-    font-size: 13px;
+#productGrid .product-card span del {
+    margin-left: 6px;
+    font-size: .8em;
+    font-weight: normal;
     color: #999;
 }
 
-.detail-button {
+#productGrid .product-card span { margin-bottom: 12px; }
+
+#productGrid .detail-button {
+    align-self: stretch;
+    margin-top: auto;
     display: block;
+    border: none;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
     text-align: center;
-    background: #3b2921;
+    background: #8B4A00;
     color: #fff;
     padding: 10px;
     border-radius: 4px;
@@ -437,8 +443,21 @@ body {
     transition: 0.2s;
 }
 
-.detail-button:hover {
-    background: #9a5700;
+#productGrid .detail-button:hover { background: #6f3b00; }
+#productGrid .detail-button.added { background: #3f7d4f; }
+
+.badge-sale {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    background: #e63946;
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
 }
 
 /* ================= NHẬN VOUCHER 100K THÀNH VIÊN MỚI ================= */
@@ -458,41 +477,41 @@ body {
 .wv-steps { display: flex; gap: 20px; list-style: none; font-size: 12px; color: #a8998a; }
 .wv-steps li { display: flex; align-items: center; gap: 7px; }
 .wv-steps li::before { content: attr(data-n); width: 20px; height: 20px; border-radius: 50%; border: 1px solid currentColor; font-size: 11px; display: flex; align-items: center; justify-content: center; }
-.wv-steps li.on { color: #d35400; font-weight: 700; }
-.wv-steps li.on::before { background: #d35400; border-color: #d35400; color: #fff; }
+.wv-steps li.on { color: #8B4A00; font-weight: 700; }
+.wv-steps li.on::before { background: #8B4A00; border-color: #8B4A00; color: #fff; }
 
 .wv-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .wv-form label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #3b2921; }
 .wv-form .full { grid-column: 1 / -1; }
 .wv-form input[type="text"], .wv-form input[type="tel"], .wv-form input[type="email"] { padding: 12px 14px; border: 1px solid #dccbb8; border-radius: 8px; background: #fff; font-size: 13px; }
-.wv-form input:focus-visible { outline: 2px solid #d35400; border-color: #d35400; }
+.wv-form input:focus-visible { outline: 2px solid #8B4A00; border-color: #8B4A00; }
 .wv-form .wv-agree { flex-direction: row; align-items: flex-start; gap: 8px; font-weight: 400; color: #6d5a49; line-height: 1.5; }
 .wv-agree a, .wv-done a, .wv-how a { color: #9a5700; font-weight: 700; text-decoration: underline; }
 .wv-err { min-height: 0; font-size: 11px; font-weight: 400; color: #c0392b; }
-.wv-submit { grid-column: 1 / -1; padding: 14px; border: none; border-radius: 8px; background: #d35400; color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; }
-.wv-submit:hover { background: #b94700; }
+.wv-submit { grid-column: 1 / -1; padding: 14px; border: none; border-radius: 8px; background: #8B4A00; color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; }
+.wv-submit:hover { background: #6f3b00; }
 
 .wv-done { text-align: center; padding: 18px 14px; background: #f7f1e8; border-radius: 12px; }
 .wv-done > i { font-size: 30px; color: #3f7d4f; }
 .wv-done h4 { margin: 8px 0 12px; font-size: 16px; color: #3b2921; }
-.wv-code { display: inline-flex; align-items: center; gap: 12px; padding: 8px 8px 8px 18px; background: #fff; border: 1px dashed #d35400; border-radius: 10px; }
+.wv-code { display: inline-flex; align-items: center; gap: 12px; padding: 8px 8px 8px 18px; background: #fff; border: 1px dashed #8B4A00; border-radius: 10px; }
 .wv-code strong { font-size: 18px; letter-spacing: 1px; color: #3b2921; }
 .wv-code button { padding: 8px 12px; border: none; border-radius: 7px; background: #3b2921; color: #fff; font-size: 12px; cursor: pointer; }
 .wv-done p { margin: 12px 0; }
-.wv-cta { display: inline-block; padding: 12px 22px; border-radius: 8px; background: #d35400; color: #fff !important; text-decoration: none !important; }
+.wv-cta { display: inline-block; padding: 12px 22px; border-radius: 8px; background: #8B4A00; color: #fff !important; text-decoration: none !important; }
 
 .wv-how { margin-top: 44px; }
 .wv-how h2 { margin-bottom: 22px; font-size: 26px; }
 .wv-how ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; list-style: none; }
 .wv-how li { display: flex; gap: 14px; }
-.wv-how li > b { font: 500 34px/1 Lora, Georgia, serif; color: #d35400; }
+.wv-how li > b { font: 500 34px/1 Lora, Georgia, serif; color: #8B4A00; }
 .wv-how h4 { margin-bottom: 5px; font-size: 14px; color: #3b2921; }
 .wv-how p { font-size: 12px; line-height: 1.6; color: #6d5a49; }
 .wv-note { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 26px; padding: 12px 16px; background: #f0e9df; border-radius: 10px; font-size: 12px; color: #6d5a49; }
 .wv-note a { color: #3b2921; font-weight: 700; white-space: nowrap; }
 .wv-allsale { margin-top: 22px; text-align: center; }
-.wv-allsale a { display: inline-block; padding: 10px 20px; border: 1px solid #dccbb8; border-radius: 8px; background: #fff; color: #3b2921; font-size: 13px; font-weight: 700; text-decoration: none; }
-.wv-allsale a:hover { background: #3b2921; color: #fff; }
+.wv-allsale button { padding: 11px 28px; border: 1px solid #8B4A00; border-radius: 8px; background: transparent; color: #8B4A00; font-size: 13px; font-weight: 700; cursor: pointer; transition: .2s; }
+.wv-allsale button:hover { background: #8B4A00; color: #fff; }
 
 @media (max-width: 860px) {
     .welcome-voucher, .wv-how ol { grid-template-columns: 1fr; }

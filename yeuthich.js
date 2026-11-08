@@ -115,22 +115,16 @@
     /* ---------- Giao diện ---------- */
     const card = (b) => {
         const p = pct(b);
-        return `<article class="yt-card">
-            <div class="yt-cover">
-                ${p ? `<span class="yt-badge">-${p}%</span>` : ""}
-                <button type="button" class="yt-heart" data-rm="${b.id}" title="Bỏ yêu thích" aria-label="Bỏ yêu thích ${b.name}"><i class="fa-solid fa-heart"></i></button>
-                <input type="checkbox" class="yt-pick" data-pick="${b.id}" ${picked.has(b.id) ? "checked" : ""} aria-label="Chọn ${b.name}">
-                <a href="chitietsp.html?id=${b.id}"><img src="${b.img}" alt="${b.name}" loading="lazy"></a>
-            </div>
-            <div class="yt-info">
-                <h3><a href="chitietsp.html?id=${b.id}">${b.name}</a></h3>
-                <p class="yt-author">${b.author}</p>
-                <p class="yt-rate"><i class="fa-solid fa-star"></i> 4.9</p>
-                <p class="yt-price"><strong>${money(b.price)}</strong>${b.old ? `<del>${money(b.old)}</del>` : ""}</p>
-                <p class="yt-stock"><i class="fa-solid fa-circle-check"></i> Còn hàng</p>
-                <button type="button" class="yt-add" data-add="${b.id}"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ</button>
-            </div>
-        </article>`;
+        return `<div class="product-card" data-id="${b.id}">
+            <button type="button" class="yt-heart" data-rm="${b.id}" title="Bỏ yêu thích" aria-label="Bỏ yêu thích ${b.name}"><i class="fa-solid fa-heart"></i></button>
+            <input type="checkbox" class="yt-pick" data-pick="${b.id}" ${picked.has(b.id) ? "checked" : ""} aria-label="Chọn ${b.name}">
+            ${p ? `<em class="yt-badge">-${p}%</em>` : ""}
+            <a href="chitietsp.html?id=${b.id}"><img src="${b.img}" alt="${b.name}" loading="lazy"></a>
+            <h4><a href="chitietsp.html?id=${b.id}">${b.name}</a></h4>
+            <p>${b.author}</p>
+            <span>${money(b.price)}${b.old ? ` <del>${money(b.old)}</del>` : ""}</span>
+            <button type="button" class="yt-add" data-add="${b.id}"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+        </div>`;
     };
 
     function updateBar() {
@@ -146,7 +140,9 @@
         const list = visible(), sale = all.filter(pct);
 
         $(".yt-page").classList.toggle("is-empty", !all.length);
-        $("#ytCount").textContent = String(all.length).padStart(2, "0");
+        
+        // Đã ẩn/bỏ hiển thị số lượng ở tiêu đề theo yêu cầu
+        if ($("#ytCount")) $("#ytCount").textContent = "";
 
         $("#ytAlert").hidden = !sale.length;
         if (sale.length) $("#ytAlertText").innerHTML = `<b>Tin vui! ${sale.length} cuốn bạn lưu đang giảm giá.</b><span>Giảm tới ${Math.max(...sale.map(pct))}%. Đừng để cuốn sách mình thương phải đợi lâu.</span>`;
@@ -160,10 +156,9 @@
         const total = all.reduce((s, b) => s + b.price, 0);
         $("#ytBarText").innerHTML = `<b>${all.length} cuốn sách, vô vàn điều đang chờ bạn.</b><span>Tổng giá trị tủ sách: ${money(total)}. Giá ưu đãi cập nhật theo thời điểm đặt hàng.</span>`;
 
-        // Gợi ý: sách chưa lưu, ưu tiên cùng thể loại với sách đã lưu
         const saved = new Set(favs), liked = new Set(all.map((b) => b.cat));
-        const sug = BOOKS.filter((b) => !saved.has(b.id)).sort((a, b) => liked.has(b.cat) - liked.has(a.cat)).slice(0, 3);
-        $("#ytSugs").innerHTML = sug.map((b) => `<a class="yt-sug" href="chitietsp.html?id=${b.id}"><img src="${b.img}" alt="${b.name}" loading="lazy"><div><h4>${b.name}</h4><p>${b.author}</p><strong>${money(b.price)}</strong><span>Khám phá ngay</span></div></a>`).join("");
+        const sug = BOOKS.filter((b) => !saved.has(b.id)).sort((a, b) => liked.has(b.cat) - liked.has(a.cat)).slice(0, 4);
+        $("#ytSugs").innerHTML = sug.map((b) => `<div class="product-card" data-id="${b.id}"><a href="chitietsp.html?id=${b.id}"><img src="${b.img}" alt="${b.name}" loading="lazy"></a><h4><a href="chitietsp.html?id=${b.id}">${b.name}</a></h4><p>${b.author}</p><span>${money(b.price)}${b.old ? ` <del>${money(b.old)}</del>` : ""}</span></div>`).join("");
 
         updateBar();
     }
@@ -175,6 +170,9 @@
 
     /* ---------- Sự kiện ---------- */
     document.addEventListener("click", (e) => {
+        // bấm vào vùng trống của thẻ sách (giống trang chủ) -> mở trang chi tiết
+        const cd = e.target.closest(".yt-grid .product-card, .yt-sugs .product-card");
+        if (cd && !e.target.closest("a, button, input, label")) { location.href = "chitietsp.html?id=" + cd.dataset.id; return; }
         const t = e.target.closest("[data-rm],[data-add],[data-cat],#ytAddAll,#ytShare");
         if (!t) return;
         if (t.dataset.rm) {
