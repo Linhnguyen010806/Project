@@ -257,3 +257,94 @@ if (tuKhoa) {
         }, 300);
     }
 }
+
+// ========================================
+// CHỨC NĂNG THÊM SÁCH VÀO GIỎ HÀNG
+// ========================================
+
+(function() {
+
+    // Lấy giỏ hàng đã lưu
+    function layGioHang() {
+        return JSON.parse(localStorage.getItem("gioHang") || "[]");
+    }
+
+    // Lưu giỏ hàng
+    function luuGioHang(gioHang) {
+        localStorage.setItem("gioHang", JSON.stringify(gioHang));
+    }
+
+    // Cập nhật số lượng trên biểu tượng giỏ hàng
+    function capNhatGioHang() {
+        let gioHang = layGioHang();
+        let tong = 0;
+
+        gioHang.forEach(function(sach) {
+            tong += Number(sach.soLuong) || 0;
+        });
+
+        let hienThi = document.getElementById("so-luong-gio-hang");
+
+        if (hienThi) {
+            hienThi.textContent = tong;
+        }
+    }
+
+    // Xử lý bấm nút thêm nhanh
+    document.querySelectorAll(".san-pham .nut-them-nhanh").forEach(function(nut) {
+
+        nut.addEventListener("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            let sanPham = nut.closest(".san-pham");
+
+            if (!sanPham) return;
+
+            let link = sanPham.querySelector('a[href*="id="]');
+            let ten = sanPham.querySelector("h3");
+            let anh = sanPham.querySelector(".khung-anh img");
+
+            if (!link || !ten || !anh) {
+                console.log("Thiếu thông tin sản phẩm");
+                return;
+            }
+
+            let id = new URL(link.href).searchParams.get("id");
+            let gia = Number(sanPham.dataset.gia);
+
+            if (!id || !Number.isFinite(gia)) {
+                console.log("Không lấy được mã sách hoặc giá sách");
+                return;
+            }
+
+            let gioHang = layGioHang();
+
+            let sachCo = gioHang.find(function(sach) {
+                return sach.id === id;
+            });
+
+            if (sachCo) {
+                sachCo.soLuong++;
+            } else {
+                gioHang.push({
+                    id: id,
+                    ten: ten.textContent.trim(),
+                    gia: gia,
+                    anh: anh.getAttribute("src"),
+                    soLuong: 1
+                });
+            }
+
+            luuGioHang(gioHang);
+            capNhatGioHang();
+
+            alert("Đã thêm sách vào giỏ hàng!");
+        });
+
+    });
+
+    // Cập nhật số lượng khi mở trang
+    capNhatGioHang();
+
+})();
