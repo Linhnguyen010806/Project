@@ -1392,30 +1392,6 @@ html{
 #backToTop:hover::before {
     border-color: #A85B00;
 }
-<<<<<<< Updated upstream
-
-
-.cart-icon-wrap {
-    position: relative;
-    display: inline-block;
-}
-
-#so-luong-gio-hang {
-    position: absolute;
-    top: -9px;
-    right: -10px;
-    width: 18px;
-    height: 18px;
-    background-color: #e52b2b;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: bold;
-    line-height: 1;
-=======
 /* ================= FLASH SALE ================= */
 
 .flash-sale {
@@ -1616,5 +1592,4 @@ html{
         align-items: flex-start;
         gap: 8px;
     }
->>>>>>> Stashed changes
 }
