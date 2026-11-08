@@ -1,7 +1,4 @@
-/* =========================================================
-   HANAMI BOOKSTORE - STYLESHEET TRANG KHUYẾN MÃI
-   Nền trắng hoàn toàn (#ffffff) đồng bộ với hệ thống website
-   ========================================================= */
+
 
 body {
     background-color: #ffffff !important;
@@ -37,6 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    container-type: inline-size;   /* để cỡ chữ nút co giãn theo bề rộng banner */
 }
 
 .banner-img {
@@ -44,29 +42,61 @@ body {
     height: auto;
     display: block;
     object-fit: cover;
-    min-height: 200px;
 }
 
+/* Nút đặt đè đúng vị trí nút "MUA NGAY" trong ảnh banner (tính theo % nên co giãn cùng ảnh) */
 .btn-san-deal-banner {
     position: absolute;
-    bottom: 25px;
-    right: 30px;
-    background-color: #3b2921;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 12px 24px;
-    border-radius: 4px;
+    left: 32.2%;
+    bottom: 17.9%;
+    transform: translateX(-50%);
+    width: 24%;
+    min-width: max-content;
+    height: 7.8%;
+    min-height: 34px;
+    box-sizing: border-box;
+    padding: 0 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .7em;
+    background-color: #4a2c1d;
+    color: #fff6e3;
+    border: none;
+    border-radius: 999px;
+    /* font-size: 14px;
+    font-size: clamp(9px, 1.05cqw, 14px);
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase; */
+    font-size: 16px;
+    font-size: clamp(11px, 1.4cqw, 18px);
+    font-weight: 700;
+    letter-spacing: .02em;
+
+    white-space: nowrap;
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    border: 1px solid #3b2921;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(74, 44, 29, .25);
+    transition: background-color .25s ease, transform .25s ease;
 }
 
 .btn-san-deal-banner:hover {
-    background-color: #9a5700;
-    border-color: #9a5700;
+    background-color: #8B4A00;
+    transform: translateX(-50%) translateY(-2px);
 }
+
+/* Điện thoại: giữ nút đè đúng vị trí trên ảnh nhưng thu nhỏ chữ cho vừa */
+@media (max-width: 700px) {
+    .btn-san-deal-banner {
+        bottom: 12.5%;
+        min-height: 24px;
+        padding: 0 .1em;
+        letter-spacing: .02em;
+        font-size: 10px;
+    }
+}
+
+
 
 /* ĐỒNG HỒ ĐẾM NGƯỢC: kiểu lật số, nền kem hoa anh đào */
 .countdown-wireframe-box {
