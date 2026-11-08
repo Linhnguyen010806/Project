@@ -30,17 +30,18 @@
             </div>
         </section>
 
-        <!-- ĐỒNG HỒ ĐẾM NGƯỢC -->
+        <!-- ĐỒNG HỒ ĐẾM NGƯỢC: Ngày : Giờ : Phút : Giây (hạn chót đặt trong khuyenmai.js) -->
         <section class="countdown-wireframe-box">
-            <div class="countdown-title">
-                <i class="fas fa-bolt"></i> SĂN DEAL GIỜ VÀNG - SỐ LƯỢNG CÓ HẠN
-            </div>
-            <div class="timer-display">
-                <div class="time-block"><span id="hours">89</span><small>Giờ</small></div>
+            <div class="countdown-title"><i class="fas fa-bolt"></i> Săn deal giờ vàng, số lượng có hạn</div>
+            <div class="countdown-sub">Ưu đãi kết thúc lúc 23:59 ngày 30/11/2026</div>
+            <div class="timer-display" role="timer" aria-label="Thời gian còn lại">
+                <div class="time-block"><span class="time-num" id="days">00</span><small>Ngày</small></div>
                 <span class="colon">:</span>
-                <div class="time-block"><span id="minutes">14</span><small>Phút</small></div>
+                <div class="time-block"><span class="time-num" id="hours">00</span><small>Giờ</small></div>
                 <span class="colon">:</span>
-                <div class="time-block"><span id="seconds">37</span><small>Giây</small></div>
+                <div class="time-block"><span class="time-num" id="minutes">00</span><small>Phút</small></div>
+                <span class="colon">:</span>
+                <div class="time-block"><span class="time-num" id="seconds">00</span><small>Giây</small></div>
             </div>
         </section>
 
@@ -99,136 +100,288 @@
         <!-- KHUNG LIỀN MẠCH: DANH MỤC DEAL HOT & LƯỚI SẢN PHẨM -->
         <section class="promo-section unified-deal-box" id="sach-khuyen-mai">
             <div class="deal-category-bar">
-                <span class="deal-title-label">Danh mục deal hot</span>
-                <div class="filter-tabs">
-                    <button class="tab-btn active" data-category="all">Tất cả</button>
-                    <button class="tab-btn" data-category="phat-trien-ban-than">Phát triển bản thân</button>
-                    <button class="tab-btn" data-category="tieu-thuyet">Tiểu thuyết</button>
-                    <button class="tab-btn" data-category="thieu-nhi">Thiếu nhi</button>
-                    <button class="tab-btn" data-category="kinh-doanh">Kinh doanh</button>
-                    <button class="tab-btn" data-category="ngoai-ngu">Ngoại ngữ</button>
-                    <button class="tab-btn" data-category="tham-khao">Tham khảo</button>
+                <div class="deal-bar-top">
+                    <span class="deal-title-label">Danh mục deal hot</span>
+                    <div class="sort-box">
+                        <select id="sortProducts" aria-label="Sắp xếp sản phẩm">
+                            <option value="featured">Sắp xếp: Nổi bật</option>
+                            <option value="low">Giá: Thấp đến Cao</option>
+                            <option value="high">Giá: Cao đến Thấp</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="sort-box">
-                    <select id="sortProducts">
-                        <option value="featured">Sắp xếp: Nổi bật</option>
-                        <option value="low">Giá: Thấp đến Cao</option>
-                        <option value="high">Giá: Cao đến Thấp</option>
-                    </select>
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-category="all" type="button">Tất cả</button>
+                    <button class="tab-btn" data-category="phat-trien-ban-than" type="button">Phát triển bản thân</button>
+                    <button class="tab-btn" data-category="tieu-thuyet" type="button">Tiểu thuyết</button>
+                    <button class="tab-btn" data-category="thieu-nhi" type="button">Thiếu nhi</button>
+                    <button class="tab-btn" data-category="kinh-doanh" type="button">Kinh doanh</button>
+                    <button class="tab-btn" data-category="ngoai-ngu" type="button">Ngoại ngữ</button>
+                    <button class="tab-btn" data-category="tham-khao" type="button">Tham khảo</button>
                 </div>
             </div>
 
             <!-- Lưới sản phẩm -->
             <div class="product-grid" id="productGrid">
 
-                <article class="promo-product" data-price="86000" data-cat="phat-trien-ban-than">
-                    <a class="product-cover" href="chitietsp.html?id=dnt">
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="phat-trien-ban-than" data-price="86000" data-order="0" onclick="goToDetail('dnt')">
+                    <em class="badge-sale">-39%</em>
+                    <a href="chitietsp.html?id=dnt">
                         <img src="images/dnt.webp" alt="Đắc Nhân Tâm" loading="lazy">
-                        <span class="badge-sale">-40%</span>
                     </a>
-                    <div class="product-info">
-                        <span class="product-category">PHÁT TRIỂN BẢN THÂN</span>
-                        <h3><a href="chitietsp.html?id=dnt">Đắc Nhân Tâm</a></h3>
-                        <p class="product-author">Dale Carnegie</p>
-                        <div class="price-line">
-                            <strong>86.000đ</strong>
-                            <del>140.000đ</del>
-                        </div>
-                        <a class="detail-button" href="chitietsp.html?id=dnt">Mua ngay <i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </article>
+                    <h4>
+                        <a href="chitietsp.html?id=dnt">Đắc Nhân Tâm</a>
+                    </h4>
+                    <p>Dale Carnegie</p>
+                    <span>86.000đ <del>140.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="dnt">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
 
-                <article class="promo-product" data-price="120000" data-cat="tieu-thuyet">
-                    <a class="product-cover" href="chitietsp.html?id=cam">
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="tieu-thuyet" data-price="120000" data-order="1" onclick="goToDetail('cam')">
+                    <em class="badge-sale">-20%</em>
+                    <a href="chitietsp.html?id=cam">
                         <img src="images/ccnct1.webp" alt="Cây cam ngọt của tôi" loading="lazy">
-                        <span class="badge-sale">-20%</span>
                     </a>
-                    <div class="product-info">
-                        <span class="product-category">TIỂU THUYẾT</span>
-                        <h3><a href="chitietsp.html?id=cam">Cây cam ngọt của tôi</a></h3>
-                        <p class="product-author">José Mauro de Vasconcelos</p>
-                        <div class="price-line">
-                            <strong>120.000đ</strong>
-                            <del>150.000đ</del>
-                        </div>
-                        <a class="detail-button" href="chitietsp.html?id=cam">Mua ngay <i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </article>
+                    <h4>
+                        <a href="chitietsp.html?id=cam">Cây cam ngọt của tôi</a>
+                    </h4>
+                    <p>José Mauro de Vasconcelos</p>
+                    <span>120.000đ <del>150.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="cam">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
 
-                <article class="promo-product" data-price="99000" data-cat="kinh-doanh">
-                    <a class="product-cover" href="chitietsp.html?id=ngcntb">
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="kinh-doanh" data-price="99000" data-order="2" onclick="goToDetail('ngcntb')">
+                    <em class="badge-sale">-34%</em>
+                    <a href="chitietsp.html?id=ngcntb">
                         <img src="images/ngcntb.webp" alt="Người giàu có nhất thành Babylon" loading="lazy">
-                        <span class="badge-sale">-35%</span>
                     </a>
-                    <div class="product-info">
-                        <span class="product-category">KINH DOANH</span>
-                        <h3><a href="chitietsp.html?id=ngcntb">Người giàu có nhất thành Babylon</a></h3>
-                        <p class="product-author">George S. Clason</p>
-                        <div class="price-line">
-                            <strong>99.000đ</strong>
-                            <del>150.000đ</del>
-                        </div>
-                        <a class="detail-button" href="chitietsp.html?id=ngcntb">Mua ngay <i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </article>
+                    <h4>
+                        <a href="chitietsp.html?id=ngcntb">Người giàu có nhất thành Babylon</a>
+                    </h4>
+                    <p>George S. Clason</p>
+                    <span>99.000đ <del>150.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="ngcntb">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
 
-                <article class="promo-product" data-price="49000" data-cat="thieu-nhi">
-                    <a class="product-cover" href="chitietsp.html?id=dm">
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="thieu-nhi" data-price="49000" data-order="3" onclick="goToDetail('dm')">
+                    <em class="badge-sale">-30%</em>
+                    <a href="chitietsp.html?id=dm">
                         <img src="images/dm.webp" alt="Dế mèn phiêu lưu ký" loading="lazy">
-                        <span class="badge-sale">-30%</span>
                     </a>
-                    <div class="product-info">
-                        <span class="product-category">THIẾU NHI</span>
-                        <h3><a href="chitietsp.html?id=dm">Dế mèn phiêu lưu ký</a></h3>
-                        <p class="product-author">Tô Hoài</p>
-                        <div class="price-line">
-                            <strong>49.000đ</strong>
-                            <del>70.000đ</del>
-                        </div>
-                        <a class="detail-button" href="chitietsp.html?id=dm">Mua ngay <i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </article>
+                    <h4>
+                        <a href="chitietsp.html?id=dm">Dế mèn phiêu lưu ký</a>
+                    </h4>
+                    <p>Tô Hoài</p>
+                    <span>49.000đ <del>70.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="dm">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
 
-                <article class="promo-product" data-price="199000" data-cat="ngoai-ngu">
-                    <a class="product-cover" href="chitietsp.html?id=hsk1">
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="ngoai-ngu" data-price="199000" data-order="4" onclick="goToDetail('hsk1')">
+                    <em class="badge-sale">-25%</em>
+                    <a href="chitietsp.html?id=hsk1">
                         <img src="images/hsk1.webp" alt="Giáo trình chuẩn HSK 1" loading="lazy">
-                        <span class="badge-sale">-25%</span>
                     </a>
-                    <div class="product-info">
-                        <span class="product-category">SÁCH HỌC NGOẠI NGỮ</span>
-                        <h3><a href="chitietsp.html?id=hsk1">Giáo trình chuẩn HSK 1</a></h3>
-                        <p class="product-author">Đang cập nhật</p>
-                        <div class="price-line">
-                            <strong>199.000đ</strong>
-                            <del>265.000đ</del>
-                        </div>
-                        <a class="detail-button" href="chitietsp.html?id=hsk1">Mua ngay <i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </article>
+                    <h4>
+                        <a href="chitietsp.html?id=hsk1">Giáo trình chuẩn HSK 1</a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>199.000đ <del>265.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="hsk1">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
 
-                <article class="promo-product" data-price="199000" data-cat="tham-khao">
-                    <a class="product-cover" href="chitietsp.html?id=mhtn">
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="tham-khao" data-price="199000" data-order="5" onclick="goToDetail('mhtn')">
+                    <em class="badge-sale">-30%</em>
+                    <a href="chitietsp.html?id=mhtn">
                         <img src="images/mhtn.webp" alt="60 đề minh họa Tốt nghiệp THPT 2026" loading="lazy">
-                        <span class="badge-sale">-30%</span>
                     </a>
-                    <div class="product-info">
-                        <span class="product-category">SÁCH THAM KHẢO</span>
-                        <h3><a href="chitietsp.html?id=mhtn">60 đề minh họa Tốt nghiệp THPT 2026</a></h3>
-                        <p class="product-author">Đang cập nhật</p>
-                        <div class="price-line">
-                            <strong>199.000đ</strong>
-                            <del>285.000đ</del>
-                        </div>
-                        <a class="detail-button" href="chitietsp.html?id=mhtn">Mua ngay <i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </article>
+                    <h4>
+                        <a href="chitietsp.html?id=mhtn">60 đề minh họa Tốt nghiệp THPT 2026</a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>199.000đ <del>285.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="mhtn">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="phat-trien-ban-than" data-price="129000" data-order="6" onclick="goToDetail('dbg')">
+                    <em class="badge-sale">-24%</em>
+                    <a href="chitietsp.html?id=dbg">
+                        <img src="images/dbg.webp" alt="Dám bị ghét" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=dbg">Dám bị ghét</a>
+                    </h4>
+                    <p>Ichiro Kishimi</p>
+                    <span>129.000đ <del>169.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="dbg">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="tieu-thuyet" data-price="109000" data-order="7" onclick="goToDetail('ngk')">
+                    <em class="badge-sale">-22%</em>
+                    <a href="chitietsp.html?id=ngk">
+                        <img src="images/ngk.webp" alt="Nhà giả kim" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=ngk">Nhà giả kim</a>
+                    </h4>
+                    <p>Paulo Coelho</p>
+                    <span>109.000đ <del>139.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="ngk">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="kinh-doanh" data-price="129000" data-order="8" onclick="goToDetail('ttdvd')">
+                    <em class="badge-sale">-24%</em>
+                    <a href="chitietsp.html?id=ttdvd">
+                        <img src="images/ttdvd.webp" alt="Từ tốt đến vĩ đại" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=ttdvd">Từ tốt đến vĩ đại</a>
+                    </h4>
+                    <p>Jim Collins</p>
+                    <span>129.000đ <del>169.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="ttdvd">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="thieu-nhi" data-price="59000" data-order="9" onclick="goToDetail('ttdd')">
+                    <em class="badge-sale">-25%</em>
+                    <a href="chitietsp.html?id=ttdd">
+                        <img src="images/ttdd.webp" alt="Tuổi thơ dữ dội" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=ttdd">Tuổi thơ dữ dội</a>
+                    </h4>
+                    <p>Phùng Quán</p>
+                    <span>59.000đ <del>79.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="ttdd">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="ngoai-ngu" data-price="199000" data-order="10" onclick="goToDetail('hsk2')">
+                    <em class="badge-sale">-25%</em>
+                    <a href="chitietsp.html?id=hsk2">
+                        <img src="images/hsk2.webp" alt="Giáo trình chuẩn HSK 2" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=hsk2">Giáo trình chuẩn HSK 2</a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>199.000đ <del>265.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="hsk2">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="tham-khao" data-price="59000" data-order="11" onclick="goToDetail('al')">
+                    <em class="badge-sale">-25%</em>
+                    <a href="chitietsp.html?id=al">
+                        <img src="images/al.webp" alt="Sách Atlat Địa lý" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=al">Sách Atlat Địa lý</a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>59.000đ <del>79.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="al">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="phat-trien-ban-than" data-price="139000" data-order="12" onclick="goToDetail('tdn')">
+                    <em class="badge-sale">-25%</em>
+                    <a href="chitietsp.html?id=tdn">
+                        <img src="images/tdn.jpg" alt="Tư duy ngược" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=tdn">Tư duy ngược</a>
+                    </h4>
+                    <p>Nguyễn Anh Dũng</p>
+                    <span>139.000đ <del>185.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="tdn">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="tieu-thuyet" data-price="160000" data-order="13" onclick="goToDetail('ove')">
+                    <em class="badge-sale">-20%</em>
+                    <a href="chitietsp.html?id=ove">
+                        <img src="images/ndomtov.webp" alt="Người đàn ông mang tên Ove" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=ove">Người đàn ông mang tên Ove</a>
+                    </h4>
+                    <p>Fredrik Backman</p>
+                    <span>160.000đ <del>199.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="ove">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="kinh-doanh" data-price="200000" data-order="14" onclick="goToDetail('48nt')">
+                    <em class="badge-sale">-23%</em>
+                    <a href="chitietsp.html?id=48nt">
+                        <img src="images/48nt.webp" alt="48 nguyên tắc chủ chốt của quyền lực" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=48nt">48 nguyên tắc chủ chốt của quyền lực</a>
+                    </h4>
+                    <p>Robert Greene</p>
+                    <span>200.000đ <del>260.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="48nt">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="thieu-nhi" data-price="99000" data-order="15" onclick="goToDetail('ehln')">
+                    <em class="badge-sale">-23%</em>
+                    <a href="chitietsp.html?id=ehln">
+                        <img src="images/ehln.webp" alt="Em học lễ nghĩa" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=ehln">Em học lễ nghĩa</a>
+                    </h4>
+                    <p>Nhiều tác giả</p>
+                    <span>99.000đ <del>129.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="ehln">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="ngoai-ngu" data-price="99000" data-order="16" onclick="goToDetail('b1')">
+                    <em class="badge-sale">-23%</em>
+                    <a href="chitietsp.html?id=b1">
+                        <img src="images/b1.webp" alt="Tiếng Nhật sơ cấp cho người mới bắt đầu" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=b1">Tiếng Nhật sơ cấp cho người mới bắt đầu</a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>99.000đ <del>129.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="b1">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
+
+                <!-- Khung sản phẩm giống trang chủ (index.html) -->
+                <div class="product-card promo-product" data-genre="tham-khao" data-price="159000" data-order="17" onclick="goToDetail('dptd')">
+                    <em class="badge-sale">-27%</em>
+                    <a href="chitietsp.html?id=dptd">
+                        <img src="images/dptd.webp" alt="Đột phá tư duy kỳ thi Tốt nghiệp THPT" loading="lazy">
+                    </a>
+                    <h4>
+                        <a href="chitietsp.html?id=dptd">Đột phá tư duy kỳ thi Tốt nghiệp THPT</a>
+                    </h4>
+                    <p>Đang cập nhật</p>
+                    <span>159.000đ <del>219.000đ</del></span>
+                    <button type="button" class="detail-button add-cart" data-cart="dptd">Thêm vào giỏ hàng <i class="fas fa-cart-plus"></i></button>
+                </div>
 
             </div>
 
             <p id="emptyMessage" class="empty-message" hidden>
                 Không tìm thấy sản phẩm phù hợp.
             </p>
-            <div class="wv-allsale"><a href="dmsp.html"><i class="fa-solid fa-book-open"></i> Xem tất cả sách đang giảm giá</a></div>
+            <div class="wv-allsale"><button type="button" id="moreDeals">Xem thêm</button></div>
         </section>
 
         <!-- ================= NHẬN VOUCHER 100K CHO THÀNH VIÊN MỚI ================= -->
