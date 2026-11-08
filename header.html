@@ -6,138 +6,139 @@
     <title>Header</title>
 </head>
 <body>
-    <header class="header">
+    
+<header class="header">
 
+    <!-- PHẦN TRÊN: LOGO - TÌM KIẾM - TIỆN ÍCH -->
     <div class="top-bar">
 
+        <!-- LOGO -->
         <div class="logo">
-            <a href="index.html"></a>
-            <link rel="stylesheet" href="thongbao.css">
-            
-                <img src="images/hanami_logo.png" alt="Hanami Bookstore Logo">
+            <a href="index.html">
+                <img src="images/hanami_logo.png"
+                     alt="Hanami Bookstore">
             </a>
         </div>
-        
-                <style>
-            .search-box {
-                position: relative;
-            }
 
-            #lich-su-tim-kiem {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                box-sizing: border-box;
-                background: white;
-                border: 1px solid #e8ded3;
-                border-radius: 8px;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-                z-index: 1000;
-                padding: 10px;
-                font-size: 12px;
-            }
+        <!-- THANH TÌM KIẾM -->
+        <div class="search-box">
 
-           .dong-lich-su {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 5px;
-                font-size: 12px;
-            }
+            <input type="text"
+                   id="o-tim-kiem"
+                   placeholder="Tìm kiếm tên sách hoặc tác giả...">
 
-            .dong-lich-su span {
-                cursor: pointer;
-            }
+            <button id="nut-tim-kiem" type="button">
+                <i class="fas fa-search"></i>
+            </button>
 
-            #lich-su-tim-kiem .dong-lich-su .nut-xoa-lich-su {
-                all: unset;
-                color: black;
-                font-size: 13px;
-                font-weight: bold;
-                cursor: pointer;
-                padding: 0 5px;
-            }
-
-            #lich-su-tim-kiem .dong-lich-su .nut-xoa-lich-su:hover {
-                background: white;
-                color: black;
-            }
-        </style>
-        <div class="search-box"
-        >
-            <input type="text" id="o-tim-kiem"
-                placeholder="Tìm kiếm tên sách hoặc tác giả...">
-            <button id="nut-tim-kiem"><i class="fas fa-search"></i></button>
-
+            <!-- LỊCH SỬ TÌM KIẾM -->
             <div id="lich-su-tim-kiem">
-                <div id="danh-sach-lich-su"></div>    
+                <div id="danh-sach-lich-su"></div>
             </div>
         </div>
 
+        <!-- THÔNG TIN BÊN PHẢI -->
         <div class="header-right">
+
             <div class="hotline">
-                Hotline: 0982 909 069
+                <i class="fa-solid fa-phone-volume"></i>
+                <div>
+                    <span>Hotline hỗ trợ</span>
+                    <strong>0982 909 069</strong>
+                </div>
             </div>
+
             <div class="top-icons">
 
-                <a href="dangnhap.html">
-                    <i class="fas fa-user"></i> Tài khoản
+                <a href="dangnhap.html" title="Tài khoản">
+                    <i class="fas fa-user"></i>
                 </a>
 
-                <a href="#" class="notification-icon" title="Thông báo">
-                    <i class="fa-solid fa-bell"></i> Thông báo</a>
-               
-
-                <a href="yeuthich.html" class="favorite-icon" title="Yêu thích">
-                    <i class="fa-solid fa-heart"></i> Yêu thích
+                <a href="#"
+                   class="notification-icon"
+                   title="Thông báo">
+                    <i class="fas fa-bell"></i>
                 </a>
 
-                <a href="#">
+                <a href="yeuthich.html"
+                   class="favorite-icon"
+                   title="Yêu thích">
+                    <i class="fas fa-heart"></i>
+                </a>
+
+                <a href="#" title="Giỏ hàng">
                     <span class="cart-icon-wrap">
-                        <i class="fas fa-cart-shopping"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <span id="so-luong-gio-hang">0</span>
                     </span>
-                    Giỏ hàng
                 </a>
 
             </div>
-        
-            
-
         </div>
 
     </div>
+
+    <!-- PHẦN MENU ĐIỀU HƯỚNG -->
     <div class="navbar">
 
-    <!-- Danh mục -->
-    <div class="category-menu">
-        <button class="category-btn">
-            <i class="fas fa-bars"></i>
-            Danh mục sách
-        </button>
+        <!-- DANH MỤC SÁCH -->
+        <div class="category-menu">
 
-        <div class="category-list">
-            <a href="dmsp.html#phat-trien-ban-than">Phát triển bản thân</a>
-            <a href="dmsp.html#tieu-thuyet">Tiểu thuyết</a>
-            <a href="dmsp.html#thieu-nhi">Thiếu nhi</a>
-            <a href="dmsp.html#kinh-doanh">Kinh doanh</a>
-            <a href="dmsp.html#sach-hoc-ngoai-ngu">Sách học ngoại ngữ</a>
-            <a href="dmsp.html#sach-tham-khao">Sách tham khảo</a>
+            <button class="category-btn" type="button">
+                <i class="fas fa-bars"></i>
+                <span>Danh mục sách</span>
+                <i class="fas fa-chevron-down arrow"></i>
+            </button>
+
+            <div class="category-list">
+                <a href="dmsp.html#phat-trien-ban-than">
+                    Phát triển bản thân
+                </a>
+
+                <a href="dmsp.html#tieu-thuyet">
+                    Tiểu thuyết
+                </a>
+
+                <a href="dmsp.html#thieu-nhi">
+                    Thiếu nhi
+                </a>
+
+                <a href="dmsp.html#kinh-doanh">
+                    Kinh doanh
+                </a>
+
+                <a href="dmsp.html#sach-hoc-ngoai-ngu">
+                    Sách học ngoại ngữ
+                </a>
+
+                <a href="dmsp.html#sach-tham-khao">
+                    Sách tham khảo
+                </a>
+            </div>
+
         </div>
+
+        <!-- MENU NGANG -->
+        <nav class="main-menu">
+
+            <a href="index.html" >
+                <i class="fas fa-home"></i>
+                Trang chủ
+            </a>
+
+            <a href="gioithieu.html">Giới thiệu</a>
+
+            <a href="khuyenmai.html" >Khuyến mãi</a>
+
+            <a href="lienhe.html" >Liên hệ</a>
+
+            <a href="index.html#customer-reviews" >Phản hồi</a>
+
+        </nav>
+
     </div>
 
-    <!-- Menu ngang -->
-    <nav class="main-menu">
-        <a href="index.html" class="active">Trang chủ</a>
-        <a href="gioithieu.html">Giới thiệu</a>
-        <a href="khuyenmai.html">Khuyến mãi</a>
-        <a href="lienhe.html">Liên hệ</a>
+</header>
 
-        <a href="index.html#customer-reviews">Phản hồi</a>
-    </nav>
-
-</div>
 </body>
 </html>

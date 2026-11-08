@@ -11,122 +11,159 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             document.getElementById("header_container").innerHTML = data;
 
-    // Thao tác tìm kiếm
-    const oTimKiem = document.getElementById("o-tim-kiem");
-const nutTimKiem = document.getElementById("nut-tim-kiem");
-const lichSu = document.getElementById("lich-su-tim-kiem");
+    
+            // =========================THAO TÁC TÌM KIẾM
+            const oTimKiem = document.getElementById("o-tim-kiem");
+            const nutTimKiem = document.getElementById("nut-tim-kiem");
+            const lichSu = document.getElementById("lich-su-tim-kiem");
+            const danhSach = document.getElementById("danh-sach-lich-su");
 
-// Lấy lịch sử tìm kiếm
-function layLichSu() {
-    return JSON.parse(localStorage.getItem("lichSuTimKiem")) || [];
-}
+            // Lấy lịch sử tìm kiếm
+            function layLichSu() {
+                return JSON.parse(localStorage.getItem("lichSuTimKiem")) || [];
+            }
 
-// Lưu lịch sử tìm kiếm
-function luuLichSu(tuKhoa) {
-    let lichSuCu = layLichSu();
+            // Lưu lịch sử tìm kiếm
+            function luuLichSu(tuKhoa) {
+                let lichSuCu = layLichSu();
 
-    // Loại bỏ từ khóa đã tồn tại
-    lichSuCu = lichSuCu.filter(function(item) {
-        return item.toLowerCase() !== tuKhoa.toLowerCase();
-    });
+                // Loại bỏ từ khóa đã tồn tại
+                lichSuCu = lichSuCu.filter(function(item) {
+                    return item.toLowerCase() !== tuKhoa.toLowerCase();
+                });
 
-    // Thêm từ khóa mới lên đầu
-    lichSuCu.unshift(tuKhoa);
+                // Thêm từ khóa mới lên đầu
+                lichSuCu.unshift(tuKhoa);
 
-    // Chỉ lưu 5 từ khóa gần nhất
-    lichSuCu = lichSuCu.slice(0, 5);
+                // Chỉ lưu 5 từ khóa gần nhất
+                lichSuCu = lichSuCu.slice(0, 5);
 
-    localStorage.setItem("lichSuTimKiem", JSON.stringify(lichSuCu));
-}
+                localStorage.setItem(
+                    "lichSuTimKiem",
+                    JSON.stringify(lichSuCu)
+                );
+            }
 
-// Hiển thị lịch sử tìm kiếm
-function hienThiLichSu() {
-    let lichSuCu = layLichSu();
+            // =========================
+            // HIỂN THỊ LỊCH SỬ
+            // =========================
+            function hienThiLichSu() {
+                let lichSuCu = layLichSu();
 
-    let danhSach = document.getElementById("danh-sach-lich-su");
-    danhSach.innerHTML = "";
+                danhSach.innerHTML = "";
 
-    if (lichSuCu.length === 0) {
-        lichSu.style.display = "none";
-        return;
-    }
+                if (lichSuCu.length === 0) {
+                    lichSu.style.display = "none";
+                    return;
+                }
 
-    lichSu.style.display = "block";
+                lichSu.style.display = "block";
 
-    lichSuCu.forEach(function(tuKhoa, index) {
-        let dong = document.createElement("div");
-        dong.className = "dong-lich-su";
+                lichSuCu.forEach(function(tuKhoa, index) {
 
-        let muc = document.createElement("span");
-        muc.textContent = tuKhoa;
+                    let dong = document.createElement("div");
+                    dong.className = "dong-lich-su";
 
-        muc.onclick = function() {
-            oTimKiem.value = tuKhoa;
-            timKiemSach();
-        };
+                    let muc = document.createElement("span");
+                    muc.textContent = tuKhoa;
 
-        let nutXoa = document.createElement("button");
-        nutXoa.className = "nut-xoa-lich-su";
-        nutXoa.textContent = "×";
+                    // Nhấn vào từ khóa để tìm kiếm lại
+                    muc.onclick = function() {
+                        oTimKiem.value = tuKhoa;
+                        timKiemSach();
+                    };
 
-        nutXoa.onclick = function() {
-            xoaLichSu(index);
-        };
+                    // Nút xóa từng từ khóa
+                    let nutXoa = document.createElement("button");
 
-        dong.appendChild(muc);
-        dong.appendChild(nutXoa);
+                    nutXoa.className = "nut-xoa-lich-su";
+                    nutXoa.textContent = "×";
+                    nutXoa.type = "button";
 
-        danhSach.appendChild(dong);
-    });
-}  
-function xoaLichSu(index) {
-    let lichSuCu = layLichSu();
+                    nutXoa.onclick = function(e) {
+                        e.stopPropagation();
+                        xoaLichSu(index);
+                    };
 
-    lichSuCu.splice(index, 1);
+                    dong.appendChild(muc);
+                    dong.appendChild(nutXoa);
 
-    localStorage.setItem(
-        "lichSuTimKiem",
-        JSON.stringify(lichSuCu)
-    );
+                    danhSach.appendChild(dong);
+                });
 
-    hienThiLichSu();
-}
-// Tìm kiếm sách
-function timKiemSach() {
-    let tuKhoa = oTimKiem.value.trim();
+                // Nút xóa tất cả lịch sử
+                let nutXoaTatCa = document.createElement("button");
 
-    if (tuKhoa === "") {
-        alert("Vui lòng nhập tên sách hoặc tên tác giả!");
-        return;
-    }
+                nutXoaTatCa.id = "nut-xoa-tat-ca";
+                nutXoaTatCa.type = "button";
+                nutXoaTatCa.textContent = "Xóa tất cả lịch sử";
 
-    // Lưu từ khóa trước khi chuyển trang
-    luuLichSu(tuKhoa);
+                nutXoaTatCa.onclick = function() {
+                    localStorage.removeItem("lichSuTimKiem");
 
-    window.location.href =
-        "dmsp.html?search=" + encodeURIComponent(tuKhoa);
-}
+                    danhSach.innerHTML = "";
+                    lichSu.style.display = "none";
+                };
 
-// Sự kiện tìm kiếm
-nutTimKiem.addEventListener("click", timKiemSach);
+                danhSach.appendChild(nutXoaTatCa);
+            }
 
-oTimKiem.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        timKiemSach();
-    }
-});
+            // =========================
+            // XÓA TỪ KHÓA
+            // =========================
+            function xoaLichSu(index) {
+                let lichSuCu = layLichSu();
 
-// Hiển thị lịch sử khi chọn ô tìm kiếm
-oTimKiem.addEventListener("focus", hienThiLichSu);
+                lichSuCu.splice(index, 1);
 
-// Ẩn lịch sử khi bấm ra ngoài
-document.addEventListener("click", function(event) {
-    if (!event.target.closest(".search-box")) {
-        lichSu.style.display = "none";
-    }
-});
-})
-    .catch(error => console.error("Lỗi tìm kiếm:", error));
+                localStorage.setItem(
+                    "lichSuTimKiem",
+                    JSON.stringify(lichSuCu)
+                );
+
+                hienThiLichSu();
+            }
+
+            // =========================
+            // TÌM KIẾM SÁCH
+            // =========================
+            function timKiemSach() {
+                let tuKhoa = oTimKiem.value.trim();
+
+                if (tuKhoa === "") {
+                    alert("Vui lòng nhập tên sách hoặc tên tác giả!");
+                    return;
+                }
+
+                // Lưu từ khóa trước khi chuyển trang
+                luuLichSu(tuKhoa);
+
+                window.location.href =
+                    "dmsp.html?search=" + encodeURIComponent(tuKhoa);
+            }
+
+            // Nhấn nút tìm kiếm
+            nutTimKiem.addEventListener("click", timKiemSach);
+
+            // Nhấn Enter để tìm kiếm
+            oTimKiem.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    timKiemSach();
+                }
+            });
+
+            // Hiển thị lịch sử khi chọn ô tìm kiếm
+            oTimKiem.addEventListener("focus", hienThiLichSu);
+
+            // Ẩn lịch sử khi nhấn ra ngoài
+            document.addEventListener("click", function(event) {
+                if (!event.target.closest(".search-box")) {
+                    lichSu.style.display = "none";
+                }
+            });
+
+        })
+        .catch(error => console.error("Lỗi Header:", error));
     
     // Tải Footer
     fetch("./footer.html")
