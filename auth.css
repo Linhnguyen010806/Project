@@ -63,9 +63,9 @@ body {
 /* Logo */
 .auth-intro h1 {
     font-family: Georgia, serif;
-    font-size: 52px;
+    font-size: 54px;
     line-height: 1.15;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     position: relative;
     z-index: 1;
     white-space: nowrap;
@@ -89,8 +89,8 @@ body {
 /* Slogan */
 .slogan {
     font-family: Arial, sans-serif;
-    font-size: 26px;
-    line-height: 1.5;
+    font-size: 25px;
+    line-height: 1.6;
     margin-bottom: 22px;
     text-align: center;
     word-spacing: normal;
