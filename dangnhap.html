@@ -97,12 +97,20 @@
 
         <p class="auth-link">
             Chưa có tài khoản?
-            <a href="dangky.html">Đăng ký</a>
+            <a href="dangky.html" target ="_self">Đăng ký</a>
         </p>
+        <!-- target="_self" giúp trang đăng ký mở ngay trong iframe hiện tại, không làm thay đổi trang chủ bên ngoài. -->
     
-        <a href="index.html" class="close-btn"
+        <!-- <a href="index.html" class="close-btn"
    aria-label="Quay về trang chủ"
-    title="Về trang chủ">&times;</a>
+    title="Về trang chủ">&times;</a> -->
+    <button type="button" class="close-btn"
+        onclick="window.parent.postMessage('closeAuthPopup', '*')"
+        aria-label="Đóng cửa sổ"
+        title="Đóng">&times;</button>
+    <!-- window.parent: truy cập trang chủ đang chứa iframe.
+    postMessage: gửi tín hiệu đến trang chủ.
+    closeAuthPopup: tín hiệu yêu cầu đóng popup. -->
 
     </div>
 

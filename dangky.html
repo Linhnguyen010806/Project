@@ -116,11 +116,15 @@
 
         <p class="auth-link">
             Đã có tài khoản?
-            <a href="dangnhap.html">Đăng nhập</a>
+            <a href="dangnhap.html" target="_self">Đăng nhập</a>
         </p>
-          <a href="index.html" class="close-btn"
+          <!-- <a href="index.html" class="close-btn"
      aria-label="Quay về trang chủ"
-    title="Về trang chủ">&times;</a>
+    title="Về trang chủ">&times;</a> -->
+    <button type="button" class="close-btn"
+        onclick="window.parent.postMessage('closeAuthPopup', '*')"
+        aria-label="Đóng cửa sổ"
+        title="Đóng">&times;</button>
 
     </div>
 
