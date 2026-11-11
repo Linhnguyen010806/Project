@@ -42,57 +42,6 @@ document.querySelectorAll(".loc-the-loai").forEach(function(muc) {
 capNhatSoLuongSach();
 
 
-
-// Thử
-
-
-
-// document.querySelectorAll(".san-pham").forEach(function(sanPham) {
-
-//     let giaBan = Number(sanPham.dataset.gia);
-//     let giamGia = Number(sanPham.dataset.giam);
-
-//     if (!sanPham.hasAttribute("data-gia") ||
-//         !Number.isFinite(giaBan) || giaBan < 0 ||
-//         !Number.isFinite(giamGia) || giamGia < 0 || giamGia >= 100) {
-//         return;
-//     }
-
-//     let giaGoc = giaBan / (1 - giamGia / 100);
-//     giaGoc = Math.round(giaGoc / 1000) * 1000;
-
-//     let dinhDangGia = function(gia) {
-//         return gia.toLocaleString("vi-VN") + "đ";
-//     };
-
-//     let giaBanHienThi = sanPham.querySelector(".gia-ban");
-//     let giaGocHienThi = sanPham.querySelector(".gia-goc");
-//     let nhanGiamGia = sanPham.querySelector(".nhan-giam-gia");
-
-//     if (giaBanHienThi) {
-//         giaBanHienThi.textContent = dinhDangGia(giaBan);
-//     }
-
-//     if (giamGia > 0) {
-//         if (nhanGiamGia) {
-//             nhanGiamGia.textContent = "-" + giamGia + "%";
-//         }
-
-//         if (giaGocHienThi) {
-//             giaGocHienThi.textContent = dinhDangGia(giaGoc);
-//         }
-//     } else {
-//         if (nhanGiamGia) {
-//             nhanGiamGia.style.display = "none";
-//         }
-
-//         if (giaGocHienThi) {
-//             giaGocHienThi.style.display = "none";
-//         }
-//     }
-
-// });
-
 //Lọc sp theo giá
 document.querySelectorAll('input[name=muc-gia]').forEach(function(radio){
     radio.addEventListener("change",function(){
@@ -191,72 +140,6 @@ function bodau(chuoi) {
         .replace(/đ/g, "d");
 }
 
-// Lấy từ khóa trên đường dẫn
-const thamSo = new URLSearchParams(window.location.search);
-const tuKhoa = thamSo.get("search");
-
-if (tuKhoa) {
-
-    const danhSach = document.querySelectorAll(
-        ".khu-vuc-danh-sach .san-pham"
-    );
-
-    let tuKhoaBoDau = bodau(tuKhoa);
-    let soSachTimThay = 0;
-    let sachDauTien = null;
-
-    danhSach.forEach(function(sanPham) {
-
-        // Lấy tên sách
-        let tenSach = sanPham.querySelector("h3").textContent;
-
-        // Lấy tên tác giả
-        let tenTacGia = sanPham.querySelector("h3").nextElementSibling.textContent;
-
-        // Ghép tên sách và tên tác giả
-        let thongTinSach = bodau(tenSach + " " + tenTacGia);
-
-        // Kiểm tra từ khóa
-        if (thongTinSach.includes(tuKhoaBoDau)) {
-
-            sanPham.style.display = "";
-
-            soSachTimThay++;
-
-            if (sachDauTien === null) {
-                sachDauTien = sanPham;
-            }
-
-        } else {
-            sanPham.style.display = "none";
-        }
-    });
-
-    // Cập nhật số lượng sách
-    capNhatSoLuongSach();
-
-    // Kiểm tra kết quả tìm kiếm
-    if (soSachTimThay === 0) {
-
-        alert("Không tìm thấy sách phù hợp với từ khóa: " + tuKhoa);
-
-    } else {
-
-        // Cuộn xuống khu vực danh sách sách
-        setTimeout(function() {
-
-            document.querySelector(".khu-vuc-danh-sach").scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-            // Làm nổi bật quyển sách đầu tiên tìm thấy
-            sachDauTien.style.outline = "2px solid #b88954";
-            sachDauTien.style.outlineOffset = "5px";
-
-        }, 300);
-    }
-}
 
 // ========================================
 // CHỨC NĂNG THÊM SÁCH VÀO GIỎ HÀNG
@@ -289,6 +172,8 @@ if (tuKhoa) {
             hienThi.textContent = tong;
         }
     }
+
+    
 
     // Xử lý bấm nút thêm nhanh
     document.querySelectorAll(".san-pham .nut-them-nhanh").forEach(function(nut) {
