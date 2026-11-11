@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanami Bookstore</title>
 
+    <link rel ="stylesheet" href="danhmucsp.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="thongbao.css">
     <link rel="stylesheet" href="yeuthich.css">
@@ -43,10 +44,10 @@
 </header>
 
 <!-- FLASH SALE -->
-<section class="flash-sale">
+<section class="danh-sach-sach">
 
-    <div class="flash-header">
-        <div class="flash-title">
+        <div class="tieu-de-muc" style=" background: linear-gradient(90deg, #e53935, #ff7043);color: white;">
+
             <span>⚡ FLASH SALE</span>
             <div class="flash-countdown">
                 Kết thúc trong
@@ -59,1009 +60,1107 @@
         <a href="khuyenmai.html" class="flash-more">
             Xem tất cả ❯
         </a>
-    </div>
+    
 
-    <div class="flash-wrapper">
-
-        <button class="flash-arrow prev" onclick="moveFlash(-1)">❮</button>
-
-        <div class="flash-list" id="flashList">
+    <div class="khung-truot-san-pham">
+        <div class="danh-sach-san-pham">
 
             <!-- Sản phẩm 1 -->
-            <div class="flash-card">
-
-                <a href="chitietsp.html?id=dnt" class="flash-link">
-                    <img src="images/dnt.webp" alt="Đắc Nhân Tâm">
-
-                    <p class="flash-name">Đắc Nhân Tâm</p>
-                </a>
-
-                <div class="flash-price">
-                    59.000đ
-                    <span>-32%</span>
-                </div>
-
-                <del>86.000đ</del>
-
-                <div class="flash-progress">
-                    <div style="width:75%"></div>
-                    <span>Đã bán 75</span>
-                </div>
-
-            </div>
-
-            <!-- Sản phẩm 2 -->
-            <div class="flash-card">
-                <img src="images/dm.webp" alt="Dế Mèn Phiêu Lưu Ký">
-
-                <p class="flash-name">Dế Mèn Phiêu Lưu Ký</p>
-
-                <div class="flash-price">
-                    35.000đ
-                    <span>-29%</span>
-                </div>
-
-                <del>49.000đ</del>
-
-                <div class="flash-progress">
-                    <div style="width:60%"></div>
-                    <span>Đã bán 60</span>
-                </div>
-            </div>
-
-            <!-- Sản phẩm 3 -->
-            <div class="flash-card">
-                <img src="images/mhbtl.jpg" alt="Mẹ Hỏi Bé Trả Lời">
-
-                <p class="flash-name">Mẹ Hỏi Bé Trả Lời</p>
-
-                <div class="flash-price">
-                    35.000đ
-                    <span>-29%</span>
-                </div>
-
-                <del>49.000đ</del>
-
-                <div class="flash-progress">
-                    <div style="width:45%"></div>
-                    <span>Đã bán 45</span>
-                </div>
-            </div>
-
-            <!-- Sản phẩm 4 -->
-            <div class="flash-card">
-                <img src="images/dnt.webp" alt="Sách phát triển bản thân">
-
-                <p class="flash-name">Những Thói Quen Tốt</p>
-
-                <div class="flash-price">
-                    69.000đ
-                    <span>-30%</span>
-                </div>
-
-                <del>99.000đ</del>
-
-                <div class="flash-progress">
-                    <div style="width:80%"></div>
-                    <span>Đã bán 80</span>
-                </div>
-            </div>
-
-            <!-- Sản phẩm 5 -->
-            <div class="flash-card">
-                <img src="images/dm.webp" alt="Sách kinh doanh">
-
-                <p class="flash-name">Sách Kỹ Năng Kinh Doanh</p>
-
-                <div class="flash-price">
-                    79.000đ
-                    <span>-34%</span>
-                </div>
-
-                <del>120.000đ</del>
-
-                <div class="flash-progress">
-                    <div style="width:35%"></div>
-                    <span>Đã bán 35</span>
-                </div>
-            </div>
-
-        </div>
-
-        <button class="flash-arrow next" onclick="moveFlash(1)">❯</button>
-
-    </div>
-</section>
-
-<!-- ===== BEST SELLER ===== -->
-<section class="book-section" id="bestseller">
- 
-    <div class="section-header">
-        <h2>🏆 Best Seller</h2>
- 
-        <div class="product-controls">
-            <button class="productPrev">❮</button>
-            <button class="productNext">❯</button>
-        </div>
-    </div>
- 
-    <div class="product-slider">
-        <div class="product-track">
- 
-            <div class="product-card">
-                <span class="rank-badge top">No1</span>
-                <a href="chitietsp.html?id=dnt" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/dnt.webp" alt="Đắc Nhân Tâm">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=dnt" class="detail-link">Đắc Nhân Tâm</a>
-                </h3>
-                <p class="book-author">Dale Carnegie</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">86.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>99000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="product-card">
-                <span class="rank-badge top">No2</span>
-                <a href="chitietsp.html?id=ccnct1" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/ccnct1.webp" alt="Cây Cam Ngọt Của Tôi">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=ccnct1" class="detail-link">Cây Cam Ngọt Của Tôi</a>
-                </h3>
-                <p class="book-author">José Mauro de Vasconcelos</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">108.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>122000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="product-card">
-                <span class="rank-badge top">No3</span>
-                <a href="chitietsp.html?id=dm" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/dm.webp" alt="Dế Mèn Phiêu Lưu Ký">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=dm" class="detail-link">Dế Mèn Phiêu Lưu Ký</a>
-                </h3>
-                <p class="book-author">Tô Hoài</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">49.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>70000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="product-card">
-                <span class="rank-badge">No4</span>
-                <a href="chitietsp.html?id=ttbt2" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/ttbt2.webp" alt="Thiên Tài Bên Trái, Kẻ Điên Bên Phải">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=ttbt2" class="detail-link">Thiên Tài Bên Trái, Kẻ Điên Bên Phải</a>
-                </h3>
-                <p class="book-author">Cao Minh</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">179.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>190000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="product-card">
-                <span class="rank-badge">No5</span>
-                <a href="chitietsp.html?id=tdnvc" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/tdnvc.webp" alt="Tư Duy Nhanh Và Chậm">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=tdnvc" class="detail-link">Tư Duy Nhanh Và Chậm</a>
-                </h3>
-                <p class="book-author">Daniel Kahneman</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">199.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>279000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="product-card">
-                <span class="rank-badge">No6</span>
-                <a href="chitietsp.html?id=48nt" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/48nt.webp" alt="48 Nguyên Tắc Chủ Chốt Của Quyền Lực">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=48nt" class="detail-link">48 Nguyên Tắc Chủ Chốt Của Quyền Lực</a>
-                </h3>
-                <p class="book-author">Robert Greene</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">189.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>220000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="product-card">
-                <span class="rank-badge">No7</span>
-                <a href="chitietsp.html?id=ndomtov" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/ndomtov.webp" alt="Người Đàn Ông Mang Tên Ove">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=ndomtov" class="detail-link">Người Đàn Ông Mang Tên Ove</a>
-                </h3>
-                <p class="book-author">Fredrik Backman</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">150.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>179000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="product-card">
-                <span class="rank-badge">No8</span>
-                <a href="chitietsp.html?id=bsv" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/bsv.webp" alt="Bông Sen Vàng">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=bsv" class="detail-link">Bông Sen Vàng</a>
-                </h3>
-                <p class="book-author">Sơn Tùng</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">169.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>180000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="product-card">
-                <span class="rank-badge">No9</span>
-                <a href="chitietsp.html?id=mindset" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/mindset.webp" alt="Tâm Lý Học Thành Công">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=mindset" class="detail-link">Tâm Lý Học Thành Công</a>
-                </h3>
-                <p class="book-author">Carol S. Dweck</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">199.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>220000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="product-card">
-                <span class="rank-badge">No10</span>
-                <a href="chitietsp.html?id=mhbtl" class="detail-link">
-                    <div class="image-frame">
-                        <img src="images/mhbtl.jpg" alt="Mẹ Hỏi Bé Trả Lời">
-                    </div>
-                </a>
-                <h3>
-                    <a href="chitietsp.html?id=mhbtl" class="detail-link">Mẹ Hỏi Bé Trả Lời</a>
-                </h3>
-                <p class="book-author">Nhiều tác giả</p>
-                <button class="quick-add-btn" type="button">+</button>
-                <div class="price-cart-group">
-                    <div class="price-info">
-                        <p>
-                            <span class="price-sale">49.000đ</span>
-                            <span class="discount-badge"></span>
-                            <del class="price-original"><i>60000đ</i></del>
-                        </p>
-                    </div>
-                </div>
-            </div>
- 
-        </div>
-    </div>
- 
-</section>
-
-
-<!-- ===== SẢN PHẨM MỚI ===== -->
-<section class="book-section">
- 
-    <div class="section-header">
-        <h2>📚 Sản phẩm mới</h2>
- 
-        <div class="product-controls">
-            <button class="productPrev">❮</button>
-            <button class="productNext">❯</button>
-        </div>
-    </div>
- 
-    <div class="product-slider">
-        <div class="product-track">
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=bsv" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/bsv.webp" alt="Bông sen vàng">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=bsv" class="detail-link">Bông sen vàng</a>
-                    </h3>
-                    <p class="book-author">Sơn Tùng</p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">169.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=dm" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/dm.webp" alt="Dế mèn phiêu lưu kí">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=dm" class="detail-link">Dế mèn phiêu lưu kí</a>
-                    </h3>
-                    <p class="book-author">Tô Hoài</p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">49.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=tcthqt" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/tcthqt.webp" alt="Tăng cường Tin học quốc tế">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=tcthqt" class="detail-link">Tăng cường Tin học quốc tế</a>
-                    </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">79.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=dnt" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/dnt.webp" alt="Đắc Nhân Tâm">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=dnt" class="detail-link">Đắc Nhân Tâm</a>
-                    </h3>
-                    <p class="book-author">Dale Carnegie</p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">86.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=ttdvd" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/ttdvd.webp" alt="Từ tốt đến vĩ đại">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=ttdvd" class="detail-link">Từ tốt đến vĩ đại</a>
-                    </h3>
-                    <p class="book-author">Jim Collins</p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">129.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=mhbtl" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=mhbtl" class="detail-link">Mẹ hỏi bé trả lời</a>
-                    </h3>
-                    <p class="book-author">Linh Lan</p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">49.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=lskthll" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/lskthll.webp" alt="Lịch sử kinh tế học lầy lội">
-                        </div>
-                    </a>
-                    <h3>
-                        <a href="chitietsp.html?id=lskthll" class="detail-link">Lịch sử kinh tế học lầy lội</a>
-                    </h3>
-                    <p class="book-author">Adam Smith</p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">199.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
- 
-        </div>
-    </div>
- 
-</section>
-<!-- ===== Thiếu nhi ===== -->
-<section class="book-section">
-
-    <div class="section-header">
-        <h2>Sách thiếu nhi</h2>
-
-        <div class="product-controls">
-            <button class="productPrev">❮</button>
-            <button class="productNext">❯</button>
-        </div>
-    </div>
-
-    <div class="product-slider">
-        <div class="product-track">            
-                <!-- Sản phẩm 1-->
-                <div class="product-card" 
+                 <div class="san-pham" 
                         data-gia="99000"
-                        data-the-loai="thieu-nhi">
-                    <a href="chitietsp.html?id=ehln" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/ehln.webp" alt="Em học lễ nghĩa">
+                        data-the-loai="kinh-doanh">
+                    <a href="chitietsp.html?id=ngcntb" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\ngcntb.webp" alt="Người giàu có nhất thành Babylon">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=ehln"  class="detail-link">
-                            Em học lễ nghĩa
+                        <a href="chitietsp.html?id=ngcntb"  class="link-chi-tiet">
+                            Người giàu có nhất thành Babylon
                         </a>
                     </h3>
-                    <p></p>
-                     <button class="quick-add-btn" type="button">+</button>
-                     <div class="price-cart-group">
-                        <div class="price-info">
+                     <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">GEORGE S.CLASON</p> 
 
-                            <p>
-                                    <span class="price-sale">99000đ</span>
-                                    <span class="discount-badge"></span>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">99000đ</span>
+                                    <span class="nhan-giam-gia"></span>
                                 </p>
 
-                                <del class="price-original"><i>110000đ</i></del>
+                                <del class="gia-goc"><i>150000đ</i></del>
                         </div>
                      </div>
-                </div>
+                  </div>
+
 
                 <!-- Sản phẩm 2-->
-                 <div class="product-card" 
-                        data-gia="59000"
-                        data-the-loai="thieu-nhi">
-                    <a href="chitietsp.html?id=ttgt" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/ttgt.webp" alt="Tự tin giao tiếp">
+                 <div class="san-pham" 
+                        data-gia="120000"
+                        data-the-loai="tieu-thuyet">
+                    <a href="chitietsp.html?id=cam" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\ccnct1.webp" alt="Cây cam ngọt của tôi">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=ttgt"  class="detail-link">
-                            Tự tin giao tiếp
+                        <a href="chitietsp.html?id=cam"  class="link-chi-tiet">
+                            Cây cam ngọt của tôi
                         </a>
                     </h3>
-                    <p> </p>
-                     <button class="quick-add-btn" type="button">+</button>
-                     <div class="price-cart-group">
-                        <div class="price-info">
+                   <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">JOSÉ MAURO DE VASCONCELOS</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-                            <p>
-                                <span class="price-sale">59000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">120000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
 
-                                <del class="price-original"><i>66000đ</i></del>
+                                <del class="gia-goc"><i>150000đ</i></del>
                         </div>
                      </div>
 
                 </div>
 
                  <!-- Sản phẩm 3-->
-                  <div class="product-card" 
-                        data-gia="29000"
-                        data-the-loai="thieu-nhi">
-                    <a href="chitietsp.html?id=cd1" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/cd1.webp" alt="Câu đố">
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-tham-khao">
+                    <a href="chitietsp.html?id=mhtn" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\mhtn.webp" alt="60 đề minh họa Tốt nghiệp THPT 2026">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=cd1"  class="detail-link">
+                        <a href="chitietsp.html?id=mhtn" class="link-chi-tiet">
+                            60 đề minh họa Tốt nghiệp THPT 2026
+                        </a>
+                    </h3>
+                        <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>285000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Sản phẩm 4-->
+                <div class="san-pham" 
+                    data-the-loai="phat-trien-ban-than"
+                    data-gia="86000">
+                    <a href="chitietsp.html?id=dnt" class="link-chi-tiet">
+
+                        <div class="khung-anh">
+
+                            <span class="nhan-sach" style="background:#6c4737;">
+                                BÁN CHẠY
+                            </span>
+                            <img src="images\dnt.webp" alt="Đắc nhân tâm">
+                        </div>
+                    </a>
+                    <h3 style="margin-bottom:2px"> 
+                        <a href="chitietsp.html?id=dnt" class="link-chi-tiet" >
+                             Đắc nhân tâm
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> DALE CARNEGIE </p>
+                    <button class="nut-them-nhanh" type="button">+</button>
+                    <div class="nhom-gia-gio-hang">
+                    <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                <span class="gia-ban">86000đ</span>
+                                <span class="nhan-giam-gia"></span>
+                            </p>
+
+                                <del class="gia-goc"><i>144000đ</i></del>
+                        
+                        </div>
+                     </div>
+                     </div>
+
+                
+</section>
+
+<!-- ===== BEST SELLER ===== -->
+<section class="danh-sach-sach">
+ 
+    <div class="tieu-de-muc">
+        <h2>🏆 Best Seller</h2>
+ 
+        
+    </div>
+ 
+    <div class="khung-truot-san-pham">
+        <div class="danh-sach-san-pham">
+ 
+            <!-- Tiểu thuyết-->
+                <!-- Sản phẩm 1-->
+             <div class="san-pham" 
+                    data-the-loai="phat-trien-ban-than"
+                    data-gia="86000">
+                    <a href="chitietsp.html?id=dnt" class="link-chi-tiet">
+
+                        <div class="khung-anh">
+
+                            <span class="nhan-sach" style="background:#6c4737;">
+                                BÁN CHẠY
+                            </span>
+                            <img src="images\dnt.webp" alt="Đắc nhân tâm">
+                        </div>
+                    </a>
+                    <h3 style="margin-bottom:2px"> 
+                        <a href="chitietsp.html?id=dnt" class="link-chi-tiet" >
+                             Đắc nhân tâm
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> DALE CARNEGIE </p>
+                    <button class="nut-them-nhanh" type="button">+</button>
+                    <div class="nhom-gia-gio-hang">
+                    <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                <span class="gia-ban">86000đ</span>
+                                <span class="nhan-giam-gia"></span>
+                            </p>
+
+                                <del class="gia-goc"><i>144000đ</i></del>
+                        
+                        </div>
+                     </div>
+                     </div>
+
+
+                <!-- Sản phẩm 2-->
+                
+                <div class="san-pham" 
+                data-gia="160000"
+                data-the-loai="tieu-thuyet">
+                    <a href="chitietsp.html?id=ove" class="link-chi-tiet">
+                    <div class="khung-anh">
+                        <img src="images\ndomtov.webp" alt="Người đàn ông mang tên Ove - Tái bản">
+                    </div>
+                    </a>
+                    <h3> 
+                        <a href="chitietsp.html?id=ove"  class="link-chi-tiet">
+                            Ngươi đàn ông mang tên OVE - Tái bản
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">FREDRIK BACKMAN</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">160000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>179000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham" 
+                        data-gia="109000"
+                        data-the-loai="tieu-thuyet">
+                    <a href="chitietsp.html?id=ngk" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\ngk.webp" alt="Nhà giả kim">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=ngk"  class="link-chi-tiet">
+                            Nhà giả kim
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> PAULO COELHO</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">109000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>120000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham" 
+                        data-gia="59000"
+                        data-the-loai="thieu-nhi">
+                    <a href="chitietsp.html?id=ttdd" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\ttdd.webp" alt="Tuổi thơ dữ dội - Tập 1">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=ttdd"  class="link-chi-tiet">
+                            Tuổi thơ dữ dội
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">PHÙNG QUÁN</p> 
+
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">59000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>66000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="kinh-doanh">
+                    <a href="chitietsp.html?id=lskthll" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\lskthll.webp" alt="Lược sử kinh tế học lầy lội">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=lskthll" class="link-chi-tiet">
+                            Lược sử kinh tế học lầy lội
+                        </a>
+                    </h3>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                        <span class="gia-ban">199000đ</span>
+                                        <span class="nhan-giam-gia"></span>
+                                  </p>
+    
+                                  <del class="gia-goc"><i>220000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Sản phẩm 6-->
+                <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
+                    <a href="chitietsp.html?id=hsk1" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\hsk1.webp" alt="Giáo trình chuẩn HSK 1">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=hsk1" class="link-chi-tiet">
+                            Giáo trình chuẩn HSK 1
+                        </a>
+                    </h3>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                        <span class="gia-ban">199000đ</span>
+                                        <span class="nhan-giam-gia"></span>
+                                  </p>
+    
+                                  <del class="gia-goc"><i>265000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+                  <div class="nut-dieu-khien-san-pham">
+                        <button class="nut-san-pham-truoc">❮</button>
+                        <button class="nut-san-pham-sau">❯</button>
+                    </div>
+ 
+        
+    </div>
+ 
+</section>
+
+
+<!-- ===== SẢN PHẨM MỚI ===== -->
+<section class="danh-sach-sach">
+ 
+    <div class="tieu-de-muc">
+        <h2>📚 Sản phẩm mới</h2>
+ 
+        
+    </div>
+ 
+    <div class="khung-truot-san-pham">
+        <div class="danh-sach-san-pham">
+             
+                  <div class="san-pham" 
+                  data-gia="199000"
+                  data-the-loai="phat-trien-ban-than">
+                     <a href="chitietsp.html?id=tlhtc" class="link-chi-tiet">
+                    <div class="khung-anh">
+                        <img src="images\tlhtc.webp" alt="Tâm lý học thành công">
+                    </div>
+                    <h3>
+                        <a href="chitietsp.html?id=tlhtc" class="link-chi-tiet">
+                            Tâm lý học thành công
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> CAROL S.DWECK</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>220000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham" 
+                  data-gia="139000"
+                  data-the-loai="phat-trien-ban-than">
+                    <a href="chitietsp.html?id=tdn" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\tdn.jpg" alt="Tư duy ngược">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=tdn"  class="link-chi-tiet">
+                            Tư duy ngược
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">NGUYỄN ANH DŨNG</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">139000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>159000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham" 
+                        data-gia="109000"
+                        data-the-loai="tieu-thuyet">
+                    <a href="chitietsp.html?id=ngk" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\ngk.webp" alt="Nhà giả kim">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=ngk"  class="link-chi-tiet">
+                            Nhà giả kim
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;"> PAULO COELHO</p> 
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">109000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>120000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham" 
+                        data-gia="59000"
+                        data-the-loai="thieu-nhi">
+                    <a href="chitietsp.html?id=ttdd" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\ttdd.webp" alt="Tuổi thơ dữ dội - Tập 1">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=ttdd"  class="link-chi-tiet">
+                            Tuổi thơ dữ dội
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">PHÙNG QUÁN</p> 
+
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">59000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>66000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham" 
+                        data-gia="49000"
+                        data-the-loai="thieu-nhi">
+                    <a href="chitietsp.html?id=dm" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\dm.webp" alt="Dế mèn phiêu lưu ký">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=dm"  class="link-chi-tiet">
+                            Dế mèn phiêu lưu ký
+                        </a>
+                    </h3>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">TÔ HOÀI</p> 
+
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">49000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>70000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
+                <!-- Sản phẩm 6-->
+                  <div class="san-pham" 
+                        data-gia="99000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
+                    <a href="chitietsp.html?id=b1" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\b1.webp" alt="Tiếng Nhật sơ cấp cho người mới bắt đầu">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=b1" class="link-chi-tiet">
+                            Tiếng Nhật sơ cấp cho người mới bắt đầu
+                        </a>
+                    </h3>
+                        <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">99000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>119000đ</i></del>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+                  <div class="nut-dieu-khien-san-pham">
+                        <button class="nut-san-pham-truoc">❮</button>
+                        <button class="nut-san-pham-sau">❯</button>
+                    </div>
+ 
+        
+    </div>
+ 
+</section>
+<!-- ===== Thiếu nhi ===== -->
+<section class="danh-sach-sach">
+ 
+    <div class="tieu-de-muc">
+        <h2>Thiếu nhi</h2>
+ 
+    </div>
+ 
+    <div class="khung-truot-san-pham">
+        <div class="danh-sach-san-pham">
+ 
+                <div class="san-pham" 
+                        data-gia="99000"
+                        data-the-loai="thieu-nhi">
+                    <a href="chitietsp.html?id=ehln" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\ehln.webp" alt="Em học lễ nghĩa">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=ehln"  class="link-chi-tiet">
+                            Em học lễ nghĩa
+                        </a>
+                    </h3>
+                    <p></p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">99000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>110000đ</i></del>
+                        </div>
+                     </div>
+                </div>
+
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham" 
+                        data-gia="59000"
+                        data-the-loai="thieu-nhi">
+                    <a href="chitietsp.html?id=ttgt" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\ttgt.webp" alt="Tự tin giao tiếp">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=ttgt"  class="link-chi-tiet">
+                            Tự tin giao tiếp
+                        </a>
+                    </h3>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">59000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>66000đ</i></del>
+                        </div>
+                     </div>
+
+                </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham" 
+                        data-gia="29000"
+                        data-the-loai="thieu-nhi">
+                    <a href="chitietsp.html?id=cd1" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\cd1.webp" alt="Câu đố">
+                        </div>
+                    </a>
+                    <h3>
+                        <a href="chitietsp.html?id=cd1"  class="link-chi-tiet">
                             Tư duy cho bé 
                         </a>
                     </h3>
                     <p> </p>
-                     <button class="quick-add-btn" type="button">+</button>
-                     <div class="price-cart-group">
-                        <div class="price-info">
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-                           <p>
-                                    <span class="price-sale">29000đ</span>
-                                    <span class="discount-badge"></span>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">29000đ</span>
+                                    <span class="nhan-giam-gia"></span>
                                 </p>
 
-                                <del class="price-original"><i>49000đ</i></del>
+                                <del class="gia-goc"><i>49000đ</i></del>
                         </div>
                      </div>
 
                   </div>
 
                   <!-- Sản phẩm 4-->
-                  <div class="product-card" 
+                  <div class="san-pham" 
                         data-gia="59000"
                         data-the-loai="thieu-nhi">
-                    <a href="chitietsp.html?id=ttdd" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/ttdd.webp" alt="Tuổi thơ dữ dội - Tập 1">
+                    <a href="chitietsp.html?id=ttdd" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\ttdd.webp" alt="Tuổi thơ dữ dội - Tập 1">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=ttdd"  class="detail-link">
+                        <a href="chitietsp.html?id=ttdd"  class="link-chi-tiet">
                             Tuổi thơ dữ dội
                         </a>
                     </h3>
                     <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">PHÙNG QUÁN</p> 
 
-                     <button class="quick-add-btn" type="button">+</button>
-                     <div class="price-cart-group">
-                        <div class="price-info">
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
-                                    <span class="price-sale">59000đ</span>
-                                    <span class="discount-badge"></span>
+                                    <span class="gia-ban">59000đ</span>
+                                    <span class="nhan-giam-gia"></span>
                                 </p>
 
-                                <del class="price-original"><i>66000đ</i></del>
+                                <del class="gia-goc"><i>66000đ</i></del>
                         </div>
                      </div>
                   </div>
 
                 <!-- Sản phẩm 5-->
-                  <div class="product-card" 
+                  <div class="san-pham" 
                         data-gia="49000"
                         data-the-loai="thieu-nhi">
-                    <a href="chitietsp.html?id=dm" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/dm.webp" alt="Dế mèn phiêu lưu ký">
+                    <a href="chitietsp.html?id=dm" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\dm.webp" alt="Dế mèn phiêu lưu ký">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=dm"  class="detail-link">
+                        <a href="chitietsp.html?id=dm"  class="link-chi-tiet">
                             Dế mèn phiêu lưu ký
                         </a>
                     </h3>
-                    <p class="book-author">TÔ HOÀI</p> 
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;">TÔ HOÀI</p> 
 
-                     <button class="quick-add-btn" type="button">+</button>
-                     <div class="price-cart-group">
-                        <div class="price-info">
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
-                           <p>
-                                    <span class="price-sale">49000đ</span>
-                                    <span class="discount-badge"></span>
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">49000đ</span>
+                                    <span class="nhan-giam-gia"></span>
                                 </p>
 
-                                <del class="price-original"><i>70000đ</i></del>
+                                <del class="gia-goc"><i>70000đ</i></del>
                         </div>
                      </div>
                   </div>
                 <!-- Sản phẩm 6-->
-                  <div class="product-card" 
+                  <div class="san-pham" 
                         data-gia="49000"
                         data-the-loai="thieu-nhi">
-                    <a href="chitietsp.html?id=mhbtl" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
+                    <a href="chitietsp.html?id=mhbtl" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\mhbtl.jpg" alt="Mẹ hỏi bé trả lời">
                         </div>
                     </a>
-                    <h3 style="margin-bottom:2px">
-                        <a href="chitietsp.html?id=mhbtl"  class="detail-link">
+                    <h3>
+                        <a href="chitietsp.html?id=mhbtl"  class="link-chi-tiet">
                             Mẹ hỏi bé trả lời
                         </a>
                     </h3>
                     <p> </p>
-                     <button class="quick-add-btn" type="button">+</button>
-                     <div class="price-cart-group">
-                        <div class="price-info">
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
 
                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
-                                    <span class="price-sale">49000đ</span>
-                                    <span class="discount-badge"></span>
+                                    <span class="gia-ban">499000đ</span>
+                                    <span class="nhan-giam-gia"></span>
                                 </p>
 
-                                <del class="price-original"><i>60000đ</i></del>
-                        </div>
+                                <del class="gia-goc"><i>60000đ</i></del>
+                    </div>
                      </div>
+                  </div>
                 </div>
-        </div>
+                    <div class="nut-dieu-khien-san-pham">
+                        <button class="nut-san-pham-truoc">❮</button>
+                        <button class="nut-san-pham-sau">❯</button>
+                    </div>
+       
     </div>
-
 </section>
 
 <!-- ===== SÁCH THAM KHẢO + GÓC NGOẠI NGỮ ===== -->
-<section class="book-section">
+ 
+<section class="danh-sach-sach">
  
     <div class="book-tabs">
         <button class="tab-btn active" data-tab="reference">Sách tham khảo</button>
         <button class="tab-btn" data-tab="foreign">Góc ngoại ngữ</button>
     </div>
+    <!-- TAB SÁCH THAM KHẢO -->
+        <div class="tab-content active" id="reference">
  
-    <div class="product-controls">
-        <button class="productPrev">❮</button>
-        <button class="productNext">❯</button>
+    <div class="nut-dieu-khien-san-pham">
+            <button class="nut-san-pham-truoc">❮</button>
+            <button class="nut-san-pham-sau">❯</button>
     </div>
+    <div class="khung-truot-san-pham">
+        <div class="danh-sach-san-pham">
  
-    <div class="tab-content active" id="reference">
-        <div class="product-slider">
-            <div class="product-track">
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=vhth" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/vhth.webp" alt="Vui học Tin học 2">
+                <!-- Sách tham khảo-->
+                <!-- Sản phẩm 1-->
+                <div class="san-pham" 
+                        data-gia="39000"
+                        data-the-loai="sach-tham-khao">
+                    <a href="chitietsp.html?id=vhth" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\vhth.webp" alt="Vui học tin học 2">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=vhth" class="detail-link">Vui học Tin học 2</a>
+                        <a href="chitietsp.html?id=vhth" class="link-chi-tiet">
+                            Vui học tin học 2
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">39.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                     <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">39000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>49000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=al" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/al.webp" alt="Sách Atlat Địa lý">
+                     </div>
+                  </div>
+
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham" 
+                        data-gia="59000"
+                        data-the-loai="sach-tham-khao">
+                    <a href="chitietsp.html?id=al" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\al.webp" alt="Sách Alat Địa lý">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=al" class="detail-link">Sách Atlat Địa lý</a>
+                        <a href="chitietsp.html?id=al" class="link-chi-tiet">
+                            Sách Alat Địa lý
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">59.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                    <p> </p>
+                    <button class="nut-them-nhanh" type="button">+</button>
+                    <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">59000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>66000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=tcthqt" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/tcthqt.webp" alt="Tăng cường Tin học quốc tế">
+                     </div>
+                  </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham" 
+                        data-gia="79000"
+                        data-the-loai="sach-tham-khao">
+                    <a href="chitietsp.html?id=tcthqt" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\tcthqt.webp" alt="Tăng cường tin học quốc tế - IC3 GS6">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=tcthqt" class="detail-link">Tăng cường Tin học quốc tế</a>
+                        <a href="chitietsp.html?id=tcthqt" class="link-chi-tiet">
+                            Tăng cường tin học quốc tế - IC3 GS6
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">79.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                    <p> </p>
+                    <button class="nut-them-nhanh" type="button">+</button>
+                    <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">79000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>99000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=mhtn" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/mhtn.webp" alt="Đề minh họa tốt nghiệp môn Toán">
+                     </div>
+                  </div>
+
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-tham-khao">
+                    <a href="chitietsp.html?id=mhtn" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\mhtn.webp" alt="60 đề minh họa Tốt nghiệp THPT 2026">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=mhtn" class="detail-link">Đề minh họa tốt nghiệp môn Toán</a>
+                        <a href="chitietsp.html?id=mhtn" class="link-chi-tiet">
+                            60 đề minh họa Tốt nghiệp THPT 2026
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">199.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                        <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>285000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=mhtn2" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/mhtn2.webp" alt="100 đề minh họa Tốt nghiệp THPT 2026">
+                     </div>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-tham-khao">
+                    <a href="chitietsp.html?id=mhtn2" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\mhtn2.webp" alt="100 đề minh họa Tốt nghiệp THPT 2026">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=mhtn2" class="detail-link">100 đề minh họa Tốt nghiệp THPT 2026</a>
+                        <a href="chitietsp.html?id=mhtn2" class="link-chi-tiet">
+                            100 đề minh họa Tốt nghiệp THPT 2026
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">199.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                     <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>209000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=dptd" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/dptd.webp" alt="Đột phá tư duy kỳ thi Tốt nghiệp THPT">
+                     </div>
+                  </div>
+                    <!-- Sản phẩm 6-->
+                  <div class="san-pham" 
+                        data-gia="159000"
+                        data-the-loai="sach-tham-khao">
+                    <a href="chitietsp.html?id=dptd" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\dptd.webp" alt="Đột phá tư duy kỳ thi Tót nghiệp THPT">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=dptd" class="detail-link">Đột phá tư duy kỳ thi Tốt nghiệp THPT</a>
+                        <a href="chitietsp.html?id=dptd" class="link-chi-tiet">
+                            Đột phá tư duy kỳ thi Tốt nghiệp THPT
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">159.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                     <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">159000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>169000đ</i></del>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
  
             </div>
         </div>
     </div>
  
     <div class="tab-content" id="foreign">
-        <div class="product-slider">
-            <div class="product-track">
+        <div class="khung-truot-san-pham">
+        <div class="danh-sach-san-pham">
  
-                <div class="product-card">
-                    <a href="chitietsp.html?id=hsk1" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/hsk1.webp" alt="Giáo trình chuẩn HSK1">
+                <!-- Sách học ngoại ngữ-->
+                <!-- Sản phẩm 1-->
+                <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
+                    <a href="chitietsp.html?id=hsk1" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\hsk1.webp" alt="Giáo trình chuẩn HSK 1">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=hsk1" class="detail-link">Giáo trình chuẩn HSK1</a>
+                        <a href="chitietsp.html?id=hsk1" class="link-chi-tiet">
+                            Giáo trình chuẩn HSK 1
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">199.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                        <span class="gia-ban">199000đ</span>
+                                        <span class="nhan-giam-gia"></span>
+                                  </p>
+    
+                                  <del class="gia-goc"><i>265000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=b1" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/b1.webp" alt="Tiếng Nhật sơ cấp cho người bắt đầu">
+                     </div>
+                  </div>
+
+                <!-- Sản phẩm 2-->
+                 <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
+                    <a href="chitietsp.html?id=hsk2" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\hsk2.webp" alt="Giáo trình chuẩn HSK 2">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=b1" class="detail-link">Tiếng Nhật sơ cấp cho người bắt đầu</a>
+                        <a href="chitietsp.html?id=hsk2" class="link-chi-tiet">
+                            Giáo trình chuẩn HSK 2
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">99.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                     <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+                            <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                        <span class="gia-ban">199000đ</span>
+                                        <span class="nhan-giam-gia"></span>
+                                  </p>
+    
+                                  <del class="gia-goc"><i>220000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=b11" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/b11.webp" alt="Tiếng Anh B1">
+                     </div>
+                  </div>
+
+                 <!-- Sản phẩm 3-->
+                  <div class="san-pham" 
+                        data-gia="299000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
+                    <a href="chitietsp.html?id=hsk3" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\hsk3.webp" alt="Giáo trình chuẩn HSK 3">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=b11" class="detail-link">Tiếng Anh B1</a>
+                        <a href="chitietsp.html?id=hsk3" class="link-chi-tiet">
+                            Giáo trình chuẩn HSK 3
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">199.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">299000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>309000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=hsk2" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/hsk2.webp" alt="Giáo trình chuẩn HSK2">
+                     </div>
+                  </div>
+
+                  <!-- Sản phẩm 4-->
+                  <div class="san-pham" 
+                        data-gia="299000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
+                    <a href="chitietsp.html?id=hsk4" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\hsk4.webp" alt="Giáo trình chuẩn HSK 4">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=hsk2" class="detail-link">Giáo trình chuẩn HSK2</a>
+                        <a href="chitietsp.html?id=hsk4" class="link-chi-tiet">
+                            Giáo trình chuẩn HSK 4
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">199.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                    <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">209000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>239000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=hsk3" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/hsk3.webp" alt="Giáo trình chuẩn HSK3">
+                     </div>
+                  </div>
+
+                <!-- Sản phẩm 5-->
+                  <div class="san-pham" 
+                        data-gia="99000"
+                        data-the-loai="sach-hoc-ngoai-ngu">
+                    <a href="chitietsp.html?id=b1" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\b1.webp" alt="Tiếng Nhật sơ cấp cho người mới bắt đầu">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=hsk3" class="detail-link">Giáo trình chuẩn HSK3</a>
+                        <a href="chitietsp.html?id=b1" class="link-chi-tiet">
+                            Tiếng Nhật sơ cấp cho người mới bắt đầu
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">299.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                        <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">99000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>119000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
-                <div class="product-card">
-                    <a href="chitietsp.html?id=hsk4" class="detail-link">
-                        <div class="image-frame">
-                            <img src="images/hsk4.webp" alt="Giáo trình chuẩn HSK4">
+                     </div>
+                  </div>
+
+                  <!-- Sản phẩm 6-->
+                  <div class="san-pham" 
+                        data-gia="199000"
+                        data-the-loai="sach-hoc-ngoai-ngu"> 
+                    <a href="chitietsp.html?id=b11" class="link-chi-tiet">
+                        <div class="khung-anh">
+                            <img src="images\b11.webp" alt="Grammar And Vocabulary With Answer Key (Tái Bản 2025)">
                         </div>
                     </a>
                     <h3>
-                        <a href="chitietsp.html?id=hsk4" class="detail-link">Giáo trình chuẩn HSK4</a>
+                        <a href="chitietsp.html?id=b11" class="link-chi-tiet">
+                            Grammar And Vocabulary With Answer Key (Tái Bản 2025)
+                        </a>
                     </h3>
-                    <p class="book-author"></p>
-                    <button class="quick-add-btn" type="button">+</button>
-                    <div class="price-cart-group">
-                        <div class="price-info">
-                            <p>
-                                <span class="price-sale">299.000đ</span>
-                                <span class="discount-badge"></span>
-                            </p>
+                        <p> </p>
+                     <button class="nut-them-nhanh" type="button">+</button>
+                     <div class="nhom-gia-gio-hang">
+                        <div class="thong-tin-gia">
+
+                           <p style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;">
+                                    <span class="gia-ban">199000đ</span>
+                                    <span class="nhan-giam-gia"></span>
+                                </p>
+
+                                <del class="gia-goc"><i>239000đ</i></del>
                         </div>
-                    </div>
-                </div>
- 
+                     </div>
+                  </div>
             </div>
         </div>
     </div>
@@ -1127,8 +1226,8 @@
         title="Quay lại đầu trang"
         aria-label="Quay lại đầu trang"></button>
 
-
 <script src="script.js"></script>
+<script src= "dmsp.js"></script>
 <script src="header_footer.js"></script>
 <script src="thongbao.js"></script>
 <script src="yeuthich.js"></script>

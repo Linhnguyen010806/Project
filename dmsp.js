@@ -12,7 +12,11 @@ function capNhatSoLuongSach() {
         }
     });
 
-    document.getElementById("so-luong-sach").textContent = soLuong;
+    const hienThiSoLuong = document.getElementById("so-luong-sach");
+
+    if (hienThiSoLuong) {
+        hienThiSoLuong.textContent = soLuong;
+    }
 }
 
 // Lọc sách theo thể loại

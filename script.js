@@ -76,66 +76,127 @@ if (nextBtn && prevBtn && slides.length > 0) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ---------- 1. FLASH SALE ---------- */
-
+    // ---------- 1. FLASH SALE ----------
     const flashList = document.querySelector("#flashList");
-    const FLASH_VISIBLE = 4;   // số sản phẩm hiện cùng lúc
+    const FLASH_VISIBLE = 4;
     let flashIndex = 0;
 
     window.moveFlash = direction => {
-        const cards = flashList?.querySelectorAll(".flash-card");
-        if (!cards?.length) return;
+        if (!flashList) return;
+
+        const cards = flashList.querySelectorAll(".flash-card");
+        if (!cards.length) return;
 
         const gap = parseFloat(getComputedStyle(flashList).columnGap) || 0;
         const step = cards[0].getBoundingClientRect().width + gap;
         const maxIndex = Math.max(0, cards.length - FLASH_VISIBLE);
 
-        flashIndex = Math.max(0, Math.min(flashIndex + direction, maxIndex));
-        flashList.style.transform = `translateX(-${flashIndex * step}px)`;
+        flashIndex = Math.max(
+            0,
+            Math.min(flashIndex + direction, maxIndex)
+        );
+
+        flashList.style.transform =
+            `translateX(-${flashIndex * step}px)`;
     };
 
     window.addEventListener("resize", () => {
         flashIndex = 0;
-        if (flashList) flashList.style.transform = "translateX(0)";
+        if (flashList) {
+            flashList.style.transform = "translateX(0)";
+        }
     });
 
 
-    /* ---------- 2. SLIDER SÁCH (thiếu nhi, sản phẩm mới, tham khảo, ngoại ngữ) ---------- */
+    // ---------- 2. SLIDER SẢN PHẨM MỚI ----------
+    document.querySelectorAll(".danh-sach-sach").forEach(section => {
 
-    document.querySelectorAll(".book-section").forEach(section => {
-        const tabs = section.querySelectorAll(".tab-btn");
-        const contents = section.querySelectorAll(".tab-content");
+        const danhSach = section.querySelector(".danh-sach-san-pham");
+        const nutTruoc = section.querySelector(".nut-san-pham-truoc");
+        const nutSau = section.querySelector(".nut-san-pham-sau");
 
-        // Track đang hiển thị: trong tab active, hoặc track duy nhất nếu không có tab
-        const getTrack = () =>
-            section.querySelector(".tab-content.active .product-track") ||
-            section.querySelector(".product-track");
+        if (!danhSach) return;
 
-        // Mỗi lần bấm cuộn đúng một khung (4 quyển)
-        const scrollTrack = direction => {
-            const track = getTrack();
-            if (!track) return;
-
-            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-            track.scrollBy({
-                left: direction * (track.clientWidth + gap),
+        nutTruoc?.addEventListener("click", () => {
+            danhSach.scrollBy({
+                left: -danhSach.clientWidth,
                 behavior: "smooth"
             });
-        };
+        });
 
-        section.querySelector(".productPrev")?.addEventListener("click", () => scrollTrack(-1));
-        section.querySelector(".productNext")?.addEventListener("click", () => scrollTrack(1));
-
-        // Chuyển tab (nếu section có tab)
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                tabs.forEach(btn => btn.classList.toggle("active", btn === tab));
-                contents.forEach(c => c.classList.toggle("active", c.id === tab.dataset.tab));
+        nutSau?.addEventListener("click", () => {
+            danhSach.scrollBy({
+                left: danhSach.clientWidth,
+                behavior: "smooth"
             });
         });
+
+    });
+
+    //---- CHUYỂN TAB SÁCH THAM KHẢO VÀ GÓC NGOẠI NGỮ ----
+
+document.querySelectorAll(".danh-sach-sach").forEach(section => {
+
+    const buttons = section.querySelectorAll(".tab-btn");
+    const contents = section.querySelectorAll(".tab-content");
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const tabId = this.dataset.tab;
+
+            // Bỏ active ở các nút
+            buttons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            // Ẩn các nội dung
+            contents.forEach(content => {
+                content.classList.remove("active");
+            });
+
+            // Thêm active cho nút được chọn
+            this.classList.add("active");
+
+            // Hiện nội dung tương ứng
+            const selectedContent = section.querySelector(
+                `#${tabId}`
+            );
+
+            if (selectedContent) {
+                selectedContent.classList.add("active");
+            }
+
+        });
+
     });
 
 });
+
+    // ---------- 3. NÚT QUAY LẠI ĐẦU TRANG ----------
+    const backToTop = document.getElementById("backToTop");
+
+    if (backToTop) {
+
+        window.addEventListener("scroll", () => {
+            backToTop.style.display =
+                window.scrollY > 300 ? "flex" : "none";
+        });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+
+});
+
+
+
+
 
 /* NÚT QUAY LẠI ĐẦU TRANG */
 
