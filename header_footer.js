@@ -263,7 +263,7 @@ if (tuKhoa) {
             hienThi.textContent = tong;
         }
     }
-
+    })();
     
 
 
@@ -280,4 +280,4 @@ if (tuKhoa) {
         })
         .catch(error => console.error("Lỗi Footer:", error));
 
-})});
+    });
