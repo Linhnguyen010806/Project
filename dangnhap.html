@@ -105,12 +105,13 @@
    aria-label="Quay về trang chủ"
     title="Về trang chủ">&times;</a> -->
     <button type="button" class="close-btn"
-        onclick="window.parent.postMessage('closeAuthPopup', '*')"
+        onclick="window.parent.postMessage('closeAuthPopup', '*')" 
         aria-label="Đóng cửa sổ"
         title="Đóng">&times;</button>
     <!-- window.parent: truy cập trang chủ đang chứa iframe.
     postMessage: gửi tín hiệu đến trang chủ.
-    closeAuthPopup: tín hiệu yêu cầu đóng popup. -->
+    closeAuthPopup: tín hiệu yêu cầu đóng popup. 
+    mở popup, chuyển từ đăng nhập sang đăng ký và đóng popup.-->
 
     </div>
 

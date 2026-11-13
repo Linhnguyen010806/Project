@@ -340,3 +340,14 @@ body {
         height: 32px;
     }
 }
+/* Ẩn phần giới thiệu khi đăng nhập bằng popup */
+.popup-mode .auth-intro {
+    display: none;
+}
+/* Lớp nền tối mờ phía sau.
+Popup nằm chính giữa màn hình.
+Khung popup màu trắng kem, bo góc.
+Nội dung đăng nhập/đăng ký hiển thị bên trong iframe. */
+/* Mở trang đăng nhập riêng: vẫn có phần giới thiệu màu nâu.
+Mở popup từ trang chủ: phần màu nâu biến mất.
+Không cần xóa HTML hay tạo thêm file. */
