@@ -144,10 +144,7 @@ function bodau(chuoi) {
         .replace(/đ/g, "d");
 }
 
-
-// ========================================
-// CHỨC NĂNG THÊM SÁCH VÀO GIỎ HÀNG
-// ========================================
+//Thêm sách vào giỏ hàng
 
 (function() {
 
@@ -236,4 +233,206 @@ function bodau(chuoi) {
     // Cập nhật số lượng khi mở trang
     capNhatGioHang();
 
+    // ================================
+// CHỨC NĂNG HIỂN THỊ POPUP GIỎ HÀNG
+// ================================
+
+// Mở giỏ hàng
+document.addEventListener("click", function(event) {
+
+    // Bấm nút giỏ hàng trên header
+    if (event.target.closest("#nut-mo-gio-hang")) {
+        event.preventDefault();
+
+        let popup = document.getElementById("popup-gio-hang");
+
+        if (popup) {
+            popup.classList.add("hien-thi");
+            hienThiDanhSachGioHang();
+        }
+    }
+
+    // Đóng bằng nút X hoặc bấm ra ngoài
+    if (
+        event.target.closest("#dong-gio-hang") ||
+        event.target.classList.contains("nen-gio-hang")
+    ) {
+        let popup = document.getElementById("popup-gio-hang");
+
+        if (popup) {
+            popup.classList.remove("hien-thi");
+        }
+    }
+
+});
+
+
+// Hiển thị danh sách sách trong giỏ hàng
+// Hiển thị danh sách sách trong giỏ hàng
+function hienThiDanhSachGioHang() {
+
+    let gioHang = layGioHang();
+
+    let danhSach = document.getElementById("danh-sach-gio-hang");
+    let tongTien = document.getElementById("tong-tien-gio-hang");
+
+    if (!danhSach || !tongTien) return;
+
+    danhSach.innerHTML = "";
+
+    // Nếu giỏ hàng trống
+    if (gioHang.length === 0) {
+
+        danhSach.innerHTML = `
+            <div class="gio-hang-trong">
+                <p>Giỏ hàng của bạn đang trống!</p>
+            </div>
+        `;
+
+        tongTien.textContent = "0đ";
+        return;
+    }
+
+    let tong = 0;
+
+    // Hiển thị từng sản phẩm
+    gioHang.forEach(function(sach) {
+
+        let gia = Number(sach.gia) || 0;
+        let soLuong = Number(sach.soLuong) || 0;
+
+        tong += gia * soLuong;
+
+        danhSach.innerHTML += `
+            <div class="sach-trong-gio">
+
+                <input type="checkbox"
+                       class="chon-sach-gio"
+                       data-id="${sach.id}"
+                       checked>
+
+                <a href="chitietsp.html?id=${encodeURIComponent(sach.id)}"
+                    style="color: inherit; text-decoration: none;">
+
+                    <img src="${sach.anh}" alt="${sach.ten}">
+
+                </a>
+<div class="thong-tin-sach-gio">
+
+    <h3>
+         <a href="chitietsp.html?id=${encodeURIComponent(sach.id)}"
+           style="color: inherit; text-decoration: none;">
+            ${sach.ten}
+        </a>
+    </h3>
+
+                    <div class="gia-sach-gio">
+                        ${gia.toLocaleString("vi-VN")}đ
+                    </div>
+
+                    <div class="so-luong-sach-gio">
+
+                        <button data-hanh-dong="giam"
+                                data-id="${sach.id}">-</button>
+
+                        <span>${soLuong}</span>
+
+                        <button data-hanh-dong="tang"
+                                data-id="${sach.id}">+</button>
+
+                    </div>
+
+                    <button class="xoa-sach-gio"
+                            data-hanh-dong="xoa"
+                            data-id="${sach.id}">
+                        Xóa
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+    });
+
+tinhTongTienDaChon();
+}
+
+// Tính tổng tiền các sách được chọn
+function tinhTongTienDaChon() {
+
+    let gioHang = layGioHang();
+    let tong = 0;
+
+    gioHang.forEach(function(sach) {
+
+        let checkbox = document.querySelector(
+            `.chon-sach-gio[data-id="${sach.id}"]`
+        );
+
+        // Chỉ tính sách được tích chọn
+        if (checkbox && checkbox.checked) {
+            tong += Number(sach.gia) * Number(sach.soLuong);
+        }
+
+    });
+
+    document.getElementById("tong-tien-gio-hang").textContent =
+        tong.toLocaleString("vi-VN") + "đ";
+}
+
+// Cập nhật tổng tiền khi chọn hoặc bỏ chọn sách
+document.addEventListener("change", function(event) {
+
+    if (event.target.classList.contains("chon-sach-gio")) {
+        tinhTongTienDaChon();
+    }
+
+});
+
+
+// Xử lý tăng, giảm và xóa sách
+document.addEventListener("click", function(event) {
+
+    let nut = event.target.closest("[data-hanh-dong]");
+
+    if (!nut) return;
+
+    let hanhDong = nut.dataset.hanhDong;
+    let id = nut.dataset.id;
+
+    if (!id) return;
+
+    let gioHang = layGioHang();
+
+    let sach = gioHang.find(function(item) {
+        return item.id === id;
+    });
+
+    if (!sach) return;
+
+    if (hanhDong === "tang") {
+        sach.soLuong++;
+    }
+
+    else if (hanhDong === "giam") {
+        sach.soLuong--;
+
+        if (sach.soLuong <= 0) {
+            gioHang = gioHang.filter(function(item) {
+                return item.id !== id;
+            });
+        }
+    }
+
+    else if (hanhDong === "xoa") {
+        gioHang = gioHang.filter(function(item) {
+            return item.id !== id;
+        });
+    }
+
+    luuGioHang(gioHang);
+
+    hienThiDanhSachGioHang();
+    capNhatGioHang();
+});
 })();

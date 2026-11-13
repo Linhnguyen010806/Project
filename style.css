@@ -1726,3 +1726,220 @@ html{
         gap: 8px;
     }
 }
+
+/* POPUP GIỎ HÀNG */
+.popup-gio-hang {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+}
+
+/* Khi mở giỏ hàng */
+.popup-gio-hang.hien-thi {
+    display: block;
+}
+
+/* Nền trong suốt để bấm ra ngoài đóng popup */
+.nen-gio-hang {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+}
+
+/* Khung giỏ hàng xổ xuống */
+.khung-gio-hang {
+    position: absolute;
+
+    top: 90px;
+    right: 32px;
+
+    width: 370px;
+    max-width: calc(100vw - 30px);
+/* 
+    height: 620px;
+    max-height: calc(100vh - 110px);
+    width: 450px;
+    max-width: calc(100vw - 30px); */
+
+    max-height: 75vh;
+    height: auto;
+
+    background: white;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #e8ddd0;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    animation: hienGioHang 0.25s ease;
+}
+
+@keyframes hienGioHang {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Danh sách sách có thể cuộn */
+#danh-sach-gio-hang {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    max-height: 45vh;
+    padding-top: 10px;
+}
+
+/* Tiêu đề */
+.dau-gio-hang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dau-gio-hang h2 {
+    color: #50362b;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+}
+
+#dong-gio-hang {
+    border: none;
+    background: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #50362b;
+}
+
+/* Danh sách sách */
+#danh-sach-gio-hang {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 15px;
+}
+
+.sach-trong-gio {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.sach-trong-gio img {
+    width: 85px;
+    height: 110px;
+    object-fit: contain;
+    background: white;
+}
+
+.thong-tin-sach-gio {
+    flex: 1;
+}
+
+.thong-tin-sach-gio h3 {
+    font-size: 15px;
+    color: #35241f;
+    margin: 0 0 8px;
+}
+
+.gia-sach-gio {
+    color: #94704d;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* Nút tăng giảm */
+.so-luong-sach-gio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.so-luong-sach-gio button {
+    width: 27px;
+    height: 27px;
+    border: 1px solid #b88954;
+    background: white;
+    color: #50362b;
+    cursor: pointer;
+}
+
+.xoa-sach-gio {
+    border: none;
+    background: none;
+    color: #94756d;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+/* Phần tổng tiền */
+.cuoi-gio-hang {
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.tong-tien {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #35241f;
+}
+
+.tong-tien strong {
+    color: #50362b;
+    font-size: 20px;
+}
+
+.nut-thanh-toan {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #50362b;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nut-thanh-toan:hover {
+    background: #b88954;
+}
+
+/* Giỏ hàng trống */
+.gio-hang-trong {
+    text-align: center;
+    color: #806f65;
+    padding: 50px 10px;
+}
+
+/* Checkbox chọn sản phẩm */
+.chon-sach-gio {
+    width: 17px;
+    height: 17px;
+    accent-color: #50362b;
+    cursor: pointer;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+@media (max-width: 600px) {
+    .khung-gio-hang {
+        top: 85px;
+        right: 10px;
+        width: calc(100vw - 20px);
+        max-width: none;
+    }
+}

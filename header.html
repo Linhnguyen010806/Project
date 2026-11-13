@@ -66,7 +66,7 @@
                     <i class="fas fa-heart"></i>
                 </a>
 
-                <a href="#" title="Giỏ hàng">
+                <a href="#" title="Giỏ hàng" id="nut-mo-gio-hang">
                     <span class="cart-icon-wrap">
                         <i class="fas fa-shopping-cart"></i>
                         <span id="so-luong-gio-hang">0</span>
@@ -140,5 +140,29 @@
 
 </header>
 
+
+<!--popup giỏ hàng-->
+<div class="popup-gio-hang" id="popup-gio-hang">
+    <div class="nen-gio-hang"></div>
+
+   <div class="khung-gio-hang">
+        <div class="dau-gio-hang">
+            <h2>Giỏ hàng của bạn</h2>
+            <button id="dong-gio-hang"> &times;</button>
+        </div>
+
+        <div id="danh-sach-gio-hang"></div>
+
+        <div id="cuoi-gio-hang">
+            <div class="tong-tien">
+                <span>Tổng tiền:</span>
+                <strong id="tong-tien-gio-hang">0đ</strong>
+            </div>
+
+            <button class="nut-thanh-toan">Thanh toán</button>
+        </div>
+   </div>
+
+</div>
 </body>
 </html>
