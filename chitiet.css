@@ -242,6 +242,22 @@ body {
     border-color: #754000;
 }
 
+#buyNow {
+    padding: 13px 22px;
+    border: 1px solid #754000;
+    border-radius: 5px;
+    background: #fff;
+    color: #754000;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#buyNow:hover {
+    background: #754000;
+    color: #fff;
+}
 .wishlist {
     width: 43px;
     height: 43px;

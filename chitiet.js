@@ -414,3 +414,17 @@ addCartButton.addEventListener("click", function () {
         "\". Chức năng giỏ hàng sẽ được kết nối theo hệ thống của website."
     );
 });
+//NÚT MUA NGAY
+const buyNowButton = document.getElementById("buyNow");
+
+buyNowButton.addEventListener("click", function () {
+    if (!book) {
+        alert("Không tìm thấy sản phẩm!");
+        return;
+    }
+
+    alert(
+        "Bạn đã chọn mua " + quantity +
+        " cuốn \"" + book.name + "\"!"
+    );
+});
