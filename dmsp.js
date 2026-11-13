@@ -19,91 +19,181 @@ function capNhatSoLuongSach() {
     }
 }
 
-// Lọc sách theo thể loại
+let theLoaiDangChon = "all";
+let mucGiaDangChon = "all";
+let kieuSapXep = "moi-nhat";
+
+// Lưu thứ tự ban đầu của các sản phẩm
+const danhSachSanPham = Array.from(
+    document.querySelectorAll(".khu-vuc-danh-sach .san-pham")
+);
+
+
+// Hàm lọc và sắp xếp sản phẩm
+function locVaSapXepSach() {
+
+    let min = 0;
+    let max = Infinity;
+
+    // Xác định khoảng giá
+    if (mucGiaDangChon !== "all") {
+        let khoangGia = mucGiaDangChon.split("-");
+
+        min = Number(khoangGia[0]);
+        max = Number(khoangGia[1]);
+    }
+
+    // Lọc theo thể loại và giá bán
+    danhSachSanPham.forEach(function(sach) {
+
+        let theLoai = sach.getAttribute("data-the-loai");
+        let gia = Number(sach.dataset.gia);
+
+        let dungTheLoai =
+            theLoaiDangChon === "all" ||
+            theLoai === theLoaiDangChon;
+
+        let dungGia = Number.isFinite(gia) && gia >= min && gia <= max;
+
+        if (dungTheLoai && dungGia) {
+            sach.style.display = "";
+        } else {
+            sach.style.display = "none";
+        }
+    });
+
+
+    
+    // Sắp xếp sản phẩm
+    let danhSachSapXep = [...danhSachSanPham];
+
+    if (kieuSapXep === "gia-tang") {
+
+        danhSachSapXep.sort(function(a, b) {
+            return Number(a.dataset.gia) - Number(b.dataset.gia);
+        });
+
+    } else if (kieuSapXep === "gia-giam") {
+
+        danhSachSapXep.sort(function(a, b) {
+            return Number(b.dataset.gia) - Number(a.dataset.gia);
+        });
+
+    } else if (kieuSapXep === "ban-chay") {
+
+        danhSachSapXep.sort(function(a, b) {
+            let banChayA = a.querySelector(".ban-chay") ? 1 : 0;
+            let banChayB = b.querySelector(".ban-chay") ? 1 : 0;
+
+            return banChayB - banChayA;
+        });
+
+    } else if (kieuSapXep === "moi-nhat") {
+
+        danhSachSapXep.sort(function(a, b) {
+            let sachMoiA = a.dataset.moi === "true" ? 1 : 0;
+            let sachMoiB = b.dataset.moi === "true" ? 1 : 0;
+
+            return sachMoiB - sachMoiA;
+        });
+
+    }
+
+    // Đưa sản phẩm về đúng thứ tự trên giao diện
+    let noiChua = danhSachSanPham.length > 0
+        ? danhSachSanPham[0].parentElement
+        : null;
+
+    if (noiChua) {
+        danhSachSapXep.forEach(function(sach) {
+            noiChua.appendChild(sach);
+        });
+    }
+
+    // Cập nhật số lượng sách đang hiển thị
+    capNhatSoLuongSach();
+
+}
+
+
+// LỌC THEO THỂ LOẠI
 document.querySelectorAll(".loc-the-loai").forEach(function(muc) {
+
     muc.addEventListener("click", function(event) {
+
         event.preventDefault();
 
-        const theLoai = this.getAttribute("data-the-loai");
+        theLoaiDangChon = this.getAttribute("data-the-loai") || "all";
 
-        const cacTheLoai = document.querySelectorAll(
-            ".khu-vuc-danh-sach .san-pham"
-        );
+        locVaSapXepSach();
 
-        cacTheLoai.forEach(function(khuVuc) {
-            if (theLoai === "all" || khuVuc.getAttribute("data-the-loai") === theLoai) {
-                khuVuc.style.display = "";
-            } else {
-                khuVuc.style.display = "none";
-            }
-        });
-
-        capNhatSoLuongSach();
     });
+
 });
+
+
+// LỌC THEO MỨC GIÁ
+document.querySelectorAll('input[name="muc-gia"]').forEach(function(radio) {
+
+    radio.addEventListener("change", function() {
+
+        mucGiaDangChon = this.value;
+
+        locVaSapXepSach();
+
+    });
+
+});
+
+
+// SẮP XẾP SẢN PHẨM
+const chonSapXep = document.getElementById("chon-sap-xep");
+
+if (chonSapXep) {
+
+    chonSapXep.addEventListener("change", function() {
+
+        kieuSapXep = this.value;
+
+        locVaSapXepSach();
+
+    });
+
+}
+
 
 // Đếm số sách khi mở trang
-capNhatSoLuongSach();
+locVaSapXepSach();
 
 
-//Lọc sp theo giá
-document.querySelectorAll('input[name=muc-gia]').forEach(function(radio){
-    radio.addEventListener("change",function(){
-        let mgia=this.value;
-
-        let min=0;
-        let max=Infinity;
-
-        if(mgia != "all"){
-            let gia=mgia.split("-");
-
-            min=Number(gia[0]);
-            max=Number(gia[1]);
-        }
-
-        let danhsach=document.querySelectorAll(".san-pham");
-
-        danhsach.forEach(function(sanpham){
-            let gias=Number(sanpham.dataset.gia);
-
-            if(gias>=min && gias<=max){
-                sanpham.style.display="";
-
-            }else
-                sanpham.style.display="none";
-        });
-
-        capNhatSoLuongSach();
-    });
-});
 
 
-let sanPhamThu = document.querySelector('.san-pham[data-id="dnt"]');
+// let sanPhamThu = document.querySelector('.san-pham[data-id="dnt"]');
 
-if (sanPhamThu && books.dnt) {
+// if (sanPhamThu && books.dnt) {
 
-    let sach = books.dnt;
+//     let sach = books.dnt;
 
-    sanPhamThu.querySelector(".gia-ban").textContent = sach.price;
-    sanPhamThu.querySelector(".gia-goc").textContent = sach.originalPrice;
+//     sanPhamThu.querySelector(".gia-ban").textContent = sach.price;
+//     sanPhamThu.querySelector(".gia-goc").textContent = sach.originalPrice;
 
-    let giaBan = Number(sach.price.replace(/[^\d]/g, ""));
-    let giaGoc = Number(sach.originalPrice.replace(/[^\d]/g, ""));
+//     let giaBan = Number(sach.price.replace(/[^\d]/g, ""));
+//     let giaGoc = Number(sach.originalPrice.replace(/[^\d]/g, ""));
 
-    let phanTram = Math.round((1 - giaBan / giaGoc) * 100);
+//     let phanTram = Math.round((1 - giaBan / giaGoc) * 100);
 
-    sanPhamThu.querySelector(".nhan-giam-gia").textContent =
-        "-" + phanTram + "%";
-}
+//     sanPhamThu.querySelector(".nhan-giam-gia").textContent =
+//         "-" + phanTram + "%";
+// }
 
 
-function onMouseOver(sanPham) {
-    sanPham.querySelector(".nut-them-nhanh").style.display = "flex";
-}
+// function onMouseOver(sanPham) {
+//     sanPham.querySelector(".nut-them-nhanh").style.display = "flex";
+// }
 
-function onMouseOut(sanPham) {
-    sanPham.querySelector(".nut-them-nhanh").style.display = "none";
-}
+// function onMouseOut(sanPham) {
+//     sanPham.querySelector(".nut-them-nhanh").style.display = "none";
+// }
 
 
 // Tự động điền nhãn giảm giá
