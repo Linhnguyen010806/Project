@@ -10,6 +10,41 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(data => {
             document.getElementById("header_container").innerHTML = data;
+            
+    // ===============================
+    // CHUYỂN SANG TRANG THANH TOÁN
+    // ===============================
+    const nutThanhToan = document.querySelector(".nut-thanh-toan");
+
+    if (nutThanhToan) {
+        nutThanhToan.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            let gioHang = [];
+
+            try {
+                gioHang = JSON.parse(
+                    localStorage.getItem("gioHang") || "[]"
+                );
+            } catch (error) {
+                gioHang = [];
+            }
+
+            if (gioHang.length === 0) {
+                alert("Giỏ hàng của bạn đang trống!");
+                return;
+            }
+
+            localStorage.setItem(
+                "sanPhamThanhToan",
+                JSON.stringify(gioHang)
+            );
+
+            window.location.href = "mua_hang.html";
+        });
+    }
+
+
 
     
             // =========================THAO TÁC TÌM KIẾM

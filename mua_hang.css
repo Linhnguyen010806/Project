@@ -1,0 +1,241 @@
+
+.checkout-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 40px auto 60px;
+    color: #50362B;
+}
+
+.checkout-title {
+    text-align: center;
+    color: #8B4A00;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.checkout-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 35px;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.checkout-box {
+    background: #FFFDF8;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #eadfce;
+    box-shadow: 0 3px 12px rgba(80, 54, 43, 0.08);
+}
+
+.checkout-box h2 {
+    color: #8B4A00;
+    font-size: 21px;
+    margin-bottom: 22px;
+}
+
+.checkout-box h2 i {
+    margin-right: 8px;
+}
+
+.checkout-box form > label {
+    display: block;
+    margin: 14px 0 7px;
+    font-weight: 600;
+}
+
+.checkout-box input:not([type="radio"]),
+.checkout-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8c7b3;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+}
+
+.checkout-box input:focus,
+.checkout-box textarea:focus {
+    border-color: #8B4A00;
+}
+
+.checkout-box textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.payment-heading {
+    margin-top: 28px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.payment-option input {
+    accent-color: #8B4A00;
+}
+
+.btn-order {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 7px;
+    background: #8B4A00;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-order:hover {
+    background: #50362B;
+}
+
+.checkout-product {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #eadfce;
+}
+
+.checkout-product img {
+    width: 65px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.checkout-product-info {
+    flex: 1;
+}
+
+.checkout-product-info h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.checkout-product-info p {
+    color: #8B4A00;
+    font-weight: bold;
+}
+
+.checkout-product .quantity {
+    color: #777;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.order-line,
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.order-total {
+    border-top: 1px solid #d8c7b3;
+    padding-top: 18px;
+    font-size: 18px;
+}
+
+.order-total strong {
+    color: #b43c24;
+    font-size: 21px;
+}
+
+.checkout-note {
+    margin-top: 25px;
+    padding: 12px;
+    background: #f7f0e6;
+    border-radius: 7px;
+    color: #72533d;
+    font-size: 13px;
+}
+
+.empty-checkout {
+    padding: 25px 0;
+    text-align: center;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-container {
+        width: 94%;
+    }
+
+    .checkout-box {
+        padding: 20px;
+    }
+
+    .checkout-title {
+        font-size: 24px;
+    }
+}
+#checkoutItems .san-pham {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#checkoutItems .san-pham img {
+    width: 70px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+#checkoutItems .thong-tin-sach h3 {
+    font-size: 15px;
+    margin: 0 0 6px;
+}
+
+#checkoutItems .gia-sach {
+    color: #b22222;
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+
+#checkoutItems .so-luong {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+#checkoutItems .so-luong button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #8b4513;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#checkoutItems .xoa-san-pham {
+    background: none;
+    border: none;
+    color: #b22222;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}

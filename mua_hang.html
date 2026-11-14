@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - Hanami Bookstore</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mua_hang.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER DÙNG CHUNG -->
+    <div id="header_container"></div>
+
+    <main class="checkout-container">
+        <h1 class="checkout-title">THANH TOÁN ĐƠN HÀNG</h1>
+        <p class="checkout-subtitle">
+            Hoàn tất thông tin để Hanami giao sách đến bạn nhé!
+        </p>
+
+        <div class="checkout-layout">
+
+            <!-- THÔNG TIN KHÁCH HÀNG -->
+            <section class="checkout-box">
+                <h2><i class="fa-solid fa-user"></i> Thông tin nhận hàng</h2>
+
+                <form id="checkoutForm">
+                    <label for="hoTen">Họ và tên *</label>
+                    <input type="text" id="hoTen"
+                           placeholder="Nhập họ và tên" required>
+
+                    <label for="dienThoai">Số điện thoại *</label>
+                    <input type="tel" id="dienThoai"
+                           placeholder="Nhập số điện thoại" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email"
+                           placeholder="Nhập email">
+
+                    <label for="diaChi">Địa chỉ nhận hàng *</label>
+                    <input type="text" id="diaChi"
+                           placeholder="Số nhà, tên đường..." required>
+
+                    <label for="tinhThanh">Tỉnh / Thành phố *</label>
+                    <input type="text" id="tinhThanh"
+                           placeholder="Nhập tỉnh hoặc thành phố" required>
+
+                    <label for="ghiChu">Ghi chú đơn hàng</label>
+                    <textarea id="ghiChu"
+                              placeholder="Ghi chú thêm cho người giao hàng..."></textarea>
+
+                    <h2 class="payment-heading">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Phương thức thanh toán
+                    </h2>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment"
+                               value="cod" checked>
+                        Thanh toán khi nhận hàng (COD)
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment"
+                               value="bank">
+                        Chuyển khoản ngân hàng
+                    </label>
+
+                    <button type="submit" class="btn-order">
+                        ĐẶT HÀNG NGAY
+                    </button>
+                </form>
+            </section>
+
+            <!-- TÓM TẮT ĐƠN HÀNG -->
+            <section class="checkout-box order-box">
+                <h2><i class="fa-solid fa-book-open"></i> Đơn hàng của bạn</h2>
+
+                <div id="checkoutItems">
+                    <!-- Sản phẩm được JavaScript hiển thị tại đây -->
+                </div>
+
+                <div class="order-line">
+                    <span>Tạm tính</span>
+                    <strong id="tamTinh">0đ</strong>
+                </div>
+
+                <div class="order-line">
+                    <span>Phí vận chuyển</span>
+                    <strong id="phiShip">30.000đ</strong>
+                </div>
+
+                <div class="order-total">
+                    <span>Tổng thanh toán</span>
+                    <strong id="tongThanhToan">0đ</strong>
+                </div>
+
+                <p class="checkout-note">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Thông tin đơn hàng của bạn được bảo mật.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER DÙNG CHUNG -->
+    <div id="footer_container"></div>
+
+    <script src="header_footer.js"></script>
+    <script src="mua_hang.js"></script>
+</body>
+</html>
