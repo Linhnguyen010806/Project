@@ -1,144 +1,218 @@
 /* ==========================================
-   TRANG LIÊN HỆ 
+   HANAMI BOOKSTORE - TRANG LIÊN HỆ (CSS)
    ========================================== */
 
-/* Khung nội dung chính */
-.page-container {
+html { 
+    scroll-behavior: smooth; 
+}
+
+.contact-page {
+    --lh-brown: #50362b;
+    --lh-dark: #35241f;
+    --lh-gold: #b88954;
+    --lh-cream: #f8f5f0;
+    --lh-text: #71645c;
+    --lh-border: #e6ded6;
+
     max-width: 1200px;
     margin: 30px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    min-height: 450px;
-    font-family: Arial, sans-serif;
-    color: #333333;
-}
-
-.page-title {
-    color: #8B4513;
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #f8bbd0;
-}
-
-/* Bố cục chia 2 cột */
-.contact-wrapper {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-/* Cột thông tin bên trái */
-.contact-info {
-    flex: 1;
-    min-width: 300px;
-    background: #fafafa;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #f0f0f0;
-}
-
-.contact-info h2 {
-    font-size: 22px;
-    color: #8B4513;
-    margin-bottom: 20px;
-}
-
-.contact-info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 18px;
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-.contact-info-item i {
-    color: #8B4513;
-    font-size: 18px;
-    margin-top: 3px;
-    width: 20px;
-}
-
-/* Cột Form bên phải */
-.contact-form-box {
-    flex: 1.2;
-    min-width: 320px;
+    padding: 0 !important;
     background: #ffffff;
-    padding: 25px;
     border-radius: 8px;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgba(53, 36, 31, 0.06);
+    overflow: hidden;
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
+    color: var(--lh-dark);
 }
 
-.contact-form-box h2 {
-    font-size: 20px;
-    color: #333333;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 18px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #555555;
-    font-size: 14px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.3s;
+.contact-page *, 
+.contact-page *::before, 
+.contact-page *::after {
     box-sizing: border-box;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #d81b60;
+/* --- BANNER TIÊU ĐỀ TRANG --- */
+.lh-store-banner {
+    background: linear-gradient(135deg, var(--lh-brown) 0%, var(--lh-dark) 100%);
+    color: #ffffff;
+    padding: 60px 40px;
+    text-align: center;
 }
 
-.submit-btn {
-    background-color: #d81b60;
+.lh-badge-sub {
+    display: inline-block;
+    color: #d1b16e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.lh-banner-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.lh-banner-content p {
+    color: #e2d3c7;
+    font-size: 14.5px;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- BỐ CỤC CHÍNH (FORM & BẢN ĐỒ) --- */
+.lh-main-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 45px;
+    padding: 55px;
+}
+
+.lh-section-title {
+    margin-bottom: 25px;
+}
+
+.lh-section-title h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--lh-brown);
+    margin: 0 0 6px;
+}
+
+.lh-section-title p {
+    color: var(--lh-text);
+    font-size: 13.5px;
+    margin: 0;
+}
+
+/* Form liên hệ */
+.lh-form-section {
+    background: #fff;
+}
+
+.lh-row-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.lh-form-group {
+    margin-bottom: 18px;
+}
+
+.lh-form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--lh-dark);
+    margin-bottom: 6px;
+}
+
+.required {
+    color: #c0392b;
+}
+
+.lh-form-group input,
+.lh-form-group textarea,
+.lh-select-control {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #dcd3cb;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #faf8f5;
+    outline: none;
+    transition: 0.3s;
+}
+
+.lh-form-group input:focus,
+.lh-form-group textarea:focus,
+.lh-select-control:focus {
+    background: #fff;
+    border-color: var(--lh-gold);
+    box-shadow: 0 0 0 3px rgba(184, 137, 84, 0.12);
+}
+
+.lh-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--lh-brown);
     color: #ffffff;
     border: none;
-    padding: 12px 25px;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 5px;
+    padding: 13px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: 0.3s;
     width: 100%;
+    margin-top: 5px;
 }
 
-.submit-btn:hover {
-    background-color: #c2185b;
+.lh-submit-btn:hover {
+    background: var(--lh-gold);
+    transform: translateY(-2px);
 }
 
-.submit-btn:active {
-    transform: scale(0.99);
+/* Bản đồ */
+.lh-map-box {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--lh-border);
+    box-shadow: 0 4px 15px rgba(53, 36, 31, 0.05);
 }
 
-/* Responsive màn hình nhỏ */
-@media (max-width: 768px) {
-    .contact-wrapper {
-        flex-direction: column;
+/* --- RESPONSIVE CHO DI ĐỘNG --- */
+@media (max-width: 900px) {
+    .lh-main-layout {
+        grid-template-columns: 1fr;
+        padding: 35px 25px;
     }
+}
 
-    .page-container {
-        padding: 15px;
-        margin: 15px auto;
+@media (max-width: 600px) {
+    .contact-page {
+        margin: 15px;
+        width: auto;
     }
+    .lh-store-banner {
+        padding: 40px 20px;
+    }
+    .lh-banner-content h1 {
+        font-size: 28px;
+    }
+    .lh-row-group {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- TÙY CHỈNH Ô CHỌN MÃ QUỐC GIA & SỐ ĐIỆN THOẠI --- */
+.lh-phone-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.lh-country-select {
+    width: 115px;
+    padding: 11px 8px;
+    border: 1px solid #dcd3cb;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-family: inherit;
+    background: #faf8f5;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lh-country-select:focus {
+    background: #fff;
+    border-color: var(--lh-gold);
+    box-shadow: 0 0 0 3px rgba(184, 137, 84, 0.12);
 }

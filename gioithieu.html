@@ -5,56 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới thiệu - Hanami Bookstore</title>
 
-    <!-- Liên kết trực tiếp file CSS của trang chủ -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+    <!-- Liên kết CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gioithieu.css">
     <link rel="stylesheet" href="thongbao.css">
+
+    <!-- FontAwesome Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <div id="header_container"></div>
 
-<!-- ===== NỘI DUNG NẰM GIỮA ===== -->
-<main class="page-container about-page" style="max-width: 1200px; margin: 30px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-    
-    <!-- Tiêu đề và Slogan -->
-    <h1 style="color: #8B4513; font-size: 28px; margin-bottom: 10px;">Về Hanami Bookstore</h1>
-    <p style="font-style: italic; color: #8B4513; font-size: 16px; margin-bottom: 25px; font-weight: bold;">"Open a book - Open a world"</p>
+<main class="page-container about-page">
 
-    <!-- Hình ảnh minh họa có nguồn -->
-    <div style="text-align: center; margin: 25px 0;">
-        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop" alt="Không gian tiệm sách Hanami" style="max-width: 100%; height: 380px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-        <p style="font-size: 13px; color: #777; margin-top: 8px; font-style: italic;">Không gian đọc sách tại Hanami Bookstore (Nguồn: Unsplash)</p>
-    </div>
+    <!-- 1. HERO KIỂU BANNER NGANG + THẺ NỔI -->
+    <section class="gt-banner-hero">
+        <div class="gt-banner-img">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop" alt="Không gian Hanami Bookstore">
+        </div>
 
-    <!-- Nội dung Giới thiệu -->
-    <h2 style="font-size: 20px; color: #8B4513; margin-top: 30px; margin-bottom: 12px; border-left: 4px solid #8B4513; padding-left: 10px;">Giới Thiệu Về Chúng Tôi</h2>
-    <p style="font-size: 15px; line-height: 1.8; color: #555; margin-bottom: 15px;">
-        Được thành lập từ tình yêu sâu sắc với những trang sách, <strong>Hanami Bookstore</strong> ra đời với mong muốn trở thành người bạn đồng hành tin cậy của mọi thế hệ độc giả yêu sách. Lấy cảm hứng từ hoa anh đào (Hanami) – biểu tượng của sự tươi mới, hy vọng và khởi đầu tốt đẹp, chúng tôi không ngừng nỗ lực mang tri thức tinh hoa đến gần hơn với cộng đồng.
-    </p>
+        <div class="gt-hero-box">
+            <span class="gt-label">WELCOME TO HANAMI BOOKSTORE</span>
+            <h1>Mở sách, <span>mở thế giới.</span></h1>
+            <p class="gt-slogan">"Open a book - Open a world"</p>
+            <div class="gt-divider-center"></div>
+            <p class="gt-intro">
+                Không chỉ là nơi tìm kiếm những cuốn sách hay, Hanami Bookstore mong muốn trở thành người bạn đồng hành tin cậy trên hành trình khám phá tri thức, nuôi dưỡng cảm hứng và kết nối những tâm hồn yêu sách.
+            </p>
+            <a href="#gt-story" class="gt-button">
+                Khám phá câu chuyện <i class="fa-solid fa-arrow-down"></i>
+            </a>
+        </div>
+    </section>
 
-    <!-- Sứ mệnh -->
-    <h2 style="font-size: 20px; color: #8B4513; margin-top: 30px; margin-bottom: 12px; border-left: 4px solid #8B4513; padding-left: 10px;">Sứ Mệnh</h2>
-    <p style="font-size: 15px; line-height: 1.8; color: #555; margin-bottom: 15px;">
-        Sứ mệnh của Hanami Bookstore là lan tỏa văn hóa đọc, khơi nguồn cảm hứng và xây dựng một không gian kết nối tri thức thân thiện, văn minh cho mọi gia đình Việt. Mỗi cuốn sách được chọn lọc tại tiệm đều mang giá trị nhân văn và tri thức sâu sắc.
-    </p>
 
-    <!-- Khám phá thế giới sách -->
-    <h2 style="font-size: 20px; color: #8B4513; margin-top: 30px; margin-bottom: 12px; border-left: 4px solid #8B4513; padding-left: 10px;">Khám Phá Thế Giới Sách Của Hanami</h2>
-    <ul style="padding-left: 20px; font-size: 15px; line-height: 1.8; color: #555;">
-        <li style="margin-bottom: 8px;"><strong>Sách Văn học & Tiểu thuyết:</strong> Những tác phẩm kinh điển trong và ngoài nước, chạm đến mọi cung bậc cảm xúc.</li>
-        <li style="margin-bottom: 8px;"><strong>Sách Phát triển bản thân:</strong> Bí quyết quản trị bản thân, kỹ năng sống và tư duy tích cực.</li>
-        <li style="margin-bottom: 8px;"><strong>Sách Ngoại ngữ & Tham khảo:</strong> Giáo trình chuẩn, sách học ngoại ngữ cập nhật mới nhất phục vụ học tập và công việc.</li>
-        <li style="margin-bottom: 8px;"><strong>Sách Thiếu nhi:</strong> Truyện tranh giáo dục nhiều màu sắc, nuôi dưỡng trí tưởng tượng và tâm hồn trẻ thơ.</li>
-    </ul>
+    <!-- 2. CÂU CHUYỆN & SỨ MỆNH (CHIA 2 CỘT THẺ CÂN XỨNG) -->
+    <section class="gt-story-section" id="gt-story">
+        <div class="gt-section-heading">
+            <span class="gt-label">OUR STORY & MISSION</span>
+            <h2>Mỗi cuốn sách là một hành trình</h2>
+            <p>Từ tình yêu dành cho những trang sách đến khát vọng lan tỏa tri thức cộng đồng.</p>
+        </div>
+
+        <div class="gt-dual-cards">
+            <!-- Cột 1: Giới thiệu -->
+            <div class="gt-info-panel">
+                <div class="gt-panel-top">
+                    <span class="gt-panel-tag">01 / KHỞI NGUỒN</span>
+                    <i class="fa-solid fa-feather-pointed"></i>
+                </div>
+                <h3>Giới thiệu về chúng tôi</h3>
+                <p>
+                    Được thành lập từ tình yêu sâu sắc với những trang sách, <strong>Hanami Bookstore</strong> ra đời với mong muốn trở thành điểm tựa tri thức cho mọi thế hệ độc giả.
+                </p>
+                <p>
+                    Lấy cảm hứng từ hoa anh đào (Hanami) – biểu tượng của sự tươi mới, hy vọng và những khởi đầu tốt đẹp, chúng tôi không ngừng nỗ lực mang tri thức tinh hoa đến gần hơn với cuộc sống mỗi ngày.
+                </p>
+            </div>
+
+            <!-- Cột 2: Sứ mệnh -->
+            <div class="gt-info-panel gt-panel-highlight">
+                <div class="gt-panel-top">
+                    <span class="gt-panel-tag">02 / ĐỊNH HƯỚNG</span>
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+                <h3>Sứ mệnh của Hanami</h3>
+                <p>
+                    Sứ mệnh của Hanami Bookstore là lan tỏa văn hóa đọc, khơi nguồn cảm hứng sáng tạo và xây dựng một không gian kết nối tri thức thân thiện, văn minh cho mọi gia đình Việt.
+                </p>
+                <p>
+                    Mỗi cuốn sách được chọn lọc trên kệ của tiệm đều mang theo giá trị nhân văn, sự tử tế và chiều sâu tri thức bền vững theo thời gian.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. GIÁ TRỊ CỐT LÕI (BỐ CỤC NGANG THANH LỊCH) -->
+    <section class="gt-values">
+        <div class="gt-section-heading">
+            <span class="gt-label">OUR VALUES</span>
+            <h2>Điều Hanami hướng tới</h2>
+            <p>Những giá trị cốt lõi tạo nên bản sắc riêng của Hanami Bookstore.</p>
+        </div>
+
+        <div class="gt-value-list">
+            <div class="gt-value-card">
+                <div class="gt-value-icon"><i class="fa-solid fa-book-open"></i></div>
+                <div class="gt-value-text">
+                    <h3>Tri thức</h3>
+                    <p>Mang đến những cuốn sách chất lượng, mở rộng hiểu biết và nuôi dưỡng tư duy sâu sắc.</p>
+                </div>
+            </div>
+
+            <div class="gt-value-card">
+                <div class="gt-value-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="gt-value-text">
+                    <h3>Tận tâm</h3>
+                    <p>Luôn đặt trải nghiệm, cảm xúc và sự hài lòng của từng độc giả lên vị trí hàng đầu.</p>
+                </div>
+            </div>
+
+            <div class="gt-value-card">
+                <div class="gt-value-icon"><i class="fa-solid fa-seedling"></i></div>
+                <div class="gt-value-text">
+                    <h3>Kết nối</h3>
+                    <p>Lan tỏa tình yêu sách và gắn kết cộng đồng những tâm hồn có chung niềm đam mê đọc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. KHÁM PHÁ THẾ GIỚI SÁCH (CHUYỂN THÀNH LƯỚI 2x2 Ô VUÔNG) -->
+    <section class="gt-categories">
+        <div class="gt-section-heading">
+            <span class="gt-label">EXPLORE OUR BOOKS</span>
+            <h2>Khám phá thế giới sách</h2>
+            <p>Mỗi thể loại là một cánh cửa mở ra những chân trời tri thức mới mẻ.</p>
+        </div>
+
+        <div class="gt-cat-grid">
+            <div class="gt-cat-box">
+                <span class="gt-cat-num">01</span>
+                <h3>Văn học & Tiểu thuyết</h3>
+                <p>Những tác phẩm kinh điển trong và ngoài nước, chạm đến mọi cung bậc cảm xúc của người đọc.</p>
+            </div>
+
+            <div class="gt-cat-box">
+                <span class="gt-cat-num">02</span>
+                <h3>Phát triển bản thân</h3>
+                <p>Bí quyết quản trị bản thân, kỹ năng sống, rèn luyện thói quen và tư duy tích cực mỗi ngày.</p>
+            </div>
+
+            <div class="gt-cat-box">
+                <span class="gt-cat-num">03</span>
+                <h3>Ngoại ngữ & Tham khảo</h3>
+                <p>Hệ thống giáo trình chuẩn, sách học ngoại ngữ và tài liệu phục vụ học tập, công việc.</p>
+            </div>
+
+            <div class="gt-cat-box">
+                <span class="gt-cat-num">04</span>
+                <h3>Sách Thiếu nhi</h3>
+                <p>Truyện tranh giáo dục nhiều màu sắc, nuôi dưỡng trí tưởng tượng và tâm hồn trong trẻo.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 5. SLOGAN CUỐI TRANG -->
+    <section class="gt-quote">
+        <span>HANAMI BOOKSTORE</span>
+        <h2>
+            Open a book, <em>Open a world.</em>
+        </h2>
+        <p>Mở một trang sách – Mở ra một thế giới.</p>
+    </section>
 
 </main>
 
-<!-- ===== FOOTER ===== -->
-<div id="footer_container"></div>   
+<div id="footer_container"></div>
 
 <script src="script.js"></script>
 <script src="thongbao.js"></script>
- <script src="header_footer.js"></script>
+<script src="header_footer.js"></script>
+
 </body>
 </html>
