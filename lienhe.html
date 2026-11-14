@@ -5,70 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liên hệ - Hanami Bookstore</title>
 
-    <!-- Liên kết trực tiếp file CSS của trang chủ -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Liên kết CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lienhe.css">
     <link rel="stylesheet" href="thongbao.css">
+
+    <!-- FontAwesome Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <div id="header_container"></div>
 
-<!-- ===== NỘI DUNG NẰM GIỮA ===== -->
-<main class="page-container" style="max-width: 1200px; margin: 30px auto; padding: 20px; background: #fff; min-height: 400px; border-radius: 8px;">
-    <h1 style="color: #8B4513; margin-bottom: 20px;">Thông Tin Liên Hệ</h1>
+<!-- ===== NỘI DUNG LIÊN HỆ ===== -->
+<main class="page-container contact-page">
 
-    <div style="display: flex; gap: 40px; flex-wrap: wrap;">
-        <!-- Cột trái: Thông tin -->
-        <div style="flex: 1; min-width: 280px; line-height: 2;">
-            <h2>Hanami Bookstore</h2>
-            <p><i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> 12 Chùa Bộc, Hà Nội, Việt Nam</p>
-            <p><i class="fas fa-phone"></i> <strong>Hotline:</strong> 0982 909 069</p>
-            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> hanamibookstore@gmail.com</p>
+    <!-- BANNER TIÊU ĐỀ TRANG -->
+    <div class="lh-store-banner">
+        <div class="lh-banner-content">
+            <span class="lh-badge-sub">HANAMI BOOKSTORE</span>
+            <h1>Kết Nối Với Chúng Tôi</h1>
+            <p>Mọi thắc mắc, góp ý hay yêu cầu tư vấn sách đều được Hanami lắng nghe và hỗ trợ tận tình.</p>
         </div>
+    </div>
 
-        <!-- Cột phải: Form gửi thông tin -->
-        <div style="flex: 1; min-width: 280px; background: #f9f9f9; padding: 20px; border-radius: 8px;">
-            <h3 style="margin-bottom: 15px;">Gửi thông tin cho chúng tôi</h3>
-            <form action="#" method="post">
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 5px;">Họ và tên:</label>
-                    <input type="text" placeholder="Nhập họ và tên" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+    <!-- KHỐI FORM GỬI THÔNG TIN & BẢN ĐỒ -->
+    <div class="lh-main-layout">
+        
+        <!-- Cột trái: Form liên hệ chi tiết -->
+        <div class="lh-form-section">
+            <div class="lh-section-title">
+                <h3>Gửi Thắc Mắc Cho Hanami</h3>
+                <p>Vui lòng điền thông tin bên dưới, chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất.</p>
+            </div>
+
+            <form id="contactForm" action="#" method="post">
+                <div class="lh-row-group">
+                    <div class="lh-form-group">
+                        <label>Họ và tên <span class="required">*</span></label>
+                        <input type="text" placeholder="Nhập họ tên của bạn" required>
+                    </div>
+                    
+                    <!-- Khối Số điện thoại tích hợp chọn mã quốc gia -->
+                    <div class="lh-form-group">
+                        <label>Số điện thoại <span class="required">*</span></label>
+                        <div class="lh-phone-wrapper">
+                            <select id="countryCode" class="lh-country-select">
+                                <option value="+84">VN (+84)</option>
+                                <option value="+1">US/CA (+1)</option>
+                                <option value="+81">JP (+81)</option>
+                                <option value="+82">KR (+82)</option>
+                                <option value="+44">UK (+44)</option>
+                                <option value="+86">CN (+86)</option>
+                                <option value="+other">Khác</option>
+                            </select>
+                            <input type="tel" id="phone" placeholder="Số điện thoại" required>
+                        </div>
+                    </div>
                 </div>
 
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 5px;">Email:</label>
-                    <input type="email" placeholder="Nhập địa chỉ email" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                <div class="lh-form-group">
+                    <label>Địa chỉ Email <span class="required">*</span></label>
+                    <input type="email" id="email" placeholder="Ví dụ: email@domain.com" required>
                 </div>
 
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 5px;">Nội dung:</label>
-                    <textarea rows="4" placeholder="Nhập nội dung tin nhắn..." required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                <div class="lh-form-group">
+                    <label>Chủ đề hỗ trợ</label>
+                    <select class="lh-select-control">
+                        <option>Hỏi về tình trạng đơn hàng & Vận chuyển</option>
+                        <option>Tư vấn chọn sách & Đặt sách theo yêu cầu</option>
+                        <option>Hợp tác phát hành sách & Sự kiện</option>
+                        <option>Ý kiến đóng góp / Khiếu nại dịch vụ</option>
+                    </select>
                 </div>
 
-                <button type="submit" style="background: #8B4513; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Gửi liên hệ</button>
+                <div class="lh-form-group">
+                    <label>Nội dung chi tiết <span class="required">*</span></label>
+                    <textarea rows="5" placeholder="Nhập nội dung bạn muốn gửi tới Hanami..." required></textarea>
+                </div>
+
+                <button type="submit" class="lh-submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Gửi Thông Tin Liên Hệ
+                </button>
             </form>
         </div>
+
+        <!-- Cột phải: Bản đồ chỉ đường tại 12 Chùa Bộc -->
+        <div class="lh-map-section">
+            <div class="lh-section-title">
+                <h3>Bản Đồ Chỉ Đường</h3>
+                <p>Ghé thăm không gian đọc sách tại cơ sở: <strong>12 Chùa Bộc, Hà Nội</strong>.</p>
+            </div>
+            
+            <div class="lh-map-box">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5058988631165!2d105.82687907533161!3d21.006277980633857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac807f20252b%3A0x367f0f622f96e4fc!2zMTIgxOGqSBDaMO5YSBC4buZYywgUXVuZyBUcnVuZywgxJDhu5FuZyDEkGEsIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2svn!4v1700000000000!5m2!1svi!2svn" 
+                    width="100%" 
+                    height="470" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
     </div>
-    <div class="map-section" style="margin-top: 30px;">
-    <h3 style="margin-bottom: 15px; color: #333;">Bản đồ vị trí</h3>
-    <div style="width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.096814183571!2d105.85227301533216!3d21.02881189315339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab953357c995%3A0x11b0b5b5b5b5b5b5!2sH%C3%A0%20N%E1%BB%99i!5e0!3m2!1svi!2svn!4v1600000000000!5m2!1svi!2svn" 
-            width="100%" 
-            height="350" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-    </div>
-</div>
+
 </main>
 
 <!-- ===== FOOTER ===== -->
 <div id="footer_container"></div>
+
 <script src="script.js"></script>
 <script src="thongbao.js"></script>
 <script src="header_footer.js"></script>
+
+<!-- SCRIPT KIỂM TRA ĐỊNH DẠNG LINH HOẠT QUỐC TẾ -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        const countryCode = document.getElementById('countryCode').value;
+        const phoneInput = document.getElementById('phone').value.trim();
+        const emailInput = document.getElementById('email').value.trim();
+
+        // Kiểm tra số điện thoại: Chỉ cho phép nhập các chữ số (từ 7 đến 15 chữ số theo chuẩn quốc tế E.164)
+        const phoneRegex = /^\d{7,15}$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!phoneRegex.test(phoneInput)) {
+            e.preventDefault();
+            alert('Số điện thoại không hợp lệ! Vui lòng chỉ nhập các chữ số (từ 7 đến 15 chữ số).');
+            document.getElementById('phone').focus();
+            return false;
+        }
+
+        if (!emailRegex.test(emailInput)) {
+            e.preventDefault();
+            alert('Địa chỉ email không đúng định dạng! (Ví dụ hợp lệ: example@gmail.com)');
+            document.getElementById('email').focus();
+            return false;
+        }
+
+        alert('Gửi thông tin liên hệ thành công! Cảm ơn bạn đã liên hệ với Hanami Bookstore.');
+    });
+</script>
+
 </body>
 </html>
