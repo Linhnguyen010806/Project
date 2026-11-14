@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chính sách bảo hành - Hanami Bookstore</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Liên kết CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chinhsach.css">
     <link rel="stylesheet" href="thongbao.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,25 +20,42 @@
 
 <div id="header_container"></div>
 
-<main class="page-container" style="max-width: 1200px; margin: 30px auto; padding: 30px; background: #fff; min-height: 400px; border-radius: 8px;">
-    <h1 style="color: #8B4513; margin-bottom: 20px;">Chính Sách Bảo Hành & Cam Kết Chất Lượng</h1>
+<!-- ĐÚNG CLASS: policy-article-page -->
+<main class="page-container policy-article-page">
+    
+    <!-- ĐÚNG CLASS: doc-header, doc-tag, doc-meta -->
+    <header class="doc-header">
+        <span class="doc-tag">CHÍNH SÁCH & CAM KẾT</span>
+        <h1>Chính Sách Bảo Hành</h1>
+        <p class="doc-meta">Áp dụng cho toàn bộ hệ thống phát hành tại Hanami Bookstore</p>
+    </header>
 
-    <div style="line-height: 1.8; color: #333;">
-        <h2 style="font-size: 18px; color: #8B4513; margin-top: 20px;">1. Cam kết sách chính hãng 100%</h2>
-        <p>Mọi ấn phẩm tại Hanami Bookstore đều được nhập trực tiếp từ các nhà xuất bản uy tín (NXB Trẻ, Kim Đồng, Nhã Nam, Alpha Books, First News...). Chúng tôi cam kết không kinh doanh sách giả, sách lậu.</p>
+    <!-- ĐÚNG CLASS: doc-body, doc-block -->
+    <section class="doc-body">
+        <article class="doc-block">
+            <h2>01. Cam kết sách chính hãng 100%</h2>
+            <p>Mọi ấn phẩm tại Hanami Bookstore đều được tuyển chọn kỹ lưỡng và nhập trực tiếp từ các nhà xuất bản uy tín hàng đầu tại Việt Nam (như NXB Trẻ, Kim Đồng, Nhã Nam, Alpha Books, First News...). Chúng tôi cam kết tuyệt đối không kinh doanh sách giả, sách lậu hay sách kém chất lượng.</p>
+        </article>
 
-        <h2 style="font-size: 18px; color: #8B4513; margin-top: 20px;">2. Bảo hành đối với sản phẩm văn phòng phẩm & phụ kiện</h2>
-        <p>Các sản phẩm văn phòng phẩm, thiết bị học tập có thời gian bảo hành từ <strong>1 - 6 tháng</strong> tùy thuộc vào quy định của hãng sản xuất.</p>
+        <article class="doc-block">
+            <h2>02. Chính sách bảo hành văn phòng phẩm & phụ kiện</h2>
+            <p>Đối với các sản phẩm văn phòng phẩm, quà tặng lưu niệm, bookmark thiết kế hay thiết bị học tập bổ trợ đi kèm, thời gian bảo hành tiêu chuẩn dao động từ <strong>1 đến 6 tháng</strong> tùy theo chính sách riêng của từng nhà sản xuất.</p>
+        </article>
 
-        <h2 style="font-size: 18px; color: #8B4513; margin-top: 20px;">3. Điều kiện không hỗ trợ bảo hành</h2>
-        <ul style="padding-left: 20px;">
-            <li>Sản phẩm hư hại do tác động môi trường (ẩm mốc, dính nước, cháy nổ...).</li>
-            <li>Sản phẩm bị hỏng do lỗi từ phía người sử dụng.</li>
-        </ul>
-    </div>
+        <article class="doc-block">
+            <h2>03. Trường hợp không hỗ trợ bảo hành</h2>
+            <p>Hanami xin phép từ chối tiếp nhận xử lý bảo hành hoặc đổi trả đối với các sản phẩm nằm trong những trường hợp sau:</p>
+            <ul>
+                <li>Sản phẩm hư hỏng do tác động bất khả kháng từ môi trường (ẩm mốc nặng do thời tiết, dính nước, hoen ố, hỏa hoạn...).</li>
+                <li>Sản phẩm bị rách nát, biến dạng cấu trúc hoặc hư hỏng nặng do lỗi chủ quan từ quá trình sử dụng của người đọc.</li>
+            </ul>
+        </article>
+    </section>
+
 </main>
 
 <div id="footer_container"></div>
+
 <script src="script.js"></script>
 <script src="thongbao.js"></script>
 <script src="header_footer.js"></script>
