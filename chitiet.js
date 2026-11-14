@@ -400,31 +400,78 @@ minusButton.addEventListener("click", function () {
 });
 
 // NÚT THÊM VÀO GIỎ HÀNG
+// ========================================
+// KẾT NỐI GIỎ HÀNG
+// ========================================
+
+// Lấy giỏ hàng đã lưu
+function layGioHangChiTiet() {
+    return JSON.parse(localStorage.getItem("gioHang") || "[]");
+}
+
+// Thêm sách vào giỏ hàng
+function themSachVaoGioHang() {
+
+    if (!book) {
+        alert("Không tìm thấy sản phẩm!");
+        return false;
+    }
+
+    let gioHang = layGioHangChiTiet();
+
+    // Chuyển giá từ dạng "86.000đ" thành số 86000
+    let gia = Number(book.price.replace(/\D/g, ""));
+
+    // Kiểm tra sách đã có trong giỏ chưa
+    let sachCo = gioHang.find(function(sach) {
+        return sach.id === id;
+    });
+
+    if (sachCo) {
+        sachCo.soLuong += quantity;
+    } else {
+        gioHang.push({
+            id: id,
+            ten: book.name,
+            gia: gia,
+            anh: book.image,
+            soLuong: quantity
+        });
+    }
+
+    // Lưu giỏ hàng
+    localStorage.setItem("gioHang", JSON.stringify(gioHang));
+    window.dispatchEvent(new Event("gioHangUpdated"));
+    return true;
+}
+
+// Nút Thêm vào giỏ hàng
 const addCartButton = document.getElementById("addCart");
 
-addCartButton.addEventListener("click", function () {
-    if (!book) {
-        alert("Không tìm thấy sản phẩm!");
-        return;
+addCartButton.addEventListener("click", function() {
+
+    if (themSachVaoGioHang()) {
+        alert("Đã thêm sách vào giỏ hàng!");
     }
 
-    alert(
-        "Đã chọn " + quantity +
-        " cuốn \"" + book.name +
-        "\". Chức năng giỏ hàng sẽ được kết nối theo hệ thống của website."
-    );
 });
-//NÚT MUA NGAY
+
+// Nút Mua ngay
 const buyNowButton = document.getElementById("buyNow");
 
-buyNowButton.addEventListener("click", function () {
-    if (!book) {
-        alert("Không tìm thấy sản phẩm!");
-        return;
+buyNowButton.addEventListener("click", function() {
+
+    if (themSachVaoGioHang()) {
+
+        // Mở popup giỏ hàng
+        const nutMoGioHang = document.getElementById("nut-mo-gio-hang");
+
+        if (nutMoGioHang) {
+            nutMoGioHang.click();
+        } else {
+            alert("Đã thêm sách vào giỏ hàng!");
+        }
+
     }
 
-    alert(
-        "Bạn đã chọn mua " + quantity +
-        " cuốn \"" + book.name + "\"!"
-    );
 });

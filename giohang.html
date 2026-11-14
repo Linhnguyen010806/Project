@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng | Hanami Bookstore</title>
+
+    <!-- CSS chung của website -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header_container"></div>
+
+    <!-- NỘI DUNG GIỎ HÀNG -->
+    <main class="cart-container">
+
+        <h1>GIỎ HÀNG CỦA BẠN</h1>
+
+        <div class="cart-content">
+
+            <!-- Danh sách sản phẩm -->
+            <div class="cart-products" id="cart-products">
+                <!-- Sản phẩm sẽ được hiển thị bằng JavaScript -->
+            </div>
+
+            <!-- Tổng tiền -->
+            <div class="cart-summary">
+                <h2>Tổng đơn hàng</h2>
+
+                <div class="summary-row">
+                    <span>Tạm tính:</span>
+                    <span id="subtotal">0đ</span>
+                </div>
+
+                <div class="summary-row total">
+                    <span>Tổng tiền:</span>
+                    <span id="total">0đ</span>
+                </div>
+
+                <button type="button" id="checkoutBtn">
+                    TIẾN HÀNH ĐẶT HÀNG
+                </button>
+
+                <a href="index.html" class="continue-shopping">
+                    <i class="fas fa-arrow-left"></i>
+                    Tiếp tục mua sắm
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer_container"></div>
+
+    <!-- JavaScript -->
+    <script src="header_footer.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

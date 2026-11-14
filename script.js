@@ -364,6 +364,8 @@ document.addEventListener("DOMContentLoaded", function () {
             hienThi.textContent = tong;
         }
     }
+    // Lắng nghe khi giỏ hàng được cập nhật từ trang khác
+        window.addEventListener("gioHangUpdated", capNhatGioHang);
 
     
 
@@ -459,7 +461,6 @@ document.addEventListener("click", function(event) {
 
 
 // Hiển thị danh sách sách trong giỏ hàng
-// Hiển thị danh sách sách trong giỏ hàng
 function hienThiDanhSachGioHang() {
 
     let gioHang = layGioHang();
@@ -550,23 +551,12 @@ tinhTongTienDaChon();
 
 // Tính tổng tiền các sách được chọn
 function tinhTongTienDaChon() {
-
     let gioHang = layGioHang();
     let tong = 0;
-
     gioHang.forEach(function(sach) {
-
-        let checkbox = document.querySelector(
-            `.chon-sach-gio[data-id="${sach.id}"]`
-        );
-
-        // Chỉ tính sách được tích chọn
-        if (checkbox && checkbox.checked) {
-            tong += Number(sach.gia) * Number(sach.soLuong);
-        }
-
+        let checkbox = document.querySelector(`.chon-sach-gio[data-id="${sach.id}"]`);
+        if (checkbox && checkbox.checked) tong += Number(sach.gia) * Number(sach.soLuong);
     });
-
     document.getElementById("tong-tien-gio-hang").textContent =
         tong.toLocaleString("vi-VN") + "đ";
 }
