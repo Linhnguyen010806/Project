@@ -2,6 +2,7 @@
    Yêu thích lưu trong localStorage (khoá "hanamiFavorites") dưới dạng danh sách id sách,
    cùng id với chitiet.js (vd: "cam", "ngk"). Trang chi tiết chỉ cần thêm/bớt id vào khoá này. */
 (function () {
+    if (!document.querySelector(".yt-page")) return;   // trang khác (vd khuyenmai.html) cũng nạp file này: không có .yt-page thì bỏ qua, tránh lỗi console
     const KEY = "hanamiFavorites", CART = "hanamiCart";
     const DEMO = false; // đặt true để xem thử giao diện khi chưa lưu cuốn nào
     const DEMO_IDS = ["cam", "ngk", "dnt", "ove", "dm", "dbg", "ngcntb", "tdnvc"];
@@ -113,16 +114,29 @@
     }
 
     /* ---------- Giao diện ---------- */
-    const card = (b) => {
+    /* Khung ảnh, tên, tác giả, giá: giống thẻ sách ở trang chủ (index.html) */
+    const NO_AUTHOR = ["Đang cập nhật", "Nhiều tác giả"];   // giống index: chưa có tác giả thì để trống
+    const AUTHOR_STYLE = "font-family: 'Times New Roman', Times, serif; font-size: 10px; margin:0;";
+    const PRICE_STYLE = "display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin: 0;";
+    const authorOf = (b) => (NO_AUTHOR.includes(b.author) ? " " : b.author.toLocaleUpperCase("vi"));
+    const bookInfo = (b) => {
         const p = pct(b);
-        return `<div class="product-card" data-id="${b.id}">
+        return `<a href="chitietsp.html?id=${b.id}" class="link-chi-tiet"><div class="khung-anh"><img src="${b.img}" alt="${b.name}" loading="lazy"></div></a>
+            <h3><a href="chitietsp.html?id=${b.id}" class="link-chi-tiet">${b.name}</a></h3>
+            <p style="${AUTHOR_STYLE}">${authorOf(b)}</p>
+            <div class="nhom-gia-gio-hang">
+                <div class="thong-tin-gia">
+                    <p style="${PRICE_STYLE}"><span class="gia-ban">${money(b.price)}</span>${p ? `<span class="nhan-giam-gia">-${p}%</span>` : ""}</p>
+                    ${b.old ? `<del class="gia-goc"><i>${money(b.old)}</i></del>` : ""}
+                </div>
+            </div>`;
+    };
+
+    const card = (b) => {
+        return `<div class="san-pham" data-id="${b.id}">
             <button type="button" class="yt-heart" data-rm="${b.id}" title="Bỏ yêu thích" aria-label="Bỏ yêu thích ${b.name}"><i class="fa-solid fa-heart"></i></button>
             <input type="checkbox" class="yt-pick" data-pick="${b.id}" ${picked.has(b.id) ? "checked" : ""} aria-label="Chọn ${b.name}">
-            ${p ? `<em class="yt-badge">-${p}%</em>` : ""}
-            <a href="chitietsp.html?id=${b.id}"><img src="${b.img}" alt="${b.name}" loading="lazy"></a>
-            <h4><a href="chitietsp.html?id=${b.id}">${b.name}</a></h4>
-            <p>${b.author}</p>
-            <span>${money(b.price)}${b.old ? ` <del>${money(b.old)}</del>` : ""}</span>
+            ${bookInfo(b)}
             <button type="button" class="yt-add" data-add="${b.id}"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</button>
         </div>`;
     };
@@ -158,7 +172,7 @@
 
         const saved = new Set(favs), liked = new Set(all.map((b) => b.cat));
         const sug = BOOKS.filter((b) => !saved.has(b.id)).sort((a, b) => liked.has(b.cat) - liked.has(a.cat)).slice(0, 4);
-        $("#ytSugs").innerHTML = sug.map((b) => `<div class="product-card" data-id="${b.id}"><a href="chitietsp.html?id=${b.id}"><img src="${b.img}" alt="${b.name}" loading="lazy"></a><h4><a href="chitietsp.html?id=${b.id}">${b.name}</a></h4><p>${b.author}</p><span>${money(b.price)}${b.old ? ` <del>${money(b.old)}</del>` : ""}</span></div>`).join("");
+        $("#ytSugs").innerHTML = sug.map((b) => `<div class="san-pham" data-id="${b.id}">${bookInfo(b)}</div>`).join("");
 
         updateBar();
     }
@@ -171,7 +185,7 @@
     /* ---------- Sự kiện ---------- */
     document.addEventListener("click", (e) => {
         // bấm vào vùng trống của thẻ sách (giống trang chủ) -> mở trang chi tiết
-        const cd = e.target.closest(".yt-grid .product-card, .yt-sugs .product-card");
+        const cd = e.target.closest(".yt-grid .san-pham, .yt-sugs .san-pham");
         if (cd && !e.target.closest("a, button, input, label")) { location.href = "chitietsp.html?id=" + cd.dataset.id; return; }
         const t = e.target.closest("[data-rm],[data-add],[data-cat],#ytAddAll,#ytShare");
         if (!t) return;

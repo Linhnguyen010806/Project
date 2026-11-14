@@ -46,19 +46,19 @@
 .yt-selectrow label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
 .yt-selectrow input { accent-color: var(--brown); }
 
-/* thẻ sách: dùng khung .product-card của trang chủ (style.css),
-   chỉ ghi đè phần kích thước dành cho slider + căn giữa nội dung */
+/* thẻ sách: dùng khung .san-pham của trang chủ (danhmucsp.css + style.css, giống index.html),
+   chỉ ghi đè phần kích thước dành cho slider */
 .yt-grid, .yt-sugs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-:is(.yt-grid, .yt-sugs) .product-card { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; flex: none; width: auto; min-width: 0; max-width: none; margin: 0; cursor: pointer; }
-:is(.yt-grid, .yt-sugs) .product-card, :is(.yt-grid, .yt-sugs) .product-card :not(i) { font-family: Arial, sans-serif; }
-:is(.yt-grid, .yt-sugs) .product-card :is(h4, p, span) { width: 100%; text-align: center; }
-:is(.yt-grid, .yt-sugs) .product-card span { margin-bottom: 12px; }
-:is(.yt-grid, .yt-sugs) .product-card span del { margin-left: 6px; font-size: .8em; font-weight: 400; color: #999; }
-.yt-badge { position: absolute; top: 50px; right: 10px; z-index: 2; background: var(--orange); color: #fff; font-size: 11px; font-style: normal; font-weight: 700; padding: 4px 8px; border-radius: 5px; }
-.yt-heart { position: absolute; top: 10px; right: 10px; z-index: 2; width: 34px; height: 34px; border: none; border-radius: 50%; background: #fff; color: #c0392b; box-shadow: 0 2px 8px rgba(58, 36, 18, .15); transition: transform .15s; }
-.yt-heart:hover { transform: scale(1.12); }
-.yt-pick { position: absolute; top: 12px; left: 12px; z-index: 2; width: 18px; height: 18px; accent-color: var(--brown); cursor: pointer; }
-.yt-add { align-self: stretch; margin-top: auto; border: none; background: var(--brown); color: #fff; border-radius: 4px; padding: 10px; font-weight: 700; transition: background .15s; }
+:is(.yt-grid, .yt-sugs) .san-pham { position: relative; flex: none; width: auto; min-width: 0; max-width: none; margin: 0; cursor: pointer; }
+:is(.yt-grid, .yt-sugs) .san-pham, :is(.yt-grid, .yt-sugs) .san-pham :not(i) { font-family: Arial, sans-serif; }
+.yt-grid .nhom-gia-gio-hang { margin-bottom: 10px; }
+/* nút tim: nhỏ, nằm ở góc phải thẻ sách; khai báo kèm .yt-page để không bị luật button chung của style.css/danhmucsp.css kéo to ra */
+.yt-page .yt-heart { position: absolute; top: 8px; right: 8px; left: auto; bottom: auto; z-index: 2; display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; min-width: 0; margin: 0; padding: 0; border: none; border-radius: 50%; background: rgba(255, 255, 255, .95); color: #c0392b; font-size: 12px; line-height: 1; box-shadow: 0 1px 5px rgba(58, 36, 18, .22); transition: transform .15s; }
+.yt-page .yt-heart i { margin: 0; font-size: 12px; line-height: 1; }
+.yt-page .yt-heart::after { content: ""; position: absolute; inset: -7px; }   /* vùng bấm rộng hơn hình tim cho dễ chạm */
+.yt-page .yt-heart:hover { transform: scale(1.12); }
+.yt-pick { position: absolute; top: 10px; left: 10px; z-index: 2; width: 16px; height: 16px; accent-color: var(--brown); cursor: pointer; }
+.yt-add { display: block; width: 100%; align-self: stretch; margin-top: auto; border: none; background: var(--brown); color: #fff; border-radius: 4px; padding: 10px; font-weight: 700; transition: background .15s; }
 .yt-add:hover { background: #6f3b00; }
 
 /* trạng thái trống */

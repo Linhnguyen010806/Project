@@ -151,11 +151,11 @@
         refresh,
         notify: push,
         voucherSaved(name) {
-            push({ type: "voucher", title: "Đã lưu voucher", href: "khuyenmai.html",
-                text: (name ? "Voucher " + quote(name) : "Voucher") + " đã được lưu vào tài khoản. Bạn có thể dùng khi thanh toán." });
+            push({ type: "voucher", title: "Bạn đã lưu voucher", href: "khuyenmai.html#voucher-section",
+                text: (name ? "Voucher " + quote(name) : "Voucher") + " đã vào ví voucher của bạn. Bạn có thể dùng khi thanh toán." });
         },
         voucherRegistered(detail) {
-            push({ type: "register", title: "Đăng ký voucher thành công", href: "khuyenmai.html",
+            push({ type: "register", title: "Đăng ký voucher thành công", href: "khuyenmai.html#voucher-section",
                 text: detail || "Bạn đã đăng ký nhận voucher. Hãy dùng cho đơn hàng đầu tiên nhé." });
         }
     };

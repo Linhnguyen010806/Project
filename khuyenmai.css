@@ -1,5 +1,3 @@
-
-
 body {
     background-color: #ffffff !important;
     color: #3b2921;
@@ -98,14 +96,14 @@ body {
 
 
 
-/* ĐỒNG HỒ ĐẾM NGƯỢC: kiểu lật số, nền kem hoa anh đào */
+/* ĐỒNG HỒ ĐẾM NGƯỢC: đồng hồ lật số, nền kem hoa anh đào */
 .countdown-wireframe-box {
     --flower: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'><g fill='%23f2a9b0' fill-opacity='.6'><path transform='rotate(0)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/><path transform='rotate(72)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/><path transform='rotate(144)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/><path transform='rotate(216)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/><path transform='rotate(288)' d='M0 -4C-12 -16 -14 -34 -5 -44L0 -39L5 -44C14 -34 12 -16 0 -4Z'/></g><circle r='5' fill='%23f6c667' fill-opacity='.9'/></svg>");
     position: relative;
     overflow: hidden;
     text-align: center;
     margin: 30px 0 40px;
-    padding: 34px 20px 30px;
+    padding: 36px 20px 32px;
     border: 1px solid #f0d5c0;
     border-radius: 22px;
     color: #3b2921;
@@ -121,27 +119,28 @@ body {
 .countdown-wireframe-box > * { position: relative; }
 
 .countdown-title {
-    font: 600 22px Lora, Georgia, serif;
+    font: 600 clamp(18px, 2.6vw, 24px)/1.35 Lora, Georgia, serif;
     color: #8B4A00;
 }
 
 .countdown-title i { margin-right: 4px; color: #e68a9c; }
 
 .countdown-sub {
-    margin: 5px 0 24px;
+    margin: 6px 0 26px;
     font-size: 13px;
     color: #8a6b52;
 }
 
 .timer-display {
+    --h: clamp(72px, 16vw, 120px);          /* chiều cao mỗi ô số */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: clamp(6px, 2vw, 16px);
+    gap: clamp(6px, 1.8vw, 18px);
 }
 
 .time-block {
-    width: clamp(60px, 17vw, 112px);
+    width: clamp(54px, 15vw, 118px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -149,33 +148,74 @@ body {
 
 .time-num {
     position: relative;
-    display: grid;
-    place-items: center;
+    display: block;
     width: 100%;
-    height: clamp(70px, 17vw, 110px);
-    border-radius: 16px;
-    border: 1px solid #efd3bb;
-    background: linear-gradient(180deg, #ffffff 0, #fffaf4 50%, #fbefe3 50%, #fff8f0 100%);
-    box-shadow: inset 0 1px 0 #fff, 0 10px 22px rgba(139, 74, 0, .16);
-    font: 600 clamp(34px, 9vw, 62px)/1 Lora, Georgia, serif;
+    height: var(--h);
+    perspective: 520px;
+    border-radius: 14px;
+    box-shadow: 0 14px 26px rgba(59, 41, 33, .28), 0 2px 0 rgba(255, 255, 255, .55);
+    font: 600 calc(var(--h) * .56)/1 Lora, Georgia, serif;
     font-variant-numeric: tabular-nums;
-    color: #8B4A00;
-    text-shadow: 0 1px 0 #fff;
+    color: #f3c677;
 }
 
-.time-num::after {              /* vạch chia đôi */
+/* nửa trên / nửa dưới: mỗi nửa chỉ lộ một nửa con số */
+.fl-half, .fl-face {
+    position: absolute;
+    left: 0; right: 0;
+    height: 50%;
+    overflow: hidden;
+    background: linear-gradient(180deg, #4d362a, #3b2921);
+}
+.fl-top, .fl-front { top: 0; border-radius: 14px 14px 0 0; }
+.fl-bot, .fl-back {
+    bottom: 0;
+    border-radius: 0 0 14px 14px;
+    background: linear-gradient(180deg, #33231a, #3d2a20);
+}
+.fl-half i, .fl-face i {
+    display: block;
+    height: var(--h);
+    line-height: var(--h);
+    text-align: center;
+    font-style: normal;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, .35);
+}
+.fl-bot i, .fl-back i { margin-top: calc(var(--h) / -2); }
+
+/* lá lật: bản lề nằm ở vạch giữa */
+.fl-leaf {
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 50%;
+    z-index: 3;
+    transform-origin: 50% 100%;
+    transform-style: preserve-3d;
+}
+.fl-face {
+    top: 0; bottom: auto;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.fl-back { top: 0; bottom: auto; transform: rotateX(180deg); }
+.fl-leaf.go { animation: flipDown .6s cubic-bezier(.45, .05, .35, 1) forwards; }
+
+@keyframes flipDown {
+    from { transform: rotateX(0); }
+    to   { transform: rotateX(-180deg); }
+}
+
+/* vạch bản lề + vệt sáng nhỏ bên dưới */
+.time-num::after {
     content: "";
     position: absolute;
-    left: 0; right: 0; top: 50%;
-    height: 1px;
-    background: rgba(139, 74, 0, .18);
-}
-
-.time-num.tick { animation: tickFlip .45s ease-out; }
-
-@keyframes tickFlip {
-    from { transform: perspective(260px) rotateX(-80deg); opacity: .2; }
-    to   { transform: none; opacity: 1; }
+    left: 0; right: 0;
+    top: calc(50% - 1px);
+    height: 2px;
+    z-index: 4;
+    background: rgba(0, 0, 0, .55);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .07);
 }
 
 .time-block small {
@@ -185,23 +225,37 @@ body {
     color: #8B4A00;
 }
 
-.time-block:last-child .time-num {      /* ô giây: màu hoa anh đào */
-    border-color: #e68a9c;
-    background: linear-gradient(180deg, #f3adb9 0, #e98fa0 50%, #e07d91 50%, #db7388 100%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 10px 24px rgba(224, 125, 145, .38);
-    color: #fff;
-    text-shadow: 0 2px 4px rgba(150, 50, 70, .35);
-}
+/* ô giây: màu hoa anh đào để mắt bắt được nhịp đếm */
+.time-block:last-child .time-num { color: #fff; box-shadow: 0 14px 26px rgba(212, 106, 134, .38), 0 2px 0 rgba(255, 255, 255, .55); }
+.time-block:last-child :is(.fl-top, .fl-front) { background: linear-gradient(180deg, #ec97a9, #e07d91); }
+.time-block:last-child :is(.fl-bot, .fl-back) { background: linear-gradient(180deg, #d4708a, #dc7b93); }
+.time-block:last-child .time-num::after { background: rgba(120, 30, 55, .5); }
+.time-block:last-child small { color: #c0506a; }
 
-.time-block:last-child .time-num::after { background: rgba(150, 50, 70, .22); }
-
+/* dấu hai chấm: hai chấm tròn thay cho ký tự ":" */
 .colon {
-    margin-top: clamp(18px, 4vw, 30px);
-    font: 600 clamp(24px, 5vw, 40px) Lora, Georgia, serif;
-    color: #d98a9a;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(var(--h) * .16);
+    height: var(--h);
+    width: 8px;
+    font-size: 0;
+    color: transparent;
+}
+.colon::before, .colon::after {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #d98a9a;
 }
 
-@media (prefers-reduced-motion: reduce) { .time-num.tick { animation: none; } }
+@media (max-width: 420px) {
+    .countdown-wireframe-box { padding: 30px 10px 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) { .fl-leaf.go { animation: none; } }
 
 /* VOUCHER SECTION */
 .promo-section {
@@ -343,10 +397,13 @@ body {
     color: #9a5700;
     padding: 8px 14px;
     border-radius: 4px;
-    font-size: 13px;
-    font-weight: bold;
+    font: bold 13px Arial, sans-serif;
     cursor: pointer;
 }
+
+.saved-voucher span { margin-left: 8px; font-weight: 400; color: #6d5a49; }
+.saved-voucher:hover { background: #f8e9d4; }
+.saved-voucher:focus-visible, .get-voucher:focus-visible, .tab-btn:focus-visible, .wv-allsale button:focus-visible { outline: 2px solid #8B4A00; outline-offset: 2px; }
 
 /* =========================================================
    KHUNG LIỀN MẠCH (UNIFIED DEAL BOX): 
@@ -415,20 +472,16 @@ body {
     background: #fff;
 }
 
-/* Lưới sản phẩm: dùng khung .product-card của trang chủ (style.css),
-   chỉ ghi đè phần kích thước dành cho slider để vừa ô lưới + căn giữa nội dung */
+/* Lưới sản phẩm: thẻ dùng khung .san-pham của trang chủ (danhmucsp.css + style.css, giống index.html),
+   chỉ ghi đè phần kích thước dành cho slider để vừa ô lưới */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-#productGrid .product-card {
+#productGrid .san-pham {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     flex: none;
     width: auto;
     min-width: 0;
@@ -437,23 +490,16 @@ body {
     cursor: pointer;
 }
 
-#productGrid .product-card[hidden] { display: none; }
+#productGrid .san-pham[hidden] { display: none; }
 
-#productGrid .product-card h4,
-#productGrid .product-card p,
-#productGrid .product-card span {
-    width: 100%;
-    text-align: center;
-}
+.tab-count { margin-left: 2px; font-weight: 400; opacity: .75; }
 
-#productGrid .product-card span del {
-    margin-left: 6px;
-    font-size: .8em;
-    font-weight: normal;
-    color: #999;
-}
+/* sách vừa hiện ra khi bấm "Xem thêm" */
+#productGrid .san-pham.reveal { animation: dealIn .4s ease backwards; animation-delay: calc(var(--i, 0) * 70ms); }
+@keyframes dealIn { from { opacity: 0; transform: translateY(12px); } }
+@media (prefers-reduced-motion: reduce) { #productGrid .san-pham.reveal { animation: none; } }
 
-#productGrid .product-card span { margin-bottom: 12px; }
+#productGrid .nhom-gia-gio-hang { margin-bottom: 10px; }
 
 #productGrid .detail-button {
     align-self: stretch;
@@ -476,20 +522,6 @@ body {
 #productGrid .detail-button:hover { background: #6f3b00; }
 #productGrid .detail-button.added { background: #3f7d4f; }
 
-.badge-sale {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 2;
-    background: #e63946;
-    color: #fff;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 4px;
-}
-
 /* ================= NHẬN VOUCHER 100K THÀNH VIÊN MỚI ================= */
 .welcome-voucher { display: grid; grid-template-columns: 1fr 1.05fr; margin-top: 48px; overflow: hidden; background: #fffdf9; border: 1px solid #ecd9c6; border-radius: 18px; box-shadow: 0 6px 24px rgba(59, 41, 33, .08); }
 .wv-serif { font-family: Lora, Georgia, serif; font-weight: 600; color: #3b2921; }
@@ -511,6 +543,8 @@ body {
 .wv-steps li.on::before { background: #8B4A00; border-color: #8B4A00; color: #fff; }
 
 .wv-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.wv-form[hidden] { display: none; }
+.wv-form input[aria-invalid="true"] { border-color: #c0392b; }
 .wv-form label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #3b2921; }
 .wv-form .full { grid-column: 1 / -1; }
 .wv-form input[type="text"], .wv-form input[type="tel"], .wv-form input[type="email"] { padding: 12px 14px; border: 1px solid #dccbb8; border-radius: 8px; background: #fff; font-size: 13px; }
