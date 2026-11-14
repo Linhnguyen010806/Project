@@ -38,39 +38,121 @@ if (toggleBtn && categoryList) {
 
 // ================= Slideshow =================
 
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
+// =====================================
+// SLIDER BANNER HANAMI BOOKSTORE
+// =====================================
 
-let current = 0;
+document.addEventListener("DOMContentLoaded", function () {
 
-function showSlide(index) {
+    const slider = document.querySelector(".slider");
+    const slideTrack = document.querySelector(".slides");
+    const images = document.querySelectorAll(".slide");
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+    const dots = document.querySelectorAll(".dot");
 
-    slides.forEach(slide => slide.classList.remove("active"));
-    dots.forEach(dot => dot.classList.remove("active"));
+    if (!slider || !slideTrack || images.length === 0) return;
 
-    slides[index].classList.add("active");
-    dots[index].classList.add("active");
-}
+    let currentIndex = 0;
+    let startX = 0;
+    let endX = 0;
+    let autoSlide;
 
-function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-}
+    // Hiển thị banner
+    function showSlide(index) {
 
-function prevSlide() {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-}
+        currentIndex = (index + images.length) % images.length;
 
-if (nextBtn && prevBtn && slides.length > 0) {
-    nextBtn.addEventListener("click", nextSlide);
-    prevBtn.addEventListener("click", prevSlide);
+        slideTrack.style.transform =
+            `translateX(-${currentIndex * 100}%)`;
 
-    setInterval(nextSlide, 3000);
-}
+        images.forEach((img, i) => {
+            img.classList.toggle("active", i === currentIndex);
+        });
 
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    // Banner tiếp theo
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    // Banner trước
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    // Nút chuyển ảnh
+    next?.addEventListener("click", function () {
+        nextSlide();
+        resetAutoSlide();
+    });
+
+    prev?.addEventListener("click", function () {
+        prevSlide();
+        resetAutoSlide();
+    });
+
+    // Nhấn dấu chấm
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", function () {
+            showSlide(index);
+            resetAutoSlide();
+        });
+    });
+
+    // Vuốt trên điện thoại
+    slider.addEventListener("touchstart", function (e) {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    slider.addEventListener("touchend", function (e) {
+        endX = e.changedTouches[0].clientX;
+
+        if (startX - endX > 50) {
+            nextSlide();
+            resetAutoSlide();
+        } else if (endX - startX > 50) {
+            prevSlide();
+            resetAutoSlide();
+        }
+    });
+
+    // Kéo chuột trên máy tính
+    slider.addEventListener("mousedown", function (e) {
+        startX = e.clientX;
+    });
+
+    slider.addEventListener("mouseup", function (e) {
+        endX = e.clientX;
+
+        if (startX - endX > 50) {
+            nextSlide();
+            resetAutoSlide();
+        } else if (endX - startX > 50) {
+            prevSlide();
+            resetAutoSlide();
+        }
+    });
+
+    // Tự động chuyển banner
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 3000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    // Khởi chạy
+    showSlide(0);
+    startAutoSlide();
+
+});
 
 // ================= FLASH SALE + SLIDER SÁCH =================
 
@@ -108,23 +190,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ---------- 2. SLIDER SẢN PHẨM MỚI ----------
-    document.querySelectorAll(".danh-sach-sach").forEach(section => {
+    // ---------- 2. SLIDER SẢN PHẨM VÀ CHUYỂN TAB ----------
 
-        const danhSach = section.querySelector(".danh-sach-san-pham");
-        const nutTruoc = section.querySelector(".nut-san-pham-truoc");
-        const nutSau = section.querySelector(".nut-san-pham-sau");
+document.querySelectorAll(".danh-sach-sach").forEach(section => {
 
-        if (!danhSach) return;
+    // Chuyển tab
+    const buttons = section.querySelectorAll(".tab-btn");
+    const contents = section.querySelectorAll(".tab-content");
 
-        nutTruoc?.addEventListener("click", () => {
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+
+            const tabId = this.dataset.tab;
+
+            buttons.forEach(btn => btn.classList.remove("active"));
+            contents.forEach(content => content.classList.remove("active"));
+
+            this.classList.add("active");
+
+            const selectedContent = section.querySelector(`#${tabId}`);
+
+            if (selectedContent) {
+                selectedContent.classList.add("active");
+            }
+        });
+    });
+
+    // Nút trượt sản phẩm
+    section.querySelectorAll(".tab-content").forEach(tab => {
+
+        const danhSach = tab.querySelector(".danh-sach-san-pham");
+        const nutTruoc = tab.querySelector(".nut-san-pham-truoc");
+        const nutSau = tab.querySelector(".nut-san-pham-sau");
+
+        if (!danhSach || !nutTruoc || !nutSau) return;
+
+        nutTruoc.addEventListener("click", () => {
             danhSach.scrollBy({
                 left: -danhSach.clientWidth,
                 behavior: "smooth"
             });
         });
 
-        nutSau?.addEventListener("click", () => {
+        nutSau.addEventListener("click", () => {
             danhSach.scrollBy({
                 left: danhSach.clientWidth,
                 behavior: "smooth"
@@ -133,93 +241,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    //---- CHUYỂN TAB SÁCH THAM KHẢO VÀ GÓC NGOẠI NGỮ ----
-
-document.querySelectorAll(".danh-sach-sach").forEach(section => {
-
-    const buttons = section.querySelectorAll(".tab-btn");
-    const contents = section.querySelectorAll(".tab-content");
-
-    buttons.forEach(button => {
-
-        button.addEventListener("click", function () {
-
-            const tabId = this.dataset.tab;
-
-            // Bỏ active ở các nút
-            buttons.forEach(btn => {
-                btn.classList.remove("active");
-            });
-
-            // Ẩn các nội dung
-            contents.forEach(content => {
-                content.classList.remove("active");
-            });
-
-            // Thêm active cho nút được chọn
-            this.classList.add("active");
-
-            // Hiện nội dung tương ứng
-            const selectedContent = section.querySelector(
-                `#${tabId}`
-            );
-
-            if (selectedContent) {
-                selectedContent.classList.add("active");
-            }
-
-        });
-
-    });
-
 });
 
-    // ---------- 3. NÚT QUAY LẠI ĐẦU TRANG ----------
-    const backToTop = document.getElementById("backToTop");
+// NÚT QUAY LẠI ĐẦU TRANG
+const backToTop = document.getElementById("backToTop");
 
-    if (backToTop) {
-
-        window.addEventListener("scroll", () => {
-            backToTop.style.display =
-                window.scrollY > 300 ? "flex" : "none";
-        });
-
-        backToTop.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-    }
-
-});
-
-
-
-
-
-/* NÚT QUAY LẠI ĐẦU TRANG */
-
-document.addEventListener("DOMContentLoaded", function () {
-    const backToTop = document.getElementById("backToTop");
-
-    if (!backToTop) return;
-
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
-            backToTop.style.display = "flex";
-        } else {
-            backToTop.style.display = "none";
-        }
+if (backToTop) {
+    window.addEventListener("scroll", () => {
+        backToTop.style.display = window.scrollY > 300 ? "flex" : "none";
     });
 
-    backToTop.addEventListener("click", function () {
+    backToTop.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
     });
+}
 });
+
 
 // Chuyển sản phẩm Flash Sale
 function moveFlash(direction) {
@@ -253,6 +293,44 @@ function updateFlashTimer() {
         flashTime--;
     }
 }
+// ================= POPUP KHUYẾN MÃI =================
 
-updateFlashTimer();
-setInterval(updateFlashTimer, 1000);
+document.addEventListener("DOMContentLoaded", function () {
+
+    const popup = document.getElementById("popup-overlay");
+    const closeBtn = document.getElementById("close-popup");
+
+    if (!popup || !closeBtn) return;
+
+    // Chỉ hiện một lần trong mỗi phiên truy cập
+    if (!sessionStorage.getItem("popupShown")) {
+
+        popup.style.display = "flex";
+
+        sessionStorage.setItem("popupShown", "true");
+    }
+
+    // Đóng khi nhấn nút X
+    closeBtn.addEventListener("click", function () {
+        popup.style.display = "none";
+    });
+
+    // Đóng khi nhấn ra ngoài popup
+    popup.addEventListener("click", function (e) {
+
+        if (e.target === popup) {
+            popup.style.display = "none";
+        }
+
+    });
+
+    // Đóng bằng phím ESC
+    document.addEventListener("keydown", function (e) {
+
+        if (e.key === "Escape") {
+            popup.style.display = "none";
+        }
+
+    });
+
+});
