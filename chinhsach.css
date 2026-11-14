@@ -1,0 +1,143 @@
+/* ==========================================================
+   HANAMI BOOKSTORE - HỆ THỐNG TRANG CHÍNH SÁCH (CHUNG)
+   ========================================================== */
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+.policy-article-page {
+    max-width: 820px !important;
+    margin: 60px auto 80px;
+    padding: 0 24px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
+    color: #35241f;
+}
+
+.policy-article-page *, 
+.policy-article-page *::before, 
+.policy-article-page *::after {
+    box-sizing: border-box;
+}
+
+/* --- PHẦN TIÊU ĐỀ TÀI LIỆU --- */
+.doc-header {
+    margin-bottom: 45px;
+    border-bottom: 2px solid #e8dfd5;
+    padding-bottom: 25px;
+}
+
+.doc-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #b88954;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.doc-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #50362b;
+    margin: 0 0 10px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.doc-meta {
+    font-size: 13.5px;
+    color: #8c7b70;
+    margin: 0;
+    font-style: italic;
+}
+
+/* --- KHỐI NỘI DUNG BÀI VIẾT --- */
+.doc-body {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+}
+
+.doc-block {
+    padding-bottom: 32px;
+    border-bottom: 1px dashed #e6dcd1;
+}
+
+.doc-block:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.doc-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #50362b;
+    margin: 0 0 12px;
+    font-weight: 600;
+}
+
+.doc-block p {
+    font-size: 15px;
+    color: #63544c;
+    line-height: 1.85;
+    margin: 0 0 12px;
+    text-align: justify;
+}
+
+.doc-block p:last-child {
+    margin-bottom: 0;
+}
+
+.doc-block strong {
+    color: #35241f;
+    font-weight: 600;
+}
+
+.doc-block ul {
+    margin: 10px 0 0 0;
+    padding-left: 22px;
+    color: #63544c;
+}
+
+.doc-block li {
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 8px;
+    text-align: justify;
+}
+
+.doc-block li::marker {
+    color: #b88954;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .policy-article-page {
+        margin: 35px auto 50px;
+        padding: 0 18px !important;
+    }
+    .doc-header {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+    }
+    .doc-header h1 {
+        font-size: 28px;
+    }
+    .doc-body {
+        gap: 28px;
+    }
+    .doc-block {
+        padding-bottom: 24px;
+    }
+    .doc-block h2 {
+        font-size: 18px;
+    }
+    .doc-block p,
+    .doc-block li {
+        font-size: 14.5px;
+    }
+}
