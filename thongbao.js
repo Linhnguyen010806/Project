@@ -2,8 +2,11 @@
    Trung tâm thông báo của Hanami (chuông trên header).
 
    Tự động thông báo (không cần sửa các trang khác):
-     - Thêm sách vào yêu thích  -> theo dõi khoá "hanamiFavorites"
-     - Thêm sách vào giỏ hàng   -> theo dõi khoá "hanamiCart"
+     - Thêm / bỏ yêu thích      -> theo dõi khoá "hanamiFavorites"
+     - Thêm / xoá giỏ hàng      -> theo dõi khoá "gioHang" (giỏ hàng chung của cả web, cùng khoá với chitiet.js)
+     - Đăng nhập                -> theo dõi khoá "hanamiCurrentUser"
+     - Mỗi thông báo đều kèm thông báo nhỏ hiện ngay cuối màn hình (truyền silent: true để tắt)
+   Gọi tay thêm: hanami.orderPlaced(maDon, tongTien) khi đặt hàng.
 
    Gọi tay từ trang Khuyến mãi (khuyenmai.js):
      hanami.voucherSaved("Tên voucher");   // khi bấm Lưu voucher
@@ -16,7 +19,7 @@
 (function () {
     if (window.hanami && window.hanami.ready) return; // tránh nạp file 2 lần
 
-    const NK = "hanamiNotifications", FK = "hanamiFavorites", CK = "hanamiCart", UK = "hanamiCurrentUser";
+    const NK = "hanamiNotifications", FK = "hanamiFavorites", CARTS = ["gioHang", "hanamiCart"], UK = "hanamiCurrentUser";
     const MIN = 60000, PREVIEW = 5, KEEP = 50; // PREVIEW: số thông báo hiện khi chưa mở rộng; KEEP: số thông báo lưu tối đa
 
     const read = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } };
@@ -29,6 +32,8 @@
         register: { label: "Đăng ký voucher", icon: "fa-user-plus" },
         favorite: { label: "Yêu thích",       icon: "fa-heart" },
         cart:     { label: "Giỏ hàng",        icon: "fa-cart-shopping" },
+        order:    { label: "Đơn hàng",       icon: "fa-box" },
+        account:  { label: "Tài khoản",      icon: "fa-user" },
         system:   { label: "Khác",            icon: "fa-bell" }
     };
     const typeOf = (n) => (TYPES[n.type] ? n.type : "system");
@@ -48,9 +53,8 @@
         mhtn: "60 đề minh họa Tốt nghiệp THPT 2026", mhtn2: "100 đề minh họa Tốt nghiệp THPT 2026", dptd: "Đột phá tư duy kỳ thi Tốt nghiệp THPT"
     };
 
-    // Thông báo mặc định chào mừng thành viên mới
-    const WELCOME = { type: "system", icon: "fa-gift", title: "Chào mừng đến Hanami", text: "Đăng ký ở trang Khuyến mãi để nhận voucher 100.000đ cho đơn đầu tiên.", href: "khuyenmai.html#nhan-voucher" };
-    if (read(NK, null) === null) write(NK, [Object.assign({ ts: Date.now(), unread: true }, WELCOME)]);
+    // Dọn thông báo chào mừng voucher 100.000đ cũ (nếu trình duyệt đã lưu từ trước); có thể xoá dòng này sau một thời gian
+    write(NK, read(NK, []).filter((n) => n.href !== "khuyenmai.html#nhan-voucher"));
 
     function ago(ts) {
         const m = Math.round((Date.now() - ts) / MIN);
@@ -126,18 +130,33 @@
     }
 
     /* ---------- Tạo thông báo ---------- */
+    /* ---------- Thông báo nhỏ: hiện ngay khi người dùng vừa thao tác ---------- */
+    const toastEl = document.createElement("div");
+    toastEl.className = "hn-toast";
+    toastEl.setAttribute("role", "status");
+    toastEl.setAttribute("aria-live", "polite");
+    document.body.appendChild(toastEl);
+    let toastTimer;
+    function toast(icon, text) {
+        toastEl.innerHTML = '<i class="fa-solid ' + esc(icon) + '"></i><span>' + esc(text) + "</span>";
+        toastEl.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toastEl.classList.remove("show"), 3200);
+    }
+
     function push(item) {
-        const t = TYPES[item.type] ? item.type : "system";
+        const { silent, ...rest } = item, t = TYPES[rest.type] ? rest.type : "system", icon = rest.icon || TYPES[t].icon;
         const list = read(NK, []);
-        list.unshift(Object.assign({ ts: Date.now(), unread: true }, item, { type: t, icon: item.icon || TYPES[t].icon }));
+        list.unshift(Object.assign({ ts: Date.now(), unread: true }, rest, { type: t, icon }));
         write(NK, list.slice(0, KEEP));
         refresh();
         if (!panel.hidden) draw();
+        if (!silent) toast(icon, rest.text || rest.title);
     }
 
     const quote = (s) => "“" + s + "”";
-    function bookText(ids) {
-        const n = ids.map((id) => (NAMES[id] ? quote(NAMES[id]) : "một cuốn sách"));
+    function bookText(names) {
+        const n = names.map((s) => (s ? quote(s) : "một cuốn sách"));
         return n.length <= 2 ? n.join(" và ") : n[0] + ", " + n[1] + " và " + (n.length - 2) + " cuốn khác";
     }
     function cartHref() {
@@ -146,7 +165,7 @@
     }
 
     // Hàm toàn cục: gọi từ bất kỳ file JS nào
-    window.hanami = {
+    window.hanami = Object.assign(window.hanami || {}, {
         ready: true,
         refresh,
         notify: push,
@@ -157,22 +176,36 @@
         voucherRegistered(detail) {
             push({ type: "register", title: "Đăng ký voucher thành công", href: "khuyenmai.html#voucher-section",
                 text: detail || "Bạn đã đăng ký nhận voucher. Hãy dùng cho đơn hàng đầu tiên nhé." });
+        },
+        orderPlaced(code, total) {
+            push({ type: "order", title: "Đặt hàng thành công", href: "#",
+                text: "Đơn hàng " + (code || "") + (total ? " (tổng " + total + ")" : "") + " đang chờ Hanami xác nhận." });
         }
-    };
+    });
 
     /* ---------- Tự động bắt hành động yêu thích + giỏ hàng ---------- */
     const idsOf = (v) => (Array.isArray(v) ? v.map((x) => (x && typeof x === "object" ? x.id : x)).filter((x) => x != null) : []);
-    const qtyOf = (c) => Number(c && (c.qty ?? c.quantity)) || 1;
+    // Giỏ hàng chung (chitiet.js, script.js...) lưu {id, ten, gia, anh, soLuong}; vẫn đọc được dạng cũ {id, qty}
+    const keyOf = (c) => (c && (c.id ?? c.ten ?? c.name));
+    const qtyOf = (c) => Number(c && (c.soLuong ?? c.qty ?? c.quantity)) || 1;
+    const nameOf = (c) => (c && (c.ten || c.name)) || (c && NAMES[c.id]) || "";
+    const cartMap = (v) => { const m = new Map(); (Array.isArray(v) ? v : []).forEach((c) => { const k = keyOf(c); if (k != null) m.set(k, c); }); return m; };
+    const ownToast = () => !!document.querySelector(".yt-page");   // trang Yêu thích đã có thông báo nhỏ riêng, tránh hiện 2 lần
 
     function onStorage(key, before, after) {
         if (key === FK) {
-            const had = new Set(idsOf(before)), added = [...new Set(idsOf(after))].filter((id) => !had.has(id));
-            if (added.length) push({ type: "favorite", title: "Đã thêm sách yêu thích", href: "yeuthich.html", text: bookText(added) + " đã được lưu vào tủ sách yêu thích của bạn." });
-        } else if (key === CK) {
-            const had = {};
-            (Array.isArray(before) ? before : []).forEach((c) => { if (c && c.id != null) had[c.id] = qtyOf(c); });
-            const added = [...new Set((Array.isArray(after) ? after : []).filter((c) => c && c.id != null && (had[c.id] === undefined || qtyOf(c) > had[c.id])).map((c) => c.id))];
-            if (added.length) push({ type: "cart", title: added.length === 1 ? "Đã thêm vào giỏ hàng" : "Đã thêm " + added.length + " cuốn vào giỏ hàng", href: cartHref(), text: bookText(added) + " đã được thêm vào giỏ hàng của bạn." });
+            const b = new Set(idsOf(before)), a = new Set(idsOf(after)), silent = ownToast();
+            const added = [...a].filter((id) => !b.has(id)), gone = [...b].filter((id) => !a.has(id));
+            if (added.length) push({ type: "favorite", silent, title: "Đã thêm sách yêu thích", href: "yeuthich.html", text: bookText(added.map((id) => NAMES[id])) + " đã được lưu vào tủ sách yêu thích của bạn." });
+            if (gone.length) push({ type: "favorite", silent, icon: "fa-heart-crack", title: "Đã bỏ khỏi yêu thích", href: "yeuthich.html", text: bookText(gone.map((id) => NAMES[id])) + " không còn trong tủ sách yêu thích của bạn." });
+        } else if (CARTS.includes(key)) {
+            const b = cartMap(before), a = cartMap(after), up = [], gone = [], silent = ownToast();
+            a.forEach((c, k) => { if (!b.has(k) || qtyOf(c) > qtyOf(b.get(k))) up.push(nameOf(c)); });
+            b.forEach((c, k) => { if (!a.has(k)) gone.push(nameOf(c)); });
+            if (up.length) push({ type: "cart", silent, title: up.length === 1 ? "Đã thêm vào giỏ hàng" : "Đã thêm " + up.length + " cuốn vào giỏ hàng", href: cartHref(), text: bookText(up) + " đã được thêm vào giỏ hàng của bạn." });
+            if (gone.length) push({ type: "cart", icon: "fa-trash-can", title: "Đã xoá khỏi giỏ hàng", href: cartHref(), text: bookText(gone) + " đã được xoá khỏi giỏ hàng của bạn." });
+        } else if (key === UK && after && after.name && !(before && before.name === after.name)) {
+            push({ type: "account", icon: "fa-user-check", title: "Đăng nhập thành công", href: "#", text: "Chào " + String(after.name).trim().split(/\s+/).pop() + ", chúc bạn có buổi đọc sách vui vẻ." });
         }
     }
 
@@ -180,7 +213,7 @@
     try {
         const orig = Storage.prototype.setItem;
         Storage.prototype.setItem = function (key, value) {
-            const watch = this === window.localStorage && (key === FK || key === CK);
+            const watch = this === window.localStorage && (key === FK || key === UK || CARTS.includes(key));
             let before = null;
             if (watch) { try { before = JSON.parse(this.getItem(key)); } catch (e) {} }
             orig.apply(this, arguments);
@@ -203,7 +236,7 @@
             panel.hidden = false;
         } else if (out) {
             e.preventDefault();
-            if (confirm("Đăng xuất khỏi tài khoản này?")) { try { localStorage.removeItem(UK); } catch (err) {} location.reload(); }
+            if (confirm("Đăng xuất khỏi tài khoản này?")) { push({ type: "account", icon: "fa-right-from-bracket", silent: true, title: "Đã đăng xuất", text: "Bạn đã đăng xuất khỏi tài khoản Hanami." }); try { localStorage.removeItem(UK); } catch (err) {} location.reload(); }
         } else if (item) {
             const list = read(NK, []), n = list[item.dataset.i];
             if (n) { n.unread = false; write(NK, list); refresh(); }

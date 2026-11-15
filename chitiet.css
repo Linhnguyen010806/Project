@@ -313,3 +313,8 @@ body {
         font-size: 14px;
     }
 }
+.wishlist.active {
+    background: #fdf1ef;
+    border-color: #e7b7b0;
+    color: #c0392b;
+}

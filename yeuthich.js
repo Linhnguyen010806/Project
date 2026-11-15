@@ -2,8 +2,7 @@
    Yêu thích lưu trong localStorage (khoá "hanamiFavorites") dưới dạng danh sách id sách,
    cùng id với chitiet.js (vd: "cam", "ngk"). Trang chi tiết chỉ cần thêm/bớt id vào khoá này. */
 (function () {
-    if (!document.querySelector(".yt-page")) return;   // trang khác (vd khuyenmai.html) cũng nạp file này: không có .yt-page thì bỏ qua, tránh lỗi console
-    const KEY = "hanamiFavorites", CART = "hanamiCart";
+    const KEY = "hanamiFavorites", CART = "gioHang";
     const DEMO = false; // đặt true để xem thử giao diện khi chưa lưu cuốn nào
     const DEMO_IDS = ["cam", "ngk", "dnt", "ove", "dm", "dbg", "ngcntb", "tdnvc"];
 
@@ -57,6 +56,33 @@
     const byId = {};
     BOOKS.forEach((b) => (byId[b.id] = b));
 
+    /* ---------- Giỏ hàng chung: khoá "gioHang" [{id, ten, gia, anh, soLuong}] — cùng định dạng chitiet.js / giỏ hàng ----------
+       Dùng ở mọi trang nạp file này: hanami.addToCart("id", soLuong), hoặc gắn data-add-cart="id" lên một nút bất kỳ. */
+    function addBooks(ids, qty) {
+        const cart = read(CART, []);
+        let n = 0;
+        ids.forEach((id) => {
+            const b = byId[id];
+            if (!b) return;
+            const it = cart.find((c) => c.id === id);
+            if (it) it.soLuong = (Number(it.soLuong) || 0) + qty;
+            else cart.push({ id, ten: b.name, gia: b.price, anh: b.img, soLuong: qty });
+            n++;
+        });
+        if (!n) return 0;
+        write(CART, cart);
+        window.dispatchEvent(new Event("gioHangUpdated"));   // để popup giỏ hàng ở header cập nhật ngay
+        return n;
+    }
+    window.hanami = window.hanami || {};
+    window.hanami.addToCart = (id, qty) => addBooks([id], Math.max(1, Number(qty) || 1));
+    document.addEventListener("click", (e) => {
+        const b = e.target.closest("[data-add-cart]");
+        if (b) { e.preventDefault(); addBooks([b.dataset.addCart], 1); }
+    });
+
+    if (!document.querySelector(".yt-page")) return;   // phần bên dưới chỉ dành cho trang Yêu thích
+
     let favs = read(KEY, null);
     if (favs === null) { favs = DEMO ? DEMO_IDS.slice() : []; write(KEY, favs); }
     favs = favs.filter((id) => byId[id]);
@@ -90,16 +116,10 @@
         if (undo) $("#ytUndo").onclick = () => { undo(); el.classList.remove("show"); };
     }
 
-    /* ---------- Giỏ hàng (lưu khoá "hanamiCart": [{id, qty}]) ---------- */
+    /* ---------- Thêm vào giỏ hàng chung (khoá "gioHang") ---------- */
     function addCart(ids) {
-        const cart = read(CART, []);
-        ids.forEach((id) => {
-            const it = cart.find((c) => c.id === id);
-            it ? it.qty++ : cart.push({ id, qty: 1 });
-        });
-        write(CART, cart);
-        window.hanami && hanami.refresh();
-        toast("Đã thêm " + ids.length + " cuốn vào giỏ hàng");
+        const n = addBooks(ids, 1);
+        if (n) toast("Đã thêm " + n + " cuốn vào giỏ hàng");
     }
 
     /* ---------- Lọc + sắp xếp ---------- */

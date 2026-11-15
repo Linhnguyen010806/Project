@@ -2,7 +2,8 @@
    1. Đồng hồ đếm ngược Ngày : Giờ : Phút : Giây tới hạn chót ghi ở data-deadline của .countdown-wireframe-box
    2. Lưu voucher + Ví voucher (khoá "hanamiVouchers")  -> báo ở chuông thông báo (hanami.voucherSaved)
    3. Danh mục deal hot: lọc theo thể loại, sắp xếp theo giá, nút "Xem thêm" (không chuyển trang)
-   4. Thêm vào giỏ hàng (khoá "hanamiCart": [{id, qty}]) -> thongbao.js tự báo ở chuông
+   4. Thêm vào giỏ hàng -> giỏ hàng chung khoá "gioHang": [{id, ten, gia, anh, soLuong}] (cùng định dạng yeuthich.js / chitiet.js,
+      nên giỏ hàng, thanh toán và popup giỏ ở header đều thấy) -> thongbao.js tự báo ở chuông
    5. Đăng ký nhận voucher thành viên mới -> báo ở chuông thông báo (hanami.voucherRegistered)
 
    Muốn thêm sách giảm giá: chép 1 khối <div class="san-pham promo-product" data-genre=".." data-price=".." data-order="..">
@@ -250,11 +251,26 @@
             e.stopPropagation();
             const id = btn.dataset.cart;
             if (!id) return;
-            const cart = read("hanamiCart", []);
+            // Lấy tên, giá, ảnh ngay từ thẻ sách đang bấm để giỏ hàng / thanh toán hiển thị đủ thông tin
+            const card = btn.closest(".promo-product");
+            const nameEl = card && $("h3 a", card), imgEl = card && $(".khung-anh img", card);
+            const info = {
+                id: id,
+                ten: nameEl ? nameEl.textContent.trim() : (imgEl && imgEl.alt) || "Sách Hanami",
+                gia: card ? Number(card.dataset.price) || 0 : 0,
+                anh: imgEl ? imgEl.getAttribute("src") || "" : ""
+            };
+            const cart = read("gioHang", []);
             const list = Array.isArray(cart) ? cart : [];
             const it = list.find((c) => c && c.id === id);
-            if (it) it.qty = (Number(it.qty ?? it.quantity) || 1) + 1; else list.push({ id: id, qty: 1 });
-            write("hanamiCart", list);        // thongbao.js tự nhận ra và báo "Đã thêm vào giỏ hàng"
+            if (it) {
+                it.soLuong = (Number(it.soLuong ?? it.qty ?? it.quantity) || 1) + 1;
+                if (!it.ten) it.ten = info.ten;
+                if (!it.gia) it.gia = info.gia;
+                if (!it.anh) it.anh = info.anh;
+            } else list.push({ id: info.id, ten: info.ten, gia: info.gia, anh: info.anh, soLuong: 1 });
+            write("gioHang", list);           // thongbao.js tự nhận ra và báo "Đã thêm vào giỏ hàng"
+            window.dispatchEvent(new Event("gioHangUpdated"));   // để popup giỏ hàng ở header cập nhật ngay
 
             if (btn.dataset.busy) return;
             btn.dataset.busy = "1";

@@ -450,9 +450,9 @@ const addCartButton = document.getElementById("addCart");
 
 addCartButton.addEventListener("click", function() {
 
-    if (themSachVaoGioHang()) {
-        alert("Đã thêm sách vào giỏ hàng!");
-    }
+    if (themSachVaoGioHang() && !(window.hanami && hanami.ready)) {
+    alert("Đã thêm sách vào giỏ hàng!");
+}
 
 });
 
@@ -475,3 +475,35 @@ buyNowButton.addEventListener("click", function() {
     }
 
 });
+// NÚT TRÁI TIM — nối với trang Yêu thích (khoá "hanamiFavorites" = danh sách id sách)
+const heartButton = document.querySelector(".wishlist");
+
+function layYeuThich() {
+    try {
+        const ds = JSON.parse(localStorage.getItem("hanamiFavorites"));
+        return Array.isArray(ds) ? ds : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function veTim() {
+    if (!heartButton) return;
+    const da = layYeuThich().includes(id);
+    heartButton.classList.toggle("active", da);
+    heartButton.textContent = da ? "♥" : "♡";
+    heartButton.setAttribute("aria-pressed", da ? "true" : "false");
+    heartButton.setAttribute("aria-label", da ? "Bỏ yêu thích" : "Thêm vào yêu thích");
+}
+
+if (heartButton) {
+    veTim();
+    heartButton.addEventListener("click", function () {
+        if (!book) { alert("Không tìm thấy sản phẩm!"); return; }
+        const ds = layYeuThich(), vt = ds.indexOf(id);
+        if (vt === -1) ds.push(id); else ds.splice(vt, 1);
+        localStorage.setItem("hanamiFavorites", JSON.stringify(ds));
+        veTim();
+    });
+    window.addEventListener("storage", veTim);
+}

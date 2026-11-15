@@ -524,6 +524,8 @@ body {
 
 /* ================= NHẬN VOUCHER 100K THÀNH VIÊN MỚI ================= */
 .welcome-voucher { display: grid; grid-template-columns: 1fr 1.05fr; margin-top: 48px; overflow: hidden; background: #fffdf9; border: 1px solid #ecd9c6; border-radius: 18px; box-shadow: 0 6px 24px rgba(59, 41, 33, .08); }
+/* TẠM ẨN khối đăng ký nhận voucher 100K thành viên mới. Muốn hiện lại: xóa dòng bên dưới. */
+.welcome-voucher { display: none; }
 .wv-serif { font-family: Lora, Georgia, serif; font-weight: 600; color: #3b2921; }
 .wv-left { display: flex; flex-direction: column; gap: 16px; padding: 42px 38px; background: #f6e3d0; }
 .wv-left h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.2; }
